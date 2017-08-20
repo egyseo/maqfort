@@ -1,0 +1,17 @@
+/*
+Theme Name: MAQFORT
+Theme URI: https://maqfort.com
+Author: Crew
+Author URI: https://crew.pt
+Description: Custom 'hand made' theme to MAQFORT enterprise;
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: maqfort
+Domain Path: /languages
+Tags: flexible-header, accessibility-ready, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, post-formats,
+*/
+
+.sticky {}          /* DO NOT EDIT THIS */
+.gallery-caption {} /* THESE ARE USELESS */
+.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
