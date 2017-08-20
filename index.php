@@ -10,9 +10,10 @@
           <header>
             <?php the_title(); ?>
           </header>
-          <?php           the_content();
-                    the_date();
-                    the_tags(); ?>
+          <?php
+            the_content();
+            the_date();
+            the_tags(); ?>
         </article>
       </div>
     <?php
