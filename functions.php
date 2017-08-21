@@ -116,3 +116,40 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 }
 
 add_action( 'wp_enqueue_scripts', 'maqfort_scripts_and_styles' );
+
+/*
+ * -----------------------------------------------------------
+ * 5.0 Register the widget areas.
+ * -----------------------------------------------------------
+*/
+
+if ( ! function_exists( 'maqfort_widget_init' ) ) {
+
+  function maqfort_widget_init() {
+
+    if ( function_exists( 'register_sidebar' ) ) {
+      
+      register_sidebar(array(
+        'name' => __( 'Sidebar', 'maqfort' ),
+        'id' => 'sidebar-1',
+        'description' => __( 'Show on some page and posts', 'maqfort' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>'
+      ));
+
+      register_sidebar(array(
+        'name' => __( 'Footer', 'maqfort' ),
+        'id' => 'sidebar-2',
+        'description' => __( 'Show on some page and posts', 'maqfort' ),
+        'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-6 col-md-3 col-lg-3 %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>'
+      ));
+    }
+  }
+}
+
+add_action( 'widgets_init', 'maqfort_widget_init'  );

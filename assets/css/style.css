@@ -1640,6 +1640,12 @@ blockquote:before, blockquote:after, q:before, q:after {
   * ----------------------------------------------------------
   * ## Main Header
   * ----------------------------------------------------------*/
+#main-header {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 4px -2px rgba(8, 8, 8, 0.2);
+          box-shadow: 0px 2px 4px -2px rgba(8, 8, 8, 0.2);
+}
+
 #main-header p {
   margin: 0;
   text-align: right;
@@ -1659,3 +1665,22 @@ blockquote:before, blockquote:after, q:before, q:after {
   * ----------------------------------------------------------
   * ## Main Navigation
   * ----------------------------------------------------------*/
+#main-footer .footer-widgets {
+  padding: 40px 0;
+  background-color: #242424;
+}
+
+#main-footer .footer-widgets .widget-title {
+  color: #ed1d24;
+}
+
+#main-footer .copyright {
+  background-color: #ed1d24;
+  color: #fff;
+  padding: 20px 0;
+}
+
+#main-footer .copyright p {
+  margin: 0;
+  font-size: 12px;
+}
