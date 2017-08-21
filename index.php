@@ -5,10 +5,10 @@
   <div class="row">
     <?php while ( have_posts() ) : the_post();
     ?>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <article class="">
           <header>
-            <?php the_title(); ?>
+            <h1><?php the_title(); ?></h1>
           </header>
           <?php
             the_content();

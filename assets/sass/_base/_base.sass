@@ -1,0 +1,21 @@
+/**
+  * ----------------------------------------------------------
+  * # Base
+  * ----------------------------------------------------------*/
+
+html
+  box-sizing: border-box
+
+*,
+*:before,
+*:after
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit
+
+html, body
+  padding: 0
+  margin: 0
+
+body
+  -webkit-font-smoothing: antialiased
+  background-color: $background-grey

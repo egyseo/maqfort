@@ -1,0 +1,24 @@
+/**
+  * ----------------------------------------------------------
+  * ## Links
+  * ----------------------------------------------------------*/
+
+a
+  color: $primary-color
+  text-decoration: none
+
+  &:visited
+    color: $primary-darker
+
+  &:hover,
+  &:focus,
+  &:active
+    color: lighten($primary-color, 10%)
+
+  &:focus
+    color: desaturate($primary-color, 20%)
+
+
+  &:hover,
+  &:active
+    outline: 0

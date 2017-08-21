@@ -1,0 +1,76 @@
+/**
+  * ----------------------------------------------------------
+  * ## Typography
+  * ----------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+textarea
+  color: $darker-grey
+  font-family: $opensans
+  @include font-size(1)
+  line-height: $font__line-height-body
+
+h1, h2, h3, h4, h5, h6
+  font-family: $header-font
+  clear: both
+
+.page-title
+  text-transform: uppercase
+  font-size: 30px
+  margin: 10px 0px 10px
+  &:after
+    display: block
+    width: 80px
+    height: 3px
+    margin: 5px 0 5px
+    background-color: $primary-color
+    content: ''
+
+p
+  margin-bottom: 1.5em
+
+dfn, cite, em, i
+  font-style: italic
+
+blockquote
+  margin: 0 1.5em
+
+address
+  margin: 0 0 1.5em
+
+pre
+  background: red
+  font-family: $font__pre
+  @include font-size(0.9375)
+  line-height: $font__line-height-pre
+  margin-bottom: 1.6em
+  max-width: 100%
+  overflow: auto
+  padding: 1.6em
+  white-space: pre-wrap
+  word-wrap: break-word
+
+code, kbd, tt, var
+  font-family: #fff
+  @include font-size(0.9375)
+
+abbr, acronym
+  border-bottom: 1px dotted $light-grey
+  cursor: help
+
+mark, ins
+  background: #fff
+  text-decoration: none
+
+big
+  font-size: 125%
+
+blockquote, q
+  quotes: "" ""
+
+  &:before,
+  &:after
+    content: ""
