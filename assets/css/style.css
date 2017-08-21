@@ -39,6 +39,7 @@
   * ## Typography
   * ----------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin-ext");
 @font-face {
   font-family: 'Oswald';
   src: url("../fonts/Oswald/Oswald-Regular.eot");
@@ -1311,7 +1312,7 @@ input[type="submit"]:focus {
   * ## Formatting
   * ----------------------------------------------------------*/
 hr {
-  background-color: #ededed;
+  background-color: #e6e6e6;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -1338,12 +1339,12 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   color: #fff;
-  border: 1px solid #ededed;
+  border: 1px solid #e6e6e6;
   border-radius: 3px;
 }
 
 select {
-  border: 1px solid #242424;
+  border: 1px solid #232323;
 }
 
 input[type="text"],
@@ -1551,7 +1552,7 @@ button,
 input,
 select,
 textarea {
-  color: #242424;
+  color: #232323;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -1559,23 +1560,8 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Montserrat, "Lucida Grande", Arial, Verdana, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
   clear: both;
-}
-
-.page-title {
-  text-transform: uppercase;
-  font-size: 30px;
-  margin: 10px 0px 10px;
-}
-
-.page-title:after {
-  display: block;
-  width: 80px;
-  height: 3px;
-  margin: 5px 0 5px;
-  background-color: #ed1d24;
-  content: '';
 }
 
 p {
@@ -1615,7 +1601,7 @@ code, kbd, tt, var {
 }
 
 abbr, acronym {
-  border-bottom: 1px dotted #ededed;
+  border-bottom: 1px dotted #e6e6e6;
   cursor: help;
 }
 
@@ -1669,9 +1655,58 @@ blockquote:before, blockquote:after, q:before, q:after {
   padding: 40px 0;
 }
 
+#main-content h1, #main-content h2, #main-content h3, #main-content h4, #main-content h5, #main-content h6 {
+  margin: 0;
+  color: #757a86;
+}
+
+#main-content h1::before, #main-content h2::before, #main-content h3::before, #main-content h4::before, #main-content h5::before, #main-content h6::before {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  background-color: #ed1d24;
+  content: '';
+}
+
+.post-card {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.post-card .card-body {
+  padding: 20px;
+  color: #757a86;
+}
+
+.post-card .card-body .post-title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.post-card .card-body p {
+  margin-bottom: 0;
+  font-size: 0.9em;
+  color: #999999;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.post-card .card-body hr {
+  margin-bottom: 0;
+}
+
+.post-card .card-body .post-date {
+  margin: 0;
+  font-style: italic;
+  color: #999999;
+  font-size: 0.8em;
+}
+
 #main-footer .footer-widgets {
   padding: 40px 0;
-  background-color: #242424;
+  background-color: #232323;
 }
 
 #main-footer .footer-widgets a {
@@ -1691,6 +1726,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 #main-footer .footer-widgets .widget-title {
   color: #ed1d24;
   margin-top: 0;
+  margin-bottom: 10px;
 }
 
 #main-footer .copyright {
