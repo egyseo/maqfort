@@ -1704,6 +1704,13 @@ blockquote:before, blockquote:after, q:before, q:after {
   font-size: 0.8em;
 }
 
+#main-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 #main-footer .footer-widgets {
   padding: 40px 0;
   background-color: #232323;
