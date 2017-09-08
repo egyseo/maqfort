@@ -1,28 +1,25 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
-<div class="container-fluid">
-  <div class="row">
-    <?php while ( have_posts() ) : the_post();
-    ?>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <a href="#" class="card-link">
-          <article class="post-card">
-            <header class="card-header">
+  <div class="container-fluid">
+    <div class="row">
 
-            </header>
-            <section class="card-body">
-              <h3 class="post-title"><?php the_title(); ?></h3>
-              <p class="post-date"><?php the_date(); ?></p>
-              <?php the_content(); ?>
-            </section>
-          </article>
-        </a>
-      </div>
-    <?php endwhile; ?>
+      <?php
 
+      if ( have_posts() ) :
 
-<?php endif; ?>
+        while ( have_posts() ) : the_post();
+
+          get_template_part( 'template-parts/post/content', get_post_format() );
+
+        endwhile;
+
+          the_posts_navigation();
+
+      else :
+
+        get_template_part( 'template-parts/content', 'none' );
+
+      endif; ?>
   </div>
 </div>
 

@@ -107,7 +107,11 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
     if ( !is_admin() ) {
 
+      wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css' );
+
       wp_enqueue_style( 'theme-core', get_stylesheet_directory_uri() . '/assets/css/style.css' );
+
+      wp_enqueue_script( 'searchform', get_stylesheet_directory_uri() . '/assets/js/searchform.js', array( 'jquery' ), false, true );
 
       wp_enqueue_script( 'jquery' );
 
@@ -128,7 +132,7 @@ if ( ! function_exists( 'maqfort_widget_init' ) ) {
   function maqfort_widget_init() {
 
     if ( function_exists( 'register_sidebar' ) ) {
-      
+
       register_sidebar(array(
         'name' => __( 'Sidebar', 'maqfort' ),
         'id' => 'sidebar-1',

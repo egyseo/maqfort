@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+<div id="site-main-navigation" class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
   <?php if ( has_nav_menu( 'main-menu' ) ) { ?>
     <nav id="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
       <?php wp_nav_menu(array(
@@ -18,4 +18,7 @@
   } else {
     ?> <p>Please assign some items to your main menu.</p> <?php
   } ?>
+  <div class="search-top">
+    <a class="btn-search-top" href="#"><i class="fa fa-search"></i></a>
+  </div>
 </div>
