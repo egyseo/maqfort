@@ -19,6 +19,6 @@
     ?> <p>Please assign some items to your main menu.</p> <?php
   } ?>
   <div class="search-top">
-    <a class="btn-search-top" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-search-top" href="#/"><i class="fa fa-search"></i></a>
   </div>
 </div>

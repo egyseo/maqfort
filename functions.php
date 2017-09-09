@@ -113,6 +113,8 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
       wp_enqueue_script( 'searchform', get_stylesheet_directory_uri() . '/assets/js/searchform.js', array( 'jquery' ), false, true );
 
+      wp_enqueue_script( 'header-scroll', get_stylesheet_directory_uri() . '/assets/js/header-scroll.js', array( 'jquery' ), false, true );
+
       wp_enqueue_script( 'jquery' );
 
     }
