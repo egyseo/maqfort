@@ -1738,6 +1738,7 @@ body.down #main-header.clone {
 }
 
 #main-nav .main-menu > li {
+  text-align: left;
   padding: 0;
   margin: 0;
   margin-right: 20px;
