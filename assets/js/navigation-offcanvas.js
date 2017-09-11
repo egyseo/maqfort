@@ -1,8 +1,6 @@
 (function($){
 
-  $( document ).ready(function() {
-
-    //Menu off canvas
+  //$( document ).ready(function() {
 
     // Calling the function
     $(function() {
@@ -22,21 +20,19 @@
         }
     }
 
-
     //Mobile Menu
+    $("#menu-toggle > li > .sub-menu").hide();
 
-      $("#menu-toggle > li > .sub-menu").hide();
+    $('#menu-toggle > li > a').click(function () {
+    	var $ul = $(this).siblings('ul');
+      //console.log('click bait');
+    	if ($ul.length > 0) {
+    			$ul.slideToggle('600');
+    			$("#menu-toggle > li > .sub-menu").not($ul).slideUp('300');
+    			return false;
+    	}
+    });
 
-      $('#menu-toggle > li > a').click(function () {
-      	var $ul = $(this).siblings('ul');
-        console.log('click bait');
-      	if ($ul.length > 0) {
-      			$ul.slideToggle(500);
-      			$("#menu-toggle > li > .sub-menu").not($ul).slideUp(200);
-      			return false;
-      	}
-      });
-
-  });
+  //});
 
 })(jQuery);

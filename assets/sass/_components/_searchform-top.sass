@@ -4,7 +4,7 @@
   * ----------------------------------------------------------*/
 #searchform-top
   display: none
-  background: #fff
+  background: $darker-grey
   padding: 20px 40px
   text-align: center
   position: relative
@@ -13,16 +13,24 @@
     border: none
     padding: 10px 0
     background: none
-    color: #cacaca
+    color: $light-grey
     outline: none
     border-bottom: 2px solid $primary-darker
     width: 80%
-    font-size: 20px
+    font-size: 18px
     font-weight: 300
+    &::-webkit-input-placeholder
+      color: $light-grey
+    &::-moz-placeholder
+      color: $light-grey
+    &:-ms-input-placeholder
+      color: $light-grey
+    &:-moz-placeholder
+      color: $light-grey
 
   #search-submit-top
     font-size: 30px
-    color: $medium-grey
+    color: $light-grey
     background: none
     border: none
     cursor: pointer

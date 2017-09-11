@@ -4,6 +4,8 @@
   </a>
 </div>
 
-<div id="navigation-toggle-on" class="col-xs-4 col-sm-4">
-  <a href="#/" id="bars" class="toggle-nav" ><i class="fa fa-bars"></i></a>
+<div id="navigation-toggle">
+  <div class="col-xs-4 col-sm-4">
+    <a href="#/" id="toggle-nav" class="toggle-nav" ><i class="fa fa-bars"></i></a>
+  </div>
 </div>

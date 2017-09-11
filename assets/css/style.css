@@ -1413,7 +1413,7 @@ textarea {
   * ----------------------------------------------------------*/
 #searchform-top {
   display: none;
-  background: #fff;
+  background: #232323;
   padding: 20px 40px;
   text-align: center;
   position: relative;
@@ -1424,17 +1424,33 @@ textarea {
   border: none;
   padding: 10px 0;
   background: none;
-  color: #cacaca;
+  color: #e6e6e6;
   outline: none;
   border-bottom: 2px solid #b00e13;
   width: 80%;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
+}
+
+#searchform-top .input-search-top::-webkit-input-placeholder {
+  color: #e6e6e6;
+}
+
+#searchform-top .input-search-top::-moz-placeholder {
+  color: #e6e6e6;
+}
+
+#searchform-top .input-search-top:-ms-input-placeholder {
+  color: #e6e6e6;
+}
+
+#searchform-top .input-search-top:-moz-placeholder {
+  color: #e6e6e6;
 }
 
 #searchform-top #search-submit-top {
   font-size: 30px;
-  color: #999999;
+  color: #e6e6e6;
   background: none;
   border: none;
   cursor: pointer;
@@ -2068,7 +2084,7 @@ body.down #main-header.clone {
 #mobile-navigation #main-nav {
   width: 100%;
   display: block;
-  margin: 30px auto;
+  margin: 40px auto;
 }
 
 #mobile-navigation #main-nav #menu-toggle {
@@ -2197,7 +2213,7 @@ body.down #main-header.clone {
 }
 
 #mobile-navigation .menu-offcanvas-extras .off-canvas-social {
-  margin: 30px auto;
+  margin: 40px auto;
 }
 
 #mobile-navigation .menu-offcanvas-extras .off-canvas-social .social-icons a {
@@ -2214,14 +2230,17 @@ body.down #main-header.clone {
   margin-right: 0;
 }
 
-#bars {
-  float: right;
-  font-size: 34px;
-  color: #232323;
+#navigation-toggle {
   display: none;
 }
 
-#bars:hover {
+#navigation-toggle #toggle-nav {
+  display: block;
+  font-size: 34px;
+  color: #232323;
+}
+
+#navigation-toggle #toggle-nav:hover {
   color: #ed1d24;
 }
 
@@ -2230,15 +2249,14 @@ body.down #main-header.clone {
 }
 
 @media (max-width: 1024px) {
-  #bars {
+  #navigation-toggle {
     display: block;
   }
 }
 
 @media (max-width: 440px) {
-  #bars {
+  #navigation-toggle {
     font-size: 28px;
-    display: block;
   }
 }
 

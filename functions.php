@@ -8,6 +8,8 @@
 
 require_once get_template_directory() . '/inc/maqfort.php';
 
+require_once get_template_directory() . '/inc/social-icons.php';
+
 /*
  * -----------------------------------------------------------
  * 2.0 Setup theme default and register various supported features.
@@ -112,6 +114,8 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
       wp_enqueue_style( 'theme-core', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 
+      wp_enqueue_script( 'jquery' );
+
       wp_enqueue_script( 'navigation-offcanvas', get_stylesheet_directory_uri() . '/assets/js/navigation-offcanvas.js', array( 'jquery' ), false, true );
 
       wp_enqueue_script( 'searchform', get_stylesheet_directory_uri() . '/assets/js/searchform.js', array( 'jquery' ), false, true );
@@ -120,7 +124,9 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
       wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/assets/js/scroll-to-top.js', array( 'jquery' ), false, true );
 
-      wp_enqueue_script( 'jquery' );
+
+
+
 
     }
   }
