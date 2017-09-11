@@ -1,4 +1,4 @@
-<div id="site-main-navigation" class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+<div id="site-main-navigation" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
   <?php if ( has_nav_menu( 'main-menu' ) ) { ?>
     <nav id="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
       <?php wp_nav_menu(array(

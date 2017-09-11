@@ -1,0 +1,30 @@
+/**
+  * ----------------------------------------------------------
+  * ### Scroll to top button
+  * ----------------------------------------------------------*/
+#return-to-top
+  position: fixed
+  bottom: 20px
+  right: 20px
+  background: transparentize($darker-grey, 0.4)
+  width: 40px
+  height: 40px
+  display: block
+  text-decoration: none
+  border-radius: 6px
+  display: none
+  transition: all 0.3s ease
+  z-index: 101
+  &:hover
+    background: transparentize($primary-color, 0.2)
+    i
+      //color: $light-grey
+      //top: 6px
+  i
+    color: white
+    margin: 0
+    position: relative
+    left: 12px
+    top: 7px
+    font-size: 17px
+    transition: all 0.3s ease

@@ -48,6 +48,7 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
       'main-menu' => esc_html__( 'Main Menu', 'maqfort' ),
+      'mobile-menu' => esc_html__( 'Mobile Menu', 'maqfort' ),
     ) );
 
     // Cleaning up random code around images.
@@ -111,9 +112,13 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
       wp_enqueue_style( 'theme-core', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 
+      wp_enqueue_script( 'navigation-offcanvas', get_stylesheet_directory_uri() . '/assets/js/navigation-offcanvas.js', array( 'jquery' ), false, true );
+
       wp_enqueue_script( 'searchform', get_stylesheet_directory_uri() . '/assets/js/searchform.js', array( 'jquery' ), false, true );
 
       wp_enqueue_script( 'header-scroll', get_stylesheet_directory_uri() . '/assets/js/header-scroll.js', array( 'jquery' ), false, true );
+
+      wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/assets/js/scroll-to-top.js', array( 'jquery' ), false, true );
 
       wp_enqueue_script( 'jquery' );
 

@@ -31,6 +31,9 @@
 	</head>
  	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-    <?php get_template_part( 'template-parts/header/main', 'header'); ?>
+    <div id="site-wrapper">
+      <div id="site-container">
 
-  <main id="main-content">
+        <?php get_template_part( 'template-parts/header/main', 'header'); ?>
+
+        <main id="main-content">

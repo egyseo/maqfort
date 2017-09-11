@@ -1,6 +1,6 @@
 (function($){
 
-/*  $(document).ready(function() {
+  /*0.$(document).ready(function() {
     var $header = $("#main-header"),
     $clone = $header.after($header.clone().addClass("clone"));
 
