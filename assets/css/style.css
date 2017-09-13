@@ -324,6 +324,12 @@ body {
   background-color: #f2f3f7;
 }
 
+@media (max-width: 782px) {
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
 /**
   * ----------------------------------------------------------
   * ## Grid
@@ -1680,7 +1686,7 @@ address {
 }
 
 pre {
-  background: red;
+  background: #fff;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -2283,6 +2289,7 @@ body.down #main-header.clone {
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .post-card .card-body {
@@ -2348,4 +2355,67 @@ body.down #main-header.clone {
 #main-footer .copyright p {
   margin: 0;
   font-size: 12px;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination .page-numbers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination .page-numbers li {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.pagination .page-numbers li a {
+  display: block;
+  padding: 10px 20px;
+  color: #232323;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.pagination .page-numbers li a:hover {
+  color: #fff;
+  background-color: #ed1d24;
+}
+
+.pagination .page-numbers li .current {
+  color: #ed1d24;
+  padding: 10px 20px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.pagination .page-numbers li .dots {
+  padding: 10px 20px;
+  color: #232323;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 350px) {
+  .pagination .page-numbers li a,
+  .pagination .page-numbers li .dots,
+  .pagination .page-numbers li .current {
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 290px) {
+  .pagination .page-numbers li a,
+  .pagination .page-numbers li .dots,
+  .pagination .page-numbers li .current {
+    padding: 4px 12px;
+    font-size: 13px;
+  }
 }

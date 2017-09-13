@@ -13,7 +13,7 @@
 
         endwhile;
 
-          the_posts_navigation();
+        maqfort_pagination();
 
       else :
 

@@ -1,0 +1,46 @@
+.pagination
+  text-align: center
+  .page-numbers
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      display: inline-block
+      font-weight: 600
+      font-size: 14px
+      a
+        display: block
+        padding: 10px 20px
+        color: $darker-grey
+        background-color: #fff
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2)
+        &:hover
+          color: #fff
+          background-color: $primary-color
+      .current
+        color: $primary-color
+        padding: 10px 20px
+        background-color: #fff
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2)
+      .dots
+        padding: 10px 20px
+        color: $darker-grey
+        background-color: #fff
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2)
+
+@media (max-width: 350px)
+  .pagination
+    .page-numbers
+      li
+        a,
+        .dots,
+        .current
+          padding: 6px 14px
+
+@media (max-width: 290px)
+  .pagination .page-numbers li
+    a,
+    .dots,
+    .current
+      padding: 4px 12px
+      font-size: 13px
