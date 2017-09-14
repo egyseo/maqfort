@@ -4,33 +4,61 @@
   * ----------------------------------------------------------*/
 
 #main-header
+  transition: all 0.3s ease-in-out
   background-color: #fff
   box-shadow: 0px 2px 4px -2px rgba(#080808, 0.2)
-  position: relative
+  position: fixed
+  z-index: 1
   width: 100%
   p
     margin: 0
     text-align: right
 
-#main-header.clone
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  transform: translateY(-100%)
-  transition: 0.2s transform cubic-bezier(.3,.73,.3,.74)
-
-body.down
-  #main-header.clone
-    transform: translateY(0)
-
 #site-branding
   .logo
-    //display: block
-    .maqfort-logo-svg
+    .hide-text
+      position: absolute
+      overflow: hidden
+      clip: rect(0 0 0 0)
+      height: 1px; width: 1px
+      margin: -1px
+      padding: 0
+      border: 0
+    #maqfort-svg
+      transition: all 0.3s ease-in-out
       margin: 20px 0
-      display: inline-block
       max-width: 250px
+      .st0
+        fill: $primary-color
+      .st1
+        fill: $darker-grey
+
+.page-template-page-home
+  #main-header
+    background-color: transparent
+    box-shadow: none
+    .btn-search-top
+      border-bottom-color: #fff
+    #maqfort-svg
+      .st1
+        fill: #fff
+    .toggle-nav
+      transition: all 0.3s ease-in-out
+      color: #fff
+.normal
+  transition: all 0.3s ease-in-out
+  background-color: #fff !important
+  box-shadow: 0px 2px 4px -2px rgba(#080808, 0.2) !important
+  .toggle-nav
+    color: $darker-grey !important
+  .btn-search-top
+    border-bottom-color: $darker-grey !important
+  #maqfort-svg
+    .st1
+      fill: $darker-grey !important
+  #main-nav > .main-menu > li > a
+    color: $darker-grey !important
+    font-weight: 600 !important
 
 @import "_main-nav"
 

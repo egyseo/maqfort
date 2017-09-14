@@ -1,6 +1,8 @@
 <div id="site-branding" class="col-xs-8 col-sm-8 col-md-3 col-lg-3">
   <a href="<?php echo home_url(); ?>" class="logo">
-    <img class="maqfort-logo-svg" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maqfort-logo.svg" alt="<?php echo sprintf( esc_html( get_bloginfo( 'name' ) ) ); ?>" />
+    <h1 class="hide-text"><?php bloginfo( 'name' ); ?></h1>
+
+    <?php get_template_part( 'template-parts/header/logo', 'svg' ); ?>
   </a>
 </div>
 
