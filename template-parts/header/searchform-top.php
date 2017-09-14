@@ -11,7 +11,7 @@
 </div>
 <div class="search-top">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row between-md between-lg">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <?php maqfort_social_icons(); ?>
       </div>
