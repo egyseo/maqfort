@@ -2,43 +2,73 @@
   * ----------------------------------------------------------
   * ### Search Form Top
   * ----------------------------------------------------------*/
-#searchform-top
-  display: none
-  background: $darker-grey
-  padding: 20px 40px
-  text-align: center
-  position: relative
-  width: 100%
-  .input-search-top
-    border: none
-    padding: 10px 0
-    background: none
-    color: $light-grey
-    outline: none
-    border-bottom: 2px solid $primary-darker
-    width: 80%
-    font-size: 18px
-    font-weight: 300
-    &::-webkit-input-placeholder
+#form-top-wrapper
+  background-color: $darker-grey
+  #searchform-top
+    display: none
+    padding: 20px 40px
+    text-align: center
+    position: relative
+    width: 100%
+    .input-search-top
+      border: none
+      padding: 10px 0
+      background: none
       color: $light-grey
-    &::-moz-placeholder
-      color: $light-grey
-    &:-ms-input-placeholder
-      color: $light-grey
-    &:-moz-placeholder
-      color: $light-grey
+      outline: none
+      border-bottom: 2px solid $primary-darker
+      width: 80%
+      font-size: 18px
+      font-weight: 300
+      &::-webkit-input-placeholder
+        color: $light-grey
+      &::-moz-placeholder
+        color: $light-grey
+      &:-ms-input-placeholder
+        color: $light-grey
+      &:-moz-placeholder
+        color: $light-grey
 
-  #search-submit-top
-    font-size: 30px
-    color: $light-grey
-    background: none
-    border: none
-    cursor: pointer
+    #search-submit-top
+      font-size: 30px
+      color: $light-grey
+      background: none
+      border: none
+      cursor: pointer
 
 .search-top
-  display: inline-block
+  display: block
+  background-color: $primary-color
+  width: 100%
+  position: relative
   .btn-search-top
-    display: block
+    background-color: $primary-darker
+    position: absolute
+    right: 40px
+    width: 50px
+    height: 50px
+    display: inline-block
     color: $primary-color
+    text-align: center
+    line-height: 50px
+    color: #fff
+    border-bottom: 4px solid $darker-grey
+    &:hover
+      background-color: $primary-color
     i
     	font-size: 16px
+  .social-icons
+    margin: 4px 0
+    a
+      color: darken($primary-darker, 10%)
+      margin-right: 6px
+      &:hover
+        color: #fff
+      &:last-child
+        margin-right: none
+
+@media (max-width: 1024px)
+  #form-top-wrapper
+    display: none
+  .search-top
+    display: none

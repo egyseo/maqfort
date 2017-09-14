@@ -1,14 +1,25 @@
-#main-content
-  padding: 40px 0
-  h1, h2, h3, h4, h5, h6
+.home
+  #main-content
+    margin: 40px 0
+
+.article-header
+  background-color: $darker-grey
+  color: $light-grey
+  width: 100%
+  padding: 100px 0
+
+  .article-title
+    color: $light-grey
+    //margin: 30px 0
+  .article-date
     margin: 0
-    color: $grey
-    &::before
-      display: inline-block
-      width: 14px
-      height: 14px
-      margin-right: 4px
-      background-color: $primary-color
-      content: ''
+    font-style: italic
+    font-size: 12px
+
+.article-content
+  margin: 30px 0
+
+.entry-footer
+
 
 @import "_post-card"

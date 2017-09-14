@@ -16,6 +16,42 @@ textarea
 h1, h2, h3, h4, h5, h6
   font-family: $header-font
   clear: both
+  margin: 0
+  color: $grey
+  &::before
+    display: inline-block
+    background-color: $primary-color
+    content: ''
+
+h1::before
+  width: 14px
+  height: 14px
+  margin-right: 4px
+
+h2::before
+  width: 12px
+  height: 12px
+  margin-right: 4px
+
+h3::before
+  width: 11px
+  height: 11px
+  margin-right: 4px
+
+h4::before
+  width: 10px
+  height: 10px
+  margin-right: 4px
+
+h5::before
+  width: 8px
+  height: 8px
+  margin-right: 4px
+
+h6::before
+  width: 6px
+  height: 6px
+  margin-right: 4px
 
 p
   margin-bottom: 1.5em
@@ -24,7 +60,31 @@ dfn, cite, em, i
   font-style: italic
 
 blockquote
-  margin: 0 1.5em
+  margin: 1.5em
+  font-style: italic
+  background-color: #fff
+  padding: 20px
+  border-left: 10px solid $primary-color
+  width: fit-content
+  position: relative
+  &:before,
+  &:after
+    content: ""
+  &:before
+    position: absolute
+    top: -30px
+    font-family: fontAwesome
+    content: "\f10d"
+    font-size: 36px
+    color: $grey
+    display: block
+
+q
+  font-style: italic
+  quotes: '\201C' '\201D' '\0022' '\0022' 
+  &:before,
+  &:after
+    content: ""
 
 address
   margin: 0 0 1.5em
@@ -42,8 +102,16 @@ pre
   word-wrap: break-word
 
 code, kbd, tt, var
-  font-family: #fff
-  @include font-size(0.9375)
+  font-family: "Lucida Console", Monaco, monospace
+  @include font-size(0.8)
+
+code
+  background-color: #fff
+  padding: 6px
+  color: $grey
+  display: inline-block
+  word-wrap: break-word
+  word-break: keep-all
 
 abbr, acronym
   border-bottom: 1px dotted $light-grey
@@ -55,10 +123,3 @@ mark, ins
 
 big
   font-size: 125%
-
-blockquote, q
-  quotes: "" ""
-
-  &:before,
-  &:after
-    content: ""

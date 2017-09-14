@@ -29,17 +29,17 @@ gulp.task('browser-sync', function() {
     browserSync.init(files, {
     //browsersync with a php server
       proxy: "localhost/maqfort",
-      notify: true
+      //notify: true
     });
 });
 
 gulp.task('sass', function () {
 
-  return gulp.src('assets/sass/*.{scss,sass}')
+  return gulp.src('assets/sass/*.sass')
 
     .pipe(plumber(plumberErrorHandler))
 
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 
     .pipe(autoprefixer({
             browsers: ['last 4 versions'],
@@ -54,5 +54,5 @@ gulp.task('sass', function () {
 
 
 gulp.task('default', ['sass', 'browser-sync'], function() {
-  gulp.watch('assets/sass/**/*.{scss,sass}', ['sass']);
+  gulp.watch('assets/sass/**/*.sass', ['sass']);
 });

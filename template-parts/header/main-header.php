@@ -1,5 +1,7 @@
 <header id="main-header">
 
+  <?php get_template_part( 'template-parts/header/searchform', 'top' ); ?>
+
   <div class="container-fluid">
     <div class="row between-xs between-sm middle-xs middle-sm middle-md middle-lg">
 
@@ -11,7 +13,5 @@
 
     </div>
   </div>
-
-  <?php get_template_part( 'template-parts/header/searchform', 'top' ); ?>
 
 </header>
