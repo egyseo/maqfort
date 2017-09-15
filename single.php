@@ -14,5 +14,3 @@
       endwhile; // End of the loop.
 
 get_footer(); ?>
-
-<h1>seingular</h1>
