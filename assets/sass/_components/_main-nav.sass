@@ -26,7 +26,7 @@
         display: block
         font-family: $opensans
         font-weight: bold
-        transition: all 0.3s ease-in-out
+        transition: $main-transition
         &:hover
           color: $primary-color
       // sub-menu level 1
@@ -120,12 +120,6 @@
   100%
     opacity: 1
     transform: rotateY(0deg) translateY(0px)
-
-.page-template-page-home
-  #main-nav > .main-menu > li > a
-    color: #fff
-    &:hover
-      color: $primary-color
 
 
 @media (max-width: 1024px)

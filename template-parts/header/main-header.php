@@ -1,4 +1,4 @@
-<header id="main-header">
+<header id="main-header" class="main-header main-header-transparent">
 
   <?php get_template_part( 'template-parts/header/searchform', 'top' ); ?>
 
