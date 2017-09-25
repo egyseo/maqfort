@@ -1,25 +1,35 @@
 #main-footer
   .footer-widgets
     padding-top: 40px
-    background-color: $darker-grey
+    background-color: $blue-grey
+    border-top: 1px solid darken($light-grey, 5%)
+
     .widget
+      color: $white-text-ongrey
       margin-bottom: 40px
+    .text-widget
+      color: $white-text-ongrey
     a
-      color: #fff
+      color: $white-text-ongrey
+      font-size: 14px
+      font-weight: 400
+      &:hover
+        color: $darker-grey
     ul, li
       list-style-type: none
       padding: 0
       margin: 0
-    p
-      color: #fff
+
     .widget-title
-      color: #fff
+      color: $light-grey
+      font-weight: normal
       margin-top: 0
       margin-bottom: 10px
   .copyright
-    background-color: $primary-color
-    color: #fff
+    background-color: $blue-grey
+    color: #D4D4D4
     padding: 20px 0
+    border-top: 1px solid #666667
     p
       margin: 0
       font-size: 12px

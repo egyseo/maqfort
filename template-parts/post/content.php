@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?> post-content" <?php post_class(); ?>>
 	<header class="article-header">
-    <div class="container-fluid">
+    <div class="container container-fluid">
       <div class="row middle-xs middle-sm middle-md middle-lg">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <?php
@@ -26,7 +26,7 @@
 	</header>
 
 	<section class="article-content">
-    <div class="container-fluid">
+    <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <?php

@@ -1,8 +1,8 @@
-<header id="main-header" class="main-header main-header-transparent">
+<header id="main-header" class="main-header">
 
   <?php get_template_part( 'template-parts/header/searchform', 'top' ); ?>
 
-  <div class="container-fluid">
+  <div class="container container-fluid">
     <div class="row between-xs between-sm middle-xs middle-sm middle-md middle-lg">
 
       <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>

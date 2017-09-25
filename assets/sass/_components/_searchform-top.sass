@@ -3,10 +3,10 @@
   * ### Search Form Top
   * ----------------------------------------------------------*/
 #form-top-wrapper
-  background-color: $darker-grey
+  background-color: $blue-grey
   #searchform-top
     display: none
-    padding: 20px 40px
+    padding: 30px 0
     text-align: center
     position: relative
     width: 100%
@@ -16,8 +16,8 @@
       background: none
       color: $light-grey
       outline: none
-      border-bottom: 2px solid $primary-darker
-      width: 80%
+      border-bottom: 2px solid $primary-color
+      width: 90%
       font-size: 18px
       font-weight: 300
       &::-webkit-input-placeholder
@@ -38,11 +38,12 @@
 
 .search-top
   display: block
-  background-color: $primary-color
+  background-color: $light-grey
+  border-bottom: 1px solid darken($light-grey, 2%)
   width: 100%
   position: relative
   .btn-search-top
-    background-color: $primary-darker
+    background-color: $blue-grey
     position: absolute
     right: 30px
     width: 40px
@@ -52,20 +53,21 @@
     text-align: center
     line-height: 30px
     color: #fff
-    border-bottom: 4px solid $darker-grey
+    border-bottom: 4px solid $primary-color
     transition: border-bottom 0.3s ease-in-out
     &:hover
       background-color: $primary-color
+      border-bottom-color: $darker-grey
     i
     	font-size: 16px
   .social-icons
     margin-bottom: 3px
     a
-      color: darken($primary-darker, 10%)
+      color: $blue-grey
       margin-right: 6px
       font-size: 14px
       &:hover
-        color: #fff
+        color: $darker-grey
       &:last-child
         margin-right: none
 

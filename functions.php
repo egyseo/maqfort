@@ -10,6 +10,8 @@ require_once get_template_directory() . '/inc/maqfort.php';
 
 require_once get_template_directory() . '/inc/social-icons.php';
 
+require_once get_template_directory() . '/inc/loops.php';
+
 /*
  * -----------------------------------------------------------
  * 2.0 Setup theme default and register various supported features.
@@ -46,6 +48,9 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
       'gallery',
       'caption',
     ) );
+
+    // Add woocommerce support.
+    add_theme_support( 'woocommerce' );
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
@@ -112,6 +117,8 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
       wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css' );
 
+      wp_enqueue_style( 'flex-slider', get_stylesheet_directory_uri() . '/assets/css/flexslider.css' );
+
       wp_enqueue_style( 'theme-core', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 
       wp_enqueue_script( 'jquery' );
@@ -124,8 +131,9 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
       wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/assets/js/scroll-to-top.js', array( 'jquery' ), false, true );
 
+      wp_enqueue_script( 'flex-slider', get_stylesheet_directory_uri() . '/assets/js/jquery.flexslider-min.js', array( 'jquery' ), false, false );
 
-
+      wp_enqueue_script( 'flex-slider-setup', get_stylesheet_directory_uri() . '/assets/js/flex-slider-setup.js', array( 'flex-slider' ), false, false);
 
 
     }

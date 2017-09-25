@@ -194,3 +194,37 @@ if ( ! function_exists( 'maqfort_pagination' ) ) {
   }
 
 }
+
+/*
+ * -----------------------------------------------------------
+ * 10.0 Display numbered  pagination navigation.
+ * -----------------------------------------------------------
+*/
+
+add_filter( 'woocommerce_breadcrumb_defaults', 'maqfort_woo_breadcrumbs' );
+function maqfort_woo_breadcrumbs() {
+    return array(
+            'delimiter'   => ' &gt; ',
+            'wrap_before' => '<section class="woo-breadcrumbs"><div class="container-fluid"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><nav class="woocommerce-breadcrumb" itemprop="breadcrumb">',
+            'wrap_after'  => '</nav></div></div></div></section>',
+            'before'      => '',
+            'after'       => '',
+            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+        );
+}
+
+/*
+ * -----------------------------------------------------------
+ * 10.0 Excerpt lenght
+ * -----------------------------------------------------------
+*/
+
+if ( ! function_exists( 'maqfort_excerpt_length' ) ) {
+
+  function maqfort_excerpt_length( $length ) {
+    return 14;
+  }
+
+}
+
+add_filter( 'excerpt_length', 'maqfort_excerpt_length', 999 );

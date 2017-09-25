@@ -14,10 +14,11 @@ textarea
   line-height: $font__line-height-body
 
 h1, h2, h3, h4, h5, h6
-  font-family: $header-font
+  font-family: $roboto
+  font-weight: normal
   clear: both
   margin: 0
-  color: $grey
+  color: $darker-grey
   &::before
     display: inline-block
     background-color: $primary-color
@@ -55,6 +56,8 @@ h6::before
 
 p
   margin-bottom: 1.5em
+  font-family: $roboto
+  font-weight: 300
 
 dfn, cite, em, i
   font-style: italic
@@ -81,7 +84,7 @@ blockquote
 
 q
   font-style: italic
-  quotes: '\201C' '\201D' '\0022' '\0022' 
+  quotes: '\201C' '\201D' '\0022' '\0022'
   &:before,
   &:after
     content: ""

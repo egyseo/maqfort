@@ -1,9 +1,79 @@
+#home-products, #home-news, #home-services
+  margin: 60px 0
+
+.section-title
+  position: relative
+  text-transform: capitalize
+  overflow: hidden
+  margin-bottom: 30px
+  font-family: $roboto
+  font-weight: 300
+  span
+    position: relative
+    display: inline-block
+    &::after
+      content: ''
+      display: inline-block
+      height: 6px
+      width: 1000%
+      position: absolute
+      top: 50%
+      left: 100%
+      right: 100%
+      margin-left: 10px
+      //margin-top: -2px
+      background-color: #f1f1f1
+
+
 #home-products
-  margin: 40px 0
-
-
-#home-services
-  margin: 40px 0
-
-#home-news
-  margin: 40px 0
+  .flex-products
+    position: relative
+    .flex-direction-nav
+      .flex-nav-prev
+        left: inherit
+        .flex-prev
+          text-shadow: none
+          opacity: 1
+          display: block
+          width: 30px
+          height: 30px
+          top: -67px
+          left: 160px
+          margin: 0
+          background-color: #f1f1f1
+          text-align: center
+          &:hover
+            background-color: $darker-grey
+            &::before
+              color: $white-text-ongrey
+          &::before
+            font-family: "FontAwesome"
+            font-size: 20px
+            display: inline-block
+            content: '\f104'
+            color: $blue-grey
+            text-shadow: none
+      .flex-nav-next
+        .flex-next
+          text-shadow: none
+          opacity: 1
+          display: block
+          width: 30px
+          height: 30px
+          top: -67px
+          left: 195px
+          right: inherit
+          margin: 0
+          background-color: #f1f1f1
+          text-align: center
+          &:hover
+            background-color: $darker-grey
+            &::before
+              color: $white-text-ongrey
+          &::before
+            font-family: "FontAwesome"
+            font-size: 20px
+            display: inline-block
+            content: '\f105'
+            color: $blue-grey
+            text-shadow: none

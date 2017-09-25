@@ -1,24 +1,113 @@
-.post-card
+.card-link
+  display: block
+  cursor: pointer
+  &:hover
+    //width: 80%
+    .post-card
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 2px 2px rgba(0, 0, 0, 0.23)
+      .card-header
+        .card-thumbnail
+          img
+            filter: contrast(100%)
+            //transform: scale(1.2)
+  .post-card
+    background-color: #fff
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2)
+    //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+    overflow: hidden
+    margin-bottom: 30px
+    transition: $main-transition
+    position: relative
+    min-height: 300px
+    .card-header
+      position: relative
+      .card-thumbnail
+        margin: 0
+        overflow: hidden
+        img
+          width: 100%
+          transition: $main-transition
+          filter: contrast(80%)
+          scale: (1)
+          vertical-align: middle
+    .card-body
+      padding: 20px
+      position: absolute
+      bottom: 0
+      width: 100%
+      transition: transform 0.3s
+      background-color: #fff
+      .card-title
+        //text-transform: uppercase
+        font-weight: normal
+        color: $darker-grey
+        transition: $main-transition
+        margin-bottom: 20px
+        &::before
+          display: none
+
+      p
+        margin-bottom: 0
+        font-size: 0.9em
+        color: $grey
+        font-weight: 500
+        line-height: 1.2
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        line-height: 16px
+        max-height: 32px
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+      hr
+        margin-bottom: 0
+    .card-date
+      position: absolute
+      top: 0
+      left: 0
+      padding: 0.8em
+      background-color: $darker-grey
+      color: #fff
+      font-size: 0.6em
+      span
+        display: block
+        text-align: center
+      .day
+        font-weight: 700
+        font-size: 18px
+      .month
+        text-transform: uppercase
+
+
+// product cards
+.product-card-link
+  display: block
+  &:hover
+    .product-card
+      //box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px 2px rgba(0, 0, 0, 0.23)
+      .product-card-thumbnail
+        img
+          transform: scale(1.1)
+          filter: contrast(90%)
+
+
+.product-card
   background-color: #fff
+  color: $grey
+  transition: $main-transition
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2)
   overflow: hidden
-  margin-bottom: 30px
-  .card-body
-    padding: 20px
-    color: $grey
-    .post-title
-      text-transform: uppercase
-      font-weight: 700
-    p
-      margin-bottom: 0
-      font-size: 0.9em
-      color: $medium-grey
-      font-weight: 500
-      line-height: 1.2
-    hr
-      margin-bottom: 0
-    .post-date
-      margin: 0
-      font-style: italic
-      color: $medium-grey
-      font-size: 0.8em
+  border: 1px solid #f1f1f1
+  .product-card-thumbnail
+    overflow: hidden
+    margin: 0
+    img
+      transition: $main-transition
+      vertical-align: middle
+    figcaption
+      background-color: $blue-grey
+  .product-card-title
+    text-transform: uppercase
+    color: $light-grey
+    &::before
+      display: inherit

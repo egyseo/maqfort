@@ -1,4 +1,4 @@
-<div id="site-branding" class="col-xs-8 col-sm-8 col-md-2 col-lg-2 site-branding">
+<div id="site-branding" class="col-xs-8 col-sm-8 col-md-3 col-lg-3 site-branding">
   <h1 class="hide-text"><?php bloginfo( 'name' ); ?></h1>
   <a href="<?php echo home_url(); ?>" class="logo">
     <?php get_template_part( 'template-parts/header/logo', 'svg' ); ?>

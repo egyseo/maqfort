@@ -7,9 +7,9 @@
   width: 100%
   position: relative
   overflow: hidden
-  background-color: $darker-grey
+  background-color: #fff
   #site-container
-    background-color: $background-grey
+    background-color: #fff
     width: 100%
     position: relative
     left: 0
@@ -20,7 +20,8 @@
   left: -300px
   top: 0
   width: 300px
-  height: 100%
+  height: 100vh
+  background-color: #fff
   #close-navigation
     float: right
     margin-right: 30px
@@ -30,6 +31,7 @@
     width: 100%
     display: block
     margin: 40px auto
+    overflow: hidden
     #menu-toggle
       list-style: none
       margin: 0
@@ -38,9 +40,10 @@
       li
         a
           display: block
-          color: $light-grey
+          color: $darker-grey
           line-height: 40px
-          font-weight: normal
+          font-family: $roboto
+          font-weight: 300
           font-size: 16px
           text-decoration: none
           width: 100%
@@ -61,12 +64,12 @@
         display: none
         margin: 0
         padding: 0
-        background-color: rgba(0,0,0,0.2)
+        background-color: $light-grey
         transition: all 0.3s ease-in-out 0s
         li
           margin: 0
           a
-            color: $light-grey
+            color: $darker-grey
             width: 100%
             font-size: 14px
             padding-left: 20px
@@ -85,18 +88,18 @@
           box-sizing: border-box
           border-radius: 0
           border-bottom: 1px solid $primary-color
-          color: $light-grey
+          color: $darker-grey
           padding: 10px
-          background-color: lighten($darker-grey, 3)
+          background-color: lighten($background-grey, 3)
           font-size: 14px
           outline: none
           width: 100%
           &:focus
             outline: none
-            color: $light-grey
-            background: lighten($darker-grey, 6)
+            color: $darker-grey
+            background: lighten($background-grey, 6)
           &:hover
-            background: lighten($darker-grey, 6)
+            background: lighten($background-grey, 6)
         button
           box-sizing: border-box
           border: none
@@ -117,7 +120,7 @@
       margin: 40px auto
       .social-icons
         a
-          color: $light-grey
+          color: $blue-grey
           font-size: 20px
           margin-right: 20px
           &:hover
@@ -132,7 +135,7 @@
   #toggle-nav
     display: block
     font-size: 34px
-    color: $darker-grey
+    color: $blue-grey
     &:hover
       color: $primary-color
 
@@ -146,4 +149,5 @@
 
 @media (max-width:440px)
   #navigation-toggle
-    font-size: 28px
+    #toggle-nav
+      font-size: 26px
