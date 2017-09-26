@@ -6,10 +6,16 @@
                 <?php get_sidebar( 'footer' ); ?>
               </div>
             </div>
+            <section class="bottom-widgets">
+              <div class="container container-fluid">
+                <div class="row" >
+                  <?php get_sidebar( 'bottomfooter' ); ?>
+                </div>
+              </div>
           </section>
           <section class="copyright">
             <div class="container container-fluid">
-              <div class="row middle-xs between-xs end-xs">
+              <div class="row middle-xs between-xs">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <p>&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?> <?php _e( 'All Rights Reserved.', 'maqfort' ); ?></p>
                 </div>

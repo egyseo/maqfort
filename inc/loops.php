@@ -43,18 +43,30 @@ if ( ! function_exists( 'maqfort_products_onfront_loop' ) ) {
 
     <?php //if( get_post_meta( get_the_ID(), '_amobft_checkbox', 1 ) ): ?>
       <li>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="product-card-link">
-          <article class="product-card">
+        <article class="product-card">
+          <header class="product-card-header">
             <?php if ( has_post_thumbnail() ) : ?>
               <figure class="product-card-thumbnail">
                 <?php the_post_thumbnail('full'); ?>
-                <figcaption>
-                  <h2 class="product-card-title"><span><?php the_title(); ?></span></h2>
-                </figcaption>
               </figure>
             <?php endif; ?>
-          </article><!-- article ends -->
-        </a>
+          </header>
+          <section class="product-card-content">
+            <span class="product-card-category"><?php
+                $terms = get_the_terms( $post->ID, 'product-category' );
+                foreach($terms as $term) {
+                  echo $term->name;
+                }
+            ?></span>
+            <h3 class="product-card-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+            <?php the_excerpt(); ?>
+          </section>
+          <footer class="product-card-footer">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </footer>
+        </article><!-- article ends -->
       </li>
     <?php //endif;
   }

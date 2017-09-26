@@ -8,6 +8,8 @@
 
 require_once get_template_directory() . '/inc/maqfort.php';
 
+require_once get_template_directory() . '/inc/mq-custom-widgets.php';
+
 require_once get_template_directory() . '/inc/social-icons.php';
 
 require_once get_template_directory() . '/inc/loops.php';
@@ -36,7 +38,7 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
 
     // Set up the WordPress core custom background feature.
     add_theme_support( 'custom-background', apply_filters( 'maqfort_custom_background_args', array(
-      'default-color' => 'f2f3f7',
+      'default-color' => 'fff',
       'default-image' => '',
     ) ) );
 
@@ -48,9 +50,6 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
       'gallery',
       'caption',
     ) );
-
-    // Add woocommerce support.
-    add_theme_support( 'woocommerce' );
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
@@ -169,6 +168,16 @@ if ( ! function_exists( 'maqfort_widget_init' ) ) {
         'id' => 'sidebar-2',
         'description' => __( 'Show on some page and posts', 'maqfort' ),
         'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-6 col-md-3 col-lg-3 %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>'
+      ));
+
+      register_sidebar(array(
+        'name' => __( 'Bottom Footer', 'maqfort' ),
+        'id' => 'bottom-footer',
+        'description' => __( 'Show on some page and posts', 'maqfort' ),
+        'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-6 col-md-6 col-lg-6 %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widget-title">',
         'after_title' => '</h4>'
