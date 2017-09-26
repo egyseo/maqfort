@@ -37,20 +37,20 @@ class MAQFORT_Contacts_Widget extends WP_Widget {
 
     ?>
 
-		<ul>
+		<ul class="contacts-widget">
 			<?php if ( ! empty( $instance['text'] ) ) { ?>
-				<li><div class="icon-box"><i class="fa fa-map-marker" aria-hidden="true"></i></div><div class="contact-block"><p<?php echo !empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></p></div><!-- address ends --> </li><?php } ?>
+				<li class="contacts-row"><div class="icon-box"><i class="fa fa-map-marker" aria-hidden="true"></i></div><div class="contact-block"><p<?php echo !empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></p></div><!-- address ends --> </li><?php } ?>
 
 			<?php if ( ! empty( $instance['phone'] ) ) { ?>
-				<li><div class="icon-box"><i class="fa fa-phone" aria-hidden="true"></i></div><div class="contact-block"><p><span><?php _e( 'Phone', 'maqfort' ); ?></span> <?php echo $instance['phone']; ?></p> <?php } ?>
+				<li class="contacts-row"><div class="icon-box"><i class="fa fa-phone" aria-hidden="true"></i></div><div class="contact-block"><p><span><?php _e( 'Phone', 'maqfort' ); ?></span> <?php echo $instance['phone']; ?></p> <?php } ?>
 					<p><?php if ( ! empty( $instance['fax'] ) ) { ?><span> <?php _e( 'Fax', 'amob' ); ?></span> <?php echo $instance['fax']; ?> </p>
 				</div><!-- phone ends --> </li> <?php } ?>
 
 			<?php if ( ! empty( $instance['email'] ) ) { ?>
-				<li><div class="icon-box"><i class="fa fa-envelope" aria-hidden="true"></i></div><div class="contact-block"><p><span> <?php echo $instance['email']; ?></span></p></div><!-- email ends --> </li> <?php } ?>
+				<li class="contacts-row"><div class="icon-box"><i class="fa fa-envelope" aria-hidden="true"></i></div><div class="contact-block"><p><span> <?php echo $instance['email']; ?></span></p></div><!-- email ends --> </li> <?php } ?>
 
 			<?php if ( ! empty( $instance['gps'] ) ) { ?>
-				<li><div class="icon-box"><i class="fa fa-road" aria-hidden="true"></i></div><div class="contact-block"><p><span><?php _e( 'GPS', 'maqfort' ); ?></span> <?php echo $instance['gps']; ?></p></div><!-- gps ends --> </li><?php } ?>
+				<li class="contacts-row"><div class="icon-box"><i class="fa fa-road" aria-hidden="true"></i></div><div class="contact-block"><p><span><?php _e( 'GPS', 'maqfort' ); ?></span> <?php echo $instance['gps']; ?></p></div><!-- gps ends --> </li><?php } ?>
 		</ul>
 
 		<?php echo $args['after_widget'];
