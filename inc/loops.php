@@ -53,7 +53,7 @@ if ( ! function_exists( 'maqfort_products_onfront_loop' ) ) {
           </header>
           <section class="product-card-content">
             <span class="product-card-category"><?php
-                $terms = get_the_terms( $post->ID, 'product-category' );
+                $terms = get_the_terms( get_the_ID(), 'product-category' );
                 foreach($terms as $term) {
                   echo $term->name;
                 }
