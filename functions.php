@@ -8,9 +8,9 @@
 
 require_once get_template_directory() . '/inc/maqfort.php';
 
-require_once get_template_directory() . '/inc/mq-custom-widgets.php';
+require_once get_template_directory() . '/inc/widgets.php';
 
-require_once get_template_directory() . '/inc/social-icons.php';
+require_once get_template_directory() . '/inc/template-tags.php';
 
 require_once get_template_directory() . '/inc/loops.php';
 

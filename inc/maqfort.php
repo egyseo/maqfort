@@ -164,58 +164,7 @@ if ( ! function_exists( 'maqfort_filter_ptags_on_images' ) ) {
 
 /*
  * -----------------------------------------------------------
- * 9.0 Display numbered  pagination navigation.
- * -----------------------------------------------------------
-*/
-
-if ( ! function_exists( 'maqfort_pagination' ) ) {
-
-  function maqfort_pagination() {
-    global $wp_query;
-    $bignum = 999999999;
-    if ( $wp_query->max_num_pages <= 1 )
-      return;
-    echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
-    echo '<hr>';
-    echo '<nav class="pagination">';
-    echo paginate_links( array(
-      'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
-      'format'       => '',
-      'current'      => max( 1, get_query_var('paged') ),
-      'total'        => $wp_query->max_num_pages,
-      'prev_text'    => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-      'next_text'    => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-      'type'         => 'list',
-      'end_size'     => 1,
-      'mid_size'     => 1
-    ) );
-    echo '</nav>';
-    echo '</div>';
-  }
-
-}
-
-/*
- * -----------------------------------------------------------
- * 10.0 Display numbered  pagination navigation.
- * -----------------------------------------------------------
-*/
-
-add_filter( 'woocommerce_breadcrumb_defaults', 'maqfort_woo_breadcrumbs' );
-function maqfort_woo_breadcrumbs() {
-    return array(
-            'delimiter'   => ' &gt; ',
-            'wrap_before' => '<section class="woo-breadcrumbs"><div class="container-fluid"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><nav class="woocommerce-breadcrumb" itemprop="breadcrumb">',
-            'wrap_after'  => '</nav></div></div></div></section>',
-            'before'      => '',
-            'after'       => '',
-            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
-        );
-}
-
-/*
- * -----------------------------------------------------------
- * 10.0 Excerpt lenght
+ * 9.0 Excerpt lenght
  * -----------------------------------------------------------
 */
 

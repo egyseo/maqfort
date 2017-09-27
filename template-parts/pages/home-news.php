@@ -7,7 +7,7 @@ $args = array(
 	'has_password'           => false,
 	'order'                  => 'DESC',
 	'orderby'                => 'date',
-  'posts_per_page' => 4,
+  'posts_per_page' => 3,
   'ignore_sticky_posts' => true,
 );
 
@@ -28,8 +28,10 @@ if ( $blogquery->have_posts() ) : ?>
         while ( $blogquery->have_posts() ) : $blogquery->the_post();
           do_action('maqfort_card_loop');
         endwhile;
-          endif; ?>
-        <?php wp_reset_postdata(); ?>
+        ?>
+
       </div>
     </div>
   </section>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
