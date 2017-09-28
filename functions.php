@@ -8,6 +8,8 @@
 
 require_once get_template_directory() . '/inc/maqfort.php';
 
+require_once get_template_directory() . '/inc/custom-post-type.php';
+
 require_once get_template_directory() . '/inc/widgets.php';
 
 require_once get_template_directory() . '/inc/template-tags.php';
@@ -156,7 +158,7 @@ if ( ! function_exists( 'maqfort_widget_init' ) ) {
 
       register_sidebar(array(
         'name' => __( 'Sidebar', 'maqfort' ),
-        'id' => 'sidebar-1',
+        'id' => 'sidebar',
         'description' => __( 'Show on some page and posts', 'maqfort' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
@@ -166,24 +168,26 @@ if ( ! function_exists( 'maqfort_widget_init' ) ) {
 
       register_sidebar(array(
         'name' => __( 'Footer', 'maqfort' ),
-        'id' => 'sidebar-2',
+        'id' => 'footer',
         'description' => __( 'Show on some page and posts', 'maqfort' ),
-        'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-6 col-md-3 col-lg-3 %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-4 col-md-3 col-lg-3 %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widget-title">',
         'after_title' => '</h4>'
       ));
 
       register_sidebar(array(
-        'name' => __( 'Bottom Footer', 'maqfort' ),
-        'id' => 'bottom-footer',
+        'name' => __( 'Footer Small', 'maqfort' ),
+        'id' => 'footer-small',
         'description' => __( 'Show on some page and posts', 'maqfort' ),
-        'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-6 col-md-6 col-lg-6 %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget-footer-small col-xs-12 col-sm-6 col-md-6 col-lg-6 %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widget-title">',
         'after_title' => '</h4>'
       ));
+
     }
+
   }
 }
 

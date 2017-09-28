@@ -118,3 +118,10 @@ if ( ! function_exists( 'maqfort_search_results_loop' ) ) {
 add_action( 'maqfort_search_results_loop', 'maqfort_search_loop' );
 
 }
+
+
+/*
+ * -----------------------------------------------------------
+ * 4.0 Related posts loop.
+ * -----------------------------------------------------------
+*/

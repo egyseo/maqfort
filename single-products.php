@@ -2,7 +2,7 @@
 
       while ( have_posts() ) : the_post();
 
-        get_template_part( 'template-parts/post/content', get_post_format() );
+        get_template_part( 'template-parts/pages/content', 'product' );
 
         //the_post_navigation();
 
@@ -12,7 +12,5 @@
         endif;
 
       endwhile; // End of the loop.
-
-      get_template_part( 'template-parts/post/related', 'posts' );
 
 get_footer(); ?>

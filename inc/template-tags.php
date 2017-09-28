@@ -110,3 +110,26 @@ if ( ! function_exists( 'maqfort_sharing_buttons' ) ) {
 }
 
 add_filter("the_content", "maqfort_sharing_buttons");
+
+/*
+ * -----------------------------------------------------------
+ * 9.0 Post meta tags
+ * -----------------------------------------------------------
+*/
+if ( ! function_exists( 'maqfort_post_meta' ) ) {
+	function maqfort_post_meta() {
+    if( has_tag() ) { ?>
+      <div class="meta-tags">
+        <ul>
+          <li class="tag-icon"><i class="fa fa-tag" aria-hidden="true"></i></li>
+          <?php
+            $tag_list = get_the_tag_list( ' ', ', ' );
+            if ( $tag_list ) {
+              echo '<li class="tags">' . $tag_list . ' </li>';
+            }?>
+        </ul>
+      </div><!-- meta tags ends -->
+    <?php }
+	}
+  add_action( 'maqfort_postmeta', 'maqfort_post_meta' );
+}

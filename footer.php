@@ -8,14 +8,14 @@
             </div>
             <section class="bottom-widgets">
               <div class="container container-fluid">
-                <div class="row" >
-                  <?php get_sidebar( 'bottomfooter' ); ?>
+                <div class="row center-xs between-md between-lg middle-sm middle-md middle-lg">
+                  <?php get_sidebar( 'footer-small' ); ?>
                 </div>
               </div>
           </section>
           <section class="copyright">
             <div class="container container-fluid">
-              <div class="row middle-xs between-xs">
+              <div class="row center-xs start-sm start-md start-lg middle-xs between-xs">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <p>&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?> <?php _e( 'All Rights Reserved.', 'maqfort' ); ?></p>
                 </div>

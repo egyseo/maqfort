@@ -1,32 +1,31 @@
 <article id="post-<?php the_ID(); ?> post-content" <?php post_class(); ?>>
-	<header class="article-header">
+	<header class="article-header" style="background-color:#525254;background-image:url(<?php the_post_thumbnail_url('full'); ?>);background-attachment:fixed; background-position:center; background-repeat:no-repeat; background-size:cover;">
     <div class="container container-fluid">
-      <div class="row middle-xs middle-sm middle-md middle-lg">
+      <div class="row bottom-xs bottom-sm bottom-md bottom-lg">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <?php
-          if ( is_singular() ) :
-            the_title( '<h1 class="article-title">', '</h1>' );
-          else :
-            the_title( '<h2 class="article-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-          endif;
-
-          if ( 'post' === get_post_type() ) : ?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-            <p class="article-date"><?php the_date(); ?></p>
+          <div class="article-header-box-top">
+            <?php the_title( '<h1 class="article-title">', '</h1>' ); ?>
+          </div>
         </div>
       </div>
     </div>
-
-
-		<?php
-		endif; ?>
 	</header>
-
 	<section class="article-content">
     <div class="container container-fluid">
+      <div class="row top-xs top-sm top-md top-lg">
+        <div class="col-xs-12">
+          <div class="article-header-box-bottom">
+            <div class="article-date">
+              <span class="day"><?php the_time('d'); ?></span>
+              <span class="month-year">
+                <span class="month"><?php the_time('M'); ?></span>
+                <span class="year"><?php the_time('Y'); ?></span>
+              </span>
+            </div>
+            <?php do_action( 'maqfort_postmeta' ); ?>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <?php
@@ -51,9 +50,5 @@
         </div>
       </div>
     </div>
-	</section><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php //maqfort_entry_footer(); ?>
-	</footer>
+	</section>
 </article>

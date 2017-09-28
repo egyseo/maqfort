@@ -1,4 +1,4 @@
-<?php if ( ! is_active_sidebar( 'sidebar-2' ) ) {
+<?php if ( ! is_active_sidebar( 'footer' ) ) {
   return;
 }
-dynamic_sidebar( 'sidebar-2' );
+dynamic_sidebar( 'footer' );
