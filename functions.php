@@ -37,6 +37,8 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
 
     // Enable suppot for Post Thumbnails.
     add_theme_support( 'post-thumbnails' );
+    add_image_size( 'maqfort-thumbnail', 370, 280, array( 'center', 'center' ) );
+
 
     // Set up the WordPress core custom background feature.
     add_theme_support( 'custom-background', apply_filters( 'maqfort_custom_background_args', array(

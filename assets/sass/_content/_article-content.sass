@@ -8,12 +8,14 @@
     margin-top: 300px
     .article-title
       color: #fff
+      &::before
+        display: none
 
 
 .article-content
   margin-bottom: 40px
   .article-header-box-bottom
-    background-color: $blue-grey
+    background-color: #3c3c3e
     padding: 20px
     margin-bottom: 40px
     .article-date
@@ -119,7 +121,38 @@
         background-color: lighten(#d34836, 20%)
 
 @media (max-width: 767px)
+  .article-header
+    .article-header-box-top
+      background-color: rgba(#525254, 0.9)
+      padding: 20px 10px
+      margin-top: 200px
   .article-content
+    .article-header-box-bottom
+      padding: 10px
+      .article-date
+        margin-right: 5px
+        padding: 0 10px 0 0
+        border-right: 2px solid $primary-color
+        .day
+          font-size: 28px
+          line-height: 1em
+          min-width: 1em
+          margin-right: 0
+        .month-year
+          font-size: 11px
+          float: left
+          .month
+            font-size: 11px
+            margin-top: 4px
+            line-height: 0.8em
+      .meta-tags
+        ul
+          li
+            a
+              font-size: 13px
+          .tag-icon
+            font-size: 14px
+            margin-right: 5px
     .maqfort-social-share
       .maqfort-link
         display: inline-block
