@@ -37,13 +37,7 @@
                  </header>
                  <section class="post-card-content">
                    <h3 class="post-card-title"><a href="<?php echo esc_url(get_permalink($page_item->ID)); ?>" title="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>"><?php echo $page_item->post_title ; ?></a></h3>
-                   <?php the_excerpt(); ?>
                  </section>
-                 <footer class="post-card-footer">
-                   <a href="<?php echo esc_url(get_permalink($page_item->ID)); ?>" title="<?php the_title_attribute(); ?>">
-                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                   </a>
-                 </footer>
                </article><!-- article ends -->
                </div>
               <?php endforeach; ?>

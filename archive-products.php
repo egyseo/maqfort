@@ -45,9 +45,6 @@ get_header(); ?>
                   </header>
                   <section class="product-card-content">
                     <h3 class="product-card-title"><a href="<?php echo esc_url( $term_link ); ?>" title=""><?php echo $taxonomy_term->name; ?></a></h3>
-                    <a href="<?php echo esc_url( $term_link ); ?>" title="">
-                      <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </a>
                   </section>
                 </article>
               </div>
