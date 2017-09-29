@@ -177,3 +177,30 @@ if ( ! function_exists( 'maqfort_excerpt_length' ) ) {
 }
 
 add_filter( 'excerpt_length', 'maqfort_excerpt_length', 999 );
+
+/*
+ * -----------------------------------------------------------
+ * 10.0 Customize the archive title
+ * -----------------------------------------------------------
+*/
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+    if( is_tax() ) {
+
+        $title = single_cat_title( '', false );
+
+    } elseif ( is_tax() ) {
+
+        $title = single_term_title( '', false );
+
+    } elseif ( is_post_type_archive() ) {
+
+        $title = post_type_archive_title( '', false );
+    }
+    elseif ( is_category() ) {
+
+            $title = single_cat_title( '', false );
+    }
+    return $title;
+
+});

@@ -3,7 +3,7 @@
    <div class="container container-fluid">
      <div class="row">
        <div class="col-xs-12">
-         <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+         <?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
        </div>
      </div>
    </div>

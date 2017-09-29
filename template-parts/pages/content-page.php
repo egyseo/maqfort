@@ -2,8 +2,8 @@
   <header class="page-header">
     <div class="container container-fluid">
       <div class="row">
-        <div class="col-xs-12">
-          <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
         </div>
       </div>
     </div>
@@ -11,7 +11,7 @@
   <section class="page-content">
     <div class="container container-fluid">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <?php
             the_content();
 
