@@ -69,7 +69,7 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
     add_filter( 'the_content', 'maqfort_filter_ptags_on_images' );
 
     // Cleaning up excerpt.
-    add_filter( 'excerpt_more', 'maqfort_excerpt_more' );
+    //add_filter( 'excerpt_more', 'maqfort_excerpt_more' );
 
     // Clean up gallery output in wp.
     add_filter( 'gallery_style', 'maqfort_gallery_style' );
