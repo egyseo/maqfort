@@ -6,6 +6,27 @@
 
   $(window).load(function() {
 
+    // The slider being synced must be initialized first
+    $('#product-carousel-galerie').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 100,
+      itemMargin: 5,
+      minItems: 1,
+      maxItems: 5,
+      asNavFor: '#product-featured-imgs'
+    });
+
+    $('#product-featured-imgs').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#product-carousel-galerie"
+    });
+
     $('.flex-products').flexslider({
       animation: "slide",
       slideshowSpeed: 4000,

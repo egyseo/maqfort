@@ -1,38 +1,92 @@
 <article class="product-article" id="post-<?php the_ID(); ?> post-content" <?php post_class(); ?>>
-  <header class="product-header">
-    <div class="container container-fluid">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-        </div>
-      </div>
-    </div>
-  </header>
-
   <section class="product-content">
     <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <?php if ( has_post_thumbnail() ) { ?>
-            <figure class="product-featured-img">
-              <?php the_post_thumbnail('full'); ?>
-            </figure>
-          <?php } ?>
+          <section class="slider-wrapper">
+            <div id="product-featured-imgs" class="flexslider">
+              <ul class="slides">
+                <?php
+                  $ft_images = get_post_meta(  get_the_ID(), '_maqfort_products_gallerie', true);
+                    if ( $ft_images ) {
+                      foreach ( $ft_images as $attachment_id => $img_full_url ) {
+                       $full = wp_get_attachment_image($attachment_id, 'full');
+                       $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+                       $url = wp_get_attachment_url( $attachment_id );
+                         echo '<li>';
+                         echo '<a href="' . $url . '" data-fancybox="group"  data-caption="'. $alt .'" >';
+                         echo $full;
+                         echo '</a>';
+                         echo '</li>';
+                      }
+                    }
+                ?>
+              </ul><!-- slides ends -->
+            </div><!-- featured img products slider ends -->
+            <div id="product-carousel-galerie" class="flexslider">
+              <ul class="slides">
+                <?php $carousel_images = get_post_meta(  get_the_ID(), '_maqfort_products_gallerie', true);
+                  if ( $carousel_images ) {
+                    foreach ( $carousel_images as $attachment_id => $img_full_url ) {
+                     $full = wp_get_attachment_image($attachment_id, 'full');
+                      echo '<li>';
+                      echo $full;
+                      echo '</li>';
+                    }
+                  } ?>
+              </ul>
+            </div><!-- carousel-product-img ends -->
+          </section>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <?php the_title( '<h1 class="article-title">', '</h1>' ); ?>
           <?php the_content(); ?>
+          <div class="product-buttons">
+            <?php
+              $get_quote = get_post_meta(  get_the_ID(), '_maqfort_products_quote_url', true);
+              $catalog = get_post_meta(  get_the_ID(), '_maqfort_products_catalog_id', true);
+            ?>
+            <?php if ( !empty( $catalog ) ) {
+              ?><a class="button-catalog" href="<?php echo wp_get_attachment_url( $catalog ); ?>" target="_blank"><?php _e( 'Download Catálogo', 'maqfort' ); ?></a> <?php
+            } ?>
+            <?php if ( !empty( $get_quote ) ) {
+              ?><a class="button-getquote" href="<?php echo $get_quote; ?>" target="_self"><?php _e( 'Peça um orçamento', 'maqfort' ); ?></a> <?php
+            } ?>
+
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <footer class="product-footer">
+  <section class="product-video-gallerie">
     <div class="container container-fluid">
+      <?php $video_galerie = get_post_meta( get_the_ID(), '_maqfort_products_video_galerie', true );
+        if ( !empty( $video_galerie ) ) {
+          ?>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <h1 class="section-title"><span><?php _e( 'Video Galerie', 'maqfort' ); ?></span></h1>
+            </div>
+          </div> <?php
+        } ?>
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-        </div>
+        <?php
+          foreach ( (array)$video_galerie as $key => $item) {
+            $vg_url = $vg_image = '';
+            if ( isset( $item[ '_maqfort_products_embed' ] ) )
+                   $vg_url = esc_url( $item[ '_maqfort_products_embed' ] );
+            if ( isset( $item[ '_maqfort_products_image' ] ) )
+                   $vg_image = wp_get_attachment_url( $item[ '_maqfort_products_image_id' ] );
+            if ( !empty( array( $vg_url ) ) ) { ?>
+              <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                <a href="<?php echo $vg_url ?>" data-fancybox="video-group">
+                  <img src="<?php echo $vg_image ?>" alt="">
+                </a>
+              </div><?php
+            }
+          } ?>
       </div>
     </div>
-  </footer>
+  </section>
+  <?php get_template_part( 'template-parts/post/related', 'products' ); ?>
 </article>

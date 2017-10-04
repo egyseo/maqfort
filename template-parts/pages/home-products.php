@@ -24,7 +24,9 @@ if ( $products_query->have_posts() ) : ?>
             <ul class="slides">
               <?php
               while ( $products_query->have_posts() ) : $products_query->the_post();
-                do_action('maqfort_products_onfront');
+                if( get_post_meta( get_the_ID(), '_maqfort_products_frontpage_checkbox', 1 ) ):
+                  do_action('maqfort_products_onfront');
+                endif;
               endwhile;
 
               endif; ?>

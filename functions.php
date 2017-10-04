@@ -16,6 +16,10 @@ require_once get_template_directory() . '/inc/template-tags.php';
 
 require_once get_template_directory() . '/inc/loops.php';
 
+require_once get_template_directory() . '/inc/components/CMB2/init.php';
+
+require_once get_template_directory() . '/inc/custom-metabox.php';
+
 /*
  * -----------------------------------------------------------
  * 2.0 Setup theme default and register various supported features.
@@ -122,6 +126,8 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
 
       wp_enqueue_style( 'flex-slider', get_stylesheet_directory_uri() . '/assets/css/flexslider.css' );
 
+      wp_enqueue_style( 'fancy-box', get_stylesheet_directory_uri() . '/assets/css/jquery.fancybox.min.css' );
+
       wp_enqueue_style( 'theme-core', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 
       wp_enqueue_script( 'jquery' );
@@ -133,6 +139,10 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
       wp_enqueue_script( 'header-scroll', get_stylesheet_directory_uri() . '/assets/js/header-scroll.js', array( 'jquery' ), false, true );
 
       wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/assets/js/scroll-to-top.js', array( 'jquery' ), false, true );
+
+      wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), false, true );
+
+      wp_enqueue_script( 'fancybox-setup', get_stylesheet_directory_uri() . '/assets/js/flex-slider-setup.js', array( 'fancybox' ), false, true);
 
       wp_enqueue_script( 'flex-slider', get_stylesheet_directory_uri() . '/assets/js/jquery.flexslider-min.js', array( 'jquery' ), false, false );
 
