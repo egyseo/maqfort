@@ -51,35 +51,28 @@ if ( ! function_exists( 'maqfort_products_onfront_loop' ) ) {
 
   function maqfort_products_onfront_loop() { ?>
 
-    <?php //if( get_post_meta( get_the_ID(), '_amobft_checkbox', 1 ) ): ?>
-      <li>
-        <article class="product-card">
-          <header class="product-card-header">
-            <?php if ( has_post_thumbnail() ) : ?>
-              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                <figure class="product-card-thumbnail">
-                  <?php the_post_thumbnail('maqfort-thumbnail'); ?>
-                </figure>
-              </a>
-            <?php endif; ?>
-          </header>
-          <section class="product-card-content">
-            <span class="product-card-category"><?php
-                $terms = get_the_terms( get_the_ID(), 'product-category' );
-                foreach($terms as $term) {
-                  echo $term->name;
-                }
-            ?></span>
-            <h3 class="product-card-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-            <?php the_excerpt(); ?>
-          </section>
-          <footer class="product-card-footer">
+    <li>
+      <article class="product-card">
+        <header class="product-card-header">
+          <?php if ( has_post_thumbnail() ) : ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <figure class="product-card-thumbnail">
+                <?php the_post_thumbnail('maqfort-thumbnail'); ?>
+              </figure>
             </a>
-          </footer>
-        </article><!-- article ends -->
-      </li>
+          <?php endif; ?>
+        </header>
+        <section class="product-card-content">
+          <h3 class="product-card-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+          <?php the_excerpt(); ?>
+        </section>
+        <footer class="product-card-footer">
+          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </a>
+        </footer>
+      </article><!-- article ends -->
+    </li>
     <?php //endif;
   }
 

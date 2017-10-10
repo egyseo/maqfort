@@ -5,7 +5,7 @@ function maqfort_get_permalink_structure() {
 
 	// Ensure rewrite slugs are set.
 	$permalinks['product_rewrite_slug']   = untrailingslashit( empty( $permalinks['product_base'] ) ? _x( 'products', 'slug', 'mfpc' ) : $permalinks['product_base'] );
-	$permalinks['category_rewrite_slug']  = untrailingslashit( empty( $permalinks['category_base'] ) ? _x( 'product-category', 'slug', 'mfpc' ) : $permalinks['category_base'] );
+	//$permalinks['category_rewrite_slug']  = untrailingslashit( empty( $permalinks['category_base'] ) ? _x( 'product-category', 'slug', 'mfpc' ) : $permalinks['category_base'] );
 
 	return $permalinks;
 }
@@ -72,7 +72,7 @@ function maqfort_products_cpt() {
 add_action( 'init', 'maqfort_products_cpt', 0 );
 
 // Register custom taxonomy for Products Custom Cost Cype.
-function maqfort_product_cat_tax() {
+/*function maqfort_product_cat_tax() {
 
   $permalinks = maqfort_get_permalink_structure();
 	// Add new taxonomy, make it hierarchical (like categories)
@@ -106,7 +106,7 @@ function maqfort_product_cat_tax() {
 	register_taxonomy( 'product-category', array( 'products' ), $args );
 
 }
-add_action( 'init', 'maqfort_product_cat_tax', 0 );
+add_action( 'init', 'maqfort_product_cat_tax', 0 );*/
 
 // Plugin Activation
 function maqfort_activation() {

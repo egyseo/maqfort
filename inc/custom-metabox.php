@@ -49,23 +49,6 @@ if ( ! function_exists('maqfort_products') ) {
     	'type' => 'checkbox',
     ) );
 
-  	// Product Featured Images
-  	$cmb->add_field( array(
-  	    'name' => __( 'Imagens em destaque do Produto', 'maqfort' ),
-  	    'desc' => __( 'Insira aqui as imagens em destaque do produto', 'maqfort' ),
-  	    'id'   => $prefix . 'featured_imgs',
-  	    'type' => 'file_list',
-  	    // 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
-  	    // Optional, override default text strings
-  	    'text' => array(
-  	        'add_upload_files_text' => __( 'Adicionar/Subir Ficheiros', 'maqfort' ), // default: "Add or Upload Files"
-  	        'remove_image_text' => __( 'Remover Imagem', 'maqfort' ), // default: "Remove Image"
-  	        'file_text' => __( 'Ficheiros', 'maqfort' ), // default: "File:"
-  	        'file_download_text' => __( 'Substituir', 'maqfort' ), // default: "Download"
-  	        'remove_text' => __( 'Remover', 'maqfort' ), // default: "Remove"
-  	    ),
-  	) );
-
   	// Product Galleries
   	$cmb->add_field( array(
   			'name' => __( 'Galeria de Imagens do Produto', 'maqfort' ),

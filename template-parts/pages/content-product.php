@@ -13,9 +13,13 @@
                        $full = wp_get_attachment_image($attachment_id, 'full');
                        $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
                        $url = wp_get_attachment_url( $attachment_id );
+                       $image_post = get_post($attachment_id);
+                        $title = $image_post->post_title;
+                        $description = $image_post->post_content;
                          echo '<li>';
                          echo '<a href="' . $url . '" data-fancybox="group"  data-caption="'. $alt .'" >';
                          echo $full;
+                         echo '<div class="flex-caption"><h2>' . $title . '</h2><hr>' .'<p>' . $description . '</p></div>';
                          echo '</a>';
                          echo '</li>';
                       }
@@ -23,7 +27,7 @@
                 ?>
               </ul><!-- slides ends -->
             </div><!-- featured img products slider ends -->
-            <div id="product-carousel-galerie" class="flexslider">
+            <!--<div id="product-carousel-galerie" class="flexslider">
               <ul class="slides">
                 <?php $carousel_images = get_post_meta(  get_the_ID(), '_maqfort_products_gallerie', true);
                   if ( $carousel_images ) {
@@ -35,7 +39,7 @@
                     }
                   } ?>
               </ul>
-            </div><!-- carousel-product-img ends -->
+            </div> carousel-product-img ends -->
           </section>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

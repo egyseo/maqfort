@@ -14,42 +14,35 @@ get_header(); ?>
   <section class="page-content">
     <div class="container container-fluid">
       <div class="row">
-        <?php
+        <?php if ( have_posts() ) : ?>
+        <section class="page-content">
+          <div class="container container-fluid">
+            <div class="row">
+              <?php while ( have_posts() ) : the_post(); ?>
 
-        $taxonomy = 'product-category';
-        $args = array(
-        	'orderby' => 'id',
-        	'order' => 'ASC',
-        );
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <article class="product-card">
+                    <header class="product-card-header">
+                      <?php if ( has_post_thumbnail() ) : ?>
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                          <figure class="product-card-thumbnail">
+                            <?php the_post_thumbnail('maqfort-thumbnail'); ?>
+                          </figure>
+                        </a>
+                      <?php endif; ?>
+                    </header>
+                    <section class="product-card-content">
+                      <h3 class="product-card-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+                    </section>
+                  </article>
+                </div>
 
-        $taxonomy_terms = get_terms($taxonomy, $args);
+              <?php endwhile; // End of the loop
+              else:
+                get_template_part( 'template-parts/post/content', 'none' );
+              endif; ?>
+            </div><!-- row ends -->
 
-        if($taxonomy_terms) {
-
-        	foreach($taxonomy_terms as $taxonomy_term) {
-            $term_link = get_term_link( $taxonomy_term );
-            $image_id = get_term_meta( $taxonomy_term->term_id, 'image', true );
-            $image_data = wp_get_attachment_image_src( $image_id, 'full' );
-            $image = $image_data[0]; ?>
-
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <article class="product-card">
-                  <header class="product-card-header">
-                    <?php if ( ! empty( $image ) ) { ?>
-                      <a href="<?php echo esc_url( $term_link ); ?>" title="">
-                        <figure class="product-card-thumbnail">
-                          <?php echo '<img src="' . esc_url( $image ) . '" />'; ?>
-                        </figure>
-                      </a>
-                    <?php } ?>
-                  </header>
-                  <section class="product-card-content">
-                    <h3 class="product-card-title"><a href="<?php echo esc_url( $term_link ); ?>" title=""><?php echo $taxonomy_term->name; ?></a></h3>
-                  </section>
-                </article>
-              </div>
-            <?php }
-        } ?>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
