@@ -21,10 +21,12 @@
 
     $('#product-featured-imgs').flexslider({
       animation: "slide",
-      controlNav: false,
-      animationLoop: false,
-      slideshow: false,
-      sync: "#product-carousel-galerie"
+      controlNav: true,
+      animationLoop: true,
+      slideshow: true,
+      keyboard: false,
+      prevText: "",
+      nextText: "",
     });
 
     $('.flex-products').flexslider({

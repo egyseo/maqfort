@@ -1,15 +1,18 @@
 .product-article
-  padding: 80px 0
+  padding-top: 40px
   .product-content
     margin-bottom: 40px
-    .article-title
+    .product-title
       font-family: $roboto
       font-weight: 300
-      margin-bottom: 30px
-    p:first-of-type
-      margin-top: 0px
+      margin-bottom: 20px
+    p
+      color: #616161
+      &:first-of-type
+        margin-top: 0px
 
 #product-featured-imgs
+  border: none
   img
     filter: contrast(0.9)
   .flex-caption
@@ -34,21 +37,49 @@
       margin: 0
       line-height: 18px
       font-size: 14px
+      color: $white-text-ongrey
+  .flex-direction-nav
+    a
+      height: 50px
+      width: 50px
+      top: 20px
+      left: 0px
+      opacity: 1
+    .flex-nav-prev
+      .flex-prev
+        padding: 10px 20px
+        background-color: $blue-grey
+        &::before
+          font-size: 20px
+          color: $white-text-ongrey
+          text-shadow: none
 
+    .flex-nav-next
+      .flex-next
+        left: 55px
+        padding: 10px 20px
+        background-color: $blue-grey
+        &::before
+          font-size: 20px
+          color: $white-text-ongrey
+          text-shadow: none
 .product-img-galerie
 
 .product-buttons
+  margin-bottom: 40px
   .button-catalog
     display: inline-block
     padding: 10px 20px
     color: $light-grey
     background-color: $blue-grey
+    font-size: 14px
     &:hover
       background-color: $darker-grey
   .button-getquote
     display: inline-block
     padding: 10px 20px
     background-color: $primary-color
+    font-size: 14px
     color: #fff
     &:hover
       background-color: $primary-darker

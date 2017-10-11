@@ -42,8 +42,8 @@
             </div> carousel-product-img ends -->
           </section>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <?php the_title( '<h1 class="article-title">', '</h1>' ); ?>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 first-xs last-sm last-md last-lg">
+          <?php the_title( '<h1 class="product-title">', '</h1>' ); ?>
           <?php the_content(); ?>
           <div class="product-buttons">
             <?php
