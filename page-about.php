@@ -9,9 +9,11 @@
  */
 get_header();
 
+putRevSlider("about");
+
 while ( have_posts() ) : the_post();
 
-  get_template_part( 'template-parts/pages/about', 'template' );
+  get_template_part( 'template-parts/pages/content', 'about' );
 
 endwhile; // End of the loop
 

@@ -1,4 +1,3 @@
-<?php putRevSlider(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="page-header">
     <div class="container container-fluid">
