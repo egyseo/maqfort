@@ -15,7 +15,7 @@ if ($categories) {
   $args=array(
     'category__in' => $category_ids,
     'post__not_in' => array($post->ID),
-    'posts_per_page'=> 2, // Number of related posts that will be shown.
+    'posts_per_page'=> 3, // Number of related posts that will be shown.
   );
 
   $related_posts = new wp_query( $args );
