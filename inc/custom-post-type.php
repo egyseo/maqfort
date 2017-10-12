@@ -51,7 +51,6 @@ function maqfort_products_cpt() {
   'exclude_from_search'   => false,
   'publicly_queryable'    => true,
   'rewrite'               => array( 'slug' => 'produtos', 'with_front' => false ),
-  'with_front' => false, 'feeds' => true ) : false,
   'capability_type'       => 'post',
   'show_in_rest'          => false,
   );
