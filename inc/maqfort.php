@@ -223,3 +223,29 @@ if ( ! function_exists( 'maqfort_excerpt_more' ) ) {
   }
 
 }
+
+/*
+ * -----------------------------------------------------------
+ * 11.0 Hide editor on certain posts
+ * -----------------------------------------------------------
+*/
+if ( ! function_exists( 'maqfort_hide_editor' ) ) {
+
+  function maqfort_hide_editor() {
+      if ( isset( $_GET['post'] ) ) {
+      $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+      if( !isset( $post_id ) ) return;
+      $template_file = get_post_meta($post_id, '_wp_page_template', true);
+      if($template_file == 'page-contacts.php'){//change mycustom-page.php to your thing
+          remove_post_type_support('page', 'editor');
+      }
+      if($template_file == 'page-home.php'){//change mycustom-page.php to your thing
+          remove_post_type_support('page', 'editor');
+      }
+
+    }
+  }
+
+  add_action( 'init', 'maqfort_hide_editor' );
+
+}

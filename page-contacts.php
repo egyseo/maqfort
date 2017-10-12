@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About Template
+ * Template Name: Contacts Template
  * The theme about page template.
  *
  * @package AMOB
@@ -9,11 +9,9 @@
  */
 get_header();
 
-putRevSlider("about");
-
 while ( have_posts() ) : the_post();
 
-  get_template_part( 'template-parts/pages/content', 'about' );
+  get_template_part( 'template-parts/pages/content', 'contacts' );
 
 endwhile; // End of the loop
 

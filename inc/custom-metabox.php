@@ -146,7 +146,7 @@ if ( ! function_exists('maqfort_related_posts') ) {
 
   	$cmb = new_cmb2_box( array(
   		'id'           => $prefix . 'search_post',
-  		'title'        => __( 'Related Content', 'amob' ),
+  		'title'        => __( 'Related Content', 'maqfort' ),
   		'object_types' => array( 'products' ), // Post type
   		'context'      => 'normal',
   		'priority'     => 'high',
@@ -171,5 +171,117 @@ if ( ! function_exists('maqfort_related_posts') ) {
   }
 
   add_action( 'cmb2_init', 'maqfort_related_posts' );
+
+}
+
+/*
+* -----------------------------------------------------------
+* 5.0 Creat metabox for contacts page.
+* -----------------------------------------------------------
+*/
+if ( ! function_exists('maqfort_address') ) {
+
+  function maqfort_address() {
+
+  	$prefix = '_maqfort_address_';
+
+  	/**
+  	 * Initiate the metabox
+  	 */
+  	$cmb = new_cmb2_box( array(
+  			'id'            => $prefix . 'details',
+  			'title'         => __( 'MAQFORT Contacts', 'maqfort' ),
+  			'object_types'  => array( 'page' ), // Post type
+        'show_on'       => array( 'key' => 'page-template', 'value' => 'page-contacts.php' ),
+  			'context'       => 'normal',
+  			'priority'      => 'high',
+  			'show_names'    => true, // Show field names on the left
+  			// 'cmb_styles' => false, // false to disable the CMB stylesheet
+  			// 'closed'     => true, // Keep the metabox closed by default
+  	) );
+
+    $cmb->add_field( array(
+        'name' => __( 'Title', 'maqfort' ),
+        'description' => __( '', 'maqfort' ),
+        'id'   => $prefix . 'title',
+        'type' => 'text',
+    ) );
+    // text area
+    $cmb->add_field( array(
+        'name' => __( 'Address', 'maqfort' ),
+        'desc' => __( 'Insert address here.', 'maqfort' ),
+        'default' => '',
+        'id' => $prefix . 'address',
+        'type' => 'textarea_small'
+    ) );
+    $cmb->add_field( array(
+        'name' => __( 'Phone', 'maqfort' ),
+        'description' => __( 'Insert the phone number here.', 'maqfort' ),
+        'id'   => $prefix . 'phone',
+        'type' => 'text',
+    ) );
+
+    $cmb->add_field( array(
+        'name' => __( 'Email', 'maqfort' ),
+        'description' => __( 'Insert the phone number here.', 'maqfort' ),
+        'id'   => $prefix . 'email',
+        'type' => 'text_email',
+    ) );
+
+  }
+
+  add_action( 'cmb2_init', 'maqfort_address' );
+
+}
+
+//contact form metabox
+if ( ! function_exists('maqfort_contact_form') ) {
+
+  function maqfort_contact_form() {
+
+  	$prefix = 'maqfort_contact_form_';
+
+  	/**
+  	 * Initiate the metabox
+  	 */
+  	$cmb = new_cmb2_box( array(
+  			'id'            => $prefix . 'details',
+  			'title'         => __( 'Contact Form', 'maqfort' ),
+  			'object_types'  => array( 'page' ), // Post type
+        'show_on'       => array( 'key' => 'page-template', 'value' => 'page-contacts.php' ),
+  			'context'       => 'normal',
+  			'priority'      => 'high',
+  			'show_names'    => true, // Show field names on the left
+  			// 'cmb_styles' => false, // false to disable the CMB stylesheet
+  			// 'closed'     => true, // Keep the metabox closed by default
+  	) );
+
+    $cmb->add_field( array(
+        'name' => __( 'Title', 'maqfort' ),
+        'description' => __( 'Form Title', 'maqfort' ),
+        'id'   => $prefix . 'title',
+        'type' => 'text',
+    ) );
+
+    // text area
+    $cmb->add_field( array(
+        'name' => __( 'Description', 'maqfort' ),
+        'desc' => __( 'Description here', 'maqfort' ),
+        'default' => '',
+        'id' => $prefix . 'description',
+        'type' => 'text'
+    ) );
+
+    $cmb->add_field( array(
+        'name' => __( 'Form Shortcode', 'maqfort' ),
+        'description' => __( 'Insert here the form shortcode', 'maqfort' ),
+        'id'   => $prefix . 'shortcode',
+        'type' => 'text',
+    ) );
+
+
+  }
+
+  add_action( 'cmb2_init', 'maqfort_contact_form' );
 
 }
