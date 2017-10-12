@@ -7,17 +7,6 @@
   overflow: hidden
   border: 1px solid #f1f1f1
   margin-bottom: 30px
-  &:hover
-    .post-card-header
-      .post-card-thumbnail
-        img
-          transform: scale(1.1)
-          filter: contrast(90%)
-    .post-card-footer
-      a
-        background-color: $blue-grey
-        i
-          color: $light-grey
   .post-card-header
     position: relative
     .post-card-date
@@ -44,6 +33,10 @@
         vertical-align: middle
         width: 100%
         filter: contrast(80%)
+      &:hover
+        img
+          transform: scale(1.1)
+          filter: contrast(90%)
   .post-card-content
     padding: 20px
     p
@@ -58,8 +51,11 @@
       text-overflow: ellipsis
       a
         color: $darker-grey
+        &:hover
+          color: $primary-color
       &::before
         display: none
+
   .post-card-footer
     text-align: right
     padding: 0px 20px 20px 20px
@@ -76,7 +72,10 @@
         margin-top: 11px
         margin-left: 3px
         font-size: 12px
-
+      &:hover
+        background-color: $blue-grey
+        i
+          color: $light-grey
 
 
 // product cards
@@ -87,17 +86,6 @@
   box-shadow: 0 7px 22px rgba(19,19,19,.08)
   overflow: hidden
   border: 1px solid #f1f1f1
-  &:hover
-    .product-card-header
-      .product-card-thumbnail
-        img
-          transform: scale(1.1)
-          //filter: contrast(90%)
-    .product-card-footer
-      a
-        background-color: $blue-grey
-        i
-          color: $light-grey
   .product-card-header
     .product-card-thumbnail
       overflow: hidden
@@ -106,8 +94,9 @@
         overflow: hidden
         transition: $main-transition
         vertical-align: middle
-        //filter: contrast(80%)
-        transform: scale(1.01)
+      &:hover
+        img
+          transform: scale(1.1)
   .product-card-content
     padding: 20px
     p
@@ -119,15 +108,11 @@
       margin-bottom: 10px
       a
         color: $darker-grey
+        &:hover
+          color: $primary-color
       &::before
         display: none
-    .product-card-category
-      text-transform: uppercase
-      display: block
-      font-weight: bold
-      font-size: 10px
-      margin-bottom: 10px
-      color: $darker-grey
+
   .product-card-footer
     text-align: right
     padding: 0px 20px 20px 20px
@@ -144,6 +129,10 @@
         margin-top: 11px
         margin-left: 3px
         font-size: 12px
+      &:hover
+        background-color: $blue-grey
+        i
+          color: $light-grey
 
 .post-type-archive-products
   .product-card
@@ -160,7 +149,6 @@
       .post-card-title
         text-align: left
         margin-bottom: 0
-
 
 .related-products
   .product-card

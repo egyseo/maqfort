@@ -17,7 +17,7 @@
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <?php maqfort_social_icons(); ?>
       </div>
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 relative">
         <a class="btn-search-top" href="#/"><i class="fa fa-search"></i></a>
       </div>
     </div>
