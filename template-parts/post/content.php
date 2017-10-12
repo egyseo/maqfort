@@ -10,6 +10,7 @@
       </div>
     </div>
 	</header>
+
 	<section class="article-content">
     <div class="container container-fluid">
       <div class="row top-xs top-sm top-md top-lg">
@@ -26,8 +27,10 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <hr>
           <?php the_post_thumbnail('full'); ?>
           <?php
             the_content( sprintf(
