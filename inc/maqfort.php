@@ -201,6 +201,25 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
             $title = single_cat_title( '', false );
     }
+    elseif ( is_tag() ) {
+
+            $title = single_tag_title( '', false );
+    }
     return $title;
 
 });
+
+/*
+ * -----------------------------------------------------------
+ * 11.0 This removes the annoying […] to a Read More link
+ * -----------------------------------------------------------
+*/
+if ( ! function_exists( 'maqfort_excerpt_more' ) ) {
+
+  function maqfort_excerpt_more($more) {
+    global $post;
+    // edit here if you like
+    return '...';
+  }
+
+}
