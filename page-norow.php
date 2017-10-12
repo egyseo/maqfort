@@ -11,7 +11,7 @@ get_header();
 
 while ( have_posts() ) : the_post();
 
-  get_template_part( 'template-parts/pages/norow', 'page' );
+  get_template_part( 'template-parts/pages/content', 'norow' );
 
 endwhile; // End of the loop
 
