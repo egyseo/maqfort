@@ -1,7 +1,19 @@
 <?php
 
+// Get permalink settings for MAQFORT independent of the user locale.
+function maqfort_get_permalink_structure() {
+
+	// Ensure rewrite slugs are set.
+	$permalinks['product_rewrite_slug']   = untrailingslashit( empty( $permalinks['product_base'] ) ? _x( 'products', 'slug', 'maqfort' ) : $permalinks['product_base'] );
+	//$permalinks['category_rewrite_slug']  = untrailingslashit( empty( $permalinks['category_base'] ) ? _x( 'product-category', 'slug', 'maqfort' ) : $permalinks['category_base'] );
+
+	return $permalinks;
+}
+
 // Register Products Custom Post Type
 function maqfort_products_cpt() {
+
+  $permalinks = maqfort_get_permalink_structure();
 
 	$labels = array(
 		'name'                  => _x( 'Products', 'Post Type General Name', 'maqfort' ),
@@ -50,7 +62,7 @@ function maqfort_products_cpt() {
 		'has_archive'           => 'products',
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'rewrite'               => array( 'slug' => 'products', 'with_front' => false ),
+		'rewrite'               => $permalinks['product_rewrite_slug'] ? array( 'slug' => $permalinks['product_rewrite_slug'], 'with_front' => false, 'feeds' => true ) : false,
 		'capability_type'       => 'post',
 		'show_in_rest'          => false,
 	);
