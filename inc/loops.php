@@ -123,10 +123,3 @@ if ( ! function_exists( 'maqfort_standart_loop' ) ) {
 add_action( 'maqfort_loop', 'maqfort_standart_loop' );
 
 }
-
-
-/*
- * -----------------------------------------------------------
- * 4.0 Related posts loop.
- * -----------------------------------------------------------
-*/
