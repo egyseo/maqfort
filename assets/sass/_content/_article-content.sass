@@ -3,22 +3,20 @@
     background-color: #f9f9f9
     height: 2px
 .article-header
-  //background-color: $blue-grey
   color: $darker-grey
   width: 100%
   .article-header-box-top
-    //background-color: rgba(#525254, 0.9)
     padding-top: 40px
-    //margin-top: 100px
+    padding-bottom: 40px
     .article-title
       color: $darker-grey
+      font-size: 2em
 
 
 .article-content
-  margin-bottom: 30px
+  margin-bottom: 40px
   .article-header-box-bottom
-    //background-color: #3c3c3e
-    padding: 10px 0px
+    margin-bottom: 20px
     .article-date
       margin-right: 20px
       display: inline-block
@@ -124,11 +122,13 @@
 @media (max-width: 767px)
   .article-header
     .article-header-box-top
-      //background-color: rgba(#525254, 0.9)
-      padding-top: 20px
+      padding-top: 40px
+      padding-bottom: 40px
+      .article-title
+        font-size: 1.8em
   .article-content
     .article-header-box-bottom
-      padding: 10px 0px
+      margin-bottom: 20px
       .article-date
         margin-right: 5px
         padding: 0 10px 0 0
