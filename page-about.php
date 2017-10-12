@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About Template
+ * Template Name: Page with Slider
  * The theme about page template.
  *
  * @package AMOB

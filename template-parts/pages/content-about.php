@@ -1,53 +1,28 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-  <?php if ( has_post_thumbnail() ) { ?>
-
-    <header class="page-header-with-img">
-
-    </header>
-    <section class="page-content">
-      <div class="container container-fluid">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
-          </div>
-        </div>
-
-            <?php
-              the_content();
-
-              wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'maqfort' ),
-                'after'  => '</div>',
-              ) );
-            ?>
-
-      </div>
-    </section>
-  <?php } else { ?>
-    <header class="page-header">
-      <div class="container container-fluid">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
-          </div>
+  <header class="page-header-with-img">
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
         </div>
       </div>
-    </header>
-    <section class="page-content">
-      <div class="container container-fluid">
+    </div>
+  </header>
+  <section class="page-content">
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <?php
+            the_content();
 
-            <?php
-              the_content();
-
-              wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'maqfort' ),
-                'after'  => '</div>',
-              ) );
-            ?>
-
+            wp_link_pages( array(
+              'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'maqfort' ),
+              'after'  => '</div>',
+            ) );
+          ?>
+        </div>
       </div>
-    </section>
-  <?php } ?>
 
+    </div>
+  </section>
 </article>
