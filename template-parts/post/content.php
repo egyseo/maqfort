@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?> post-content" <?php post_class(); ?>>
-	<header class="article-header" style="background-color:#525254;background-image:url(<?php the_post_thumbnail_url('full'); ?>);background-position:center; background-repeat:no-repeat; background-size:cover;">
+	<header class="article-header" style="background-color:#525254;background-image:url(<?php the_post_thumbnail_url('maqfort-header'); ?>);background-position:center; background-repeat:no-repeat; background-size:cover;">
     <div class="container container-fluid">
       <div class="row bottom-xs bottom-sm bottom-md bottom-lg">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
