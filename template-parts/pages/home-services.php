@@ -1,4 +1,4 @@
-<section id="home-services"  style="background-color:rgba(255, 0, 0, 0.45);background-image:url(<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/parallax-1.jpg);background-attachment:fixed; background-position:center; background-repeat:no-repeat; background-size:cover;">
+<section id="home-services"  style="background-attachment:fixed; background-position:center; background-repeat:no-repeat; background-size:cover;">
   <div class="container container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

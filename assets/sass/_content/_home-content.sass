@@ -89,8 +89,7 @@
     max-width: 90%
     padding: 40px
     text-align: center
-    color: #fff
-    //border: 2px solid #fff
+    color: $darker-grey
     border-radius: 10px
     img
       color: $blue-grey
@@ -98,7 +97,7 @@
       margin-bottom: 20px
     .section-title
       margin-bottom: 20px
-      color: #fff
+      color: $darker-grey
       &::before
         display: none
       &::after
@@ -107,15 +106,16 @@
       margin: 0
       margin-bottom: 20px
     button
-      color: #fff
+      color: $primary-color
       padding: 10px 20px
-      border: 1px solid #fff
+      border: 1px solid $primary-color
       border-radius: none
       cursor: pointer
       font-size: 14px
       &:hover
-        color: $blue-grey
-        border: 1px solid $darker-grey
+        color: #fff
+        border: 1px solid $primary-darker
+        background-color: $primary-darker
 
 
 @media (max-width: 767px)
