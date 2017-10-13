@@ -24,7 +24,7 @@ textarea
   border-radius: 3px
 
   &:focus
-    color:
+    outline: none
 
 select
   border: 1px solid $darker-grey
@@ -49,5 +49,43 @@ input[type="color"]
 textarea
   padding-left: 3px
   width: 100%
+
+#contact_form_pop
+  .wpcf7-form
+    input[type="text"],
+    input[type="email"],
+    textarea
+      width: 100%
+      border: 1px solid #e6e6e6
+      border-radius: 0px
+      padding: 10px
+      margin-top: 10px
+      color: $blue-grey
+      font-weight: lighter
+      &:focus
+        outline: none
+      &:active
+        outline: none
+      &:hover
+        outline: none
+    .wpcf7-submit
+      background-color: $primary-color
+      width: 100%
+      text-align: center
+      margin: 0 auto
+      &:hover
+        background-color: $primary-darker
+    .required-fields
+      color: $primary-color
+      font-weight: 500
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+  font-family: $roboto
+  text-transform: inherit
+
+
 
 @import "_searchform-top"

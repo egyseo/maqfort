@@ -3,6 +3,7 @@
     <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <?php the_title( '<h1 class="product-title hide">', '</h1>' ); ?>
           <section class="slider-wrapper">
             <div id="product-featured-imgs" class="flexslider">
               <ul class="slides">
@@ -42,21 +43,24 @@
             </div> carousel-product-img ends -->
           </section>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 first-xs last-sm last-md last-lg">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <?php the_title( '<h1 class="product-title">', '</h1>' ); ?>
           <?php the_content(); ?>
           <div class="product-buttons">
             <?php
               $get_quote = get_post_meta(  get_the_ID(), '_maqfort_products_quote_url', true);
               $catalog = get_post_meta(  get_the_ID(), '_maqfort_products_catalog_id', true);
-            ?>
-            <?php if ( !empty( $catalog ) ) {
-              ?><a class="button-catalog" href="<?php echo wp_get_attachment_url( $catalog ); ?>" target="_blank"><?php _e( 'Download Catálogo', 'maqfort' ); ?></a> <?php
-            } ?>
-            <?php if ( !empty( $get_quote ) ) {
-              ?><a class="button-getquote" href="<?php echo $get_quote; ?>" target="_self"><?php _e( 'Peça um orçamento', 'maqfort' ); ?></a> <?php
-            } ?>
-
+              if ( !empty( $catalog ) ) {
+                echo '<a class="button-catalog" href="' . wp_get_attachment_url( $catalog ) . '" target="_blank">' . __( 'Download Catalog', 'maqfort' ) . '</a>';
+              }
+              if ( !empty( $get_quote ) ) {
+                echo '<button type="button" name="button" class="button-getquote" href="#contact_form_pop">' . __( 'Get a quote', 'maqfort' ) . '</button>';
+              } ?>
+            <div style="display:none" class="fancybox-hidden">
+                <div id="contact_form_pop" style="height: 80vh;">
+                    <?php echo do_shortcode( $get_quote ); ?>
+                </div>
+            </div>
           </div>
         </div>
       </div>

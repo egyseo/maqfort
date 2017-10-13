@@ -91,7 +91,7 @@ if ( ! function_exists('maqfort_products') ) {
       'desc' => __( 'Insira aqui o shortcode do formulário para pedidos de orçamentos', 'maqfort' ),
       'default' => '',
       'id' => $prefix . 'quote_url',
-      'type' => 'text_url'
+      'type' => 'text'
     ) );
 
 

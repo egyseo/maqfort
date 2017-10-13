@@ -11,6 +11,15 @@
       &:first-of-type
         margin-top: 0px
 
+.hide
+  display: none
+
+@media (max-width: 767px)
+  .product-title
+    display: none
+  .hide
+    display: inline-block
+
 #product-featured-imgs
   border: none
   img
@@ -81,6 +90,7 @@
     background-color: $primary-color
     font-size: 14px
     color: #fff
+    cursor: pointer
     &:hover
       background-color: $primary-darker
 

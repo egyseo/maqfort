@@ -15,15 +15,25 @@
 
   // Initalize the Lightbox for any links with the 'video' class and provide improved video embed support
   $(".video").fancybox({
-      maxWidth        : 800,
-      maxHeight       : 600,
-      fitToView       : false,
-      width           : '70%',
-      height          : '70%',
-      autoSize        : false,
-      closeClick      : false,
-      openEffect      : 'none',
-      closeEffect     : 'none'
+    maxWidth        : 800,
+    maxHeight       : 600,
+    fitToView       : false,
+    width           : '70%',
+    height          : '70%',
+    autoSize        : false,
+    closeClick      : false,
+    openEffect      : 'none',
+    closeEffect     : 'none'
+  });
+
+  $(".button-getquote").fancybox({
+    fitToView	: true,
+    width		: '80%',
+    height		: '80%',
+    autoSize	: true,
+    closeClick	: false,
+    openEffect	: 'none',
+    closeEffect	: 'none'
   });
 
 })(jQuery);
