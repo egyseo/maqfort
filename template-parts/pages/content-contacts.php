@@ -30,13 +30,13 @@
                 echo '<h2 class="address-title">' . esc_html( $address_title ). '</h2>';
               }
               if ( ! empty( $address_address ) ) {
-                echo '<p>' . $address_address . '</p>';
+                echo '<p class="address">' . $address_address . '</p>';
               }
               if ( ! empty( $address_phone ) ) {
-                echo '<p>' . esc_html( 'Phone:', 'maqfort' ) . '<a href="tel:' . esc_html( $address_phone ) . '">' . esc_html( $address_phone ) . '</a></p>';
+                echo '<p class="address-phone">' . esc_html( 'Phone: ', 'maqfort' ) . '<a href="tel:' . esc_html( $address_phone ) . '">' . esc_html( $address_phone ) . '</a></p>';
               }
               if ( ! empty( $address_email ) ) {
-                echo '<a href="mailto:' . esc_html( $address_email ) . '">' .  __( 'Send email', 'maqfort' ) . '</a>';
+                echo '<a href="mailto:' . esc_html( $address_email ) . '" class="address-mailto">' .  __( 'Send email', 'maqfort' ) . '</a>';
               } ?>
             </section>
           </div>
@@ -44,7 +44,9 @@
             <div id="map-amob"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.0713707660766!2d-8.543199684289153!3d41.43767300083858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2459da3af7f5ab%3A0xf70a34e8efcc7c19!2sMAQFORT!5e0!3m2!1spt-PT!2spt!4v1507909111738" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe></div>
           </div>
         </div>
-        <section class="contact-form">
+      </div>
+      <section class="contact-form">
+        <div class="container container-fluid">
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <?php if ( ! empty( $contact_form_title ) ) {
@@ -57,8 +59,8 @@
               echo do_shortcode( $contact_form_shorcode ); ?>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </section>
   <?php } else { ?>
     <header class="page-header">
