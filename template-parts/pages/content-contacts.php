@@ -25,18 +25,20 @@
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <?php if ( ! empty( $address_title ) ) {
-              echo '<h2 class="address-title">' . esc_html( $address_title ). '</h2>';
-            }
-            if ( ! empty( $address_address ) ) {
-              echo '<p>' . $address_address . '</p>';
-            }
-            if ( ! empty( $address_phone ) ) {
-              echo '<p>' . esc_html( 'Phone:', 'maqfort' ) . '<a href="tel:' . esc_html( $address_phone ) . '">' . esc_html( $address_phone ) . '</a></p>';
-            }
-            if ( ! empty( $address_email ) ) {
-              echo '<a href="mailto:' . esc_html( $address_email ) . '">' .  __( 'Send email', 'maqfort' ) . '</a>';
-            } ?>
+            <section class="contact-address">
+              <?php if ( ! empty( $address_title ) ) {
+                echo '<h2 class="address-title">' . esc_html( $address_title ). '</h2>';
+              }
+              if ( ! empty( $address_address ) ) {
+                echo '<p>' . $address_address . '</p>';
+              }
+              if ( ! empty( $address_phone ) ) {
+                echo '<p>' . esc_html( 'Phone:', 'maqfort' ) . '<a href="tel:' . esc_html( $address_phone ) . '">' . esc_html( $address_phone ) . '</a></p>';
+              }
+              if ( ! empty( $address_email ) ) {
+                echo '<a href="mailto:' . esc_html( $address_email ) . '">' .  __( 'Send email', 'maqfort' ) . '</a>';
+              } ?>
+            </section>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <p>mapa</p>
@@ -72,18 +74,20 @@
       <div class="container container-fluid">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <?php if ( ! empty( $address_title ) ) {
-              echo '<h2 class="address-title">' . esc_html( $address_title ). '</h2>';
-            }
-            if ( ! empty( $address_address ) ) {
-              echo '<p>' . $address_address . '</p>';
-            }
-            if ( ! empty( $address_phone ) ) {
-              echo '<p>' . esc_html( 'Phone:', 'maqfort' ) . '<a href="tel:' . esc_html( $address_phone ) . '">' . esc_html( $address_phone ) . '</a></p>';
-            }
-            if ( ! empty( $address_email ) ) {
-              echo '<a href="mailto:' . esc_html( $address_email ) . '">' .  __( 'Send email', 'maqfort' ) . '</a>';
-            } ?>
+            <section class="contact-address">
+              <?php if ( ! empty( $address_title ) ) {
+                echo '<h2 class="address-title">' . esc_html( $address_title ). '</h2>';
+              }
+              if ( ! empty( $address_address ) ) {
+                echo '<p class="address">' . $address_address . '</p>';
+              }
+              if ( ! empty( $address_phone ) ) {
+                echo '<p class="address-phone">' . esc_html( 'Phone: ', 'maqfort' ) . '<a href="tel:' . esc_html( $address_phone ) . '">' . esc_html( $address_phone ) . '</a></p>';
+              }
+              if ( ! empty( $address_email ) ) {
+                echo '<a href="mailto:' . esc_html( $address_email ) . '" class="address-mailto">' .  __( 'Send email', 'maqfort' ) . '</a>';
+              } ?>
+            </section>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <p>mapa</p>
