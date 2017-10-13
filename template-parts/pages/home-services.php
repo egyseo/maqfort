@@ -20,27 +20,23 @@
           if ( isset( $service[ '_maqfort_homepage_btn' ] ) )
             $service_btn = esc_html( $service[  '_maqfort_homepage_btn' ] );
 
-          if ( isset( $service[ '__maqfort_homepage_url' ] ) )
+          if ( isset( $service[ '_maqfort_homepage_url' ] ) )
             $service_url = esc_html( $service[  '_maqfort_homepage_url' ] );
 
           if ( isset( $service[ '_maqfort_homepage_image' ] ) )
             $service_image = wp_get_attachment_url( $service[ '_maqfort_homepage_image_id' ] );
 
-          if ( !empty( array( $service_title ) ) ) { ?>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-              <div class="service-box">
-                <img src="<?php echo $service_image ?>">
-                <h2 class="service-title"><?php  echo $service_title ?></h2>
-                <p><?php echo $service_description ?></p>
-                <a href="<?php echo $service_url ?>" target="_self" class="service-btn"><?php echo $service_btn ?></a>
-              </div>
-            </div>
-          <?php }
+          if ( !empty( array( $service_title ) ) ) {
+
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="service-box">' . '<img src="'. $service_image . '"><h2 class="service-title">' . $service_title . '</h2><p>' . $service_description . '</p><a href="' . $service_url . '" target="_self" class="service-btn">' . $service_btn . '</a></div></div>';
+
+          }
 
         }
 
       }
       ?>
+
     </div>
   </div>
 </section>
