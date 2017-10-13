@@ -84,36 +84,37 @@
 
 
 #home-services
+  background-color: $primary-darker
   height: 100%
   .service-box
     max-width: 90%
     padding: 40px
     text-align: center
-    color: $darker-grey
+    color: $light-grey
     border-radius: 10px
     img
-      color: $blue-grey
       max-width: 100px
       margin-bottom: 20px
     .service-title
       margin-bottom: 20px
-      color: $darker-grey
+      color: #fff
       &::before
         display: none
     p
       margin: 0
       margin-bottom: 40px
     .service-btn
-      color: $primary-color
+      color: $darker-grey
+      background-color: $light-grey
       padding: 10px 20px
-      border: 1px solid $primary-color
+      border: 1px solid $light-grey
       border-radius: none
       cursor: pointer
       font-size: 14px
       &:hover
         color: #fff
-        border: 1px solid $primary-darker
-        background-color: $primary-darker
+        border: 1px solid $darker-grey
+        background-color: $darker-grey
 
 
 @media (max-width: 767px)
