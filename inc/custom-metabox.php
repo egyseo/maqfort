@@ -342,16 +342,10 @@ if ( ! function_exists('maqfort_homepage_services') ) {
         'type' => 'textarea',
     ) );
 
-    $cmb->add_group_field( $group_field_id, array(
-        'name' => __( 'Button text', 'maqfort' ),
-        'description' => __( 'Insert here the button text.', 'maqfort' ),
-        'id'   => $prefix . 'btn',
-        'type' => 'text',
-    ) );
 
     $cmb->add_group_field( $group_field_id, array(
-        'name' => __( 'Button URL', 'maqfort' ),
-        'description' => __( 'Insert here the button url.', 'maqfort' ),
+        'name' => __( 'URL', 'maqfort' ),
+        'description' => __( 'Insert here the url.', 'maqfort' ),
         'id'   => $prefix . 'url',
         'type' => 'text_url',
     ) );

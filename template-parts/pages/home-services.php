@@ -9,16 +9,13 @@
 
         foreach ( (array)$service_itens as $key => $service ) {
 
-          $service_title = $service_description = $service_btn = $service_url = $service_image = '';
+          $service_title = $service_description = $service_url = $service_image = '';
 
           if ( isset( $service[ '_maqfort_homepage_title' ] ) )
             $service_title = esc_html( $service[ '_maqfort_homepage_title' ] );
 
           if ( isset( $service[ '_maqfort_homepage_description' ] ) )
             $service_description = esc_html( $service[  '_maqfort_homepage_description' ] );
-
-          if ( isset( $service[ '_maqfort_homepage_btn' ] ) )
-            $service_btn = esc_html( $service[  '_maqfort_homepage_btn' ] );
 
           if ( isset( $service[ '_maqfort_homepage_url' ] ) )
             $service_url = esc_html( $service[  '_maqfort_homepage_url' ] );
@@ -28,7 +25,7 @@
 
           if ( !empty( array( $service_title ) ) ) {
 
-            echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><div class="service-box">' . '<img src="'. $service_image . '"><h2 class="service-title">' . $service_title . '</h2><p>' . $service_description . '</p><a href="' . $service_url . '" target="_self" class="service-btn">' . $service_btn . '</a></div></div>';
+            echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><a href="' . $service_url . '" target="_self"><div class="service-box">' . '<img src="'. $service_image . '"><h2 class="service-title">' . $service_title . '</h2><p>' . $service_description . '</p></div></a></div>';
 
           }
 
