@@ -45,22 +45,22 @@
           </div>
         </div>
       </div>
-      <section class="contact-form">
-        <div class="container container-fluid">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <?php if ( ! empty( $contact_form_title ) ) {
-                echo '<h2 class="contact-form-title">' . esc_html( $contact_form_title ) . '</h2>';
-              }
-              if ( ! empty( $contact_form_desc ) ) {
-                echo '<p>' . esc_html( $contact_form_desc ) . '</p>';
-              }
+    </section>
+    <section class="contact-form">
+      <div class="container container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <?php if ( ! empty( $contact_form_title ) ) {
+              echo '<h2 class="contact-form-title">' . esc_html( $contact_form_title ) . '</h2>';
+            }
+            if ( ! empty( $contact_form_desc ) ) {
+              echo '<p>' . esc_html( $contact_form_desc ) . '</p>';
+            }
 
-              echo do_shortcode( $contact_form_shorcode ); ?>
-            </div>
+            echo do_shortcode( $contact_form_shorcode ); ?>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   <?php } else { ?>
     <header class="page-header">

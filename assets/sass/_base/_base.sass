@@ -3,14 +3,11 @@
   * # Base
   * ----------------------------------------------------------*/
 
-html
-  box-sizing: border-box
-
 *,
 *:before,
 *:after
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit
+  box-sizing: border-box
 
 html, body
   padding: 0
@@ -19,6 +16,7 @@ html, body
 body
   -webkit-font-smoothing: antialiased
   background-color: $background-grey
+  text-rendering: optimizeLegibility
 
 @media  (max-width: 782px)
   #wpadminbar

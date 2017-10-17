@@ -1,6 +1,6 @@
 <section id="home-services">
-  <div class="container container-fluid">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row middle-xs middle-sm middle-md middle-lg">
 
       <?php
       $service_itens = get_post_meta( get_the_ID(), '_maqfort_homepage_itens', true );
@@ -28,7 +28,7 @@
 
           if ( !empty( array( $service_title ) ) ) {
 
-            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="service-box">' . '<img src="'. $service_image . '"><h2 class="service-title">' . $service_title . '</h2><p>' . $service_description . '</p><a href="' . $service_url . '" target="_self" class="service-btn">' . $service_btn . '</a></div></div>';
+            echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><div class="service-box">' . '<img src="'. $service_image . '"><h2 class="service-title">' . $service_title . '</h2><p>' . $service_description . '</p><a href="' . $service_url . '" target="_self" class="service-btn">' . $service_btn . '</a></div></div>';
 
           }
 
