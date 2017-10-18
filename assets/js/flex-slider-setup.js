@@ -21,7 +21,7 @@
 
     $('#product-featured-imgs').flexslider({
       animation: "slide",
-      controlNav: true,
+      controlNav: false,
       animationLoop: true,
       slideshow: true,
       keyboard: false,

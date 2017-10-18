@@ -2,7 +2,7 @@
 // WP_Query arguments
 $args = array(
 	'post_type'              => array( 'products' ),
-  'posts_per_page' => 6,
+  'posts_per_page' => 200,
   'ignore_sticky_posts' => true,
 );
 
