@@ -91,26 +91,27 @@
   .col-md-4,
   .col-lg-4
     padding: 0
-    &:nth-child(2)
+  a
+    &:hover
       .service-box
-        background-color: lighten($darker-grey, 10%)
+        background-color: rgba( $primary-color, .7 )
   .service-box
-    height: 400px
-    background-color: lighten($darker-grey, 5%)
-    padding: 40px 20px
+    background-color: rgba( $primary-darker, .7 )
+    padding: 150px 40px
     text-align: center
     color: $light-grey
     img
       max-width: 100px
       margin-bottom: 20px
     .service-title
-      margin-bottom: 20px
       color: #fff
+      font-weight: 100
       &::before
         display: none
     p
       margin: 0
       margin-bottom: 40px
+      font-size: 14px
     .service-btn
       color: $darker-grey
       background-color: $light-grey

@@ -51,7 +51,7 @@ if ( ! function_exists( 'maqfort_products_onfront_loop' ) ) {
 
   function maqfort_products_onfront_loop() { ?>
 
-    <li>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <article class="product-card">
         <header class="product-card-header">
           <?php if ( has_post_thumbnail() ) : ?>
@@ -72,7 +72,7 @@ if ( ! function_exists( 'maqfort_products_onfront_loop' ) ) {
           </a>
         </footer>
       </article><!-- article ends -->
-    </li>
+    </div>
     <?php //endif;
   }
 

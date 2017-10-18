@@ -43,33 +43,33 @@ if ( ! function_exists('maqfort_products') ) {
   	) );
 
     $cmb->add_field( array(
-    	'name' => __( 'Mostrar na página inicial?', 'maqfort' ),
-    	'desc' => __( 'Clique na caixa se desejar mosrtar este produtoo na página inicial', 'maqfort' ),
+    	'name' => __( 'Show on front page?', 'maqfort' ),
+    	'desc' => __( 'check the box if you want to show posts on the fronpage of the site.', 'maqfort' ),
     	'id'   => $prefix . 'frontpage_checkbox',
     	'type' => 'checkbox',
     ) );
 
   	// Product Galleries
   	$cmb->add_field( array(
-  			'name' => __( 'Galeria de Imagens do Produto', 'maqfort' ),
-  			'desc' => __( 'Insira aqui a galeria de imagens do produto', 'maqfort' ),
+  			'name' => __( 'Produt images gallery', 'maqfort' ),
+  			'desc' => __( 'Insert here the images of the product', 'maqfort' ),
   			'id'   => $prefix . 'gallerie',
   			'type' => 'file_list',
   			// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
   			// Optional, override default text strings
   			'text' => array(
-  					'add_upload_files_text' => __( 'Adicionar/Subir Ficheiros', 'maqfort' ), // default: "Add or Upload Files"
-  					'remove_image_text' => __( 'Remover Imagem', 'maqfort' ), // default: "Remove Image"
-  					'file_text' => __( 'Ficheiros', 'maqfort' ), // default: "File:"
+  					'add_upload_files_text' => __( 'Add Image', 'maqfort' ), // default: "Add or Upload Files"
+  					'remove_image_text' => __( 'Remove Image', 'maqfort' ), // default: "Remove Image"
+  					'file_text' => __( 'Files', 'maqfort' ), // default: "File:"
   					'file_download_text' => __( 'Download', 'maqfort' ), // default: "Download"
-  					'remove_text' => __( 'Remover', 'maqfort' ) // default: "Remove"
+  					'remove_text' => __( 'Remove', 'maqfort' ) // default: "Remove"
   			),
   	) );
 
   	// Product Catalog link/file
   	$cmb->add_field( array(
-  	    'name'    => __( 'Catálogo do Produto', 'maqfort' ),
-  	    'desc'    => __( 'Faça upload de uma imagem/pdf ou insira uma URL.', 'maqfort' ),
+  	    'name'    => __( 'Product Catalog', 'maqfort' ),
+  	    'desc'    => __( 'Upload the pdf file or insert the URL.', 'maqfort' ),
   	    'id'      => $prefix  .'catalog',
   	    'type'    => 'file',
   	    // Optional:
@@ -77,7 +77,7 @@ if ( ! function_exists('maqfort_products') ) {
   	        'url' => true, // Hide the text input for the url
   	    ),
   	    'text'    => array(
-  	        'add_upload_file_text' => 'Adicionar Ficheiro' // Change upload button text. Default: "Add or Upload File"
+  	        'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
   	    ),
   	    // query_args are passed to wp.media's library query.
   	    'query_args' => array(
@@ -87,8 +87,8 @@ if ( ! function_exists('maqfort_products') ) {
 
     // Contact form shortcode
     $cmb->add_field( array(
-      'name' => __( 'Shortcode para o Formuláro de Orçamento', 'maqfort' ),
-      'desc' => __( 'Insira aqui o shortcode do formulário para pedidos de orçamentos', 'maqfort' ),
+      'name' => __( 'Contact Form Shortcode', 'maqfort' ),
+      'desc' => __( 'Insert here the shortcode of the disere contact form.', 'maqfort' ),
       'default' => '',
       'id' => $prefix . 'quote_url',
       'type' => 'text'
@@ -98,12 +98,12 @@ if ( ! function_exists('maqfort_products') ) {
     $group_field_id = $cmb->add_field( array(
     	'id'          => $prefix . 'video_galerie',
     	'type'        => 'group',
-    	'description' => __( 'Galeria de videos do Produto', 'maqfort' ),
+    	'description' => __( 'Product Video Gallery', 'maqfort' ),
     	// 'repeatable'  => false, // use false if you want non-repeatable group
     	'options'     => array(
     		'group_title'   => __( 'Video {#}', 'maqfort' ), // since version 1.1.4, {#} gets replaced by row number
-    		'add_button'    => __( 'Adicionar Video', 'maqfort' ),
-    		'remove_button' => __( 'Remover Video', 'maqfort' ),
+    		'add_button'    => __( 'Add Video', 'maqfort' ),
+    		'remove_button' => __( 'Remove Video', 'maqfort' ),
     		'sortable'      => true, // beta
     		 'closed'     => true, // true to have the groups closed by default
     	),
@@ -120,7 +120,7 @@ if ( ! function_exists('maqfort_products') ) {
 
     $cmb->add_group_field( $group_field_id, array(
         'name' => __( 'Video Thumbnail', 'maqfort' ),
-        'description' => __( 'Insira aqui o thumbnail do video.', 'maqfort' ),
+        'description' => __( 'Insert here the video thumbnail.', 'maqfort' ),
         'id'   => $prefix . 'image',
         'type' => 'file',
     ) );
@@ -130,43 +130,55 @@ if ( ! function_exists('maqfort_products') ) {
 
 }
 
-
-
 /*
 * -----------------------------------------------------------
 * 4.0 Creat metabox for related posts/products.
 * -----------------------------------------------------------
 */
-
 if ( ! function_exists('maqfort_related_posts') ) {
 
   function maqfort_related_posts() {
 
-  	$prefix = '_maqfort_related_posts_';
+    $prefix = '_maqfort_related_posts_';
 
-  	$cmb = new_cmb2_box( array(
-  		'id'           => $prefix . 'search_post',
-  		'title'        => __( 'Related Content', 'maqfort' ),
-  		'object_types' => array( 'products' ), // Post type
-  		'context'      => 'normal',
-  		'priority'     => 'high',
-  		'show_names'   => true, // Show field names on the left
-  	) );
+    $cmb = new_cmb2_box( array(
+    'id'           => $prefix . 'search_post',
+    'title'        => __( 'Related Content', 'maqfort' ),
+    'object_types' => array( 'products' ), // Post type
+    'context'      => 'normal',
+    'priority'     => 'high',
+    'show_names'   => true, // Show field names on the left
+    ) );
 
-  	$cmb->add_field( array(
-  		'name'      	=> __( 'Related Products', 'maqfort' ),
-  		'id'        	=> $prefix . 'search_products',
-  		'type'      	=> 'post_search_ajax',
-  		'desc'			=> __( '(Procure posts/produtos relacionados.)', 'maqfort' ),
-  		// Optional :
-  		'limit'      	=> 3, 		// Limit selection to X items only (default 1)
-  		'sortable' 	 	=> true, 	// Allow selected items to be sortable (default false)
-  		'query_args'	=> array(
-  			'post_type'			=> array( 'products' ),
-  			'post_status'		=> array( 'publish' ),
-  			'posts_per_page'	=> -1
-  		)
-  	) );
+    $cmb->add_field( array(
+    'name'      	=> __( 'Related Products', 'maqfort' ),
+    'id'        	=> $prefix . 'search_products',
+    'type'      	=> 'post_search_ajax',
+    'desc'			=> __( '(Search for related products)', 'maqfort' ),
+    // Optional :
+    'limit'      	=> 3, 		// Limit selection to X items only (default 1)
+    'sortable' 	 	=> true, 	// Allow selected items to be sortable (default false)
+    'query_args'	=> array(
+    	'post_type'			=> array( 'products' ),
+    	'post_status'		=> array( 'publish' ),
+    	'posts_per_page'	=> -1
+    )
+    ) );
+
+    $cmb->add_field( array(
+    'name'      	=> __( 'Related Posts', 'maqfort' ),
+    'id'        	=> $prefix . 'search_posts',
+    'type'      	=> 'post_search_ajax',
+    'desc'			=> __( '(Search for related posts)', 'maqfort' ),
+    // Optional :
+    'limit'      	=> 3, 		// Limit selection to X items only (default 1)
+    'sortable' 	 	=> true, 	// Allow selected items to be sortable (default false)
+    'query_args'	=> array(
+      'post_type'			=> array( 'posts' ),
+      'post_status'		=> array( 'publish' ),
+      'posts_per_page'	=> -1
+    )
+    ) );
 
   }
 
@@ -332,14 +344,6 @@ if ( ! function_exists('maqfort_homepage_services') ) {
         'description' => __( 'Insert here the service title.', 'maqfort' ),
         'id'   => $prefix . 'title',
         'type' => 'text',
-    ) );
-
-
-    $cmb->add_group_field( $group_field_id, array(
-        'name' => __( 'Service description', 'maqfort' ),
-        'description' => __( 'Insert here the service description.', 'maqfort' ),
-        'id'   => $prefix . 'description',
-        'type' => 'textarea',
     ) );
 
 

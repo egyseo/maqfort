@@ -9,13 +9,10 @@
 
         foreach ( (array)$service_itens as $key => $service ) {
 
-          $service_title = $service_description = $service_url = $service_image = '';
+          $service_title = $service_url = $service_image = '';
 
           if ( isset( $service[ '_maqfort_homepage_title' ] ) )
             $service_title = esc_html( $service[ '_maqfort_homepage_title' ] );
-
-          if ( isset( $service[ '_maqfort_homepage_description' ] ) )
-            $service_description = esc_html( $service[  '_maqfort_homepage_description' ] );
 
           if ( isset( $service[ '_maqfort_homepage_url' ] ) )
             $service_url = esc_html( $service[  '_maqfort_homepage_url' ] );
@@ -25,7 +22,7 @@
 
           if ( !empty( array( $service_title ) ) ) {
 
-            echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><a href="' . $service_url . '" target="_self"><div class="service-box">' . '<img src="'. $service_image . '"><h2 class="service-title">' . $service_title . '</h2><p>' . $service_description . '</p></div></a></div>';
+            echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><div class="service-bg"style="background-color:#525254;background-image:url(' . $service_image . '); background-position:center background-repeat:no-repeat; background-size:cover;"><a href="' . $service_url . '" target="_self"><div class="service-box">' . '<h2 class="service-title">' . $service_title . '</h2></div></a></div></div>';
 
           }
 

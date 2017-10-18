@@ -2,7 +2,7 @@
 // WP_Query arguments
 $args = array(
 	'post_type'              => array( 'products' ),
-  'posts_per_page' => 200,
+  'posts_per_page' => 6,
   'ignore_sticky_posts' => true,
 );
 
@@ -19,22 +19,16 @@ if ( $products_query->have_posts() ) : ?>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="flex-products">
-            <ul class="slides">
-              <?php
-              while ( $products_query->have_posts() ) : $products_query->the_post();
-                if( get_post_meta( get_the_ID(), '_maqfort_products_frontpage_checkbox', 1 ) ):
-                  do_action('maqfort_products_onfront');
-                endif;
-              endwhile;
+        <?php
+        while ( $products_query->have_posts() ) : $products_query->the_post();
+          if( get_post_meta( get_the_ID(), '_maqfort_products_frontpage_checkbox', 1 ) ):
+            do_action('maqfort_products_onfront');
+          endif;
+        endwhile;
 
-              endif; ?>
+        endif; ?>
 
-              <?php wp_reset_postdata(); ?>
-            </ul>
-          </div>
-        </div>
+        <?php wp_reset_postdata(); ?>
       </div>
     </div>
   </section>
