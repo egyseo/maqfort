@@ -33,7 +33,7 @@ if ( ! function_exists('maqfort_products') ) {
   	 */
   	$cmb = new_cmb2_box( array(
   			'id'            => 'product_details',
-  			'title'         => __( 'Detalhes do Produto', 'maqfort' ),
+  			'title'         => __( 'Product Details', 'maqfort' ),
   			'object_types'  => array( 'products', ), // Post type
   			'context'       => 'normal',
   			'priority'      => 'high',
@@ -42,10 +42,10 @@ if ( ! function_exists('maqfort_products') ) {
   			// 'closed'     => true, // Keep the metabox closed by default
   	) );
 
-  	// Product Galleries
+  	// Product Images
   	$cmb->add_field( array(
-  			'name' => __( 'Produt images gallery', 'maqfort' ),
-  			'desc' => __( 'Insert here the images of the product', 'maqfort' ),
+  			'name' => __( 'Product Images ', 'maqfort' ),
+  			'desc' => __( 'Insert here the images of the product.', 'maqfort' ),
   			'id'   => $prefix . 'gallerie',
   			'type' => 'file_list',
   			// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
@@ -58,6 +58,23 @@ if ( ! function_exists('maqfort_products') ) {
   					'remove_text' => __( 'Remove', 'maqfort' ) // default: "Remove"
   			),
   	) );
+
+    // Product Pieces Images
+    $cmb->add_field( array(
+        'name' => __( 'Product Pieces Image', 'maqfort' ),
+        'desc' => __( 'Insert here the images of the product piece', 'maqfort' ),
+        'id'   => $prefix . 'carousel',
+        'type' => 'file_list',
+        // 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+        // Optional, override default text strings
+        'text' => array(
+            'add_upload_files_text' => __( 'Add Image', 'maqfort' ), // default: "Add or Upload Files"
+            'remove_image_text' => __( 'Remove Image', 'maqfort' ), // default: "Remove Image"
+            'file_text' => __( 'Files', 'maqfort' ), // default: "File:"
+            'file_download_text' => __( 'Download', 'maqfort' ), // default: "Download"
+            'remove_text' => __( 'Remove', 'maqfort' ) // default: "Remove"
+        ),
+    ) );
 
   	// Product Catalog link/file
   	$cmb->add_field( array(

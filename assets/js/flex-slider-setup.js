@@ -9,20 +9,16 @@
     // The slider being synced must be initialized first
     $('#product-carousel-galerie').flexslider({
       animation: "slide",
-      controlNav: false,
-      animationLoop: false,
       slideshow: false,
       itemWidth: 100,
       itemMargin: 5,
-      minItems: 1,
       maxItems: 5,
-      asNavFor: '#product-featured-imgs'
+      prevText: "",
+      nextText: ""
     });
 
     $('#product-featured-imgs').flexslider({
       animation: "slide",
-      controlNav: false,
-      animationLoop: true,
       slideshow: true,
       keyboard: false,
       prevText: "",

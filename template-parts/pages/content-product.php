@@ -12,12 +12,8 @@
                     if ( $ft_images ) {
                       foreach ( $ft_images as $attachment_id => $img_full_url ) {
                        $full = wp_get_attachment_image($attachment_id, 'full');
-                       $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
-                       $url = wp_get_attachment_url( $attachment_id );
                          echo '<li>';
-                         echo '<a href="' . $url . '" data-fancybox="group"  data-caption="'. $alt .'" >';
                          echo $full;
-                         echo '</a>';
                          echo '</li>';
                       }
                     }
@@ -26,13 +22,17 @@
             </div><!-- featured img products slider ends -->
             <div id="product-carousel-galerie" class="flexslider">
               <ul class="slides">
-                <?php $carousel_images = get_post_meta(  get_the_ID(), '_maqfort_products_gallerie', true);
+                <?php $carousel_images = get_post_meta(  get_the_ID(), '_maqfort_products_carousel', true);
                   if ( $carousel_images ) {
                     foreach ( $carousel_images as $attachment_id => $img_full_url ) {
                      $full = wp_get_attachment_image($attachment_id, 'full');
-                      echo '<li>';
-                      echo $full;
-                      echo '</li>';
+                     $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+                     $url = wp_get_attachment_url( $attachment_id );
+                       echo '<li>';
+                       echo '<a href="' . $url . '" data-fancybox="group"  data-caption="'. $alt .'" >';
+                       echo $full;
+                       echo '</a>';
+                       echo '</li>';
                     }
                   } ?>
               </ul>
