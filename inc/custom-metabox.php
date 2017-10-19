@@ -42,13 +42,6 @@ if ( ! function_exists('maqfort_products') ) {
   			// 'closed'     => true, // Keep the metabox closed by default
   	) );
 
-    $cmb->add_field( array(
-    	'name' => __( 'Show on front page?', 'maqfort' ),
-    	'desc' => __( 'check the box if you want to show posts on the fronpage of the site.', 'maqfort' ),
-    	'id'   => $prefix . 'frontpage_checkbox',
-    	'type' => 'checkbox',
-    ) );
-
   	// Product Galleries
   	$cmb->add_field( array(
   			'name' => __( 'Produt images gallery', 'maqfort' ),
@@ -300,7 +293,7 @@ if ( ! function_exists('maqfort_contact_form') ) {
 
 /*
 * -----------------------------------------------------------
-* 6 Creat metabox for maqfort srevices on home page.
+* 6.0 Creat metabox for maqfort srevices on home page.
 * -----------------------------------------------------------
 */
 if ( ! function_exists('maqfort_homepage_services') ) {
@@ -364,5 +357,88 @@ if ( ! function_exists('maqfort_homepage_services') ) {
   }
 
   add_action( 'cmb2_init', 'maqfort_homepage_services' );
+
+}
+
+/*
+* -----------------------------------------------------------
+* 7.0 Creat metabox for products on the front page.
+* -----------------------------------------------------------
+*/
+if ( ! function_exists('maqfort_products_list') ) {
+
+  function maqfort_products_list() {
+
+  	$prefix = '_maqfort_products_list_';
+
+    $cmb = new_cmb2_box( array(
+    'id'           => $prefix . 'search_product',
+    'title'        => __( 'Product List', 'maqfort' ),
+    'object_types'  => array( 'page', ), // Post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'page-home.php' ),
+    'context'      => 'normal',
+    'priority'     => 'high',
+    'show_names'   => true, // Show field names on the left
+    ) );
+
+    $cmb->add_field( array(
+    'name'      	=> __( 'Products', 'maqfort' ),
+    'id'        	=> $prefix . 'product',
+    'type'      	=> 'post_search_ajax',
+    'desc'			=> __( '(Search for products)', 'maqfort' ),
+    // Optional :
+    'limit'      	=> 6, 		// Limit selection to X items only (default 1)
+    'sortable' 	 	=> true, 	// Allow selected items to be sortable (default false)
+    'query_args'	=> array(
+    	'post_type'			=> array( 'products' ),
+    	'post_status'		=> array( 'publish' ),
+    	'posts_per_page'	=> -1
+      )
+    ) );
+
+  }
+
+  add_action( 'cmb2_init', 'maqfort_products_list' );
+
+}
+
+/*
+* -----------------------------------------------------------
+* 8.0 Creat metabox for title links on the front page.
+* -----------------------------------------------------------
+*/
+if ( ! function_exists('maqfort_title_links') ) {
+
+  function maqfort_title_links() {
+
+  	$prefix = '_maqfort_titles_';
+
+    $cmb = new_cmb2_box( array(
+    'id'           => $prefix . 'links',
+    'title'        => __( 'Home Page Links', 'maqfort' ),
+    'object_types'  => array( 'page', ), // Post type
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'page-home.php' ),
+    'context'      => 'normal',
+    'priority'     => 'high',
+    'show_names'   => true, // Show field names on the left
+    ) );
+
+    $cmb->add_field(  array(
+        'name' => __( 'Products URL', 'maqfort' ),
+        'description' => __( 'Insert here the url.', 'maqfort' ),
+        'id'   => $prefix . 'products_url',
+        'type' => 'text_url',
+    ) );
+
+    $cmb->add_field(  array(
+        'name' => __( 'New URL', 'maqfort' ),
+        'description' => __( 'Insert here the url.', 'maqfort' ),
+        'id'   => $prefix . 'news_url',
+        'type' => 'text_url',
+    ) );
+
+  }
+
+  add_action( 'cmb2_init', 'maqfort_title_links' );
 
 }

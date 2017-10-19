@@ -16,11 +16,13 @@ $blogquery = new WP_Query( $args );
 
 if ( $blogquery->have_posts() ) : ?>
 
+<?php $title_url = get_post_meta( get_the_ID(), '_maqfort_titles_news_url', true ); ?>
+
   <section id="home-news">
     <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12">
-          <h1 class="section-title"><span><?php _e( 'Notícias', 'maqfort' ); ?></span></h1>
+          <h1 class="section-title"><span><a href="<?php echo $title_url; ?>"><?php _e( 'News', 'maqfort' ); ?></a></span></h1>
         </div>
       </div>
       <div class="row">

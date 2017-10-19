@@ -1,34 +1,46 @@
 <?php
-// WP_Query arguments
-$args = array(
-	'post_type'              => array( 'products' ),
-  'posts_per_page' => 200,
-  'ignore_sticky_posts' => true,
-);
 
-// The Query
-$products_query = new WP_Query( $args );
+global $post;
 
-if ( $products_query->have_posts() ) : ?>
+$products_list = get_post_meta( get_the_ID(), '_maqfort_products_list_product', true );
 
+if( $products_list ) { ?>
+  <?php $title_url = get_post_meta( get_the_ID(), '_maqfort_titles_products_url', true ); ?>
   <section id="home-products">
     <div class="container container-fluid">
       <div class="row">
-        <div class="col-xs-12">
-          <h1 class="section-title"><span><?php _e( 'Products', 'maqfort' ); ?></span></h1>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1 class="section-title"><span><a href="<?php echo $title_url; ?>"><?php _e( 'Products', 'maqfort' ); ?></a></span></h1>
         </div>
       </div>
       <div class="row">
-        <?php
-        while ( $products_query->have_posts() ) : $products_query->the_post();
-          if( get_post_meta( get_the_ID(), '_maqfort_products_frontpage_checkbox', 1 ) ):
-            do_action('maqfort_products_onfront');
-          endif;
-        endwhile;
-
-        endif; ?>
-
-        <?php wp_reset_postdata(); ?>
+        <?php foreach ( $products_list as $post ) : setup_postdata( $GLOBALS['post'] =& $post ); ?>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <article class="product-card">
+              <header class="product-card-header">
+                <?php if ( has_post_thumbnail() ) : ?>
+                  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <figure class="product-card-thumbnail">
+                      <?php the_post_thumbnail('maqfort-thumbnail'); ?>
+                    </figure>
+                  </a>
+                <?php endif; ?>
+              </header>
+              <section class="product-card-content">
+                <h3 class="product-card-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+                <?php the_excerpt(); ?>
+              </section>
+              <footer class="product-card-footer">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </footer>
+            </article><!-- article ends -->
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
+<?php }
+
+wp_reset_postdata();

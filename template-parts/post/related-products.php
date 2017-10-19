@@ -2,20 +2,18 @@
 
 global $post;
 
-  $related_posts = get_post_meta( get_the_ID(), '_maqfort_related_posts_search_products', true );
+$related_posts = get_post_meta( get_the_ID(), '_maqfort_related_posts_search_products', true );
 
-  if( $related_posts ) { ?>
-    <section class="related-products">
-      <div class="container container-fluid">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h1 class="section-title"><span><?php _e( 'Related Posts', 'maqfort' ); ?></span></h1>
-          </div>
+if( $related_posts ) { ?>
+  <section class="related-products">
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1 class="section-title"><span><?php _e( 'Related Posts', 'maqfort' ); ?></span></h1>
         </div>
-        <div class="row">
-          <?php
-            foreach ( $related_posts as $post ) : setup_postdata( $GLOBALS['post'] =& $post );
-          ?>
+      </div>
+      <div class="row">
+        <?php foreach ( $related_posts as $post ) : setup_postdata( $GLOBALS['post'] =& $post ); ?>
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <article class="product-card">
               <header class="product-card-header">
@@ -42,11 +40,12 @@ global $post;
                   <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
               </footer>
-            </article><!-- article ends -->
-          </div><!-- card wrapper ends -->
-          <?php endforeach; } ?>
-        </div><!-- row ends -->
-      </div><!-- container ends -->
-  </section><!-- recommended section ends -->
+            </article>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+<?php }
 
-  <?php wp_reset_postdata();
+wp_reset_postdata();
