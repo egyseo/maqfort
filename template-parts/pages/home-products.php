@@ -14,8 +14,11 @@ if( $products_list ) { ?>
         </div>
       </div>
       <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="flex-products">
+            <ul class="slides">
         <?php foreach ( $products_list as $post ) : setup_postdata( $GLOBALS['post'] =& $post ); ?>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <li>
             <article class="product-card">
               <header class="product-card-header">
                 <?php if ( has_post_thumbnail() ) : ?>
@@ -36,8 +39,11 @@ if( $products_list ) { ?>
                 </a>
               </footer>
             </article><!-- article ends -->
-          </div>
+          </li>
         <?php endforeach; ?>
+        </ul>
+      </div>
+      </div>
       </div>
     </div>
   </section>
