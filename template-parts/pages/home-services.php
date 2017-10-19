@@ -22,7 +22,7 @@
 
           if ( !empty( array( $service_title ) ) ) {
 
-            echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><div class="service-bg"style="background-color:#525254;background-image:url(' . $service_image . '); background-position:center background-repeat:no-repeat; background-size:cover;"><a href="' . $service_url . '" target="_self"><div class="service-box">' . '<h2 class="service-title">' . $service_title . '</h2></div></a></div></div>';
+            echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><div class="service-bg"style="background-image:url(' . $service_image . '); background-position:center background-repeat:no-repeat; background-size:cover;"><a href="' . $service_url . '" target="_self"><div class="service-box">' . '<h2 class="service-title">' . $service_title . '</h2></div></a></div></div>';
 
           }
 
