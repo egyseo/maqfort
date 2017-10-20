@@ -12,8 +12,12 @@
                     if ( $ft_images ) {
                       foreach ( $ft_images as $attachment_id => $img_full_url ) {
                        $full = wp_get_attachment_image($attachment_id, 'full');
+                       $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+                       $url = wp_get_attachment_url( $attachment_id );
                          echo '<li>';
+                         echo '<a href="' . $url . '" data-fancybox="group"  data-caption="'. $alt .'" >';
                          echo $full;
+                         echo '</a>';
                          echo '</li>';
                       }
                     }
@@ -93,4 +97,5 @@
     </div>
   </section>
   <?php get_template_part( 'template-parts/post/related', 'products' ); ?>
+  <?php get_template_part( 'template-parts/post/related', 'news' ); ?>
 </article>
