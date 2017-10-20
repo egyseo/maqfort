@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Service Template
- * The theme template for service pages.
+ * Template Name: Siblings Pages
+ * The theme template for pages with siblings.
  *
  * @package AMOB
  * @since AMOB Theme 1.0
@@ -11,7 +11,7 @@
 
   while ( have_posts() ) : the_post();
 
-    get_template_part( 'template-parts/pages/content', 'service' );
+    get_template_part( 'template-parts/pages/siblings', 'page' );
 
   endwhile; // End of the loop.
 
