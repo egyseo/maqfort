@@ -33,20 +33,24 @@
     .flex-nav-prev
       .flex-prev
         padding: 9px 14px
-        background-color: $blue-grey
+        background-color: transparentize($blue-grey, .4)
         &::before
           font-size: 16px
           color: $white-text-ongrey
           text-shadow: none
+        &:hover
+          background-color: $blue-grey
     .flex-nav-next
       .flex-next
         left: 45px
         padding: 9px 14px
-        background-color: $blue-grey
+        background-color: transparentize($blue-grey, .4)
         &::before
           font-size: 16px
           color: $white-text-ongrey
           text-shadow: none
+        &:hover
+          background-color: $blue-grey
 
 .product-buttons
   margin-bottom: 40px

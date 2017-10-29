@@ -10,11 +10,11 @@ if ( ! function_exists( 'maqfort_social_icons' ) ) {
   function maqfort_social_icons() { ?>
 
     <div class="social-icons">
-      <a href="https://www.linkedin.com/company-beta/1986845/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      <a href="https://www.youtube.com/user/maqfortSA" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-      <a href="https://www.facebook.com/WWW.maqfort.PT/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href="https://twitter.com/maqfort_SA" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href="https://plus.google.com/u/0/108259241911936398026" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/company/11062619/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://www.youtube.com/channel/UCGm3A-0jxzlwbbnb45YuB-Q" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/maqfortportugal/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <!-- <a href="https://twitter.com/maqfort_SA" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
+      <a href="https://plus.google.com/106255417800774888840" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
     </div><!-- social icons ends -->
 
   <?php }
@@ -120,7 +120,7 @@ if ( ! function_exists( 'maqfort_post_meta' ) ) {
 	function maqfort_post_meta() {
     if( has_tag() ) { ?>
       <div class="meta-tags">
-        <ul>
+        <ul temprop="keywords">
           <li class="tag-icon"><i class="fa fa-tag" aria-hidden="true"></i></li>
           <?php
             $tag_list = get_the_tag_list( ' ', ', ' );

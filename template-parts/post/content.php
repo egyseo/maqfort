@@ -1,17 +1,17 @@
-<article id="post-<?php the_ID(); ?> post-content" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?> post-content" <?php post_class(); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 	<header class="article-header">
     <div class="container container-fluid">
       <div class="row bottom-xs bottom-sm bottom-md bottom-lg">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="article-header-box-top">
-            <?php the_title( '<h1 class="article-title">', '</h1>' ); ?>
+            <?php the_title( '<h1 class="article-title" rel="bookmark" itemprop="headline">', '</h1>' ); ?>
           </div>
         </div>
       </div>
     </div>
 	</header>
 
-	<section class="article-content">
+	<section class="article-content" itemprop="articleBody">
     <div class="container container-fluid">
       <div class="row top-xs top-sm top-md top-lg">
         <div class="col-xs-12">

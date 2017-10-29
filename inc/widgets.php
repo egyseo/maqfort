@@ -194,9 +194,6 @@ class MAQFORT_Social_Widget extends WP_Widget {
       <?php if ( ! empty( $instance['facebook'] ) ) { ?>
         <li><a href="<?php echo $instance['facebook']; ?>" target="_blank" class="facebook-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><?php } ?>
 
-      <?php if ( ! empty( $instance['twitter'] ) ) { ?>
-        <li><a href="<?php echo $instance['twitter']; ?>" target="_blank" class="twitter-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><?php } ?>
-
       <?php if ( ! empty( $instance['google'] ) ) { ?>
         <li><a href="<?php echo $instance['google']; ?>" target="_blank" class="google-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li><?php } ?>
 		</ul>
@@ -234,11 +231,6 @@ class MAQFORT_Social_Widget extends WP_Widget {
       <label for="<?php echo esc_attr( $this->get_field_id( 'facebook' ) ); ?>"><?php esc_attr_e( 'Facebook URL:', 'maqfort' ); ?></label>
       <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'facebook' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'facebook' ) ); ?>" type="text" value="<?php echo esc_attr( $facebook ); ?>">
     </p>
-    <?php $twitter = ! empty( $instance['twitter'] ) ? $instance['twitter'] : esc_html__( 'Twitter URL', 'maqfort' ); ?>
-    <p>
-      <label for="<?php echo esc_attr( $this->get_field_id( 'twitter' ) ); ?>"><?php esc_attr_e( 'Twitter URL:', 'maqfort' ); ?></label>
-      <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'twitter' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twitter' ) ); ?>" type="text" value="<?php echo esc_attr( $twitter ); ?>">
-    </p>
     <?php $google = ! empty( $instance['google'] ) ? $instance['google'] : esc_html__( 'Google URL', 'maqfort' ); ?>
     <p>
       <label for="<?php echo esc_attr( $this->get_field_id( 'google' ) ); ?>"><?php esc_attr_e( 'Google URL:', 'maqfort' ); ?></label>
@@ -268,7 +260,6 @@ class MAQFORT_Social_Widget extends WP_Widget {
 		$instance['linkedin'] = ( ! empty( $new_instance['linkedin'] ) ) ? strip_tags( $new_instance['linkedin'] ) : '';
 		$instance['youtube'] = ( ! empty( $new_instance['youtube'] ) ) ? strip_tags( $new_instance['youtube'] ) : '';
 		$instance['facebook'] = ( ! empty( $new_instance['facebook'] ) ) ? strip_tags( $new_instance['facebook'] ) : '';
-		$instance['twitter'] = ( ! empty( $new_instance['twitter'] ) ) ? strip_tags( $new_instance['twitter'] ) : '';
 		$instance['google'] = ( ! empty( $new_instance['google'] ) ) ? strip_tags( $new_instance['google'] ) : '';
 
 		return $instance;
