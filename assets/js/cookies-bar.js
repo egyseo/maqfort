@@ -34,7 +34,7 @@
   $(document).ready(function() {
     if( !(euReadCookie("euCookiesAcc")) ){
       console.log("cookie not set");
-      $("#eu-cookie-bar").animate( { bottom: "0", opacity: 1 }, 600, function(){});
+      $("#eu-cookie-bar").animate( { bottom: "0", opacity: 1, display: "block" }, 600, function(){});
     }
   });
 
