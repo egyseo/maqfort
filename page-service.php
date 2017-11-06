@@ -2,10 +2,6 @@
 /**
  * Template Name: Service Template
  * The theme template for service pages.
- *
- * @package AMOB
- * @since AMOB Theme 1.0
- *
  */
   get_header();
 

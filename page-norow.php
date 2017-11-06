@@ -2,10 +2,6 @@
 /**
  * Template Name: Page with no rows and columns
  * The theme page template.
- *
- * @package AMOB
- * @since AMOB Theme 1.0
- *
  */
 get_header();
 

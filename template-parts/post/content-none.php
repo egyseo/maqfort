@@ -9,17 +9,17 @@
           <?php
             if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-              <p><?php printf( wp_kses( __( 'Preparado para criar  a sua primeira publicação? <a href="%1$s">Comece aqui</a>.', 'maqfort' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+              <p><?php printf( wp_kses( __( 'Ready to write your first post? <a href="%1$s">Start here</a>.', 'maqfort' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
             <?php elseif ( is_search() ) : ?>
 
-              <p><?php esc_html_e( 'Desculpe, não encontramos nada com os seus termos de pesquisa. Por favor tente de novo com novos termos', 'maqfort' ); ?></p>
+              <p><?php esc_html_e( 'Sorry,  but we cant find anything with your search terms. Please try again with new terms.', 'maqfort' ); ?></p>
               <?php
                 get_search_form();
 
             else : ?>
 
-              <p><?php esc_html_e( 'Parece que não conseguimos encontrar o que procura. Talvez pesquisar ajude.', 'maqfort' ); ?></p>
+              <p><?php esc_html_e( 'We cant find what you are looking for, prehaps search can help you.', 'maqfort' ); ?></p>
               <?php
                 get_search_form();
 

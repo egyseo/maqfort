@@ -2,10 +2,6 @@
 /**
  * Template Name: About Template
  * The theme about page template.
- *
- * @package AMOB
- * @since AMOB Theme 1.0
- *
  */
 get_header();
 

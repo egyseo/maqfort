@@ -36,12 +36,6 @@ function disable_default_dashboard_widgets() {
 	unset($wp_meta_boxes['dashboard']['normal']['core']['rg_forms_dashboard']);        // Gravity Forms Plugin Widget
 	unset($wp_meta_boxes['dashboard']['normal']['core']['bbp-dashboard-right-now']);   // bbPress Plugin Widget
 
-	/*
-	have more plugin widgets you'd like to remove?
-	share them with us so we can get a list of
-	the most commonly used. :D
-	https://github.com/eddiemachado/amob/issues
-	*/
 }
 
 /*
@@ -59,7 +53,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 // removing the dashboard widgets
 add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
 // adding any custom widgets
-//add_action( 'wp_dashboard_setup', 'amob_custom_dashboard_widgets' );
+//add_action( 'wp_dashboard_setup', 'maqfort_custom_dashboard_widgets' );
 
 
 /************* CUSTOM LOGIN PAGE *****************/

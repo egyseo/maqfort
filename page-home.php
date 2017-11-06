@@ -2,10 +2,6 @@
 /**
  * Template Name: Home Page
  * The theme page template.
- *
- * @package AMOB
- * @since AMOB Theme 1.0
- *
  */
 get_header();
 

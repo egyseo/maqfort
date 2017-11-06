@@ -43,7 +43,7 @@ class MAQFORT_Contacts_Widget extends WP_Widget {
 
 			<?php if ( ! empty( $instance['phone'] ) ) { ?>
 				<li class="contacts-row"><div class="icon-box"><i class="fa fa-phone" aria-hidden="true"></i></div><div class="contact-block"><p><span><?php _e( 'Phone', 'maqfort' ); ?></span> <?php echo $instance['phone']; ?></p> <?php } ?>
-					<p><?php if ( ! empty( $instance['fax'] ) ) { ?><span> <?php _e( 'Fax', 'amob' ); ?></span> <?php echo $instance['fax']; ?> </p>
+					<p><?php if ( ! empty( $instance['fax'] ) ) { ?><span> <?php _e( 'Fax', 'maqfort' ); ?></span> <?php echo $instance['fax']; ?> </p>
 				</div><!-- phone ends --> </li> <?php } ?>
 
 			<?php if ( ! empty( $instance['email'] ) ) { ?>

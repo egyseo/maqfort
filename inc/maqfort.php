@@ -142,7 +142,7 @@ if ( ! function_exists( 'rw_title' ) ) {
 
     // Add a page number if necessary.
     if ( $paged >= 2 || $page >= 2 ) {
-      $title .= " {$sep} " . sprintf( __( 'Página %s', 'amob' ), max( $paged, $page ) );
+      $title .= " {$sep} " . sprintf( __( 'Page %s', 'maqfort' ), max( $paged, $page ) );
     }
 
     return $title;

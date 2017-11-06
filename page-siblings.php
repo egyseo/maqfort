@@ -2,10 +2,6 @@
 /**
  * Template Name: Siblings Pages
  * The theme template for pages with siblings.
- *
- * @package AMOB
- * @since AMOB Theme 1.0
- *
  */
   get_header();
 
