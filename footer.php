@@ -23,7 +23,7 @@
             </div>
           </section>
         </footer>
-        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+        <a href="javascript:" id="return-to-top" rel="nofollow"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
         <?php wp_footer(); ?>
       </div><!-- site-container ends -->
     </div><!-- site-wrapper ends -->

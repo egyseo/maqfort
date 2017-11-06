@@ -29,7 +29,9 @@
 
 		<?php wp_head(); ?>
 	</head>
- 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+ 	<body <?php body_class(); ?> <?php maqfort_html_tag_schema(); ?> >
+
+    <?php get_template_part( 'template-parts/cookies', 'bar' ); ?>
 
     <div id="site-wrapper">
       <div id="site-container">

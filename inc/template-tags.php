@@ -120,7 +120,7 @@ if ( ! function_exists( 'maqfort_post_meta' ) ) {
 	function maqfort_post_meta() {
     if( has_tag() ) { ?>
       <div class="meta-tags">
-        <ul temprop="keywords">
+        <ul itemprop="keywords">
           <li class="tag-icon"><i class="fa fa-tag" aria-hidden="true"></i></li>
           <?php
             $tag_list = get_the_tag_list( ' ', ', ' );

@@ -1,0 +1,53 @@
+//Change the login page
+
+//Color variables
+
+$primary: #ed1d24
+$secondary: darken($primary, 15%)
+$darker: #242424
+
+body
+  background-color: #ededed
+
+#login
+  h1
+    a
+      width: 230px
+      height: 40px
+      background-size: 230px 40px
+      &:focus
+        box-shadow: none
+
+  form
+    padding: 30px
+    label
+      color: $darker
+      font-weight: 600
+    .input
+      border: none
+      box-shadow: none
+      background-color: white
+      border-bottom: 2px solid $secondary
+      font-weight: normal
+      color: $secondary
+    input[type="submit"]
+      background-color: $darker
+      border: none
+      border-radius: 0px
+      box-shadow: none
+      text-shadow: none
+      font-weight: 600
+      padding: 0 20px
+      line-height: 0px
+      height: 40px
+      &:hover
+        background: $secondary
+  #backtoblog, #nav
+    text-align: center
+    a
+      color: $darker
+      font-weight: 600
+
+  input:-webkit-autofill
+    -webkit-box-shadow: 0 0 0 30px white inset
+    -webkit-text-fill-color: $secondary !important

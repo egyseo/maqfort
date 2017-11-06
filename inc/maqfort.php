@@ -249,3 +249,47 @@ if ( ! function_exists( 'maqfort_hide_editor' ) ) {
   add_action( 'init', 'maqfort_hide_editor' );
 
 }
+
+/* -----------------------------------------------------------------------------
+ * 12.0 HTML Tag Schema
+ * -------------------------------------------------------------------------- */
+if ( ! function_exists( 'maqfort_html_tag_schema' ) ) {
+
+	function maqfort_html_tag_schema() {
+
+		$schema = 'http://schema.org/';
+
+    // Is products post type
+    if ( is_singular('products') ) {
+      $type = 'Product';
+    }
+
+    // Is service page
+    elseif ( is_page_template('page-service.php') ) {
+      $type = 'Service';
+    }
+
+		// Is single post
+		elseif( is_single() ) {
+			$type = "Article";
+		}
+
+		// Is author page
+		elseif( is_author() ) {
+			$type = 'ProfilePage';
+		}
+
+		// Is search results page
+		elseif( is_search() ) {
+			$type = 'SearchResultsPage';
+		}
+
+		else {
+			$type = 'WebPage';
+		}
+
+		echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
+
+	}
+
+}
