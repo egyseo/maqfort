@@ -62,7 +62,7 @@ function maqfort_products_cpt() {
 		'has_archive'           => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'rewrite'               => $permalinks['product_rewrite_slug'] ? array( 'slug' => $permalinks['product_rewrite_slug'], 'with_front' => false, 'feeds' => true ) : false,
+		'rewrite'               => array( 'slug' => 'products', 'with_front' => false ),
 		'capability_type'       => 'post',
 		'show_in_rest'          => false,
 	);
