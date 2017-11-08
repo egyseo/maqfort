@@ -46,8 +46,8 @@ function maqfort_products_cpt() {
 	);
 
 	$args = array(
-		'label'                 => __( 'Produtos', 'maqfort' ),
-		'description'           => __( 'Products Cataloguw', 'maqfort' ),
+		'label'                 => __( 'Products', 'maqfort' ),
+		'description'           => __( 'Products Catalogue', 'maqfort' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
 		'hierarchical'          => true,
@@ -59,7 +59,7 @@ function maqfort_products_cpt() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,
+		'has_archive'           => 'products',
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'rewrite'               => $permalinks['product_rewrite_slug'] ? array( 'slug' => $permalinks['product_rewrite_slug'], 'with_front' => false, 'feeds' => true ) : false,

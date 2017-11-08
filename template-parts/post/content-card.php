@@ -1,1 +1,1 @@
-<?php do_action( 'maqfort_loop' ); ?>
+<?php do_action( 'maqfort_card_loop' ); ?>
