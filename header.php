@@ -10,19 +10,26 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <?php // force Internet Explorer to use the latest rendering engine available ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php wp_title('-', true, 'right' ); ?></title>
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!--[if IE]>
-    	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-    <![endif]-->
-    <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#ed1d24">
     <meta name="theme-color" content="#ed1d24">
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-144x144.png">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-icon-precomposed.png">
+    <link rel=”icon” href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+    <!--[if IE]>
+      <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+    <![endif]-->
+    <?php // or, set /favicon.ico for IE10 win ?>
 
+    <title><?php wp_title('-', true, 'right' ); ?></title>
 
     <!-- Google Tag Manager -->
       <script>
@@ -54,6 +61,7 @@
     <?php get_template_part( 'template-parts/cookies', 'bar' ); ?>
 
     <div id="site-wrapper">
+
       <div id="site-container">
 
         <?php get_template_part( 'template-parts/header/main', 'header'); ?>
