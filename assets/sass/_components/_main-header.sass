@@ -16,8 +16,13 @@
     text-align: right
 
 .site-branding
-  .logo
+  .custom-logo-link
     display: block
+    .custom-logo
+      margin: 15px 0 10px
+      transition: $main-transition
+      max-width: 250px
+
   .hide-text
     position: absolute
     overflow: hidden
@@ -26,14 +31,6 @@
     margin: -1px
     padding: 0
     border: 0
-  #maqfort-svg
-    margin: 15px 0 10px
-    transition: $main-transition
-    max-width: 250px
-    .st0
-      fill: $primary-color
-    .st1
-      fill: $darker-grey
 
 
 @import "_main-nav"
@@ -43,20 +40,23 @@
 
 .main-header-small
   .site-branding
-    #maqfort-svg
-      margin: 5px 0 0
-      max-width: 200px
+    .custom-logo-link
+      .custom-logo
+        margin: 5px 0 0
+        max-width: 200px
   #main-nav
     li
       line-height: 70px
 
 @media (max-width: 1024px)
   .site-branding
-    #maqfort-svg
-      margin: 15px 0 10px
-      max-width: 170px
+    .custom-logo-link
+      .custom-logo
+        margin: 15px 0 10px
+        max-width: 170px
   .main-header-small
     .site-branding
-      #maqfort-svg
-        margin: 15px 0 10px
-        max-width: 120px
+      .custom-logo-link
+        .custom-logo
+          margin: 15px 0 10px
+          max-width: 120px

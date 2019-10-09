@@ -1,5 +1,4 @@
 <div id="mobile-navigation">
-  <a href="#/" id="close-navigation" class="toggle-nav"><i class="fa fa-times"></i></a>
   <?php if ( has_nav_menu( 'mobile-menu' ) ) { ?>
     <nav id="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
       <?php wp_nav_menu(array(
@@ -25,6 +24,6 @@
     </div>
     <?php
     } else {
-    ?> <p>Please assign some items to your main menu.</p> <?php
+      echo '<p class="no-nav">' , __('Adicione alguns itens ao menu principal.', 'maqfort') , '</p>';
   } ?>
 </div>

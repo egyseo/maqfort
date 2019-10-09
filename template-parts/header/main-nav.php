@@ -16,6 +16,6 @@
       )); ?>
     </nav> <?php
   } else {
-    ?> <p>Please assign some items to your main menu.</p> <?php
+    echo '<p class="no-nav">', __('Adicione alguns itens ao menu principal', 'maqfort') , '</p>';
   } ?>
 </div>
