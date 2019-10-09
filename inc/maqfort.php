@@ -6,9 +6,9 @@
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_head_cleanup' ) ) {
+if ( ! function_exists( 'mf_head_cleanup' ) ) {
 
-  function maqfort_head_cleanup() {
+  function mf_head_cleanup() {
     // category feeds
     // remove_action( 'wp_head', 'feed_links_extra', 3 );
     // post and comment feeds
@@ -32,10 +32,10 @@ if ( ! function_exists( 'maqfort_head_cleanup' ) ) {
     remove_action( 'wp_head', 'wp_generator' );
 
     // Remove WP version from css.
-    add_filter( 'style_loader_src', 'maqfort_remove_wp_ver_css_js', 9999 );
+    add_filter( 'style_loader_src', 'mf_remove_wp_ver_css_js', 9999 );
 
     // Remove Wp version from scripts.
-    add_filter( 'script_loader_src', 'maqfort_remove_wp_ver_css_js', 9999 );
+    add_filter( 'script_loader_src', 'mf_remove_wp_ver_css_js', 9999 );
 
   }
 }
@@ -46,9 +46,9 @@ if ( ! function_exists( 'maqfort_head_cleanup' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_rss_version' ) ) {
+if ( ! function_exists( 'mf_rss_version' ) ) {
 
-  function maqfort_rss_version() { return ''; }
+  function mf_rss_version() { return ''; }
 
 }
 
@@ -58,9 +58,9 @@ if ( ! function_exists( 'maqfort_rss_version' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_remove_wp_ver_css_js' ) ) {
+if ( ! function_exists( 'mf_remove_wp_ver_css_js' ) ) {
 
-  function maqfort_remove_wp_ver_css_js( $src ) {
+  function mf_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
       $src = remove_query_arg( 'ver', $src );
     return $src;
@@ -74,9 +74,9 @@ if ( ! function_exists( 'maqfort_remove_wp_ver_css_js' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_remove_wp_widget_recent_comments_style' ) ) {
+if ( ! function_exists( 'mf_remove_wp_widget_recent_comments_style' ) ) {
 
-  function maqfort_remove_wp_widget_recent_comments_style() {
+  function mf_remove_wp_widget_recent_comments_style() {
     if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
       remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
     }
@@ -89,9 +89,9 @@ if ( ! function_exists( 'maqfort_remove_wp_widget_recent_comments_style' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_remove_recent_comments_style' ) ) {
+if ( ! function_exists( 'mf_remove_recent_comments_style' ) ) {
 
-  function maqfort_remove_recent_comments_style() {
+  function mf_remove_recent_comments_style() {
     global $wp_widget_factory;
     if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
       remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
@@ -105,9 +105,9 @@ if ( ! function_exists( 'maqfort_remove_recent_comments_style' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_gallery_style' ) ) {
+if ( ! function_exists( 'mf_gallery_style' ) ) {
 
-  function maqfort_gallery_style($css) {
+  function mf_gallery_style($css) {
     return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
   }
 }
@@ -156,8 +156,8 @@ if ( ! function_exists( 'rw_title' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_filter_ptags_on_images' ) ) {
-  function maqfort_filter_ptags_on_images($content){
+if ( ! function_exists( 'mf_filter_ptags_on_images' ) ) {
+  function mf_filter_ptags_on_images($content){
     return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
   }
 }
@@ -168,15 +168,15 @@ if ( ! function_exists( 'maqfort_filter_ptags_on_images' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_excerpt_length' ) ) {
+if ( ! function_exists( 'mf_excerpt_length' ) ) {
 
-  function maqfort_excerpt_length( $length ) {
+  function mf_excerpt_length( $length ) {
     return 14;
   }
 
 }
 
-add_filter( 'excerpt_length', 'maqfort_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'mf_excerpt_length', 999 );
 
 /*
  * -----------------------------------------------------------
@@ -214,9 +214,9 @@ add_filter( 'get_the_archive_title', function ( $title ) {
  * 11.0 This removes the annoying […] to a Read More link
  * -----------------------------------------------------------
 */
-if ( ! function_exists( 'maqfort_excerpt_more' ) ) {
+if ( ! function_exists( 'mf_excerpt_more' ) ) {
 
-  function maqfort_excerpt_more($more) {
+  function mf_excerpt_more($more) {
     global $post;
     // edit here if you like
     return '...';
@@ -229,9 +229,9 @@ if ( ! function_exists( 'maqfort_excerpt_more' ) ) {
  * 11.0 Hide editor on certain posts
  * -----------------------------------------------------------
 */
-if ( ! function_exists( 'maqfort_hide_editor' ) ) {
+if ( ! function_exists( 'mf_hide_editor' ) ) {
 
-  function maqfort_hide_editor() {
+  function mf_hide_editor() {
       if ( isset( $_GET['post'] ) ) {
       $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
       if( !isset( $post_id ) ) return;
@@ -246,16 +246,16 @@ if ( ! function_exists( 'maqfort_hide_editor' ) ) {
     }
   }
 
-  add_action( 'init', 'maqfort_hide_editor' );
+  add_action( 'init', 'mf_hide_editor' );
 
 }
 
 /* -----------------------------------------------------------------------------
  * 12.0 HTML Tag Schema
  * -------------------------------------------------------------------------- */
-if ( ! function_exists( 'maqfort_html_tag_schema' ) ) {
+if ( ! function_exists( 'mf_html_tag_schema' ) ) {
 
-	function maqfort_html_tag_schema() {
+	function mf_html_tag_schema() {
 
 		$schema = 'http://schema.org/';
 

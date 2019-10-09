@@ -5,14 +5,14 @@
 * 1.0 Creat contacts widget.
 * -----------------------------------------------------------
 */
-class MAQFORT_Contacts_Widget extends WP_Widget {
+class mf_Contacts_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'maqfort_contacts_widget', // Base ID
+			'mf_contacts_widget', // Base ID
 			esc_html__( 'Contacts', 'maqfort' ), // Name
 			array( 'description' => esc_html__( 'Your contacts', 'maqfort' ), ) // Args
 		);
@@ -141,10 +141,10 @@ class MAQFORT_Contacts_Widget extends WP_Widget {
 * 2.0 Register the contacts widget.
 * -----------------------------------------------------------
 */
-function maqfort_register_widgets() {
-	register_widget( 'MAQFORT_Contacts_Widget' );
+function mf_register_widgets() {
+	register_widget( 'mf_Contacts_Widget' );
 }
-add_action( 'widgets_init', 'maqfort_register_widgets' );
+add_action( 'widgets_init', 'mf_register_widgets' );
 
 
 /*
@@ -152,14 +152,14 @@ add_action( 'widgets_init', 'maqfort_register_widgets' );
 * 4.0 Creat social icons widget.
 * -----------------------------------------------------------
 */
-class MAQFORT_Social_Widget extends WP_Widget {
+class mf_Social_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'maqfort_social_widget', // Base ID
+			'mf_social_widget', // Base ID
 			esc_html__( 'Social Icons', 'maqfort' ), // Name
 			array( 'description' => esc_html__( 'Your Social Urls', 'maqfort' ), ) // Args
 		);
@@ -272,7 +272,7 @@ class MAQFORT_Social_Widget extends WP_Widget {
 * 4.0 Register the widget.
 * -----------------------------------------------------------
 */
-function maqfort_register_social_widgets() {
-	register_widget( 'MAQFORT_Social_Widget' );
+function mf_register_social_widgets() {
+	register_widget( 'mf_Social_Widget' );
 }
-add_action( 'widgets_init', 'maqfort_register_social_widgets' );
+add_action( 'widgets_init', 'mf_register_social_widgets' );

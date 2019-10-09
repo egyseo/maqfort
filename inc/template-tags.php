@@ -5,15 +5,15 @@
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_social_icons' ) ) {
+if ( ! function_exists( 'mf_social_icons' ) ) {
 
-  function maqfort_social_icons() { ?>
+  function mf_social_icons() { ?>
 
     <div class="social-icons">
       <a href="https://www.linkedin.com/company/11062619/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
       <a href="https://www.youtube.com/channel/UCGm3A-0jxzlwbbnb45YuB-Q" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
       <a href="https://www.facebook.com/maqfortportugal/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <!-- <a href="https://twitter.com/maqfort_SA" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
+      <!-- <a href="https://twitter.com/mf_SA" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
       <a href="https://plus.google.com/106255417800774888840" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
     </div><!-- social icons ends -->
 
@@ -27,9 +27,9 @@ if ( ! function_exists( 'maqfort_social_icons' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_pagination' ) ) {
+if ( ! function_exists( 'mf_pagination' ) ) {
 
-  function maqfort_pagination() {
+  function mf_pagination() {
     global $wp_query;
     $bignum = 999999999;
     if ( $wp_query->max_num_pages <= 1 )
@@ -62,9 +62,9 @@ if ( ! function_exists( 'maqfort_pagination' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_sharing_buttons' ) ) {
+if ( ! function_exists( 'mf_sharing_buttons' ) ) {
 
-  function maqfort_sharing_buttons( $content ) {
+  function mf_sharing_buttons( $content ) {
   	global $post;
   	if( is_singular('post') ){
 
@@ -79,7 +79,7 @@ if ( ! function_exists( 'maqfort_sharing_buttons' ) ) {
   		$maqfortThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 
   		// Construct sharing URL without using any script
-  		$twitterURL = 'https://twitter.com/intent/tweet?text='. $maqfortTitle .'&amp;url=' . $maqfortURL . '&amp;via=maqfort_SA';
+  		$twitterURL = 'https://twitter.com/intent/tweet?text='. $maqfortTitle .'&amp;url=' . $maqfortURL . '&amp;via=mf_SA';
   		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u=' . $maqfortURL;
   		$googleURL = 'https://plus.google.com/share?url=' . $maqfortURL;
   		$whatsappURL = 'whatsapp://send?text=' . $maqfortTitle . ' ' . $maqfortURL;
@@ -109,15 +109,15 @@ if ( ! function_exists( 'maqfort_sharing_buttons' ) ) {
 
 }
 
-add_filter("the_content", "maqfort_sharing_buttons");
+add_filter("the_content", "mf_sharing_buttons");
 
 /*
  * -----------------------------------------------------------
  * 9.0 Post meta tags
  * -----------------------------------------------------------
 */
-if ( ! function_exists( 'maqfort_post_meta' ) ) {
-	function maqfort_post_meta() {
+if ( ! function_exists( 'mf_post_meta' ) ) {
+	function mf_post_meta() {
     if( has_tag() ) { ?>
       <div class="meta-tags">
         <ul itemprop="keywords">
@@ -131,5 +131,60 @@ if ( ! function_exists( 'maqfort_post_meta' ) ) {
       </div><!-- meta tags ends -->
     <?php }
 	}
-  add_action( 'maqfort_postmeta', 'maqfort_post_meta' );
+  add_action( 'mf_postmeta', 'mf_post_meta' );
+}
+
+/*----------- Touch Icons -----------*/
+if ( ! function_exists( 'mf_all_touch_icons' ) ) {
+  function mf_all_touch_icons() {
+    $touch_icon_phone = get_theme_mod( 'touch-icon-phone');
+    $touch_icon_ipad = get_theme_mod( 'touch-icon-ipad');
+    $touch_icon_iphone_retina = get_theme_mod( 'touch-icon-iphone-retina');
+    $touch_icon_ipad_retina = get_theme_mod( 'touch-icon-ipad-retina');
+    $touch_icon_ipad_pro = get_theme_mod( 'touch-icon-ipad-pro');
+    $touch_icon_iphone_6_plus = get_theme_mod( 'touch-icon-iphone-6-plus');
+    $android_icon_hd = get_theme_mod( 'android-icon-hd');
+    $android_icon = get_theme_mod( 'android-icon');
+    if ( !empty( $touch_icon_phone ) ) {
+      echo '<link rel="apple-touch-icon" sizes="57x57" href="' , esc_url($touch_icon_phone) , '">';
+    } else {
+      return;
+    }
+    if ( !empty( $touch_icon_ipad ) ) {
+      echo '<link rel="apple-touch-icon" sizes="76x76" href="' , esc_url($touch_icon_ipad) , '">';
+    } else {
+      return;
+    }
+    if ( !empty( $touch_icon_iphone_retina ) ) {
+      echo '<link rel="apple-touch-icon" sizes="120x120" href="' , esc_url($touch_icon_iphone_retina) , '">';
+    } else {
+      return;
+    }
+    if ( !empty( $touch_icon_ipad_retina ) ) {
+      echo '<link rel="apple-touch-icon" sizes="152x152" href="' , esc_url($touch_icon_ipad_retina) , '">';
+    } else {
+      return;
+    }
+    if ( !empty( $touch_icon_ipad_pro ) ) {
+      echo '<link rel="apple-touch-icon" sizes="167x167" href="' , esc_url($touch_icon_ipad_pro) , '">';
+    } else {
+      return;
+    }
+    if ( !empty( $touch_icon_iphone_6_plus ) ) {
+      echo '<link rel="apple-touch-icon" sizes="180x180" href="' , esc_url($touch_icon_iphone_6_plus) , '">';
+    } else {
+      return;
+    }
+    if ( !empty( $android_icon_hd ) ) {
+      echo '<link rel="icon" sizes="192x192" href="' , esc_url($android_icon_hd) , '">';
+    } else {
+      return;
+    }
+    if ( !empty( $android_icon ) ) {
+      echo '<link rel="icon" sizes="128x128" href="' , esc_url($android_icon) , '">';
+    } else {
+      return;
+    }
+  }
+  add_action( 'mf_touch_icons', 'mf_all_touch_icons' );
 }

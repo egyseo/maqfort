@@ -53,7 +53,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 // removing the dashboard widgets
 add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
 // adding any custom widgets
-//add_action( 'wp_dashboard_setup', 'maqfort_custom_dashboard_widgets' );
+//add_action( 'wp_dashboard_setup', 'mf_custom_dashboard_widgets' );
 
 
 /************* CUSTOM LOGIN PAGE *****************/
@@ -62,20 +62,20 @@ add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
 
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
-function maqfort_login_css() {
-	wp_enqueue_style( 'maqfort_login_css', get_template_directory_uri() . '/assets/css/admin-login.css', false );
+function mf_login_css() {
+	wp_enqueue_style( 'mf_login_css', get_template_directory_uri() . '/assets/css/admin-login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
-function maqfort_login_url() {  return home_url(); }
+function mf_login_url() {  return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function maqfort_login_title() { return get_option( 'blogname' ); }
+function mf_login_title() { return get_option( 'blogname' ); }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', 'maqfort_login_css', 10 );
-add_filter( 'login_headerurl', 'maqfort_login_url' );
-add_filter( 'login_headertitle', 'maqfort_login_title' );
+add_action( 'login_enqueue_scripts', 'mf_login_css', 10 );
+add_filter( 'login_headerurl', 'mf_login_url' );
+add_filter( 'login_headertitle', 'mf_login_title' );
 
 
 /************* CUSTOMIZE ADMIN *******************/
@@ -88,23 +88,23 @@ you like.
 */
 
 // Custom Backend Footer
-function maqfort_custom_admin_footer() {
+function mf_custom_admin_footer() {
 	_e( '<span id="footer-thankyou">Developed by <a href="http://crew.pt" target="_blank">Crew</a></span>.', 'maqfort' );
 }
 
 // adding it to the admin area
-add_filter( 'admin_footer_text', 'maqfort_custom_admin_footer' );
+add_filter( 'admin_footer_text', 'mf_custom_admin_footer' );
 
 
 // Change login page logo
-function maqfort_login_logo() {
+function mf_login_logo() {
   echo '<style type="text/css">
     h1 a {
       background-image: url(' . get_template_directory_uri() . '/assets/images/maqfort-logo.svg) !important;
     }
   </style>';
 }
-add_action('login_head', 'maqfort_login_logo');
+add_action('login_head', 'mf_login_logo');
 
 
 //remove WordPress logo from admin bar

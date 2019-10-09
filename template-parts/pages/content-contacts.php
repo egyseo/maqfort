@@ -1,10 +1,10 @@
 <?php
-  $address_prefix = '_maqfort_address_';
+  $address_prefix = '_mf_address_';
   $address_title = get_post_meta( get_the_ID(), $address_prefix . 'title', true );
   $address_address = get_post_meta( get_the_ID(), $address_prefix . 'address', true );
   $address_phone = get_post_meta( get_the_ID(), $address_prefix . 'phone', true );
   $address_email = get_post_meta( get_the_ID(), $address_prefix . 'email', true );
-  $contact_form_prefix = 'maqfort_contact_form_';
+  $contact_form_prefix = 'mf_contact_form_';
   $contact_form_title = get_post_meta( get_the_ID(), $contact_form_prefix . 'title', true );
   $contact_form_desc = get_post_meta( get_the_ID(), $contact_form_prefix . 'description', true );
   $contact_form_shorcode = get_post_meta( get_the_ID(), $contact_form_prefix . 'shortcode', true );

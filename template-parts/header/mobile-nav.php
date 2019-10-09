@@ -20,7 +20,7 @@
     <div class="menu-offcanvas-extras">
       <?php get_search_form(); ?>
       <div class="off-canvas-social">
-        <?php maqfort_social_icons(); ?>
+        <?php mf_social_icons(); ?>
       </div>
     </div>
     <?php

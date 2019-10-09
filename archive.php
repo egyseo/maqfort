@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="container container-fluid">
       <div class="row">
         <?php while ( have_posts() ) : the_post(); ?>
-          <?php do_action( 'maqfort_loop' ); ?>
+          <?php do_action( 'mf_loop' ); ?>
         <?php endwhile; // End of the loop
         else:
           get_template_part( 'template-parts/post/content', 'none' );
@@ -25,7 +25,7 @@ get_header(); ?>
       </div><!-- row ends -->
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-           <?php maqfort_pagination(); ?>
+           <?php mf_pagination(); ?>
         </div>
       </div>
     </div>

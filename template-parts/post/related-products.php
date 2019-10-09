@@ -2,7 +2,7 @@
 
 global $post;
 
-$related_posts = get_post_meta( get_the_ID(), '_maqfort_related_posts_search_products', true );
+$related_posts = get_post_meta( get_the_ID(), '_mf_related_posts_search_products', true );
 
 if( $related_posts ) { ?>
   <section class="related-products">

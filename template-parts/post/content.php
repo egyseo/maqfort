@@ -23,7 +23,7 @@
                 <span class="year"><?php the_time('Y'); ?></span>
               </span>
             </div>
-            <?php do_action( 'maqfort_postmeta' ); ?>
+            <?php do_action( 'mf_postmeta' ); ?>
           </div>
         </div>
       </div>

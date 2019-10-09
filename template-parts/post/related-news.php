@@ -2,7 +2,7 @@
 
 global $post;
 
-$related_posts = get_post_meta( get_the_ID(), '_maqfort_related_posts_search_news', true );
+$related_posts = get_post_meta( get_the_ID(), '_mf_related_posts_search_news', true );
 
 if( $related_posts ) { ?>
   <section class="related-products">
@@ -14,7 +14,7 @@ if( $related_posts ) { ?>
       </div>
       <div class="row">
         <?php foreach ( $related_posts as $post ) : setup_postdata( $GLOBALS['post'] =& $post );
-          do_action( 'maqfort_card_loop' );
+          do_action( 'mf_card_loop' );
         endforeach; ?>
       </div>
     </div>

@@ -26,7 +26,7 @@ if ($categories) {
 
     while( $related_posts->have_posts() ) {
       $related_posts->the_post();
-      do_action( 'maqfort_card_loop' );
+      do_action( 'mf_card_loop' );
     }
     echo '</div></div></section>';
   }

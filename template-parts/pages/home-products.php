@@ -2,15 +2,15 @@
 
 global $post;
 
-$products_list = get_post_meta( get_the_ID(), '_maqfort_products_list_product', true );
+$products_list = get_post_meta( get_the_ID(), '_mf_products_list_product', true );
 
 if( $products_list ) { ?>
-  <?php $title_url = get_post_meta( get_the_ID(), '_maqfort_titles_products_url', true ); ?>
+  <?php $title_url = get_post_type_archive_link( 'produtos' ); ?>
   <section id="home-products">
     <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h1 class="section-title"><span><a href="<?php echo $title_url; ?>"><?php _e( 'Products', 'maqfort' ); ?></a></span></h1>
+          <h2 class="section-title"><span><a href="<?php echo $title_url; ?>"><?php _e( 'Produtos', 'maqfort' ); ?></a></span></h2>
         </div>
       </div>
       <div class="row">

@@ -26,8 +26,8 @@
 
             <div class="service-button">
               <?php
-                $get_quote = get_post_meta(  get_the_ID(), '_maqfort_service_template_quote_url', true);
-                $get_title = get_post_meta(  get_the_ID(), '_maqfort_service_template_title', true);
+                $get_quote = get_post_meta(  get_the_ID(), '_mf_service_template_quote_url', true);
+                $get_title = get_post_meta(  get_the_ID(), '_mf_service_template_title', true);
                 if ( !empty( $get_quote ) ) {
                   echo '<button type="button" name="button" class="button-getquote" href="#contact_form_pop">' . $get_title . '</button>';
                 } ?>
@@ -65,8 +65,8 @@
             ?>
             <div class="service-button">
               <?php
-                $get_quote = get_post_meta(  get_the_ID(), '_maqfort_service_template_quote_url', true);
-                $get_title = get_post_meta(  get_the_ID(), '_maqfort_service_template_title', true);
+                $get_quote = get_post_meta(  get_the_ID(), '_mf_service_template_quote_url', true);
+                $get_title = get_post_meta(  get_the_ID(), '_mf_service_template_title', true);
                 if ( !empty( $get_quote ) ) {
                   echo '<button type="button" name="button" class="button-getquote" href="#contact_form_pop">' . $get_title . '</button>';
                 } ?>

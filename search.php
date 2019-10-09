@@ -21,7 +21,7 @@
           <?php
             while ( have_posts() ) : the_post();
 
-              do_action( 'maqfort_loop' );
+              do_action( 'mf_loop' );
 
             endwhile;
 
@@ -36,7 +36,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-           <?php maqfort_pagination(); ?>
+           <?php mf_pagination(); ?>
         </div>
       </div>
     </div>

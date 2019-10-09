@@ -16,11 +16,11 @@ require_once get_template_directory() . '/inc/template-tags.php';
 
 require_once get_template_directory() . '/inc/loops.php';
 
-require_once get_template_directory() . '/inc/components/CMB2/init.php';
-
 require_once get_template_directory() . '/inc/custom-metabox.php';
 
 require_once get_template_directory() . '/inc/admin.php';
+
+require_once get_template_directory() . '/inc/customizer.php';
 
 /*
  * -----------------------------------------------------------
@@ -28,9 +28,9 @@ require_once get_template_directory() . '/inc/admin.php';
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_setup' ) ) {
+if ( ! function_exists( 'mf_setup' ) ) {
 
-  function maqfort_setup() {
+  function mf_setup() {
 
     // Load theme translations.
     load_theme_textdomain( 'maqfort', get_template_directory() . '/languages' );
@@ -48,7 +48,7 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
 
 
     // Set up the WordPress core custom background feature.
-    add_theme_support( 'custom-background', apply_filters( 'maqfort_custom_background_args', array(
+    add_theme_support( 'custom-background', apply_filters( 'mf_custom_background_args', array(
       'default-color' => 'fff',
       'default-image' => '',
     ) ) );
@@ -62,6 +62,21 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
       'caption',
     ) );
 
+    /**
+    * Add support for core custom logo.
+    *
+    * @link https://codex.wordpress.org/Theme_Logo
+    */
+    add_theme_support(
+      'custom-logo',
+      array(
+        'height'      => 500,
+        'width'       => 250,
+        'flex-width'  => true,
+        'flex-height' => true,
+      )
+    );
+
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
       'main-menu' => esc_html__( 'Main Menu', 'maqfort' ),
@@ -69,32 +84,32 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
     ) );
 
     // Cleaning up random code around images.
-    add_filter( 'the_content', 'maqfort_filter_ptags_on_images' );
+    add_filter( 'the_content', 'mf_filter_ptags_on_images' );
 
     // Cleaning up excerpt.
-    add_filter( 'excerpt_more', 'maqfort_excerpt_more' );
+    add_filter( 'excerpt_more', 'mf_excerpt_more' );
 
     // Clean up gallery output in wp.
-    add_filter( 'gallery_style', 'maqfort_gallery_style' );
+    add_filter( 'gallery_style', 'mf_gallery_style' );
 
     // A better title.
     add_filter( 'wp_title', 'rw_title', 10, 3 );
 
     // Remove WP version from RSS.
-    add_filter( 'the_generator', 'maqfort_rss_version' );
+    add_filter( 'the_generator', 'mf_rss_version' );
 
     // Remove pesky injected css for recent comments widget.
-    add_filter( 'wp_head', 'maqfort_remove_wp_widget_recent_comments_style', 1 );
+    add_filter( 'wp_head', 'mf_remove_wp_widget_recent_comments_style', 1 );
 
     // Launching operation cleanup.
-    add_action( 'init', 'maqfort_head_cleanup' );
+    add_action( 'init', 'mf_head_cleanup' );
 
     // Clean up comment styles in the head.
-    add_action( 'wp_head', 'maqfort_remove_recent_comments_style', 1 );
+    add_action( 'wp_head', 'mf_remove_recent_comments_style', 1 );
 
   }
 
-  add_action( 'after_setup_theme', 'maqfort_setup' );
+  add_action( 'after_setup_theme', 'mf_setup' );
 
 }
 
@@ -104,14 +119,14 @@ if ( ! function_exists( 'maqfort_setup' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_content_width' ) ) {
+if ( ! function_exists( 'mf_content_width' ) ) {
 
-  function maqfort_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'maqfort_content_width', 640 );
+  function mf_content_width() {
+    $GLOBALS['content_width'] = apply_filters( 'mf_content_width', 640 );
   }
 }
 
-add_action( 'after_setup_theme', 'maqfort_content_width', 0 );
+add_action( 'after_setup_theme', 'mf_content_width', 0 );
 
 /*
  * -----------------------------------------------------------
@@ -119,9 +134,9 @@ add_action( 'after_setup_theme', 'maqfort_content_width', 0 );
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
+if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 
-  function maqfort_scripts_and_styles() {
+  function mf_scripts_and_styles() {
 
     if ( !is_admin() ) {
 
@@ -159,7 +174,7 @@ if ( ! function_exists( 'maqfort_scripts_and_styles' ) ) {
   }
 }
 
-add_action( 'wp_enqueue_scripts', 'maqfort_scripts_and_styles' );
+add_action( 'wp_enqueue_scripts', 'mf_scripts_and_styles' );
 
 /*
  * -----------------------------------------------------------
@@ -167,9 +182,9 @@ add_action( 'wp_enqueue_scripts', 'maqfort_scripts_and_styles' );
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_widget_init' ) ) {
+if ( ! function_exists( 'mf_widget_init' ) ) {
 
-  function maqfort_widget_init() {
+  function mf_widget_init() {
 
     if ( function_exists( 'register_sidebar' ) ) {
 
@@ -208,4 +223,4 @@ if ( ! function_exists( 'maqfort_widget_init' ) ) {
   }
 }
 
-add_action( 'widgets_init', 'maqfort_widget_init'  );
+add_action( 'widgets_init', 'mf_widget_init'  );

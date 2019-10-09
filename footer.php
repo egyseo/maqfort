@@ -15,9 +15,12 @@
           </section>
           <section class="copyright">
             <div class="container container-fluid">
-              <div class="row center-xs start-sm start-md start-lg middle-xs between-xs">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <p>&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?> <?php _e( 'All Rights Reserved.', 'maqfort' ); ?></p>
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <p><?php bloginfo( 'name' ); ?> &copy; <?php echo date( 'Y' ); ?> <?php _e( ' - Todos os Direitos Reservados', 'maqfort' ); ?></p>
+                </div>
+                <div class="col-12 col-md-6">
+                  <p class="dev-by"><?php _e('Desenvolvido por:', 'maqfort'); ?> <a href="https://crew.pt" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/crew-rgb-white.svg" alt="crew"></a></p>
                 </div>
               </div>
             </div>

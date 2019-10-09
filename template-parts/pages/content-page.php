@@ -19,7 +19,7 @@
               the_content();
 
               wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'maqfort' ),
+                'before' => '<div class="page-links">' . esc_html__( 'Páginas:', 'maqfort' ),
                 'after'  => '</div>',
               ) );
             ?>

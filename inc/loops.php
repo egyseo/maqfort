@@ -5,9 +5,9 @@
  * 1.0 Home page news loop.
  * -----------------------------------------------------------
 */
-if ( ! function_exists( 'maqfort_news_card_loop' ) ) {
+if ( ! function_exists( 'mf_news_card_loop' ) ) {
 
-  function maqfort_news_card_loop() { ?>
+  function mf_news_card_loop() { ?>
 
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
     <article class="post-card">
@@ -38,7 +38,7 @@ if ( ! function_exists( 'maqfort_news_card_loop' ) ) {
 
   <?php }
 
-  add_action( 'maqfort_card_loop', 'maqfort_news_card_loop' );
+  add_action( 'mf_card_loop', 'mf_news_card_loop' );
 
 }
 
@@ -48,9 +48,9 @@ if ( ! function_exists( 'maqfort_news_card_loop' ) ) {
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'maqfort_standart_loop' ) ) {
+if ( ! function_exists( 'mf_standart_loop' ) ) {
 
-  function maqfort_standart_loop() { ?>
+  function mf_standart_loop() { ?>
 
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <article class="post-card">
@@ -82,6 +82,6 @@ if ( ! function_exists( 'maqfort_standart_loop' ) ) {
 
   <?php }
 
-add_action( 'maqfort_loop', 'maqfort_standart_loop' );
+add_action( 'mf_loop', 'mf_standart_loop' );
 
 }
