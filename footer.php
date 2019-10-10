@@ -23,7 +23,7 @@
                   <p><?php bloginfo( 'name' ); ?> &copy; <?php echo date( 'Y' ); ?> <?php _e( ' - Todos os Direitos Reservados', 'maqfort' ); ?></p>
                 </div>
                 <div class="col-12 col-xs-12 col-sm-6 col-md-6">
-                  <p class="dev-by"><?php _e('Desenvolvido por:', 'maqfort'); ?> <a href="https://crew.pt" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/crew-rgb-white.svg" alt="crew"></a></p>
+                  <div class="dev-by"><p><?php _e('Desenvolvido por:', 'maqfort'); ?></p> <a href="https://crew.pt" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/crew-rgb-white.svg" alt="crew"></a></div>
                 </div>
               </div>
             </div>

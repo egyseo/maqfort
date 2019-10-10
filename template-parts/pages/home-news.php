@@ -22,7 +22,10 @@ if ( $blogquery->have_posts() ) : ?>
     <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h2 class="section-title"><span><a href="<?php echo $title_url; ?>"><?php _e( 'Notícias', 'maqfort' ); ?></a></span></h2>
+          <div class="section-title-wrapper">
+            <h2 class="section-title"><span><a href="<?php echo $title_url; ?>"><?php _e( 'Notícias', 'maqfort' ); ?></a></span></h2>
+            <a class="see-all" href="<?php echo $title_url; ?>"><?php _e('Ver todas as notícias', 'maqfort'); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+          </div>
         </div>
       </div>
       <div class="row">

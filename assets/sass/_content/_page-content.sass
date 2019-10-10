@@ -17,19 +17,45 @@
   height: 300px
   margin-bottom: 40px
 
-.no-results-page
-  padding: 200px 0
+.no-results-page,
+.error-not-found
+  padding: 100px 0
   text-align: center
   header
     h1
       font-size: 3rem
   section
+    p
+      margin-bottom: 20px
     #searchform
       width: 100%
+      margin-bottom: 40px
       .input-group
+        display: flex
+        justify-content: center
+        width: 100%
         .input-search
-          padding: 20px 10px
+          border: 0px
+          border-radius: 0
+          border-bottom: 2px solid $primary-color
+          color: $darker-grey
+          background-color: $light-grey
+          padding: 15px 20px
+          margin: 0
+          width: 500px
+          &::placeholder
+            color: $darker-grey
         #searchsubmit
+          margin: 0
+          background-color: $primary-color
+          color: white
+          border-radius: 0
+    .go-to-home
+      background-color: $blue-grey
+      color: white
+      padding: 15px 20px
+      .fa
+        margin-left: 10px
 
 @media (max-width: 767px)
   .page-header-with-img

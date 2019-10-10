@@ -12,5 +12,6 @@ function crew_customize_register( $wp_customize ) {
 
   require get_parent_theme_file_path( '/inc/customizer/touch-icon.php' );
   require get_parent_theme_file_path( '/inc/customizer/social-icons.php' );
+  require get_parent_theme_file_path( '/inc/customizer/home-settings.php' );
 }
 add_action( 'customize_register', 'crew_customize_register' );

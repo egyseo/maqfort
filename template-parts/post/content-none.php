@@ -8,23 +8,16 @@
         <section>
           <?php
             if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
               <p><?php printf( wp_kses( __( 'Ready to write your first post? <a href="%1$s">Start here</a>.', 'maqfort' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
-
             <?php elseif ( is_search() ) : ?>
-
-              <p><?php esc_html_e( 'Pedimos desculpa, mas não encontramos nada com a sua palavra de pesquisa. Tente por favor com uma palavra diferente.', 'maqfort' ); ?></p>
-              <?php
-              get_search_form();
-
-            else : ?>
-
+              <p><?php esc_html_e( 'Pedimos desculpa, mas não encontramos nada. Tente por favor com uma palavra diferente.', 'maqfort' ); ?></p>
+              <?php get_search_form(); ?>
+              <a class="go-to-home" href="<?php echo get_home_url(); ?>"><?php _e('Ir para o início', 'maqfort'); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <?php else : ?>
               <p><?php esc_html_e( 'Não conseguimos encontrar o que procura, talvez uma pesquisa possa ajudá-lo.', 'maqfort' ); ?></p>
-              <?php
-              get_search_form();
-
-            endif;
-          ?>
+              <?php get_search_form(); ?>
+              <a class="go-to-home" href="<?php echo get_home_url(); ?>"><?php _e('Ir para o início', 'mafort'); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <?php endif;?>
         </section>
       </div>
     </div>

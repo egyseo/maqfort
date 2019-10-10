@@ -1,11 +1,11 @@
 <?php
 /**
- * Template Name: Home Page
+ * Template Name: Home Template
  * The theme page template.
  */
 get_header();
 
-putRevSlider("slider1");
+get_template_part( 'template-parts/pages/home', 'slider' );
 
 while ( have_posts() ) : the_post();
 

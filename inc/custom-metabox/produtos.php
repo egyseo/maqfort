@@ -6,7 +6,7 @@
 */
 if ( ! function_exists('mf_produtos') ) {
 
-  function mf_products() {
+  function mf_produtos() {
 
   	$prefix = '_mf_produtos_';
 
@@ -118,6 +118,6 @@ if ( ! function_exists('mf_produtos') ) {
     ) );
   }
 
-  add_action( 'cmb2_init', 'mf_products' );
+  add_action( 'cmb2_init', 'mf_produtos' );
 
 }
