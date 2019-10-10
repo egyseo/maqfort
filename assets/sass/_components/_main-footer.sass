@@ -45,15 +45,18 @@
       margin-bottom: 10px
   .copyright
     background-color: $blue-grey
-    color: #D4D4D4
+    color: #A3A3A3
     padding: 20px 0
-    border-top: 1px solid #666667
+    border-top: 1px solid #545454
     p
       margin: 0
       font-size: 12px
     .dev-by
       text-align: right
+      a
+        display: inline-block
       img
+        width: 40px
         max-width: 40px
 
 #main-footer
@@ -77,51 +80,43 @@
             &::after
               display: none
 
-    .widget_mf_social_widget
-      .social-icons-widget
-        text-align: right
-        li
-          display: inline-block
-          a
-            display: block
-            width: 42px
-            height: 42px
-            background-color: #6B6B6D
-            transition: $main-transition
-            position: relative
-            .fa
-              color: #FFF
-              position: absolute
-              left: 0
-              top: 0
-              width: 42px
-              height: 42px
-              line-height: 42px
-              text-align: center
-              font-size: 20px
-          .linkedin-icon:hover
-            background-color: #0077b5
-          .youtube-icon:hover
-            background-color: #bd081c
-          .facebook-icon:hover
-            background-color: #3b5998
-          .twitter-icon:hover
-            background-color: #00aced
-          .google-icon:hover
-            background-color: #d34836
+    .social-icons
+      text-align: right
+      a
+        display: inline-block
+        padding: 10px 15px
+        margin-left: 6px
+        background-color: #6B6B6D
+        transition: $main-transition
+        .fa
+          color: #FFFF
+          text-align: center
+          font-size: 16px
+          margin: 0
+      .social-icon-linkedin:hover
+        background-color: #0077b5
+      .social-icon-youtube:hover
+        background-color: #bd081c
+      .social-icon-facebook:hover
+        background-color: #3b5998
+      .social-icon-twitter:hover
+        background-color: #00aced
+      .social-icon-google:hover
+        background-color: #d34836
 
 @media (max-width: 767px)
   #main-footer
     .bottom-widgets
       .widget_nav_menu
-        margin-bottom: 40px
+        margin-bottom: 20px
         .menu
           text-align: center
-      .widget_mf_social_widget
+      .social-icons
+        text-align: center
         margin-bottom: 40px
-        .social-icons-widget
-          text-align: center
     .copyright
+      padding: 30px 0
       text-align: center
       .dev-by
+        margin-top: 10px
         text-align: center

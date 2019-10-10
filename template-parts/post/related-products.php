@@ -9,7 +9,7 @@ if( $related_posts ) { ?>
     <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h1 class="section-title"><span><?php _e( 'Related Posts', 'maqfort' ); ?></span></h1>
+          <h1 class="section-title"><span><?php _e( 'Outros Produtos', 'maqfort' ); ?></span></h1>
         </div>
       </div>
       <div class="row">

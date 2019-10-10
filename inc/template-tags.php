@@ -1,24 +1,38 @@
 <?php
-/*
- * -----------------------------------------------------------
- * 1.0 Setup Social Icons to the theme.
- * -----------------------------------------------------------
-*/
-
+/*----------- Social Icons -----------*/
 if ( ! function_exists( 'mf_social_icons' ) ) {
 
-  function mf_social_icons() { ?>
-
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/company/11062619/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      <a href="https://www.youtube.com/channel/UCGm3A-0jxzlwbbnb45YuB-Q" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-      <a href="https://www.facebook.com/maqfortportugal/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <!-- <a href="https://twitter.com/mf_SA" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
-      <a href="https://plus.google.com/106255417800774888840" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-    </div><!-- social icons ends -->
-
-  <?php }
-
+  function mf_social_icons() {
+    $facebook_url = get_theme_mod( 'facebook_field' );
+    $linkedin_url = get_theme_mod( 'linkedin_field' );
+    $twitter_url = get_theme_mod( 'twitter_field' );
+    $youtube_url = get_theme_mod( 'youtube_field' );
+    $googleplus_url = get_theme_mod( 'googleplus_field' );
+    $instagram_url = get_theme_mod( 'instagram_field' );
+    if ( !empty( $facebook_url || $linkedin_url || $twitter_url || $youtube_url || $googleplus_url ) ) :
+      echo '<div class="social-icons">';
+      if ( !empty( $linkedin_url ) ) :
+        echo '<a href="' , esc_url( $linkedin_url ) , '" target="_blank" class="social-icon-linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
+      endif;
+      if ( !empty( $youtube_url ) ) :
+        echo '<a href="' , esc_url( $youtube_url ) , '" target="_blank" class="social-icon-youtube"><i class="fa fa-youtube-play" aria-hidden="true""></i></a>';
+      endif;
+      if ( !empty( $facebook_url ) ) :
+        echo '<a href="' , esc_url( $facebook_url ) , '" target="_blank" class="social-icon-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
+      endif;
+      if ( !empty( $twitter_url ) ) :
+        echo '<a href="' , esc_url( $twitter_url ) , '" target="_blank" class="social-icon-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
+      endif;
+      if ( !empty( $googleplus_url ) ) :
+        echo '<a href="' , esc_url( $googleplus_url ) , '" target="_blank" class="social-icon-googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>';
+      endif;
+      if ( !empty( $instagram_url ) ) :
+        echo '<a href="' , esc_url( $instagram_url ) , '" target="_blank" class="social-icon-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>';
+      endif;
+      echo '</div><!-- social icons ends -->';
+    endif;
+  }
+  add_action( 'mf_social', 'mf_social_icons' );
 }
 
 /*
@@ -26,7 +40,6 @@ if ( ! function_exists( 'mf_social_icons' ) ) {
  * 2.0 Display numbered  pagination navigation.
  * -----------------------------------------------------------
 */
-
 if ( ! function_exists( 'mf_pagination' ) ) {
 
   function mf_pagination() {
@@ -54,14 +67,11 @@ if ( ! function_exists( 'mf_pagination' ) ) {
 
 }
 
-
-
 /*
  * -----------------------------------------------------------
  * 3.0 Social Share Buttons
  * -----------------------------------------------------------
 */
-
 if ( ! function_exists( 'mf_sharing_buttons' ) ) {
 
   function mf_sharing_buttons( $content ) {
@@ -90,7 +100,7 @@ if ( ! function_exists( 'mf_sharing_buttons' ) ) {
 
   		// Add sharing button at the end of page/page content
   		$content .= '<div class="maqfort-social-share">';
-  		$content .= '<h4>' . __('Share on:', 'maqfort') . '</h4>';
+  		$content .= '<h4>' . __('Partilhe nas redes socias!', 'maqfort') . '</h4>';
 
   		$content .= '<a class="maqfort-link maqfort-facebook" title="Facebook" href="' . $facebookURL . '" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
       $content .= '<a class="maqfort-link maqfort-twitter" title="Twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>';

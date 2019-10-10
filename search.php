@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h1 class="page-title">
-            <?php echo esc_html_e( 'Search results for', 'maqfort' ) ?>: <span><?php the_search_query(); ?></span>
+            <?php echo esc_html_e( 'Resultados de pesquisa para:', 'maqfort' ) ?>: <span><?php the_search_query(); ?></span>
           </h1>
         </div>
       </div>
@@ -31,7 +31,7 @@
 
             endif;
           ?>
-          
+
         </div>
       </div>
       <div class="row">

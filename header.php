@@ -34,6 +34,7 @@
     <div id="site-wrapper">
 
       <div id="site-container">
+        <div id="mobile-grey-back"></div>
 
         <?php get_template_part( 'template-parts/header/main', 'header'); ?>
 

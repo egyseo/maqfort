@@ -15,7 +15,6 @@ get_header(); ?>
           <div class="container container-fluid">
             <div class="row">
               <?php while ( have_posts() ) : the_post(); ?>
-
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                   <article class="product-card">
                     <header class="product-card-header">
@@ -32,7 +31,6 @@ get_header(); ?>
                     </section>
                   </article>
                 </div>
-
               <?php endwhile; // End of the loop
               else:
                 get_template_part( 'template-parts/post/content', 'none' );

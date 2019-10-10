@@ -14,9 +14,10 @@
       top: 0
       left: 0
       padding: 1em
-      background-color: $darker-grey
+      background-color: $blue-grey
       color: #fff
       font-size: 0.6em
+      border-bottom: 2px solid $primary-color
       span
         display: block
         text-align: center
@@ -60,19 +61,27 @@
     padding: 0px 20px 20px 20px
     a
       display: inline-block
-      border: 1px solid $blue-grey
-      width: 35px
-      height: 35px
+      padding: 10px 20px
+      background-color: $blue-grey
       transition: $main-transition
       text-align: center
+      position: relative
+      &::before
+        position: absolute
+        top: 50%
+        bottom: 0px
+        left: -4px
+        content: ''
+        background-color: $primary-color
+        width: 2px
       i
         transition: $main-transition
-        color: $blue-grey
-        margin-top: 11px
-        margin-left: 3px
-        font-size: 12px
+        color: white
+        font-size: 14px
       &:hover
-        background-color: $blue-grey
+        background-color: darken($blue-grey, 20%)
+        &::before
+          background-color: darken($primary-color, 20%)
         i
           color: $light-grey
 
@@ -117,23 +126,31 @@
     padding: 0px 20px 20px 20px
     a
       display: inline-block
-      border: 1px solid $blue-grey
-      width: 35px
-      height: 35px
+      padding: 10px 20px
+      background-color: $blue-grey
       transition: $main-transition
       text-align: center
+      position: relative
+      &::before
+        position: absolute
+        top: 50%
+        bottom: 0px
+        left: -4px
+        content: ''
+        background-color: $primary-color
+        width: 2px
       i
         transition: $main-transition
-        color: $blue-grey
-        margin-top: 11px
-        margin-left: 3px
-        font-size: 12px
+        color: white
+        font-size: 14px
       &:hover
-        background-color: $blue-grey
+        background-color: darken($blue-grey, 20%)
+        &::before
+          background-color: darken($primary-color, 20%)
         i
           color: $light-grey
 
-.post-type-archive-products
+.post-type-archive-produtos
   .product-card
     margin-bottom: 40px
     .product-card-content

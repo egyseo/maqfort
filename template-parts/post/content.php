@@ -4,6 +4,13 @@
       <div class="row bottom-xs bottom-sm bottom-md bottom-lg">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="article-header-box-top">
+            <div class="article-date">
+              <span class="day"><?php the_time('d'); ?></span>
+              <span class="month-year">
+                <span class="month"><?php the_time('M'); ?></span>
+                <span class="year"><?php the_time('Y'); ?></span>
+              </span>
+            </div>
             <?php the_title( '<h1 class="article-title" rel="bookmark" itemprop="headline">', '</h1>' ); ?>
           </div>
         </div>
@@ -13,21 +20,6 @@
 
 	<section class="article-content" itemprop="articleBody">
     <div class="container container-fluid">
-      <div class="row top-xs top-sm top-md top-lg">
-        <div class="col-xs-12">
-          <div class="article-header-box-bottom">
-            <div class="article-date">
-              <span class="day"><?php the_time('d'); ?></span>
-              <span class="month-year">
-                <span class="month"><?php the_time('M'); ?></span>
-                <span class="year"><?php the_time('Y'); ?></span>
-              </span>
-            </div>
-            <?php do_action( 'mf_postmeta' ); ?>
-          </div>
-        </div>
-      </div>
-
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <hr>

@@ -1,4 +1,3 @@
-
 <div id="form-top-wrapper">
   <div class="container container-fluid">
     <div class="row">
@@ -15,7 +14,7 @@
   <div class="container container-fluid">
     <div class="row between-md between-lg">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <?php mf_social_icons(); ?>
+        <?php do_action('mf_social'); ?>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 relative">
         <a class="btn-search-top" href="#/" rel="nofollow"><i class="fa fa-search"></i></a>

@@ -22,7 +22,7 @@ if ($categories) {
 
   if( $related_posts->have_posts() ) {
 
-    echo '<section class="related-posts"><div class="container container-fluid"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h2 class="section-title"><span>' . __( 'Related Posts', 'maqfort' ) . '</span></h2></div></div><div class="row">';
+    echo '<section class="related-posts"><div class="container container-fluid"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h2 class="section-title"><span>' . __( 'Relacionados', 'maqfort' ) . '</span></h2></div></div><div class="row">';
 
     while( $related_posts->have_posts() ) {
       $related_posts->the_post();
