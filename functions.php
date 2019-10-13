@@ -44,6 +44,7 @@ if ( ! function_exists( 'mf_setup' ) ) {
     // Enable suppot for Post Thumbnails.
     add_theme_support( 'post-thumbnails' );
     add_image_size( 'maqfort-thumbnail', 604, 517 );
+    add_image_size( 'maqfort-home-thumb', 640, 480 );
     add_image_size( 'maqfort-header', 1920, 476 );
 
 

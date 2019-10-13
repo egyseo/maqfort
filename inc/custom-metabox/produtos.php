@@ -16,7 +16,7 @@ if ( ! function_exists('mf_produtos') ) {
   	$cmb = new_cmb2_box( array(
   			'id'            => 'product_details',
   			'title'         => __( 'Product Details', 'maqfort' ),
-  			'object_types'  => array( 'produtos', ), // Post type
+  			'object_types'  => array( 'produtos' ), // Post type
   			'context'       => 'normal',
   			'priority'      => 'high',
   			'show_names'    => true, // Show field names on the left

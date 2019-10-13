@@ -15,7 +15,7 @@ if ( ! function_exists('mf_homepage_services') ) {
   	 */
   	$cmb = new_cmb2_box( array(
   			'id'            => $prefix . 'services',
-  			'title'         => __( 'MAQFORT Services', 'maqfort' ),
+  			'title'         => __( 'Serviços MAQFORT', 'maqfort' ),
   			'object_types'  => array( 'page', ), // Post type
         'show_on'      => array( 'key' => 'page-template', 'value' => 'page-home.php' ),
   			'context'       => 'normal',
@@ -28,12 +28,12 @@ if ( ! function_exists('mf_homepage_services') ) {
     $group_field_id = $cmb->add_field( array(
       'id'          => $prefix . 'itens',
       'type'        => 'group',
-      'description' => __( 'Add Services', 'maqfort' ),
+      'description' => __( 'Adicionar Serviços', 'maqfort' ),
       // 'repeatable'  => false, // use false if you want non-repeatable group
       'options'     => array(
-          'group_title'   => __( 'Service {#}', 'maqfort' ), // since version 1.1.4, {#} gets replaced by row number
-          'add_button'    => __( 'Add Service', 'maqfort' ),
-          'remove_button' => __( 'Remover Service', 'maqfort' ),
+          'group_title'   => __( 'Serviço {#}', 'maqfort' ), // since version 1.1.4, {#} gets replaced by row number
+          'add_button'    => __( 'Adicionar Serviço', 'maqfort' ),
+          'remove_button' => __( 'Remover Serviço', 'maqfort' ),
           'sortable'      => true, // beta
           'closed'     => true, // true to have the groups closed by default
         ),
@@ -41,8 +41,8 @@ if ( ! function_exists('mf_homepage_services') ) {
 
     // Id's for group's fields only need to be unique for the group. Prefix is not needed.
     $cmb->add_group_field( $group_field_id, array(
-        'name' => __( 'Service title', 'maqfort' ),
-        'description' => __( 'Insert here the service title.', 'maqfort' ),
+        'name' => __( 'Nome do Serviços', 'maqfort' ),
+        'description' => __( 'Insira aqui o nome do serviços', 'maqfort' ),
         'id'   => $prefix . 'title',
         'type' => 'text',
     ) );
@@ -50,16 +50,20 @@ if ( ! function_exists('mf_homepage_services') ) {
 
     $cmb->add_group_field( $group_field_id, array(
         'name' => __( 'URL', 'maqfort' ),
-        'description' => __( 'Insert here the url.', 'maqfort' ),
         'id'   => $prefix . 'url',
         'type' => 'text_url',
     ) );
 
     $cmb->add_group_field( $group_field_id, array(
-        'name' => __( 'Service image', 'maqfort' ),
-        'description' => __( 'Insert here the desire image.', 'maqfort' ),
+        'name' => __( 'Imagem do Serviço', 'maqfort' ),
         'id'   => $prefix . 'image',
         'type' => 'file',
+    ) );
+
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => __( 'Icon do Serviço', 'maqfort' ),
+        'id'   => $prefix . 'icon',
+        'type' => 'fontawesome_icon',
     ) );
 
   }

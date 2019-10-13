@@ -32,7 +32,7 @@ class CMB2_Field_Display {
 	 * Get the corresponding display class for the field type.
 	 *
 	 * @since  2.2.2
-	 * @param  CMB2_Field $field
+	 * @param  CMB2_Field $field Requested field type.
 	 * @return CMB2_Field_Display
 	 */
 	public static function get( CMB2_Field $field ) {
@@ -99,7 +99,7 @@ class CMB2_Field_Display {
 			default:
 				$type = new self( $field );
 				break;
-		}// End switch().
+		}// End switch.
 
 		return $type;
 	}
@@ -108,7 +108,7 @@ class CMB2_Field_Display {
 	 * Setup our class vars
 	 *
 	 * @since 2.2.2
-	 * @param CMB2_Field $field A CMB2 field object
+	 * @param CMB2_Field $field A CMB2 field object.
 	 */
 	public function __construct( CMB2_Field $field ) {
 		$this->field = $field;
@@ -122,14 +122,14 @@ class CMB2_Field_Display {
 	 * @since 2.2.2
 	 */
 	public function display() {
-		// If repeatable
+		// If repeatable.
 		if ( $this->field->args( 'repeatable' ) ) {
 
-			// And has a repeatable value
+			// And has a repeatable value.
 			if ( is_array( $this->field->value ) ) {
 
 				// Then loop and output.
-				echo '<ul class="cmb2-' . str_replace( '_', '-', $this->field->type() ) . '">';
+				echo '<ul class="cmb2-' . esc_attr( sanitize_html_class( str_replace( '_', '-', $this->field->type() ) ) ) . '">';
 				foreach ( $this->field->value as $val ) {
 					$this->value = $val;
 					echo '<li>', $this->_display(), '</li>';
@@ -376,7 +376,7 @@ class CMB2_Display_Taxonomy_Multicheck extends CMB2_Field_Display {
 				$links[] = '<a href="' . esc_url( $link ) . '">' . esc_html( $term->name ) . '</a>';
 			}
 			// Then loop and output.
-			echo '<div class="cmb2-taxonomy-terms-', esc_attr( $taxonomy ), '">';
+			echo '<div class="cmb2-taxonomy-terms-', esc_attr( sanitize_html_class( $taxonomy ) ), '">';
 			echo implode( ', ', $links );
 			echo '</div>';
 		}
@@ -400,14 +400,14 @@ class CMB2_Display_File extends CMB2_Field_Display {
 		$type  = $types->get_new_render_type( $this->field->type(), 'CMB2_Type_File_Base' );
 
 		$id = $this->field->get_field_clone( array(
-			'id' => $this->field->_id() . '_id',
+			'id' => $this->field->_id( '', false ) . '_id',
 		) )->escaped_value( 'absint' );
 
 		$this->file_output( $this->value, $id, $type );
 	}
 
 	protected function file_output( $url_value, $id, CMB2_Type_File_Base $field_type ) {
-		// If there is no ID saved yet, try to get it from the url
+		// If there is no ID saved yet, try to get it from the url.
 		if ( $url_value && ! $id ) {
 			$id = CMB2_Utils::image_id_from_url( esc_url_raw( $url_value ) );
 		}
@@ -421,7 +421,7 @@ class CMB2_Display_File extends CMB2_Field_Display {
 				) );
 			} else {
 				$size = is_array( $img_size ) ? $img_size[0] : 200;
-				$image = '<img class="cmb-image-display" style="max-width: ' . absint( $size ) . 'px; width: 100%; height: auto;" src="' . $url_value . '" alt="" />';
+				$image = '<img class="cmb-image-display" style="max-width: ' . absint( $size ) . 'px; width: 100%; height: auto;" src="' . esc_url( $url_value ) . '" alt="" />';
 			}
 
 			echo $image;
@@ -429,9 +429,9 @@ class CMB2_Display_File extends CMB2_Field_Display {
 		} else {
 
 			printf( '<div class="file-status"><span>%1$s <strong><a href="%2$s">%3$s</a></strong></span></div>',
-				esc_html( $field_type->_text( 'file_text', esc_html__( 'File:', 'cmb2' ) ) ),
-				$url_value,
-				CMB2_Utils::get_file_name_from_path( $url_value )
+				esc_html( $field_type->_text( 'file_text', __( 'File:', 'cmb2' ) ) ),
+				esc_url( $url_value ),
+				esc_html( CMB2_Utils::get_file_name_from_path( $url_value ) )
 			);
 
 		}

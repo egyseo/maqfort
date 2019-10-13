@@ -1,2 +1,45 @@
+.section-title-wrapper
+  position: relative
+  .see-all
+    position: absolute
+    bottom: 0
+    right: 20px
+    background-color: $light-grey
+    color: $darker-grey
+    padding: 10px
+    font-size: 11px
+    text-transform: uppercase
+    .fa
+      margin-left: 10px
+      color: $primary-color
+    &:hover
+      color: $primary-color
+
+.section-title
+  position: relative
+  text-transform: capitalize
+  overflow: hidden
+  margin-bottom: 30px
+  font-size: 30px
+  font-family: $roboto
+  font-weight: 300
+  span
+    position: relative
+    display: inline-block
+    &::after
+      content: ''
+      display: inline-block
+      height: 6px
+      width: 2000%
+      position: absolute
+      top: 50%
+      left: 100%
+      right: 100%
+      margin-left: 10px
+      //margin-top: -2px
+      background-color: #f1f1f1
+  a
+    color: $darker-grey
+
 .related-posts
   margin: 40px auto

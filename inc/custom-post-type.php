@@ -38,6 +38,7 @@ function mf_produtos_cpt() {
 		'description'           => __( 'Catálogo de Produtos', 'maqfort' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
+    'taxonomies'            => array( 'categorias_de_produtos' ),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
@@ -52,9 +53,53 @@ function mf_produtos_cpt() {
 		'publicly_queryable'    => true,
 		'rewrite'               => array( 'slug' =>  _x('produtos', 'maqfort')),
 		'capability_type'       => 'post',
-		'show_in_rest'          => false,
+		'show_in_rest'          => true,
 	);
 	register_post_type( 'produtos', $args );
+
+  $tax_labels = array(
+    'name' =>  _x( 'Categorias de Produtos', 'maqfort' ),
+    'singular_name' => _x('Categoria de Produto', 'maqfort'),
+    'menu_name' => __('Categorias de Produtos', 'maqfort'),
+    'all_items' => __('Todas as Categorias', 'maqfort'),
+    'edit_item' => __('Editar Categoria', 'maqfort'),
+    'view_item' => __('Ver Categoria', 'maqfort'),
+    'update_item' =>  __('Actualizar Categoria', 'maqfort'),
+    'add_new_item' => __('Adicionar Nova Categoria', 'maqfort'),
+    'new_item_name' => __('Novo Nome de Categoria', 'maqfort'),
+    'parent_item' => __('Categoria Pai', 'maqfort'),
+    'parent_item_colon' => __('Categoria Pai:', 'maqfort'),
+    'search_items' => __('Procurar Categorias', 'maqfort'),
+    'popular_items' =>  __('Categorias Populares', 'maqfort'),
+    'separate_items_with_commas' => __('Separate tags with commas', 'maqfort'),
+    'add_or_remove_items' => __('Adicionar ou Renover Categorias', 'maqfort'),
+    'choose_from_most_used' => __('Escolha das Categortias mais usadas', 'maqfort'),
+    'not_found' =>  __( 'Nenhuma Categoria encontrada', 'maqfort'),
+    'back_to_items' => __( '← Voltar às Categorias', 'maqfort'),
+  );
+
+  $tax_args = array (
+    'label' => __('Categorias de Produtos', 'maqfort'),
+    'labels' => $tax_labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' =>  true,
+    'show_in_menu' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'description' => __('', 'maqfort'),
+    'hierarchical' => true,
+    'rewrite' => array(
+      'slug' => _x('categorias_de_produtos', 'maqfort'),
+      'with_front' => true,
+      'hierarchical' => true,
+    ),
+    'capabilities' => array(
+      'edit_posts'
+    ),
+    'sort' => true,
+  );
+  register_taxonomy( 'categorias_de_produtos', array('produtos'), $tax_args );
 
 }
 add_action( 'init', 'mf_produtos_cpt', 0 );

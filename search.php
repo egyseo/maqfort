@@ -16,23 +16,14 @@
   <section class="search-page">
     <div class="container container-fluid">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
           <?php
             while ( have_posts() ) : the_post();
-
               do_action( 'mf_loop' );
-
             endwhile;
-
             else:
-
               get_template_part( 'template-parts/post/content', 'none' );
-
             endif;
           ?>
-
-        </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

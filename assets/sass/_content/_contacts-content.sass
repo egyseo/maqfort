@@ -1,23 +1,36 @@
-.contact-address
-  .address-title
-    &::before
-      display: none
+.page-template-page-contacts
+  .page-header-with-img
+    margin: 0
 
+.address-wrapper
+  display: flex
+  justify-content: center
+  align-items: center
+  .map-wrapper
+    width: 50%
   .address
-    margin-bottom: 10px
-    margin-top: 0
-  .address-phone
-    margin-top: 0
-    margin-bottom: 10px
-    &:hover
-      color: $primary-darker
-  .address-mailto
-    background-color: $primary-color
-    padding: 10px 20px
-    color: #fff
-    display: inline-block
-    &:hover
-      background-color: $primary-darker
+    width: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-left: 4rem
+    .address-content
+      width: 300px
+      .address-title
+        &::before
+          display: none
+      .address-phone
+        margin-top: 0
+        margin-bottom: 10px
+        &:hover
+          color: $primary-darker
+      .address-mailto
+        background-color: $primary-color
+        padding: 10px 20px
+        color: #fff
+        display: inline-block
+        &:hover
+          background-color: $primary-darker
 
 .contact-form
   background-color: $light-grey
@@ -57,5 +70,19 @@
       font-weight: bold
       margin-bottom: 10px
 
-#map-maqfort
-  margin-bottom: 40px
+
+@media (max-width: 790px)
+  .address-wrapper
+    flex-direction: column
+    .map-wrapper
+      width: 100%
+    .address
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-left: 4rem
+      .address-content
+        width: 100%
+        padding-top: 40px
+        padding-bottom: 40px
