@@ -1,6 +1,6 @@
 <?php
 get_header();
-
+wp_reset_query();
 ?>
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="page-header">
@@ -15,30 +15,31 @@ get_header();
     <section class="page-content">
       <div class="container container-fluid">
         <div class="row">
-          <?php // Start the Loop.
+          <?php
           $taxonomies = get_terms( array(
               'taxonomy' => 'categorias_de_produtos',
-              'hide_empty' => false
+              'hide_empty' => false,
+              'parent'   => 0,
           ) );
-
-          if ( !empty($taxonomies) ) :
-              $output = '<select>';
-              foreach( $taxonomies as $category ) {
-                  if( $category->parent == 0 ) {
-                      $output.= '<optgroup label="'. esc_attr( $category->name ) .'">';
-                      foreach( $taxonomies as $subcategory ) {
-                          if($subcategory->parent == $category->term_id) {
-                          $output.= '<option value="'. esc_attr( $subcategory->term_id ) .'">
-                              '. esc_html( $subcategory->name ) .'</option>';
-                          }
-                      }
-                      $output.='</optgroup>';
-                  }
+          if ($taxonomies) :
+            foreach( $taxonomies as $term ) {
+              if( $term->parent == 0 ) {
+                $term_link = get_term_link( $term );
+                $image = wp_get_attachment_image( get_term_meta( $term->term_id, 'customtaxonomie_mb_image_id', 1) , 'full' );
+                $output = '<div class="col-xs-12 col-md-4"><article class="card"><header class="card-header">';
+                $output .= $image;
+                $output .= '<a href="' . esc_url($term_link) . '"><h2>' . esc_attr($term->name) . '</h2></a>';
+                /*$output .= sprintf( '<a href="%1$s"><h2>%2$s</h2></a>',
+                    esc_url( get_term_link( $term->slug, $term ) ),
+                    esc_html( $term->name )
+                );*/
+                $output .= '<p class="descrição">' . esc_html($term->description) . '</p>';
+                $output .= '</header></article></div>';
+                echo $output;
               }
-              $output.='</select>';
-              echo $output;
+            }
           endif;
- ?>
+         ?>
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -47,11 +48,6 @@ get_header();
         </div>
       </div>
     </section>
-    <?php
-    else :
-    get_template_part( 'template-parts/content/content', 'none' );
-    ?>
   </article>
   <?php
-endif;
 get_footer();
