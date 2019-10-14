@@ -14,7 +14,7 @@ function maqfort_taxonomy_metabox() {
    'id'               => $prefix . 'edit',
    'title'            => esc_html__( 'Categoria de Produtos', 'maqfort' ), // Doesn't output for term boxes
    'object_types'     => array( 'term' ), // Tells CMB2 to use term_meta vs post_meta
-   'taxonomies'       => array( 'categorias_de_produtos' ), // Tells CMB2 which taxonomies should have these fields
+   'taxonomies'       => array( 'mf_tipos_de_produtos' ), // Tells CMB2 which taxonomies should have these fields
    // 'new_term_section' => true, // Will display in the "Add New Category" section
  ) );
 

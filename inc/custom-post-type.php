@@ -1,11 +1,67 @@
 <?php
+/*
+ * -----------------------------------------------------------
+ * Register Custom Post Types and Taxonomies for the Theme.
+ * -----------------------------------------------------------
+ */
 
-// Register Products Custom Post Type
-function mf_produtos_cpt() {
+/*----------- Register Custom Taxonomie like product_cat -----------*/
+function mf_register_custom_tax(){
+
+  $labels = array(
+    'name' =>  __( 'Categorias de Produtos', 'maqfort' ),
+    'singular_name' => __('Categoria de Produto', 'maqfort'),
+    'menu_name' => __('Categorias de Produtos', 'maqfort'),
+    'all_items' => __('Todas as Categorias', 'maqfort'),
+    'edit_item' => __('Editar Categoria', 'maqfort'),
+    'view_item' => __('Ver Categoria', 'maqfort'),
+    'update_item' =>  __('Actualizar Categoria', 'maqfort'),
+    'add_new_item' => __('Adicionar Nova Categoria', 'maqfort'),
+    'new_item_name' => __('Novo Nome de Categoria', 'maqfort'),
+    'parent_item' => __('Categoria Pai', 'maqfort'),
+    'parent_item_colon' => __('Categoria Pai:', 'maqfort'),
+    'search_items' => __('Procurar Categorias', 'maqfort'),
+    'popular_items' =>  __('Categorias Populares', 'maqfort'),
+    'separate_items_with_commas' => __('Separate tags with commas', 'maqfort'),
+    'add_or_remove_items' => __('Adicionar ou Renover Categorias', 'maqfort'),
+    'choose_from_most_used' => __('Escolha das Categortias mais usadas', 'maqfort'),
+    'not_found' =>  __( 'Nenhuma Categoria encontrada', 'maqfort'),
+    'back_to_items' => __( '← Voltar às Categorias', 'maqfort'),
+  );
+
+  $args = array (
+    'label' => __('Categorias de Produtos', 'maqfort'),
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' =>  true,
+    'show_in_menu' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'description' => __('', 'maqfort'),
+    'hierarchical' => true,
+    'query_var' => true,
+    'rewrite' => array(
+      'slug' => __('produtos', 'maqfort'),
+      'with_front' => false,
+      'hierarchical' => true,
+    ),
+    'sort' => true,
+  );
+
+  register_taxonomy( 'mf_tipos_de_produtos', array('mf_produtos'), $args );
+
+}
+
+add_action( 'init', 'mf_register_custom_tax', 0 );
+
+
+/*----------- Register Custom Post Type like product -----------*/
+function mf_register_custom_post_type_products() {
 
 	$labels = array(
-		'name'                  => _x( 'Produtos', 'Post Type General Name', 'maqfort' ),
-		'singular_name'         => _x( 'Produto', 'Post Type Singular Name', 'maqfort' ),
+		'name'                  => __( 'Produtos', 'Post Type General Name', 'maqfort' ),
+		'singular_name'         => __( 'Produto', 'Post Type Singular Name', 'maqfort' ),
 		'menu_name'             => __( 'Produtos', 'maqfort' ),
 		'name_admin_bar'        => __( 'Produtos', 'maqfort' ),
 		'archives'              => __( 'Arquivos de Produtos', 'maqfort' ),
@@ -37,9 +93,9 @@ function mf_produtos_cpt() {
 		'label'                 => __( 'Produtos', 'maqfort' ),
 		'description'           => __( 'Catálogo de Produtos', 'maqfort' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
-    'taxonomies'            => array( 'categorias_de_produtos' ),
-		'hierarchical'          => true,
+		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+    'taxonomies'            => array( 'mf_tipos_de_produtos' ),
+		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
@@ -48,105 +104,44 @@ function mf_produtos_cpt() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,
+    'has_archive' => 'todos_produtos',
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'rewrite'               => array( 'slug' =>  _x('produtos', 'maqfort')),
+    'query_var' => true,
+		'rewrite'               => array(
+      'slug' =>  __('produtos/%mf_tipos_de_produtos%', 'maqfort'),
+      'with_front' => false,
+    ),
 		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
-	register_post_type( 'produtos', $args );
-
-  $tax_labels = array(
-    'name' =>  _x( 'Categorias de Produtos', 'maqfort' ),
-    'singular_name' => _x('Categoria de Produto', 'maqfort'),
-    'menu_name' => __('Categorias de Produtos', 'maqfort'),
-    'all_items' => __('Todas as Categorias', 'maqfort'),
-    'edit_item' => __('Editar Categoria', 'maqfort'),
-    'view_item' => __('Ver Categoria', 'maqfort'),
-    'update_item' =>  __('Actualizar Categoria', 'maqfort'),
-    'add_new_item' => __('Adicionar Nova Categoria', 'maqfort'),
-    'new_item_name' => __('Novo Nome de Categoria', 'maqfort'),
-    'parent_item' => __('Categoria Pai', 'maqfort'),
-    'parent_item_colon' => __('Categoria Pai:', 'maqfort'),
-    'search_items' => __('Procurar Categorias', 'maqfort'),
-    'popular_items' =>  __('Categorias Populares', 'maqfort'),
-    'separate_items_with_commas' => __('Separate tags with commas', 'maqfort'),
-    'add_or_remove_items' => __('Adicionar ou Renover Categorias', 'maqfort'),
-    'choose_from_most_used' => __('Escolha das Categortias mais usadas', 'maqfort'),
-    'not_found' =>  __( 'Nenhuma Categoria encontrada', 'maqfort'),
-    'back_to_items' => __( '← Voltar às Categorias', 'maqfort'),
-  );
-
-  $tax_args = array (
-    'label' => __('Categorias de Produtos', 'maqfort'),
-    'labels' => $tax_labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' =>  true,
-    'show_in_menu' => true,
-    'show_in_rest' => true,
-    'show_admin_column' => true,
-    'description' => __('', 'maqfort'),
-    'hierarchical' => true,
-    'rewrite' => array(
-      'slug' => _x('categorias_de_produtos', 'maqfort'),
-      'with_front' => true,
-      'hierarchical' => true,
-    ),
-    'capabilities' => array(
-      'edit_posts'
-    ),
-    'sort' => true,
-  );
-  register_taxonomy( 'categorias_de_produtos', array('produtos'), $tax_args );
+	register_post_type( 'mf_produtos', $args );
 
 }
-add_action( 'init', 'mf_produtos_cpt', 0 );
+add_action( 'init', 'mf_register_custom_post_type_products', 0 );
 
-// Register custom taxonomy for Products Custom Cost Cype.
-/*function mf_product_cat_tax() {
-
-  $permalinks = mf_get_permalink_structure();
-	// Add new taxonomy, make it hierarchical (like categories)
-	$labels = array(
-		'name'              => _x( 'Categories', 'taxonomy general name', 'maqfort' ),
-		'singular_name'     => _x( 'Categorie', 'taxonomy singular name', 'maqfort' ),
-		'search_items'      => __( 'Search Categories', 'maqfort' ),
-		'all_items'         => __( 'All Categories', 'maqfort' ),
-		'parent_item'       => __( 'Parent Categorie', 'maqfort' ),
-		'parent_item_colon' => __( 'Parent Categorie:', 'maqfort' ),
-		'edit_item'         => __( 'Edit Categorie', 'maqfort' ),
-		'update_item'       => __( 'Update Categorie', 'maqfort' ),
-		'add_new_item'      => __( 'Add New Categorie', 'maqfort' ),
-		'new_item_name'     => __( 'New Categorie Name', 'maqfort' ),
-		'menu_name'         => __( 'Categories', 'maqfort' ),
-	);
-
-	$args = array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-    'rewrite'          => array(
-      'slug'         => $permalinks['category_rewrite_slug'],
-      'with_front'   => false,
-      'hierarchical' => true,
-    ),
-	);
-
-	register_taxonomy( 'product-category', array( 'products' ), $args );
-
-}
-add_action( 'init', 'mf_product_cat_tax', 0 );*/
-
-// Plugin Activation
+/*----------- Refresh rewrite rules on theme activation -----------*/
 function mf_activation() {
     // trigger our function that registers the custom post type
-    mf_produtos_cpt();
-
+    mf_register_custom_tax();
+    mf_register_custom_post_type_products();
     // clear the permalinks after the post type has been registered
     flush_rewrite_rules();
 }
 add_action( 'after_setup_theme', 'mf_activation' );
+
+
+
+
+add_filter('post_type_link', 'projectcategory_permalink_structure', 10, 4);
+function projectcategory_permalink_structure($post_link, $post, $leavename, $sample) {
+    if (false !== strpos($post_link, '%mf_tipos_de_produtos%')) {
+        $projectscategory_type_term = get_the_terms($post->ID, 'mf_tipos_de_produtos');
+        if (!empty($projectscategory_type_term))
+            $post_link = str_replace('%mf_tipos_de_produtos%', array_pop($projectscategory_type_term)->
+            slug, $post_link);
+        else
+            $post_link = str_replace('%mf_tipos_de_produtos%', 'uncategorized', $post_link);
+    }
+    return $post_link;
+}

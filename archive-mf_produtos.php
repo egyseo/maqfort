@@ -1,6 +1,5 @@
 <?php
 get_header();
-wp_reset_query();
 ?>
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="page-header">
@@ -17,7 +16,7 @@ wp_reset_query();
         <div class="row">
           <?php
           $taxonomies = get_terms( array(
-              'taxonomy' => 'categorias_de_produtos',
+              'taxonomy' => 'mf_tipos_de_produtos',
               'hide_empty' => false,
               'parent'   => 0,
           ) );
@@ -29,10 +28,6 @@ wp_reset_query();
                 $output = '<div class="col-xs-12 col-md-4"><article class="card"><header class="card-header">';
                 $output .= $image;
                 $output .= '<a href="' . esc_url($term_link) . '"><h2>' . esc_attr($term->name) . '</h2></a>';
-                /*$output .= sprintf( '<a href="%1$s"><h2>%2$s</h2></a>',
-                    esc_url( get_term_link( $term->slug, $term ) ),
-                    esc_html( $term->name )
-                );*/
                 $output .= '<p class="descrição">' . esc_html($term->description) . '</p>';
                 $output .= '</header></article></div>';
                 echo $output;

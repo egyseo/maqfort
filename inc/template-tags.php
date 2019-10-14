@@ -202,7 +202,7 @@ if ( ! function_exists( 'mf_all_touch_icons' ) ) {
 /*----------- Loop de categorias de produtos -----------*/
 if(!function_exists('mf_product_categories_loop')) {
   function mf_product_categories_loop($query){
-    if ( $query->is_post_type_archive( array('produtos') ) && $query->is_main_query() ) {
+    if ( $query->is_post_type_archive( array('mf_produtos') ) && $query->is_main_query() ) {
        //$query->set( 'posts_per_page', -1);
     }
   }
