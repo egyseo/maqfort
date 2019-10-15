@@ -5,7 +5,7 @@ global $post;
 $products_list = get_post_meta( get_the_ID(), '_mf_products_list_product', true );
 
 if( $products_list ) { ?>
-  <?php $title_url = get_post_type_archive_link( 'produtos' ); ?>
+  <?php $title_url = get_post_type_archive_link( 'mf_produtos' ); ?>
   <section id="home-products">
     <div class="container container-fluid">
       <div class="row">
