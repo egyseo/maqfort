@@ -125,26 +125,11 @@ function mf_flush_rewrite_rule_on_activation() {
     flush_rewrite_rules();
 }
 
-/*----------- Update permalinks structure -----------*/
-/*add_filter('post_type_link', 'mf_update_permalink_structure', 10, 2);
-
-function mf_update_permalink_structure( $post_link, $post ) {
-  if ( false !== strpos( $post_link, '%mf_tipos_de_produtos%' ) ) {
-    $taxonomy_terms = get_the_terms( $post->ID, 'mf_tipos_de_produtos' );
-    foreach ( $taxonomy_terms as $term ) {
-      if ( ! $term->parent ) {
-        $post_link = str_replace( '%mf_tipos_de_produtos%', $term->slug, $post_link );
-      }
-    }
-  }
-  return $post_link;
-}
-*/
-
+/*----------- Change term request -----------*/
 add_filter('request', 'mf_change_term_request', 1, 1 );
 
 function mf_change_term_request($query){
-  
+
 	$tax_name = 'mf_tipos_de_produtos'; // specify you taxonomy name here, it can be also 'category' or 'post_tag'
 
 	// Request for child terms differs, we should make an additional check
