@@ -3,7 +3,7 @@
   * ### Search Form Top
   * ----------------------------------------------------------*/
 #form-top-wrapper
-  background-color: rgba(255, 255, 255, 1)
+  background-color: $blue-grey
   #searchform-top
     display: none
     padding: 30px 0
@@ -38,7 +38,7 @@
 
 .search-top
   display: block
-  background-color: $blue-grey
+  background-color: $light-grey
   width: 100%
   position: relative
   .btn-search-top
@@ -53,22 +53,54 @@
     line-height: 30px
     color: #fff
     border-bottom: 4px solid $primary-color
-    transition: border-bottom 0.3s ease-in-out
+    transition: $main-transition
     &:hover
       background-color: $primary-color
       border-bottom-color: $blue-grey
     i
     	font-size: 16px
+      transition: $main-transition
   .social-icons
-    margin-bottom: 3px
+    margin-bottom: 5px
+    transition: $main-transition
     a
-      color: $light-grey
-      margin-right: 6px
-      font-size: 14px
+      color: $darker-grey
+      margin-right: 8px
+      font-size: 12px
       &:hover
         color: $primary-color
       &:last-child
         margin-right: none
+
+.no-search-top
+  transition: $main-transition
+  overflow: hidden
+  .btn-search-top
+    height: 0px
+    i
+      font-size: 1px
+  .social-icons
+    margin-bottom: 0
+    height: 0px
+
+.btn-search-top-wrapper
+  display: none
+  .btn-search-top
+    background-color: $blue-grey
+    width: 40px
+    height: 40px
+    display: inline-block
+    color: $primary-color
+    text-align: center
+    line-height: 30px
+    color: #fff
+    border-bottom: 4px solid $primary-color
+    transition: $main-transition
+    &:hover
+      background-color: $primary-color
+      border-bottom-color: $blue-grey
+    i
+    	font-size: 16px
 
 @media (max-width: 1024px)
   #form-top-wrapper
