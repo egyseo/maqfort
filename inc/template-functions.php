@@ -259,7 +259,7 @@ if ( ! function_exists( 'mf_html_tag_schema' ) ) {
 		$schema = 'http://schema.org/';
 
     // Is products post type
-    if ( is_singular('products') ) {
+    if ( is_singular('mf_produtos') ) {
       $type = 'Product';
     }
 
