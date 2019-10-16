@@ -9,7 +9,9 @@ get_template_part( 'template-parts/pages/home', 'slider' );
 
 while ( have_posts() ) : the_post();
 
-  get_template_part( 'template-parts/pages/home', 'products' );
+  get_template_part( 'template-parts/pages/home', 'products-categories' );
+
+  //get_template_part( 'template-parts/pages/home', 'products' );
 
   get_template_part( 'template-parts/pages/home', 'services' );
 

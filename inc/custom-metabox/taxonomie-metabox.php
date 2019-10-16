@@ -28,4 +28,14 @@ function maqfort_taxonomy_metabox() {
    ),
  ) );
 
+ $cmb_term->add_field( array(
+   'name' => __('Mostrar na página inicial?', 'maqfort'),
+   'id'   => $prefix . 'showon_home',
+   'type' => 'checkbox',
+   'column' => array(
+     'position' => 4,
+     'name'     => esc_html__('Na Homepage?', 'maqfort'),
+   ),
+) );
+
 }

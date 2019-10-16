@@ -21,11 +21,11 @@ $desc = get_theme_mod('products_archives_page_desc');
         <div class="row">
           <?php
           $taxonomies = get_terms( array(
-              'taxonomy' => 'mf_tipos_de_produtos',
-              'hide_empty' => true,
-              'parent'   => 0,
-              'orderby' => 'id',
-              'order' => 'ASC'
+            'taxonomy' => 'mf_tipos_de_produtos',
+            'hide_empty' => true,
+            'parent'   => 0,
+            'orderby' => 'id',
+            'order' => 'ASC'
           ) );
           if ($taxonomies) :
             foreach( $taxonomies as $term ) {
