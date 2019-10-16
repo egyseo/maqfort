@@ -66,9 +66,11 @@
       </div>
     </div>
   </section>
+  <?php $video_galerie = get_post_meta( get_the_ID(), '_mf_products_video_galerie', true ); ?>
+  <?php if($video_galerie) : ?>
   <section class="product-video-gallerie">
     <div class="container container-fluid">
-      <?php $video_galerie = get_post_meta( get_the_ID(), '_mf_products_video_galerie', true );
+      <?php
         if ( !empty( $video_galerie ) ) {
           ?>
           <div class="row">
@@ -96,6 +98,7 @@
       </div>
     </div>
   </section>
+<?php endif; ?>
   <?php get_template_part( 'template-parts/post/related', 'products' ); ?>
   <?php get_template_part( 'template-parts/post/related', 'news' ); ?>
 </article>

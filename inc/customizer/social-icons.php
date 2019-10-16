@@ -2,7 +2,7 @@
 
 // Section for the social icons.
 $wp_customize->add_section( 'social_section', array(
-    'priority' => 1,
+    'priority' => 3,
     'capability' => 'edit_theme_options',
     'theme_supports' => '',
     'title' => __( 'Redes Socias', 'maqfort' ),

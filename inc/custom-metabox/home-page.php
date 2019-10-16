@@ -85,7 +85,7 @@ if ( ! function_exists('mf_products_list') ) {
 
     $cmb = new_cmb2_box( array(
     'id'           => $prefix . 'search_product',
-    'title'        => __( 'Product List', 'maqfort' ),
+    'title'        => __( 'Lista de Produtos', 'maqfort' ),
     'object_types'  => array( 'page' ), // Post type
     'show_on'      => array( 'key' => 'page-template', 'value' => 'page-home.php' ),
     'context'      => 'normal',
@@ -94,10 +94,10 @@ if ( ! function_exists('mf_products_list') ) {
     ) );
 
     $cmb->add_field( array(
-    'name'      	=> __( 'Products', 'maqfort' ),
+    'name'      	=> __( 'Produtos', 'maqfort' ),
     'id'        	=> $prefix . 'product',
     'type'      	=> 'post_search_ajax',
-    'desc'			=> __( '(Search for products)', 'maqfort' ),
+    'desc'			=> __( 'Procure por produtos', 'maqfort' ),
     // Optional :
     'limit'      	=> 6, 		// Limit selection to X items only (default 1)
     'sortable' 	 	=> true, 	// Allow selected items to be sortable (default false)

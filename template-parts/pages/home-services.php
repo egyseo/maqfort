@@ -19,7 +19,11 @@
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
               <a class="service-box" href="<?php echo $service_url; ?>">
                 <div class="service-image-box">
-                  <img class="service-image" src="<?php echo $service_image; ?>" alt="serviço">
+                  <?php if($service_image) : ?>
+                    <img class="service-image" src="<?php echo $service_image; ?>" alt="<?php echo $service_title; ?>">
+                  <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/placeholder.png" alt="imagem provisória">
+                  <?php endif; ?>
                   <div class="service-content-box">
                     <div class="service-content">
                       <?php

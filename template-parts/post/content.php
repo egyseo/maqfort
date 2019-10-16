@@ -22,8 +22,10 @@
     <div class="container container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <hr>
-          <?php the_post_thumbnail('full'); ?>
+          <?php if(has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail('full'); ?>
+            <hr>
+          <?php endif; ?>
           <?php
             the_content( sprintf(
               wp_kses(

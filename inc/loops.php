@@ -61,11 +61,12 @@ if ( ! function_exists( 'mf_standart_loop' ) ) {
                 <?php the_post_thumbnail('maqfort-thumbnail'); ?>
               </figure>
             </a>
-
           <?php else : ?>
-            <figure class="post-card-thumbnail">
-              <img src="https://via.placeholder.com/370x280" alt="">
-            </figure>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+              <figure class="post-card-thumbnail">
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/placeholder.png" alt="imagem provisória">
+              </figure>
+            </a>
           <?php endif; ?>
         </header>
         <section class="post-card-content">

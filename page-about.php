@@ -5,7 +5,11 @@
  */
 get_header();
 
-putRevSlider("about");
+$sliderShortcode = get_theme_mod( 'about_slider' );
+
+if (!empty( $sliderShortcode )) :
+  echo '<div class="slider-wrapper">' , do_shortcode( $sliderShortcode, true ) , '</div>';
+endif;
 
 while ( have_posts() ) : the_post();
 

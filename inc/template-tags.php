@@ -100,7 +100,7 @@ if ( ! function_exists( 'mf_sharing_buttons' ) ) {
 
   		// Add sharing button at the end of page/page content
   		$content .= '<div class="maqfort-social-share">';
-  		$content .= '<h4>' . __('Partilhe nas redes socias!', 'maqfort') . '</h4>';
+  		$content .= '<h4>' . __('Partilhe nas redes socias', 'maqfort') . '</h4>';
 
   		$content .= '<a class="maqfort-link maqfort-facebook" title="Facebook" href="' . $facebookURL . '" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
       $content .= '<a class="maqfort-link maqfort-twitter" title="Twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
@@ -199,7 +199,7 @@ if ( ! function_exists( 'mf_all_touch_icons' ) ) {
   add_action( 'mf_touch_icons', 'mf_all_touch_icons' );
 }
 
-/*----------- Loop de categorias de produtos -----------*/
+/*----------- Change Query on Produtos archive page -----------*/
 if(!function_exists('mf_product_categories_loop')) {
   function mf_product_categories_loop($query){
     if ( $query->is_post_type_archive( array('mf_produtos') ) && $query->is_main_query() ) {

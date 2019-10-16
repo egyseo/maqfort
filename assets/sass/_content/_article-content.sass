@@ -3,38 +3,39 @@
     background-color: #f9f9f9
     height: 2px
 .article-header
-  color: $darker-grey
+  background-color: $blue-grey
   width: 100%
   .article-header-box-top
-    padding: 60px 0
+    padding: 80px 0
+    display: flex
+    align-items: center
     .article-title
-      color: $darker-grey
+      color: white
       font-size: 2em
       display: inline-block
     .article-date
+      display: flex
+      width: 95px
       margin-right: 20px
       display: inline-block
-      vertical-align: middle
-      padding: 0 20px 0 0
       border-right: 3px solid $primary-color
-      float: none
       .day
-        font-size: 40px
+        font-size: 30px
         line-height: 1em
         min-width: 1em
         display: block
-        color: $darker-grey
+        color: white
         float: left
         margin-right: 5px
       .month-year
-        font-size: 11px
+        font-size: 8px
         font-weight: 300
         display: block
         text-transform: uppercase
-        color: $blue-grey
+        color: white
         float: left
         .month
-          font-size: 18px
+          font-size: 13px
           font-weight: normal
           margin-top: 4px
           line-height: 1em
@@ -47,26 +48,24 @@
 
 
 .article-content
-  margin-bottom: 40px
-  .article-header-box-bottom
-    margin-bottom: 20px
-    .meta-tags
+  padding: 60px 0 20px
+  .meta-tags
+    display: inline-block
+    ul
       display: inline-block
-      ul
+      list-style-type: none
+      margin: 0
+      padding: 0
+      li
         display: inline-block
-        list-style-type: none
-        margin: 0
-        padding: 0
-        li
-          display: inline-block
+        color: $blue-grey
+        a
           color: $blue-grey
-          a
-            color: $blue-grey
-        .tag-icon
-          color: $primary-color
-          font-weight: bold
-          font-size: 18px
-          margin-right: 5px
+      .tag-icon
+        color: $primary-color
+        font-weight: bold
+        font-size: 18px
+        margin-right: 5px
 
 
   .maqfort-social-share

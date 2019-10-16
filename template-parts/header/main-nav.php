@@ -18,8 +18,4 @@
   } else {
     echo '<p class="no-nav">', __('Adicione alguns itens ao menu principal', 'maqfort') , '</p>';
   } ?>
-
-  <div class="btn-search-top-wrapper">
-    <a class="btn-search-top" href="#/" rel="nofollow"><i class="fa fa-search"></i></a>
-  </div>
 </div>

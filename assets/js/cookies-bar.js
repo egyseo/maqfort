@@ -12,7 +12,6 @@ function euSetCookie(cookieName, cookieValue, nDays) {
   document.cookie = cookieName+"="+escape(cookieValue)+ ";expires="+expire.toGMTString()+"; path=/";
 }
 
-
 function euReadCookie(cookieName) {
   var theCookie=" "+document.cookie;
   var ind=theCookie.indexOf(" "+cookieName+"=");

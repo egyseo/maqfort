@@ -1,9 +1,16 @@
-<?php get_header(); ?>
+<?php
+
+get_header();
+
+$desc = get_theme_mod('news_page_desc');
+?>
   <div class="container container-fluid">
     <div class="row">
       <div class="col-xs-12">
         <h1><?php _e( 'Notícias', 'maqfort' ); ?></h1>
-        <p><?php _e( 'Siga as nossas últimas notícias e mantenha-s actualizado com o mundo das máquinas e ferramentas da MAQFORT!', 'maqfort' ); ?></p>
+        <?php if($desc) : ?>
+          <p><?php echo esc_html($desc); ?></p>
+        <?php endif; ?>
       </div>
     </div>
     <div class="row">
@@ -18,4 +25,4 @@
       endif; ?>
     </div>
   </div>
-<?php get_footer(); ?>
+<?php get_footer();

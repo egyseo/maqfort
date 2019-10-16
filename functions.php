@@ -6,7 +6,7 @@
  * -----------------------------------------------------------
 */
 
-require_once get_template_directory() . '/inc/maqfort.php';
+require_once get_template_directory() . '/inc/template-functions.php';
 
 require_once get_template_directory() . '/inc/custom-post-type.php';
 
@@ -82,6 +82,7 @@ if ( ! function_exists( 'mf_setup' ) ) {
     register_nav_menus( array(
       'main-menu' => esc_html__( 'Main Menu', 'maqfort' ),
       'mobile-menu' => esc_html__( 'Mobile Menu', 'maqfort' ),
+      'menu-footer' => esc_html__( 'Footer Menu', 'maqfort' ),
     ) );
 
     // Cleaning up random code around images.
@@ -159,7 +160,7 @@ if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 
       wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/assets/js/scroll-to-top.js', array( 'jquery' ), false, true );
 
-      wp_enqueue_script( 'cookies-bar', get_stylesheet_directory_uri() . '/assets/js/cookies-bar.js', array( 'jquery' ), false, true );
+      wp_enqueue_script( 'cookies-bar', get_stylesheet_directory_uri() . '/assets/js/cookies-bar.js', false, true );
 
       wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), false, true );
 
@@ -204,16 +205,6 @@ if ( ! function_exists( 'mf_widget_init' ) ) {
         'id' => 'footer',
         'description' => __( 'Show on some page and posts', 'maqfort' ),
         'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-4 col-md-3 col-lg-3 %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>'
-      ));
-
-      register_sidebar(array(
-        'name' => __( 'Footer Small', 'maqfort' ),
-        'id' => 'footer-small',
-        'description' => __( 'Show on some page and posts', 'maqfort' ),
-        'before_widget' => '<div id="%1$s" class="widget-footer-small col-xs-12 col-sm-6 col-md-6 col-lg-6 %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widget-title">',
         'after_title' => '</h4>'

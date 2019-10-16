@@ -3,7 +3,7 @@
 * Topuch Icons Section
 */
 $wp_customize->add_section( 'images_icons', array(
-    'priority' => 6,
+    'priority' => 4,
     'capability' => 'edit_theme_options',
     'theme_supports' => '',
     'title' => __('Icons', 'maqfort'),
