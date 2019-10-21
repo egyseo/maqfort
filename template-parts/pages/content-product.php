@@ -8,7 +8,7 @@
             <div id="product-featured-imgs" class="flexslider">
               <ul class="slides">
                 <?php
-                  $ft_images = get_post_meta(  get_the_ID(), '_mf_products_gallerie', true);
+                  $ft_images = get_post_meta(  get_the_ID(), '_mf_produtos_gallerie', true);
                     if ( $ft_images ) {
                       foreach ( $ft_images as $attachment_id => $img_full_url ) {
                        $full = wp_get_attachment_image($attachment_id, 'full');
@@ -26,7 +26,7 @@
             </div><!-- featured img products slider ends -->
             <div id="product-carousel-galerie" class="flexslider">
               <ul class="slides">
-                <?php $carousel_images = get_post_meta(  get_the_ID(), '_mf_products_carousel', true);
+                <?php $carousel_images = get_post_meta(  get_the_ID(), '_mf_produtos_carousel', true);
                   if ( $carousel_images ) {
                     foreach ( $carousel_images as $attachment_id => $img_full_url ) {
                      $full = wp_get_attachment_image($attachment_id, 'full');
@@ -48,20 +48,25 @@
           <?php the_content(); ?>
           <div class="product-buttons">
             <?php
-              $get_quote = get_post_meta(  get_the_ID(), '_mf_products_quote_url', true);
-              $catalog = get_post_meta(  get_the_ID(), '_mf_products_catalog_id', true);
-              if ( !empty( $catalog ) ) {
-                echo '<a class="button-catalog" href="' . wp_get_attachment_url( $catalog ) . '" target="_blank">' . __( 'Download Catalog', 'maqfort' ) . '</a>';
-              }
-              if ( !empty( $get_quote ) ) {
-                echo '<button type="button" name="button" class="button-getquote" href="#contact_form_pop">' . __( 'Get a quote', 'maqfort' ) . '</button>';
-              } ?>
+              $get_quote = get_post_meta(get_the_ID(), '_mf_produtos_quote_url', true);
+              $catalog = get_post_meta(get_the_ID(), '_mf_produtos_catalog_id', true);
+              $extraInfo = get_post_meta(get_the_ID(), '_mf_produtos_extra_info', true);
+              if($extraInfo) :
+                echo '<a class="button-catalog extra-info" href="' , wp_get_attachment_url($extraInfo) , '" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i>' , __('Mais Detalhes', 'maqfort' ) , '</a>';
+              endif;
+              if($catalog) :
+                echo '<a class="button-catalog" href="' , wp_get_attachment_url($catalog) , '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' , __( 'Catálogo', 'maqfort' ) , '</a>';
+              endif;
+              if($get_quote) :
+                echo '<button type="button" name="button" class="button-getquote" href="#contact_form_pop"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>' , __( 'Pedir Orçamento', 'maqfort' ) , '</button>';
+              endif; ?>
             <div style="display:none" class="fancybox-hidden">
                 <div id="contact_form_pop" style="height: 80vh;">
                     <?php echo do_shortcode( $get_quote ); ?>
                 </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

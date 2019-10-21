@@ -14,5 +14,6 @@ function mf_customize_register( $wp_customize ) {
   require get_parent_theme_file_path( '/inc/customizer/social-icons.php' );
   require get_parent_theme_file_path( '/inc/customizer/general-settings.php' );
   require get_parent_theme_file_path( '/inc/customizer/cookies.php' );
+  require get_parent_theme_file_path( '/inc/customizer/laser-section.php' );
 }
 add_action( 'customize_register', 'mf_customize_register' );

@@ -36,33 +36,41 @@
     .flex-nav-prev
       .flex-prev
         padding: 9px 14px
-        background-color: transparentize($blue-grey, .4)
+        background-color: transparentize($blue-grey, .9)
         &::before
           font-size: 16px
-          color: $white-text-ongrey
+          color: $grey
           text-shadow: none
         &:hover
-          background-color: $blue-grey
+          background-color: $primary-color
+          &::before
+            color: white
     .flex-nav-next
       .flex-next
         left: 45px
         padding: 9px 14px
-        background-color: transparentize($blue-grey, .4)
+        background-color: transparentize($blue-grey, .9)
         &::before
           font-size: 16px
-          color: $white-text-ongrey
+          color: $grey
           text-shadow: none
         &:hover
-          background-color: $blue-grey
+          background-color: $primary-color
+          &::before
+            color: white
 
 .product-buttons
   margin-bottom: 40px
+  a,
+  button
+    font-size: 13px
+    .fa
+      margin-right: 8px
   .button-catalog
     display: inline-block
     padding: 10px 20px
     color: $light-grey
     background-color: $blue-grey
-    font-size: 14px
     margin-right: 20px
     &:hover
       background-color: $darker-grey
@@ -70,13 +78,37 @@
     display: inline-block
     padding: 10px 20px
     background-color: $primary-color
-    font-size: 14px
     color: #fff
     cursor: pointer
     &:hover
       background-color: $primary-darker
 
 .product-video-gallerie
+
+
+
+.lasers-container
+  display: flex
+  flex-wrap: wrap
+  .laser-image
+    width: 40%
+    img
+  .laser-description
+    width: 60%
+    p
+      font-size: 13px
+  .laser-list
+    width: 100%
+    columns: 2
+    font-size: 13px
+    padding: 0
+    margin: 0
+
+  .laser-list-title
+    margin-bottom: 10px
+    strong
+      color: $primary-color
+
 
 @media (max-width: 767px)
   .product-buttons

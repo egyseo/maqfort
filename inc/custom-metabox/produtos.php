@@ -15,7 +15,7 @@ if ( ! function_exists('mf_produtos') ) {
   	 */
   	$cmb = new_cmb2_box( array(
   			'id'            => 'product_details',
-  			'title'         => __( 'Product Details', 'maqfort' ),
+  			'title'         => __( 'Detalhes do Produto', 'maqfort' ),
   			'object_types'  => array( 'mf_produtos' ), // Post type
   			'context'       => 'normal',
   			'priority'      => 'high',
@@ -26,42 +26,42 @@ if ( ! function_exists('mf_produtos') ) {
 
   	// Product Images
   	$cmb->add_field( array(
-  			'name' => __( 'Product Images ', 'maqfort' ),
-  			'desc' => __( 'Insert here the images of the product.', 'maqfort' ),
+  			'name' => __( 'Principais imagens do produtos', 'maqfort' ),
+  			'desc' => '',
   			'id'   => $prefix . 'gallerie',
   			'type' => 'file_list',
   			// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
   			// Optional, override default text strings
   			'text' => array(
-  					'add_upload_files_text' => __( 'Add Image', 'maqfort' ), // default: "Add or Upload Files"
-  					'remove_image_text' => __( 'Remove Image', 'maqfort' ), // default: "Remove Image"
-  					'file_text' => __( 'Files', 'maqfort' ), // default: "File:"
+  					'add_upload_files_text' => __( 'Adicionar Imagem', 'maqfort' ), // default: "Add or Upload Files"
+  					'remove_image_text' => __( 'Remover Imager', 'maqfort' ), // default: "Remove Image"
+  					'file_text' => __( 'Ficheiros', 'maqfort' ), // default: "File:"
   					'file_download_text' => __( 'Download', 'maqfort' ), // default: "Download"
-  					'remove_text' => __( 'Remove', 'maqfort' ) // default: "Remove"
+  					'remove_text' => __( 'Remover', 'maqfort' ) // default: "Remove"
   			),
   	) );
 
     // Product Pieces Images
     $cmb->add_field( array(
-        'name' => __( 'Product Pieces Image', 'maqfort' ),
-        'desc' => __( 'Insert here the images of the product piece', 'maqfort' ),
+        'name' => __( 'Imagens de detalhes do produto', 'maqfort' ),
+        'desc' => '',
         'id'   => $prefix . 'carousel',
         'type' => 'file_list',
         // 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
         // Optional, override default text strings
         'text' => array(
-            'add_upload_files_text' => __( 'Add Image', 'maqfort' ), // default: "Add or Upload Files"
-            'remove_image_text' => __( 'Remove Image', 'maqfort' ), // default: "Remove Image"
-            'file_text' => __( 'Files', 'maqfort' ), // default: "File:"
+            'add_upload_files_text' => __( 'Adicionar Imagem', 'maqfort' ), // default: "Add or Upload Files"
+            'remove_image_text' => __( 'Remover Imagem', 'maqfort' ), // default: "Remove Image"
+            'file_text' => __( 'Ficheiros', 'maqfort' ), // default: "File:"
             'file_download_text' => __( 'Download', 'maqfort' ), // default: "Download"
-            'remove_text' => __( 'Remove', 'maqfort' ) // default: "Remove"
+            'remove_text' => __( 'Remover', 'maqfort' ) // default: "Remove"
         ),
     ) );
 
   	// Product Catalog link/file
   	$cmb->add_field( array(
-  	    'name'    => __( 'Product Catalog', 'maqfort' ),
-  	    'desc'    => __( 'Upload the pdf file or insert the URL.', 'maqfort' ),
+  	    'name'    => __( 'Catálogo Geral', 'maqfort' ),
+  	    'desc'    => '',
   	    'id'      => $prefix  .'catalog',
   	    'type'    => 'file',
   	    // Optional:
@@ -69,13 +69,32 @@ if ( ! function_exists('mf_produtos') ) {
   	        'url' => true, // Hide the text input for the url
   	    ),
   	    'text'    => array(
-  	        'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
+  	        'add_upload_file_text' => 'Adicionar Ficheiro' // Change upload button text. Default: "Add or Upload File"
   	    ),
   	    // query_args are passed to wp.media's library query.
   	    'query_args' => array(
   	        'type' => 'application/pdf', // Make library only display PDFs.
   	    ),
   	) );
+
+    // Product Catalog link/file
+    $cmb->add_field( array(
+        'name'    => __( 'Detalhes do Produto em PDF', 'maqfort' ),
+        'desc'    => '',
+        'id'      => $prefix  . 'extra_info',
+        'type'    => 'file',
+        // Optional:
+        'options' => array(
+            'url' => true, // Hide the text input for the url
+        ),
+        'text'    => array(
+            'add_upload_file_text' => 'Adicionar Ficheiro' // Change upload button text. Default: "Add or Upload File"
+        ),
+        // query_args are passed to wp.media's library query.
+        'query_args' => array(
+            'type' => 'application/pdf', // Make library only display PDFs.
+        ),
+    ) );
 
     // Contact form shortcode
     $cmb->add_field( array(
