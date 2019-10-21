@@ -129,7 +129,7 @@ function mf_flush_rewrite_rule_on_activation() {
 add_filter('request', 'mf_change_term_request', 1, 1 );
 
 function mf_change_term_request($query){
-
+  $name = '';
 	$tax_name = 'mf_tipos_de_produtos'; // specify you taxonomy name here, it can be also 'category' or 'post_tag'
 
 	// Request for child terms differs, we should make an additional check
