@@ -55,7 +55,7 @@
                 echo '<a class="button-catalog extra-info" href="' , wp_get_attachment_url($extraInfo) , '" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i>' , __('Mais Detalhes', 'maqfort' ) , '</a>';
               endif;
               if($catalog) :
-                echo '<a class="button-catalog" href="' , wp_get_attachment_url($catalog) , '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' , __( 'Catálogo', 'maqfort' ) , '</a>';
+                echo '<a class="button-catalog" href="' , esc_url($catalog) , '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' , __( 'Catálogo', 'maqfort' ) , '</a>';
               endif;
               if($get_quote) :
                 echo '<button type="button" name="button" class="button-getquote" href="#contact_form_pop"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>' , __( 'Pedir Orçamento', 'maqfort' ) , '</button>';

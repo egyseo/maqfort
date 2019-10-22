@@ -106,8 +106,75 @@ if ( ! function_exists('mf_produtos') ) {
         'id'   => $prefix . 'image',
         'type' => 'file',
     ) );
+
   }
 
   add_action( 'cmb2_init', 'mf_produtos' );
 
 }
+
+/*----------- Add metabox to creat tables. -----------*/
+if (!function_exists('mf_products_tables')) :
+
+  function mf_products_tables() {
+
+    $prefix = 'mf_produtos_tables';
+
+    $cmb = new_cmb2_box( array(
+      'id'            => 'product_tables',
+      'title'         => __( 'Tabelas do Produto', 'maqfort' ),
+      'object_types'  => array( 'mf_produtos' ),
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true,
+    ) );
+
+    $group_field_id = $cmb->add_field( array(
+      'id'          => $prefix . 'tables',
+      'type'        => 'group',
+      'description' => '',
+      'options'     => array(
+        'group_title'   => __('Tabela {#}', 'maqfort'),
+        'add_button'    => __('Adicionar Tabela', 'maqfort'),
+        'remove_button' => __('Remover Tabela', 'maqfort'),
+        'sortable'      => true,
+        'closed'        => false,
+    ) ) );
+
+    $cmb->add_group_field( $group_field_id, array(
+      'id'   => $prefix . 'title',
+      'type' => 'text',
+      'name' => __('Nome da Tabela', 'maqfort'),
+      'desc' => '',
+    ) );
+
+    $cmb->add_group_field( $group_field_id, array(
+      'id'   => $prefix . 'thead',
+      'type' => 'text',
+      'name' => __('Cabeçalho', 'maqfort'),
+      'desc' => '',
+      'repeatable' => true,
+    ) );
+
+    $cmb->add_group_field( $group_field_id, array(
+      'id'   => $prefix . 'thead',
+      'type' => 'text',
+      'name' => __('Cabeçalho', 'maqfort'),
+      'desc' => '',
+      'repeatable' => true,
+    ) );
+
+
+    $cmb->add_group_field( $group_field_id, array(
+      'id'   => $prefix . 'tcell',
+      'type' => 'text',
+      'name' => __('Cabeçalho', 'maqfort'),
+      'desc' => '',
+      'repeatable' => true,
+    ) );
+
+  }
+
+  add_action( 'cmb2_init', 'mf_products_tables' );
+
+endif;
