@@ -126,21 +126,27 @@ function mf_flush_rewrite_rule_on_activation() {
 }
 
 /*----------- Change term request -----------*/
+
+ /* Taken from: https://rudrastyh.com/wordpress/remove-taxonomy-slug-from-urls.html */
 add_filter('request', 'mf_change_term_request', 1, 1 );
 
 function mf_change_term_request($query){
-  $name = '';
+
 	$tax_name = 'mf_tipos_de_produtos'; // specify you taxonomy name here, it can be also 'category' or 'post_tag'
 
 	// Request for child terms differs, we should make an additional check
-	if( $query['attachment'] ) :
+
+	if( isset( $query['attachment'] ) && $query['attachment'] ) :
 		$include_children = true;
 		$name = $query['attachment'];
 	else:
 		$include_children = false;
-		$name = $query['name'];
+    if( isset( $query['name'] ) ) :
+      $name = $query['name'];
+    else :
+      $name = '';
+    endif;
 	endif;
-
 
 	$term = get_term_by('slug', $name, $tax_name); // get the current term to make sure it exists
 
@@ -174,6 +180,8 @@ function mf_change_term_request($query){
 		endswitch;
 
 	endif;
+
+
 
 	return $query;
 
