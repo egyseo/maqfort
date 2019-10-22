@@ -58,25 +58,6 @@ if ( ! function_exists('mf_produtos') ) {
         ),
     ) );
 
-  	// Product Catalog link/file
-  	$cmb->add_field( array(
-  	    'name'    => __( 'Catálogo Geral', 'maqfort' ),
-  	    'desc'    => '',
-  	    'id'      => $prefix  .'catalog',
-  	    'type'    => 'file',
-  	    // Optional:
-  	    'options' => array(
-  	        'url' => true, // Hide the text input for the url
-  	    ),
-  	    'text'    => array(
-  	        'add_upload_file_text' => 'Adicionar Ficheiro' // Change upload button text. Default: "Add or Upload File"
-  	    ),
-  	    // query_args are passed to wp.media's library query.
-  	    'query_args' => array(
-  	        'type' => 'application/pdf', // Make library only display PDFs.
-  	    ),
-  	) );
-
     // Product Catalog link/file
     $cmb->add_field( array(
         'name'    => __( 'Detalhes do Produto em PDF', 'maqfort' ),
@@ -95,16 +76,6 @@ if ( ! function_exists('mf_produtos') ) {
             'type' => 'application/pdf', // Make library only display PDFs.
         ),
     ) );
-
-    // Contact form shortcode
-    $cmb->add_field( array(
-      'name' => __( 'Contact Form Shortcode', 'maqfort' ),
-      'desc' => __( 'Insert here the shortcode of the disere contact form.', 'maqfort' ),
-      'default' => '',
-      'id' => $prefix . 'quote_url',
-      'type' => 'text'
-    ) );
-
 
     $group_field_id = $cmb->add_field( array(
     	'id'          => $prefix . 'video_galerie',
