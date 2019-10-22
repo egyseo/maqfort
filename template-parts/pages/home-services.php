@@ -5,9 +5,11 @@
       $service_itens = get_post_meta( get_the_ID(), '_mf_homepage_itens', true );
       if ($service_itens) {
         foreach ( (array)$service_itens as $key => $service ) {
-          $service_title = $service_url = $service_image = $service_icon = '';
+          $service_title = $service_url = $service_image = $service_icon =  $service_desc = '';
           if ( isset( $service[ '_mf_homepage_title' ] ) )
             $service_title = esc_html( $service[ '_mf_homepage_title' ] );
+          if ( isset( $service[ '_mf_homepage_description' ] ) )
+            $service_desc = esc_html( $service[ '_mf_homepage_description' ] );
           if ( isset( $service[ '_mf_homepage_url' ] ) )
             $service_url = esc_html( $service[  '_mf_homepage_url' ] );
           if ( isset( $service[ '_mf_homepage_image' ] ) )
@@ -34,6 +36,9 @@
                       <p class="service-title">
                         <?php echo $service_title; ?>
                       </p>
+                      <?php if($service_desc) :?>
+                        <?php echo '<p class="service-desc">' , $service_desc , '</p>'; ?>
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>

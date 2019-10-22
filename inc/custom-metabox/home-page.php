@@ -47,6 +47,12 @@ if ( ! function_exists('mf_homepage_services') ) {
         'type' => 'text',
     ) );
 
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => __( 'Descrição do Serviços', 'maqfort' ),
+        'description' => '',
+        'id'   => $prefix . 'description',
+        'type' => 'textarea',
+    ) );
 
     $cmb->add_group_field( $group_field_id, array(
         'name' => __( 'URL', 'maqfort' ),

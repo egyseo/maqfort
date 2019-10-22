@@ -48,9 +48,9 @@
           <?php the_content(); ?>
           <div class="product-buttons">
             <?php
-              $get_quote = get_post_meta(get_the_ID(), '_mf_produtos_quote_url', true);
-              $catalog = get_post_meta(get_the_ID(), '_mf_produtos_catalog_id', true);
-              $extraInfo = get_post_meta(get_the_ID(), '_mf_produtos_extra_info', true);
+              $get_quote = get_theme_mod('product_form');
+              $catalog = get_theme_mod('products_catalogue_button');
+              $extraInfo = get_post_meta(get_the_ID(), '_mf_produtos_extra_info_id', true);
               if($extraInfo) :
                 echo '<a class="button-catalog extra-info" href="' , wp_get_attachment_url($extraInfo) , '" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i>' , __('Mais Detalhes', 'maqfort' ) , '</a>';
               endif;
@@ -104,6 +104,6 @@
     </div>
   </section>
 <?php endif; ?>
-  <?php get_template_part( 'template-parts/post/related', 'products' ); ?>
+  <?php get_template_part( 'template-parts/pages/related', 'products' ); ?>
   <?php get_template_part( 'template-parts/post/related', 'news' ); ?>
 </article>
