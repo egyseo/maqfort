@@ -24,7 +24,7 @@ $desc = get_theme_mod('products_archives_page_desc');
             'taxonomy' => 'mf_tipos_de_produtos',
             'hide_empty' => true,
             'parent'   => 0,
-            'orderby' => 'id',
+            'orderby' => 'menu_order',
             'order' => 'ASC'
           ) );
           if ($taxonomies) :

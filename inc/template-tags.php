@@ -206,6 +206,10 @@ if(!function_exists('mf_product_categories_loop')) {
       $query->set( 'posts_per_page', -1);
       $query->set( 'post_status', 'private' );
     }
+    if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+      $query->set( 'orderby', 'menu_order');
+      $query->set( 'order', 'ASC');
+    }
   }
   add_action('pre_get_posts', 'mf_product_categories_loop');
 }

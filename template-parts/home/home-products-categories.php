@@ -4,7 +4,7 @@ $taxonomies = get_terms( array(
   'taxonomy' => 'mf_tipos_de_produtos',
   'hide_empty' => true,
   'parent'   => 0,
-  'orderby' => 'id',
+  'orderby' => 'menu_order',
   'order' => 'ASC'
 ) );
 
