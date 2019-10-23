@@ -9,7 +9,7 @@ if (!function_exists('mf_tables_mb')) :
 
   function mf_tables_mb() {
 
-    $prefix = 'mf_tables_mb';
+    $prefix = 'mf_tables_mb_';
 
     $cmb = new_cmb2_box( array(
       'id'            => $prefix . 'table',
@@ -18,6 +18,13 @@ if (!function_exists('mf_tables_mb')) :
       'context'       => 'normal',
       'priority'      => 'high',
       'show_names'    => true,
+    ) );
+
+    $cmb->add_field(array(
+      'name' => __( 'Nome da tabela', 'maqfort' ),
+      'desc' => '',
+      'id'   => $prefix . 'table_name',
+      'type' => 'text',
     ) );
 
     $cmb->add_field(array(

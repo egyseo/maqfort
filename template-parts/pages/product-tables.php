@@ -14,16 +14,16 @@ if($tableList) :
   echo '<section class="product-tables-wrapper"><div class="container container-fluid"><div class="tab">';
 
   foreach ($tableList as $table) : setup_postdata( $GLOBALS['post'] =& $post );
-    $tableName = get_the_title($table);
+    $tableName = get_post_meta($table, 'mf_tables_mb_table_name', true);
     ?><button class="tablinks" onclick="mfNextTable(event, '<?php echo $tableName; ?>')"><h3><?php echo $tableName; ?></h3></button><?php
   endforeach;
 
   echo '</div>';
 
   foreach ($tableList as $table) : setup_postdata( $GLOBALS['post'] =& $post );
-    $tableHead = get_post_meta($table, 'mf_tables_mbtable_head', true);
-    $tableRow = get_post_meta($table, 'mf_tables_mbtable_row', true);
-    $tableName = get_the_title($table);
+    $tableHead = get_post_meta($table, 'mf_tables_mb_table_head', true);
+    $tableRow = get_post_meta($table, 'mf_tables_mb_table_row', true);
+    $tableName = get_post_meta($table, 'mf_tables_mb_table_name', true);
 
     ?>
     <div id="<?php echo $tableName; ?>" class="tabcontent">
