@@ -114,6 +114,69 @@ function mf_register_custom_post_type_products() {
 
 }
 
+/*----------- Subsection comment block -----------*/
+add_action( 'init', 'mf_register_custom_post_type_tables', 0 );
+
+function mf_register_custom_post_type_tables() {
+
+  $labels = array(
+    'name'                  => __( 'Tabelas', 'Post Type General Name', 'maqfort' ),
+    'singular_name'         => __( 'Tabela', 'Post Type Singular Name', 'maqfort' ),
+    'menu_name'             => __( 'Tabelas', 'maqfort' ),
+    'name_admin_bar'        => __( 'Tabelas', 'maqfort' ),
+    'archives'              => __( 'Arquivos de Tabelas', 'maqfort' ),
+    'attributes'            => __( 'Atributos de Tabela', 'maqfort' ),
+    'parent_item_colon'     => __( 'Tabela Pai:', 'maqfort' ),
+    'all_items'             => __( 'Todos os Tabelas', 'maqfort' ),
+    'add_new_item'          => __( 'Adicionar Novo Tabela', 'maqfort' ),
+    'add_new'               => __( 'Adicionar Novo', 'maqfort' ),
+    'new_item'              => __( 'Novo Tabela', 'maqfort' ),
+    'edit_item'             => __( 'Editar Tabela', 'maqfort' ),
+    'update_item'           => __( 'Actualizar Tabela', 'maqfort' ),
+    'view_item'             => __( 'Ver Tabela', 'maqfort' ),
+    'view_items'            => __( 'Ver Tabelas', 'maqfort' ),
+    'search_items'          => __( 'Procurar Tabela', 'maqfort' ),
+    'not_found'             => __( 'Não encontrado', 'maqfort' ),
+    'not_found_in_trash'    => __( 'Nenhum Tabela encontrado no lixo', 'maqfort' ),
+    'featured_image'        => __( 'Imagem de destaque', 'maqfort' ),
+    'set_featured_image'    => __( 'Definir imagem de destaque', 'maqfort' ),
+    'remove_featured_image' => __( 'Remover imagem de destaque', 'maqfort' ),
+    'use_featured_image'    => __( 'Usar como imagem de destaque', 'maqfort' ),
+    'insert_into_item'      => __( 'Inserir em Tabelas', 'maqfort' ),
+    'uploaded_to_this_item' => __( 'Uploaded to this Product', 'maqfort' ),
+    'items_list'            => __( 'Lista de Tabelas', 'maqfort' ),
+    'items_list_navigation' => __( 'Navegação de lista de Tabelas', 'maqfort' ),
+    'filter_items_list'     => __( 'Filtrar lista de Tabelas', 'maqfort' ),
+  );
+
+  $args = array(
+    'label'                 => __( 'Tabelas', 'maqfort' ),
+    'description'           => __( 'Tabelas de Especificações de Produtos', 'maqfort' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title' ),
+    'hierarchical'          => false,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'menu_icon'             => 'dashicons-grid-view',
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => false,
+    'exclude_from_search'   => true,
+    'publicly_queryable'    => true,
+    'query_var'             => true,
+    'capability_type'       => 'post',
+    'show_in_rest'          => true,
+    'rewrite'               => array('slug' =>  __('tabela', 'maqfort'), 'with_front' => false),
+  );
+
+  register_post_type( 'mf_tables', $args );
+
+}
+
+
 /*----------- Refresh rewrite rules on theme activation -----------*/
 add_action( 'after_setup_theme', 'mf_flush_rewrite_rule_on_activation' );
 
@@ -121,6 +184,7 @@ function mf_flush_rewrite_rule_on_activation() {
     // trigger our function that registers the custom post type
     mf_register_custom_tax();
     mf_register_custom_post_type_products();
+    mf_register_custom_post_type_tables();
     // clear the permalinks after the post type has been registered
     flush_rewrite_rules();
 }

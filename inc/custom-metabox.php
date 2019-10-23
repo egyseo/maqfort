@@ -22,3 +22,4 @@ require_once dirname( __FILE__ ) . '/custom-metabox/service-page.php';
 require_once dirname( __FILE__ ) . '/custom-metabox/produtos.php';
 require_once dirname( __FILE__ ) . '/custom-metabox/related-posts.php';
 require_once dirname( __FILE__ ) . '/custom-metabox/taxonomie-metabox.php';
+require_once dirname( __FILE__ ) . '/custom-metabox/tables-metabox.php';

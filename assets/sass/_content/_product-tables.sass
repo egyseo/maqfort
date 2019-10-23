@@ -1,0 +1,48 @@
+.product-tables-wrapper
+  padding: 60px 0
+  .tab
+    overflow: hidden
+    //border: 1px solid $light-grey
+    button
+      background-color: inherit
+      float: left
+      border: none
+      border-radius: 0
+      outline: none
+      cursor: pointer
+      padding: 15px 20px
+      transition: 0.3s
+      font-size: 15px
+      &:hover
+        background-color: $light-grey
+      h3
+        &::before
+          display: none
+    .active
+      background-color: $light-grey
+  .tabcontent
+    display: none
+    padding: 20px 0
+    border-top: 1px solid $white-text-ongrey
+    table
+      thead
+        background-color: $primary-color
+        tr
+          border: none
+          td
+            border: none
+            p
+              margin: 0
+              color: white
+              font-weight: bold
+              font-size: 14px
+      tbody
+        tr
+          border-color: $light-grey
+          &:nth-child(even)
+            background-color: $light-grey
+          td
+            border-color: $light-grey
+            p
+              margin: 0
+              font-size: 13px

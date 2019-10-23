@@ -104,6 +104,7 @@
     </div>
   </section>
 <?php endif; ?>
+  <?php get_template_part( 'template-parts/pages/product', 'tables' ); ?>
   <?php get_template_part( 'template-parts/pages/related', 'products' ); ?>
   <?php get_template_part( 'template-parts/post/related', 'news' ); ?>
 </article>
