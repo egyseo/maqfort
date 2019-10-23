@@ -75,7 +75,7 @@ function mf_login_title() { return get_option( 'blogname' ); }
 // calling it only on the login page
 add_action( 'login_enqueue_scripts', 'mf_login_css', 10 );
 add_filter( 'login_headerurl', 'mf_login_url' );
-add_filter( 'login_headertitle', 'mf_login_title' );
+add_filter( 'login_headertext', 'mf_login_title' );
 
 
 /************* CUSTOMIZE ADMIN *******************/
