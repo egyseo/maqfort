@@ -44,7 +44,7 @@ if (!function_exists('mf_tables_mb')) :
         'add_button'    => __('Adicionar Linha', 'maqfort'),
         'remove_button' => __('Remover Linha', 'maqfort'),
         'sortable'      => true,
-        'closed'        => false,
+        'closed'        => true,
     ) ) );
 
     $cmb->add_group_field( $group_field_id, array(

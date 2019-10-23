@@ -94,12 +94,12 @@ if ( ! function_exists('mf_produtos') ) {
     $group_field_id = $cmb->add_field( array(
     	'id'          => $prefix . 'video_galerie',
     	'type'        => 'group',
-    	'description' => __( 'Product Video Gallery', 'maqfort' ),
+    	'description' => __( 'Videos do Produto', 'maqfort' ),
     	// 'repeatable'  => false, // use false if you want non-repeatable group
     	'options'     => array(
     		'group_title'   => __( 'Video {#}', 'maqfort' ), // since version 1.1.4, {#} gets replaced by row number
-    		'add_button'    => __( 'Add Video', 'maqfort' ),
-    		'remove_button' => __( 'Remove Video', 'maqfort' ),
+    		'add_button'    => __( 'Adicionar Video', 'maqfort' ),
+    		'remove_button' => __( 'Remover Video', 'maqfort' ),
     		'sortable'      => true, // beta
     		 'closed'     => true, // true to have the groups closed by default
     	),
@@ -108,15 +108,15 @@ if ( ! function_exists('mf_produtos') ) {
     // Id's for group's fields only need to be unique for the group. Prefix is not needed.
     $cmb->add_group_field( $group_field_id, array(
       'name' => 'oEmbed',
-    	'desc' => 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
+    	'desc' => 'Insira um link do youtube, twitter, or instagram URL.',
     	'id'   => $prefix . 'embed',
     	'type' => 'oembed',
     	// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
     ) );
 
     $cmb->add_group_field( $group_field_id, array(
-        'name' => __( 'Video Thumbnail', 'maqfort' ),
-        'description' => __( 'Insert here the video thumbnail.', 'maqfort' ),
+        'name' => __( 'Thumbnail do video', 'maqfort' ),
+        'description' => '',
         'id'   => $prefix . 'image',
         'type' => 'file',
     ) );
