@@ -29,7 +29,7 @@ require_once get_template_directory() . '/inc/admin.php';
  * -----------------------------------------------------------
 */
 
-if ( ! function_exists( 'mf_setup' ) ) {
+if (!function_exists('mf_setup') ) {
 
   function mf_setup() {
 

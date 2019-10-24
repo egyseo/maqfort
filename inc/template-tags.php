@@ -224,6 +224,8 @@ if(!function_exists('mf_breadcrumbs')) :
       echo '<section class="breadcrumbs"><div class="container container-fluid"><div class="row"><div class="col-sm-12">';
       yoast_breadcrumb( '<div id="breadcrumbs">','</div>' );
       echo '</div></div></div></section>';
+    else :
+      return;
     endif;
   }
 
