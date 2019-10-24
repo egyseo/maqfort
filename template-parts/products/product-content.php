@@ -8,6 +8,7 @@
 
 ?>
 <article class="product-article" id="post-<?php the_ID(); ?> post-content" <?php post_class(); ?>>
+  <?php do_action('breadcrumbs'); ?>
   <section class="product-content">
     <div class="container container-fluid">
       <div class="row">

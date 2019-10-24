@@ -213,3 +213,20 @@ if(!function_exists('mf_product_categories_loop')) {
   }
   add_action('pre_get_posts', 'mf_product_categories_loop');
 }
+
+
+/*----------- Integrate yoast breadcrumbs -----------*/
+
+if(!function_exists('mf_breadcrumbs')) :
+
+  function mf_breadcrumbs(){
+    if ( function_exists('yoast_breadcrumb') ) :
+      echo '<section class="breadcrumbs"><div class="container container-fluid"><div class="row"><div class="col-sm-12">';
+      yoast_breadcrumb( '<div id="breadcrumbs">','</div>' );
+      echo '</div></div></div></section>';
+    endif;
+  }
+
+  add_action('breadcrumbs', 'mf_breadcrumbs');
+
+endif;

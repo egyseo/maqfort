@@ -6,6 +6,7 @@
     <header class="page-header-with-img" style="background-color:#525254;background-image:url(<?php the_post_thumbnail_url('full'); ?>); background-position:center; background-repeat:no-repeat; background-size:cover;">
 
     </header>
+    <?php do_action('breadcrumbs'); ?>
     <section class="page-content">
       <div class="container container-fluid">
         <div class="row">
@@ -37,6 +38,7 @@
         </div>
       </div>
     </header>
+    <?php do_action('breadcrumbs'); ?>
     <section class="page-content">
       <div class="container container-fluid">
         <div class="row">

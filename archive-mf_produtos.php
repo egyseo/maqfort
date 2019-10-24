@@ -16,6 +16,7 @@ $desc = get_theme_mod('products_archives_page_desc');
       </div>
     </div>
     </header>
+    <?php do_action('breadcrumbs'); ?>
     <section class="page-content">
       <div class="container container-fluid">
         <div class="row">

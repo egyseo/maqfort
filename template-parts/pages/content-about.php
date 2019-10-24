@@ -1,4 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <?php do_action('breadcrumbs'); ?>
   <section class="page-content">
     <div class="container container-fluid">
       <div class="row">

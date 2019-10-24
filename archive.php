@@ -16,6 +16,7 @@ get_header(); ?>
     </div>
   </header>
   <?php if ( have_posts() ) : ?>
+  <?php do_action('breadcrumbs'); ?>
   <section class="page-content">
     <div class="container container-fluid">
       <div class="row">
