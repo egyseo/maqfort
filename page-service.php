@@ -1,14 +1,16 @@
 <?php
 /**
+ * -----------------------------------------------------------
  * Template Name: Service Template
  * The theme template for service pages.
+ * -----------------------------------------------------------
  */
-  get_header();
 
-  while ( have_posts() ) : the_post();
+get_header();
 
-    get_template_part( 'template-parts/pages/content', 'service' );
+while ( have_posts() ) :
+	the_post();
+	get_template_part( 'template-parts/pages/page', 'service' );
+endwhile;
 
-  endwhile; // End of the loop.
-
-  get_footer();
+get_footer();

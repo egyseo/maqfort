@@ -1,15 +1,20 @@
-<?php get_header();
+<?php
+/**
+ * -----------------------------------------------------------
+ * The theme default single post template.
+ * -----------------------------------------------------------
+ */
 
-  while ( have_posts() ) : the_post();
+get_header();
 
-    get_template_part( 'template-parts/post/content', get_post_format() );
+while ( have_posts() ) :
 
-    if ( comments_open() || get_comments_number() ) :
-      comments_template();
-    endif;
+	the_post();
 
-  endwhile;
+	get_template_part( 'template-parts/post/content', get_post_format() );
 
-  get_template_part( 'template-parts/post/related', 'posts' );
+endwhile;
 
-get_footer(); ?>
+get_template_part( 'template-parts/post/related', 'posts' );
+
+get_footer();

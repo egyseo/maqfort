@@ -1,18 +1,16 @@
 <?php
 /**
  * -----------------------------------------------------------
- * The theme products template.
+ * Template Name: Page with childs
+ * the theme template for pages with siblings.
  * -----------------------------------------------------------
  */
 
 get_header();
 
 while ( have_posts() ) :
-
 	the_post();
-
-	get_template_part( 'template-parts/products/product', 'content' );
-
-endwhile; // End of the loop.
+	get_template_part( 'template-parts/pages/page', 'childs' );
+endwhile;
 
 get_footer();
