@@ -1,9 +1,12 @@
 <?php
-/*
-* -----------------------------------------------------------
-* Metabox for products.
-* -----------------------------------------------------------
-*/
+/**
+ * -----------------------------------------------------------
+ * Metabox for products.
+ *
+ * @package maqfort
+ * -----------------------------------------------------------
+ */
+
 if ( ! function_exists( 'mf_produtos' ) ) {
 
 	function mf_produtos() {
@@ -15,18 +18,27 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 		 */
 		$cmb = new_cmb2_box(
 			array(
-				'id'            => 'product_details',
-				'title'         => __( 'Detalhes do Produto', 'maqfort' ),
-				'object_types'  => array( 'mf_produtos' ), // Post type
-				'context'       => 'normal',
-				'priority'      => 'high',
-				'show_names'    => true, // Show field names on the left
-			// 'cmb_styles' => false, // false to disable the CMB stylesheet
-			// 'closed'     => true, // Keep the metabox closed by default
+				'id'           => 'product_details',
+				'title'        => __( 'Detalhes do Produto', 'maqfort' ),
+				'object_types' => array( 'mf_produtos' ), // Post type.
+				'context'      => 'normal',
+				'priority'     => 'high',
+				'show_names'   => true, // Show field names on the left.
+			// 'cmb_styles' => false, // false to disable the CMB stylesheet.
+			// 'closed'     => true, // Keep the metabox closed by default.
 			)
 		);
 
-		// Product Images
+		$cmb->add_field(
+			array(
+				'name'    => __( 'Descrição do Produto', 'maqfort' ),
+				'id'      => $prefix . 'wysiwyg',
+				'type'    => 'wysiwyg',
+				'options' => array(),
+			)
+		);
+
+		// Product Images.
 		$cmb->add_field(
 			array(
 				'name' => __( 'Principais imagens do produtos', 'maqfort' ),

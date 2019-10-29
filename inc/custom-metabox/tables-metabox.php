@@ -1,7 +1,9 @@
 <?php
-/*
+/**
  * -----------------------------------------------------------
- * Add metabox to creat tables
+ * Add metabox to creat tables.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 
@@ -13,12 +15,12 @@ if ( ! function_exists( 'mf_tables_mb' ) ) :
 
 		$cmb = new_cmb2_box(
 			array(
-				'id'            => $prefix . 'table',
-				'title'         => __( 'Tabela', 'maqfort' ),
-				'object_types'  => array( 'mf_tables' ),
-				'context'       => 'normal',
-				'priority'      => 'high',
-				'show_names'    => true,
+				'id'           => $prefix . 'table',
+				'title'        => __( 'Tabela', 'maqfort' ),
+				'object_types' => array( 'mf_tables' ),
+				'context'      => 'normal',
+				'priority'     => 'high',
+				'show_names'   => true,
 			)
 		);
 
@@ -33,10 +35,10 @@ if ( ! function_exists( 'mf_tables_mb' ) ) :
 
 		$cmb->add_field(
 			array(
-				'name' => __( 'Cabeçalho da Tabela', 'maqfort' ),
-				'desc' => '',
-				'id'   => $prefix . 'table_head',
-				'type' => 'text',
+				'name'       => __( 'Cabeçalho da Tabela', 'maqfort' ),
+				'desc'       => '',
+				'id'         => $prefix . 'table_head',
+				'type'       => 'text',
 				'repeatable' => true,
 			)
 		);
@@ -59,11 +61,19 @@ if ( ! function_exists( 'mf_tables_mb' ) ) :
 		$cmb->add_group_field(
 			$group_field_id,
 			array(
-				'id'   => 'table_cell',
-				'type' => 'text',
-				'name' => __( 'Conteudo', 'maqfort' ),
-				'desc' => '',
+				'id'         => 'table_cell',
+				'type'       => 'text',
+				'name'       => __( 'Conteudo', 'maqfort' ),
+				'desc'       => '',
 				'repeatable' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name' => __( 'Rodapé da tabela', 'maqfort' ),
+				'id'   => $prefix . 'table_footer',
+				'type' => 'wysiwyg',
 			)
 		);
 

@@ -1,67 +1,53 @@
 <?php
-/*
+/**
  * -----------------------------------------------------------
  * Tables with extra info for products.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 
-global $post;
+$table_list = get_post_meta( get_the_ID(), '_mf_produtos_tabelas', true );
 
-$tableList = get_post_meta( get_the_ID(), '_mf_produtos_tabelas', true );
+if ( $table_list ) :
 
-if ( $tableList ) :
-
-	echo '<section class="product-tables-wrapper"><div class="container container-fluid"><div class="tab">';
-
-	foreach ( $tableList as $table ) :
-		setup_postdata( $GLOBALS['post'] =& $post );
-		$tableName = get_post_meta( $table, 'mf_tables_mb_table_name', true );
-		?><button class="tablinks" onclick="mfNextTable(event, '<?php echo $tableName; ?>')"><h3><?php echo $tableName; ?></h3></button>
-		<?php
-  endforeach;
-
-	echo '</div>';
-
-	foreach ( $tableList as $table ) :
-		setup_postdata( $GLOBALS['post'] =& $post );
-		$tableHead = get_post_meta( $table, 'mf_tables_mb_table_head', true );
-		$tableRow = get_post_meta( $table, 'mf_tables_mb_table_row', true );
-		$tableName = get_post_meta( $table, 'mf_tables_mb_table_name', true );
+	foreach ( $table_list as $table ) :
+		$table_head = get_post_meta( $table, 'mf_tables_mb_table_head', true );
+		$table_row  = get_post_meta( $table, 'mf_tables_mb_table_row', true );
+		$table_name = get_post_meta( $table, 'mf_tables_mb_table_name', true );
 
 		?>
-	<div id="<?php echo $tableName; ?>" class="tabcontent">
-	  <table>
-		<thead>
-		  <?php
-			foreach ( (array) $tableHead as $thead ) :
-				echo '<td><p>', esc_html( $thead ) ,'</p></td>';
-			endforeach;
-			?>
-		</thead>
-		<tbody>
-			<?php
-			foreach ( (array) $tableRow as $trow => $row ) :
-				echo '<tr>';
-				$tcell = '';
+	<div id="<?php echo esc_html( $table_name ); ?>" class="tabcontent">
+		<table>
+			<thead>
+				<?php
+				foreach ( (array) $table_head as $thead ) :
+					echo '<td><p>', esc_html( $thead ) ,'</p></td>';
+				endforeach;
+				?>
+			</thead>
+			<tbody>
+				<?php
+				foreach ( (array) $table_row as $trow => $row ) :
+					echo '<tr>';
+					$tcell = '';
 
-				if ( isset( $row['table_cell'] ) ) :
-					$tcell = $row['table_cell'];
-					foreach ( $tcell as $cell ) :
-						echo '<td><p>', esc_html( $cell ) ,'</p></td>';
-				  endforeach;
-			  endif;
-				echo '</tr>';
-			endforeach;
-			?>
-		</tbody>
-	  </table>
+					if ( isset( $row['table_cell'] ) ) :
+						$tcell = $row['table_cell'];
+						foreach ( $tcell as $cell ) :
+							echo '<td><p>', esc_html( $cell ) ,'</p></td>';
+					endforeach;
+					endif;
+					echo '</tr>';
+				endforeach;
+				?>
+			</tbody>
+		</table>
 	</div>
 		<?php
 
-  endforeach;
+	endforeach;
 
 	echo '</div></section>';
 
 endif;
-
-wp_reset_postdata();

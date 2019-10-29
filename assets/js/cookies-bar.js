@@ -35,7 +35,7 @@ function euAcceptCookiesWP() {
 }
 
 
-function mfNextTable(evt, tableName) {
+function mfNextTab(evt, tabName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -45,6 +45,8 @@ function mfNextTable(evt, tableName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(tableName).style.display = "block";
+	console.log(tabName)
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+
 }
