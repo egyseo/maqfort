@@ -312,9 +312,11 @@ class CMB2_Field extends CMB2_Base {
 	 * @return mixed
 	 */
 	public function update_data( $new_value, $single = true ) {
-		$a = $this->data_args( array(
-			'single' => $single,
-		) );
+		$a = $this->data_args(
+			array(
+				'single' => $single,
+			)
+		);
 
 		$a['value'] = $a['repeat'] ? array_values( $new_value ) : $new_value;
 
@@ -386,9 +388,11 @@ class CMB2_Field extends CMB2_Base {
 	 * @return mixed
 	 */
 	public function remove_data( $old = '' ) {
-		$a = $this->data_args( array(
-			'old' => $old,
-		) );
+		$a = $this->data_args(
+			array(
+				'old' => $old,
+			)
+		);
 
 		/**
 		 * Filter whether to override removing of meta value.
@@ -452,13 +456,16 @@ class CMB2_Field extends CMB2_Base {
 	 * @return array       Updated arguments
 	 */
 	public function data_args( $args = array() ) {
-		$args = wp_parse_args( $args, array(
-			'type'     => $this->object_type,
-			'id'       => $this->object_id,
-			'field_id' => $this->id( true ),
-			'repeat'   => $this->args( 'repeatable' ),
-			'single'   => ! $this->args( 'multiple' ),
-		) );
+		$args = wp_parse_args(
+			$args,
+			array(
+				'type'     => $this->object_type,
+				'id'       => $this->object_id,
+				'field_id' => $this->id( true ),
+				'repeat'   => $this->args( 'repeatable' ),
+				'single'   => ! $this->args( 'multiple' ),
+			)
+		);
 		return $args;
 	}
 
@@ -617,11 +624,14 @@ class CMB2_Field extends CMB2_Base {
 	 */
 	public function escaping_exception() {
 		// These types cannot be escaped.
-		return in_array( $this->type(), array(
-			'file_list',
-			'multicheck',
-			'text_datetime_timestamp_timezone',
-		) );
+		return in_array(
+			$this->type(),
+			array(
+				'file_list',
+				'multicheck',
+				'text_datetime_timestamp_timezone',
+			)
+		);
 	}
 
 	/**
@@ -685,15 +695,21 @@ class CMB2_Field extends CMB2_Base {
 			return $type_methods[ $type ];
 		}
 
-		$all_or_nothing_types = array_flip( apply_filters( 'cmb2_all_or_nothing_types', array(
-			'select',
-			'radio',
-			'radio_inline',
-			'taxonomy_select',
-			'taxonomy_radio',
-			'taxonomy_radio_inline',
-			'taxonomy_radio_hierarchical',
-		), $this ) );
+		$all_or_nothing_types = array_flip(
+			apply_filters(
+				'cmb2_all_or_nothing_types',
+				array(
+					'select',
+					'radio',
+					'radio_inline',
+					'taxonomy_select',
+					'taxonomy_radio',
+					'taxonomy_radio_inline',
+					'taxonomy_radio_hierarchical',
+				),
+				$this
+			)
+		);
 
 		if ( isset( $all_or_nothing_types[ $type ] ) ) {
 			return 'set_field_defaults_all_or_nothing_types';
@@ -986,10 +1002,13 @@ class CMB2_Field extends CMB2_Base {
 		 *
 		 * @param array $field_types The types of fields which should get the 'table-layout' class
 		 */
-		$repeat_table_rows_types = apply_filters( 'cmb2_repeat_table_row_types', array(
-			'text_url',
-			'text',
-		) );
+		$repeat_table_rows_types = apply_filters(
+			'cmb2_repeat_table_row_types',
+			array(
+				'text_url',
+				'text',
+			)
+		);
 
 		$conditional_classes = array(
 			'cmb-type-' . str_replace( '_', '-', sanitize_html_class( $this->type() ) ) => true,
@@ -1104,10 +1123,12 @@ class CMB2_Field extends CMB2_Base {
 			return false;
 		}
 
-		return $this->get_field_clone( array(
-			'id' => $this->_id( '', false ) . $suffix,
-			'sanitization_cb' => false,
-		) );
+		return $this->get_field_clone(
+			array(
+				'id' => $this->_id( '', false ) . $suffix,
+				'sanitization_cb' => false,
+			)
+		);
 	}
 
 	/**
@@ -1433,11 +1454,14 @@ class CMB2_Field extends CMB2_Base {
 	 * @return array        Modified field config array.
 	 */
 	protected function set_field_defaults_group( $args ) {
-		$args['options'] = wp_parse_args( $args['options'], array(
-			'add_button'     => esc_html__( 'Add Group', 'cmb2' ),
-			'remove_button'  => esc_html__( 'Remove Group', 'cmb2' ),
-			'remove_confirm' => '',
-		) );
+		$args['options'] = wp_parse_args(
+			$args['options'],
+			array(
+				'add_button'     => esc_html__( 'Add Group', 'cmb2' ),
+				'remove_button'  => esc_html__( 'Remove Group', 'cmb2' ),
+				'remove_confirm' => '',
+			)
+		);
 
 		return $args;
 	}

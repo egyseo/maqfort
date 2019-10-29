@@ -14,7 +14,7 @@ class mf_Contacts_Widget extends WP_Widget {
 		parent::__construct(
 			'mf_contacts_widget', // Base ID
 			esc_html__( 'Contactos', 'maqfort' ), // Name
-			array( 'description' => esc_html__( 'Os seus contactos', 'maqfort' ), ) // Args
+			array( 'description' => esc_html__( 'Os seus contactos', 'maqfort' ) ) // Args
 		);
 	}
 
@@ -32,18 +32,22 @@ class mf_Contacts_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-    $widget_text = ! empty( $instance['text'] ) ? $instance['text'] : '';
-    $text = apply_filters( 'widget_text', $widget_text, $instance, $this );
+		$widget_text = ! empty( $instance['text'] ) ? $instance['text'] : '';
+		$text = apply_filters( 'widget_text', $widget_text, $instance, $this );
 
-    ?>
+		?>
 
 		<ul class="contacts-widget">
 			<?php if ( ! empty( $instance['text'] ) ) { ?>
-				<li class="contacts-row"><div class="icon-box"><i class="fa fa-map-marker" aria-hidden="true"></i></div><div class="contact-block"><p><?php echo !empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></p></div><!-- address ends --> </li><?php } ?>
+				<li class="contacts-row"><div class="icon-box"><i class="fa fa-map-marker" aria-hidden="true"></i></div><div class="contact-block"><p><?php echo ! empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></p></div><!-- address ends --> </li><?php } ?>
 
 			<?php if ( ! empty( $instance['phone'] ) ) { ?>
 				<li class="contacts-row"><div class="icon-box"><i class="fa fa-phone" aria-hidden="true"></i></div><div class="contact-block"><p><span><?php _e( 'Telefone', 'maqfort' ); ?></span> <?php echo $instance['phone']; ?></p> <?php } ?>
-					<p><?php if ( ! empty( $instance['fax'] ) ) { ?><span> <?php _e( 'Fax', 'maqfort' ); ?></span> <?php echo $instance['fax']; ?> </p>
+					<p>
+					<?php
+					if ( ! empty( $instance['fax'] ) ) {
+						?>
+						<span> <?php _e( 'Fax', 'maqfort' ); ?></span> <?php echo $instance['fax']; ?> </p>
 				</div><!-- phone ends --> </li> <?php } ?>
 
 			<?php if ( ! empty( $instance['email'] ) ) { ?>
@@ -53,7 +57,8 @@ class mf_Contacts_Widget extends WP_Widget {
 				<li class="contacts-row"><div class="icon-box"><i class="fa fa-road" aria-hidden="true"></i></div><div class="contact-block"><p><span><?php _e( 'GPS', 'maqfort' ); ?></span> <?php echo $instance['gps']; ?></p></div><!-- gps ends --> </li><?php } ?>
 		</ul>
 
-		<?php echo $args['after_widget'];
+		<?php
+		echo $args['after_widget'];
 	}
 
 	/**
@@ -64,29 +69,30 @@ class mf_Contacts_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-    $instance = wp_parse_args( (array) $instance, array( 'text' => '' ) );
+		$instance = wp_parse_args( (array) $instance, array( 'text' => '' ) );
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Novo Titlo', 'maqfort' );
-		$filter = isset( $instance['filter'] ) ? $instance['filter'] : 0;?>
+		$filter = isset( $instance['filter'] ) ? $instance['filter'] : 0;
+		?>
 		<p>
-  		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Titlo:', 'maqfort' ); ?></label>
-  		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-    </p>
-    <?php
+		  <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Titlo:', 'maqfort' ); ?></label>
+		  <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+	</p>
+		<?php
 			$text = ! empty( $instance['text'] ) ? $instance['text'] : esc_html__( 'Morada', 'maqfort' );
-	 	?>
-    <p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php esc_attr_e( 'Morada:', 'maqfort' ); ?></label>
-    		<textarea class="widefat" rows="6" cols="6" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea></p>
+		?>
+	<p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php esc_attr_e( 'Morada:', 'maqfort' ); ?></label>
+			<textarea class="widefat" rows="6" cols="6" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea></p>
 
-    		<p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox"<?php checked( $filter ); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php esc_attr_e( 'Adicionar parágrafos automáticamente', 'maqfort' ); ?></label></p>
+			<p><input id="<?php echo $this->get_field_id( 'filter' ); ?>" name="<?php echo $this->get_field_name( 'filter' ); ?>" type="checkbox"<?php checked( $filter ); ?> />&nbsp;<label for="<?php echo $this->get_field_id( 'filter' ); ?>"><?php esc_attr_e( 'Adicionar parágrafos automáticamente', 'maqfort' ); ?></label></p>
 		<?php
 			$phone = ! empty( $instance['phone'] ) ? $instance['phone'] : esc_html__( 'Telefone', 'maqfort' );
-	 	?>
+		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_attr_e( 'Telefone:', 'maqfort' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'phone' ) ); ?>" type="text" value="<?php echo esc_attr( $phone ); ?>">
 			<?php
 				$fax = ! empty( $instance['fax'] ) ? $instance['fax'] : esc_html__( 'Fax:', 'maqfort' );
-		 	?>
+			?>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'fax' ) ); ?>"><?php esc_attr_e( 'Fax:', 'maqfort' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'fax' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'fax' ) ); ?>" type="text" value="<?php echo esc_attr( $fax ); ?>">
 		</p>
@@ -107,7 +113,7 @@ class mf_Contacts_Widget extends WP_Widget {
 		<?php
 	}
 
-  /**
+	/**
 	 * Sanitize widget form values as they are saved.
 	 *
 	 * @see WP_Widget::update()
@@ -119,12 +125,12 @@ class mf_Contacts_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-    if ( current_user_can( 'unfiltered_html' ) ) {
-      $instance['text'] = $new_instance['text'];
-    } else {
-      $instance['text'] = wp_kses_post( $new_instance['text'] );
-    }
-    $instance['filter'] = ! empty( $new_instance['filter'] );
+		if ( current_user_can( 'unfiltered_html' ) ) {
+			$instance['text'] = $new_instance['text'];
+		} else {
+			$instance['text'] = wp_kses_post( $new_instance['text'] );
+		}
+		$instance['filter'] = ! empty( $new_instance['filter'] );
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['phone'] = ( ! empty( $new_instance['phone'] ) ) ? strip_tags( $new_instance['phone'] ) : '';
 		$instance['fax'] = ( ! empty( $new_instance['fax'] ) ) ? strip_tags( $new_instance['fax'] ) : '';

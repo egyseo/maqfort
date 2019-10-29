@@ -1520,7 +1520,6 @@ class CMB2 extends CMB2_Base {
 		switch ( $field['type'] ) {
 			case 'file':
 			case 'file_list':
-
 				// Initiate attachment JS hooks.
 				add_filter( 'wp_prepare_attachment_for_js', array( 'CMB2_Type_File_Base', 'prepare_image_sizes_for_js' ), 10, 3 );
 				break;
@@ -1536,7 +1535,6 @@ class CMB2 extends CMB2_Base {
 				}
 				break;
 			case 'colorpicker':
-
 				// https://github.com/JayWood/CMB2_RGBa_Picker
 				// Dequeue the rgba_colorpicker custom field script if it is used,
 				// since we now enqueue our own more current version.
@@ -1567,10 +1565,13 @@ class CMB2 extends CMB2_Base {
 
 		$column = is_array( $field['column'] ) ? $field['column'] : array();
 
-		$field['column'] = wp_parse_args( $column, array(
-			'name'     => isset( $field['name'] ) ? $field['name'] : '',
-			'position' => false,
-		) );
+		$field['column'] = wp_parse_args(
+			$column,
+			array(
+				'name'     => isset( $field['name'] ) ? $field['name'] : '',
+				'position' => false,
+			)
+		);
 
 		return $field;
 	}

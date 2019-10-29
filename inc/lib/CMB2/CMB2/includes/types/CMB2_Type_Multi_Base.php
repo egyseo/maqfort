@@ -32,14 +32,18 @@ abstract class CMB2_Type_Multi_Base extends CMB2_Type_Base {
 	 * @return string       Gnerated list item html
 	 */
 	public function list_input( $args = array(), $i ) {
-		$a = $this->parse_args( 'list_input', array(
-			'type'  => 'radio',
-			'class' => 'cmb2-option',
-			'name'  => $this->_name(),
-			'id'    => $this->_id( $i ),
-			'value' => $this->field->escaped_value(),
-			'label' => '',
-		), $args );
+		$a = $this->parse_args(
+			'list_input',
+			array(
+				'type'  => 'radio',
+				'class' => 'cmb2-option',
+				'name'  => $this->_name(),
+				'id'    => $this->_id( $i ),
+				'value' => $this->field->escaped_value(),
+				'label' => '',
+			),
+			$args
+		);
 
 		return sprintf( "\t" . '<li><input%s/> <label for="%s">%s</label></li>' . "\n", $this->concat_attrs( $a, array( 'label' ) ), $a['id'], $a['label'] );
 	}

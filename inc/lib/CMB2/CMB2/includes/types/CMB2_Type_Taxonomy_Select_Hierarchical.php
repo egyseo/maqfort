@@ -32,9 +32,12 @@ class CMB2_Type_Taxonomy_Select_Hierarchical extends CMB2_Type_Taxonomy_Select {
 
 	public function render() {
 		return $this->rendered(
-			$this->types->select( array(
-				'options' => $this->get_term_options(),
-			), 'taxonomy_select_hierarchical' )
+			$this->types->select(
+				array(
+					'options' => $this->get_term_options(),
+				),
+				'taxonomy_select_hierarchical'
+			)
 		);
 	}
 

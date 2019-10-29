@@ -203,7 +203,11 @@ class CMB2_Options_Hookup extends CMB2_hookup {
 			<?php if ( ! empty( $tabs ) ) : ?>
 				<h2 class="nav-tab-wrapper">
 					<?php foreach ( $tabs as $option_key => $tab_title ) : ?>
-						<a class="nav-tab<?php if ( self::is_page( $option_key ) ) : ?> nav-tab-active<?php endif; ?>" href="<?php menu_page_url( $option_key ); ?>"><?php echo wp_kses_post( $tab_title ); ?></a>
+						<a class="nav-tab
+						<?php
+						if ( self::is_page( $option_key ) ) :
+							?>
+							 nav-tab-active<?php endif; ?>" href="<?php menu_page_url( $option_key ); ?>"><?php echo wp_kses_post( $tab_title ); ?></a>
 					<?php endforeach; ?>
 				</h2>
 			<?php endif; ?>

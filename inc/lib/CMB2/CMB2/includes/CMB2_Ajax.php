@@ -89,13 +89,15 @@ class CMB2_Ajax {
 		$this->ajax_update = true;
 
 		// Get embed code (or fallback link).
-		$html = $this->get_oembed( array(
-			'url'         => $oembed_url,
-			'object_id'   => $_REQUEST['object_id'],
-			'object_type' => isset( $_REQUEST['object_type'] ) ? $_REQUEST['object_type'] : 'post',
-			'oembed_args' => $embed_args,
-			'field_id'    => $_REQUEST['field_id'],
-		) );
+		$html = $this->get_oembed(
+			array(
+				'url'         => $oembed_url,
+				'object_id'   => $_REQUEST['object_id'],
+				'object_type' => isset( $_REQUEST['object_type'] ) ? $_REQUEST['object_type'] : 'post',
+				'oembed_args' => $embed_args,
+				'field_id'    => $_REQUEST['field_id'],
+			)
+		);
 
 		wp_send_json_success( $html );
 	}
@@ -115,12 +117,15 @@ class CMB2_Ajax {
 		// Sanitize object_id.
 		$this->object_id = is_numeric( $args['object_id'] ) ? absint( $args['object_id'] ) : sanitize_text_field( $args['object_id'] );
 
-		$args = wp_parse_args( $args, array(
-			'object_type' => 'post',
-			'oembed_args' => array(),
-			'field_id'    => false,
-			'wp_error'    => false,
-		) );
+		$args = wp_parse_args(
+			$args,
+			array(
+				'object_type' => 'post',
+				'oembed_args' => array(),
+				'field_id'    => false,
+				'wp_error'    => false,
+			)
+		);
 
 		$this->embed_args =& $args;
 

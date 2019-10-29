@@ -518,46 +518,75 @@ class CMB2_Types {
 	}
 
 	public function text_small() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'class' => 'cmb2-text-small',
-			'desc'  => $this->_desc(),
-		), 'input' )->render();
+		return $this->get_new_render_type(
+			__FUNCTION__,
+			'CMB2_Type_Text',
+			array(
+				'class' => 'cmb2-text-small',
+				'desc'  => $this->_desc(),
+			),
+			'input'
+		)->render();
 	}
 
 	public function text_medium() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'class' => 'cmb2-text-medium',
-			'desc'  => $this->_desc(),
-		), 'input' )->render();
+		return $this->get_new_render_type(
+			__FUNCTION__,
+			'CMB2_Type_Text',
+			array(
+				'class' => 'cmb2-text-medium',
+				'desc'  => $this->_desc(),
+			),
+			'input'
+		)->render();
 	}
 
 	public function text_email() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'class' => 'cmb2-text-email cmb2-text-medium',
-			'type'  => 'email',
-		), 'input' )->render();
+		return $this->get_new_render_type(
+			__FUNCTION__,
+			'CMB2_Type_Text',
+			array(
+				'class' => 'cmb2-text-email cmb2-text-medium',
+				'type'  => 'email',
+			),
+			'input'
+		)->render();
 	}
 
 	public function text_url() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'class' => 'cmb2-text-url cmb2-text-medium regular-text',
-			'value' => $this->field->escaped_value( 'esc_url' ),
-		), 'input' )->render();
+		return $this->get_new_render_type(
+			__FUNCTION__,
+			'CMB2_Type_Text',
+			array(
+				'class' => 'cmb2-text-url cmb2-text-medium regular-text',
+				'value' => $this->field->escaped_value( 'esc_url' ),
+			),
+			'input'
+		)->render();
 	}
 
 	public function text_money() {
-		$input = $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
-			'class' => 'cmb2-text-money',
-			'desc'  => $this->_desc(),
-		), 'input' )->render();
+		$input = $this->get_new_render_type(
+			__FUNCTION__,
+			'CMB2_Type_Text',
+			array(
+				'class' => 'cmb2-text-money',
+				'desc'  => $this->_desc(),
+			),
+			'input'
+		)->render();
 		return ( ! $this->field->get_param_callback_result( 'before_field' ) ? '$ ' : ' ' ) . $input;
 	}
 
 	public function textarea_small() {
-		return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Textarea', array(
-			'class' => 'cmb2-textarea-small',
-			'rows'  => 4,
-		) )->render();
+		return $this->get_new_render_type(
+			__FUNCTION__,
+			'CMB2_Type_Textarea',
+			array(
+				'class' => 'cmb2-textarea-small',
+				'rows'  => 4,
+			)
+		)->render();
 	}
 
 	public function textarea_code( $args = array() ) {

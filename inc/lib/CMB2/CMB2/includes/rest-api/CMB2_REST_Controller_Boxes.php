@@ -58,30 +58,38 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 		// $args['context']['default'] = 'view';
 		// $args['context']['enum'] = array( 'view', 'embed' );
 		// Returns all boxes data.
-		register_rest_route( $this->namespace, '/' . $this->rest_base, array(
+		register_rest_route(
+			$this->namespace,
+			'/' . $this->rest_base,
 			array(
-				'methods'             => WP_REST_Server::READABLE,
-				'permission_callback' => array( $this, 'get_items_permissions_check' ),
-				'callback'            => array( $this, 'get_items' ),
-				'args'                => $args,
-			),
-			'schema' => array( $this, 'get_item_schema' ),
-		) );
+				array(
+					'methods'             => WP_REST_Server::READABLE,
+					'permission_callback' => array( $this, 'get_items_permissions_check' ),
+					'callback'            => array( $this, 'get_items' ),
+					'args'                => $args,
+				),
+				'schema' => array( $this, 'get_item_schema' ),
+			)
+		);
 
 		$args['_rendered'] = array(
 			'description' => __( 'Includes the fully rendered attributes, \'form_open\', \'form_close\', as well as the enqueued \'js_dependencies\' script handles, and \'css_dependencies\' stylesheet handles.', 'cmb2' ),
 		);
 
 		// Returns specific box's data.
-		register_rest_route( $this->namespace, '/' . $this->rest_base . '/(?P<cmb_id>[\w-]+)', array(
+		register_rest_route(
+			$this->namespace,
+			'/' . $this->rest_base . '/(?P<cmb_id>[\w-]+)',
 			array(
-				'methods'             => WP_REST_Server::READABLE,
-				'permission_callback' => array( $this, 'get_item_permissions_check' ),
-				'callback'            => array( $this, 'get_item' ),
-				'args'                => $args,
-			),
-			'schema' => array( $this, 'get_item_schema' ),
-		) );
+				array(
+					'methods'             => WP_REST_Server::READABLE,
+					'permission_callback' => array( $this, 'get_item_permissions_check' ),
+					'callback'            => array( $this, 'get_item' ),
+					'args'                => $args,
+				),
+				'schema' => array( $this, 'get_item_schema' ),
+			)
+		);
 	}
 
 	/**
@@ -119,9 +127,13 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 
 		$boxes = CMB2_REST::get_all();
 		if ( empty( $boxes ) ) {
-			return new WP_Error( 'cmb2_rest_no_boxes', __( 'No boxes found.', 'cmb2' ), array(
-				'status' => 403,
-			) );
+			return new WP_Error(
+				'cmb2_rest_no_boxes',
+				__( 'No boxes found.', 'cmb2' ),
+				array(
+					'status' => 403,
+				)
+			);
 		}
 
 		$boxes_data = array();

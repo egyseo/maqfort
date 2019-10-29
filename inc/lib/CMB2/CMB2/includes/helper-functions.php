@@ -302,13 +302,16 @@ function cmb2_print_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 		return;
 	}
 
-	$args = wp_parse_args( $args, array(
-		'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data"><input type="hidden" name="object_id" value="%2$s">%3$s<input type="submit" name="submit-cmb" value="%4$s" class="button-primary"></form>',
-		'save_button' => esc_html__( 'Save', 'cmb2' ),
-		'object_type' => $cmb->mb_object_type(),
-		'cmb_styles'  => $cmb->prop( 'cmb_styles' ),
-		'enqueue_js'  => $cmb->prop( 'enqueue_js' ),
-	) );
+	$args = wp_parse_args(
+		$args,
+		array(
+			'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data"><input type="hidden" name="object_id" value="%2$s">%3$s<input type="submit" name="submit-cmb" value="%4$s" class="button-primary"></form>',
+			'save_button' => esc_html__( 'Save', 'cmb2' ),
+			'object_type' => $cmb->mb_object_type(),
+			'cmb_styles'  => $cmb->prop( 'cmb_styles' ),
+			'enqueue_js'  => $cmb->prop( 'enqueue_js' ),
+		)
+	);
 
 	// Set object type explicitly (rather than trying to guess from context).
 	$cmb->object_type( $args['object_type'] );

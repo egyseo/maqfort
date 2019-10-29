@@ -399,9 +399,11 @@ class CMB2_Display_File extends CMB2_Field_Display {
 		$types = new CMB2_Types( $this->field );
 		$type  = $types->get_new_render_type( $this->field->type(), 'CMB2_Type_File_Base' );
 
-		$id = $this->field->get_field_clone( array(
-			'id' => $this->field->_id( '', false ) . '_id',
-		) )->escaped_value( 'absint' );
+		$id = $this->field->get_field_clone(
+			array(
+				'id' => $this->field->_id( '', false ) . '_id',
+			)
+		)->escaped_value( 'absint' );
 
 		$this->file_output( $this->value, $id, $type );
 	}
@@ -416,9 +418,14 @@ class CMB2_Display_File extends CMB2_Field_Display {
 			$img_size = $this->field->args( 'preview_size' );
 
 			if ( $id ) {
-				$image = wp_get_attachment_image( $id, $img_size, null, array(
-					'class' => 'cmb-image-display',
-				) );
+				$image = wp_get_attachment_image(
+					$id,
+					$img_size,
+					null,
+					array(
+						'class' => 'cmb-image-display',
+					)
+				);
 			} else {
 				$size = is_array( $img_size ) ? $img_size[0] : 200;
 				$image = '<img class="cmb-image-display" style="max-width: ' . absint( $size ) . 'px; width: 100%; height: auto;" src="' . esc_url( $url_value ) . '" alt="" />';
@@ -428,7 +435,8 @@ class CMB2_Display_File extends CMB2_Field_Display {
 
 		} else {
 
-			printf( '<div class="file-status"><span>%1$s <strong><a href="%2$s">%3$s</a></strong></span></div>',
+			printf(
+				'<div class="file-status"><span>%1$s <strong><a href="%2$s">%3$s</a></strong></span></div>',
 				esc_html( $field_type->_text( 'file_text', __( 'File:', 'cmb2' ) ) ),
 				esc_url( $url_value ),
 				esc_html( CMB2_Utils::get_file_name_from_path( $url_value ) )
@@ -471,14 +479,16 @@ class CMB2_Display_oEmbed extends CMB2_Field_Display {
 			return;
 		}
 
-		cmb2_do_oembed( array(
-			'url'         => $this->value,
-			'object_id'   => $this->field->object_id,
-			'object_type' => $this->field->object_type,
-			'oembed_args' => array(
-				'width' => '300',
-			),
-			'field_id'    => $this->field->id(),
-		) );
+		cmb2_do_oembed(
+			array(
+				'url'         => $this->value,
+				'object_id'   => $this->field->object_id,
+				'object_type' => $this->field->object_type,
+				'oembed_args' => array(
+					'width' => '300',
+				),
+				'field_id'    => $this->field->id(),
+			)
+		);
 	}
 }

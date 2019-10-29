@@ -4,7 +4,7 @@
  * -----------------------------------------------------------
  * Implement the custom theme functions.
  * -----------------------------------------------------------
-*/
+ */
 require_once get_template_directory() . '/inc/custom-post-types.php';
 
 require_once get_template_directory() . '/inc/template-functions.php';
@@ -172,13 +172,11 @@ if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 
 			wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), false, true );
 
-			wp_enqueue_script( 'fancybox-setup', get_stylesheet_directory_uri() . '/assets/js/fancybox-setup.js', array( 'fancybox' ), false, true);
+			wp_enqueue_script( 'fancybox-setup', get_stylesheet_directory_uri() . '/assets/js/fancybox-setup.js', array( 'fancybox' ), false, true );
 
 			wp_enqueue_script( 'flex-slider', get_stylesheet_directory_uri() . '/assets/js/jquery.flexslider-min.js', array( 'jquery' ), false, false );
 
-			wp_enqueue_script( 'flex-slider-setup', get_stylesheet_directory_uri() . '/assets/js/flex-slider-setup.js', array( 'flex-slider' ), false, false);
-
-
+			wp_enqueue_script( 'flex-slider-setup', get_stylesheet_directory_uri() . '/assets/js/flex-slider-setup.js', array( 'flex-slider' ), false, false );
 
 		}
 	}

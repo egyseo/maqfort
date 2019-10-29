@@ -504,7 +504,7 @@ class CMB2_Sanitize {
 		if ( $this->value && ! $id_val ) {
 			$id_val = CMB2_Utils::image_id_from_url( $this->value );
 
-		// If there is an ID but user emptied the input value, remove the ID.
+			// If there is an ID but user emptied the input value, remove the ID.
 		} elseif ( ! $this->value && $id_val ) {
 			$id_val = null;
 		}
@@ -534,10 +534,12 @@ class CMB2_Sanitize {
 	 * @return CMB2_Field
 	 */
 	public function _new_supporting_field( $new_field_id ) {
-		return $this->field->get_field_clone( array(
-			'id' => $new_field_id,
-			'sanitization_cb' => false,
-		) );
+		return $this->field->get_field_clone(
+			array(
+				'id' => $new_field_id,
+				'sanitization_cb' => false,
+			)
+		);
 	}
 
 	/**

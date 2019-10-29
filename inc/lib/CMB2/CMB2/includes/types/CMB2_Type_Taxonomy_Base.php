@@ -134,7 +134,7 @@ abstract class CMB2_Type_Taxonomy_Base extends CMB2_Type_Multi_Base {
 	 *
 	 * @since  2.2.5
 	 *
-	 * @param  array  $all_terms   Array of all terms.
+	 * @param  array        $all_terms   Array of all terms.
 	 * @param  array|string $saved Array of terms set to the object, or single term slug.
 	 *
 	 * @return string              List of terms.

@@ -234,11 +234,15 @@ class CMB2_REST extends CMB2_Hookup_Base {
 	 * @return void
 	 */
 	protected static function register_rest_field( $object_types, $object_type ) {
-		register_rest_field( $object_types, 'cmb2', array(
-			'get_callback'    => array( __CLASS__, "get_{$object_type}_rest_values" ),
-			'update_callback' => array( __CLASS__, "update_{$object_type}_rest_values" ),
-			'schema'          => null, // @todo add schema
-		) );
+		register_rest_field(
+			$object_types,
+			'cmb2',
+			array(
+				'get_callback'    => array( __CLASS__, "get_{$object_type}_rest_values" ),
+				'update_callback' => array( __CLASS__, "update_{$object_type}_rest_values" ),
+				'schema'          => null, // @todo add schema
+			)
+		);
 	}
 
 	/**
@@ -751,11 +755,15 @@ class CMB2_REST extends CMB2_Hookup_Base {
 	 * @return boolean       Whether value is considered readable.
 	 */
 	public static function is_readable( $value ) {
-		return ! empty( $value ) && ! in_array( $value, array(
-			WP_REST_Server::CREATABLE,
-			WP_REST_Server::EDITABLE,
-			WP_REST_Server::DELETABLE,
-		), true );
+		return ! empty( $value ) && ! in_array(
+			$value,
+			array(
+				WP_REST_Server::CREATABLE,
+				WP_REST_Server::EDITABLE,
+				WP_REST_Server::DELETABLE,
+			),
+			true
+		);
 	}
 
 	/**
@@ -770,10 +778,14 @@ class CMB2_REST extends CMB2_Hookup_Base {
 	 * @return boolean       Whether value is considered editable.
 	 */
 	public static function is_editable( $value ) {
-		return in_array( $value, array(
-			WP_REST_Server::EDITABLE,
-			WP_REST_Server::ALLMETHODS,
-		), true );
+		return in_array(
+			$value,
+			array(
+				WP_REST_Server::EDITABLE,
+				WP_REST_Server::ALLMETHODS,
+			),
+			true
+		);
 	}
 
 	/**
