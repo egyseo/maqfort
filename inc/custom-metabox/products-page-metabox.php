@@ -115,7 +115,7 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 
 		$group_field_id = $cmb->add_field(
 			array(
-				'id'          => $prefix . 'video_galerie',
+				'id'          => $prefix . 'videos',
 				'type'        => 'group',
 				'description' => __( 'Videos do Produto', 'maqfort' ),
 				// 'repeatable'  => false, // use false if you want non-repeatable group
@@ -138,16 +138,6 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 				'id'   => $prefix . 'embed',
 				'type' => 'oembed',
 			// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-			)
-		);
-
-		$cmb->add_group_field(
-			$group_field_id,
-			array(
-				'name' => __( 'Thumbnail do video', 'maqfort' ),
-				'description' => '',
-				'id'   => $prefix . 'image',
-				'type' => 'file',
 			)
 		);
 
