@@ -1,0 +1,26 @@
+.product-block
+  .block-title
+    font-size: 20px
+  .laser-block-content
+    display: flex
+    padding: 20px 0
+    .block-description
+      .list-title
+        font-weight: bold
+        color: $primary-color
+        margin-bottom: 10px
+      ul
+        margin: 0
+        padding-left: 15px
+        margin-left: 15px
+        columns: 2
+        list-style-type: none
+        font-size: 14px
+        li
+          &::before
+            content: '\25AA'
+            color: $primary-color
+            font-weight: bold
+            display: inline-block
+            margin-left: -1em
+            width: 1em

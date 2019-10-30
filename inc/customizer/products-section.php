@@ -44,7 +44,6 @@ $wp_customize->add_control(
 	)
 );
 
-
 // Settings.
 $wp_customize->add_setting(
 	'product_form',
@@ -67,6 +66,33 @@ $wp_customize->add_control(
 			'section'     => 'products_section',
 			'priority'    => 2,
 			'label'       => __( 'Shortcode do Formulário', 'maqfort' ),
+			'description' => '',
+		)
+	)
+);
+
+// Settings.
+$wp_customize->add_setting(
+	'product_block_laser[editor_content]',
+	array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'wp_kses_post',
+	)
+);
+
+// Controls.
+$wp_customize->add_control(
+	new Text_Editor_Custom_Control(
+		$wp_customize,
+		'product_block_laser[editor_content]',
+		array(
+			'type'        => 'textarea',
+			'section'     => 'products_section',
+			'priority'    => 3,
+			'label'       => __( 'Bloco do produto - Laser', 'maqfort' ),
 			'description' => '',
 		)
 	)
