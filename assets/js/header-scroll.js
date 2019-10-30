@@ -17,16 +17,6 @@
         }
     });
 
-    const tabLinks = $('.tablinks');
-    if(tabLinks.length <= 1) {
-      tabLinks.addClass('active');
-      const tabContent = $('.tabcontent');
-      if( tabContent[0] ){
-        tabContent.css('display', 'block');
-      }
-
-    }
-
   });
 
 })(jQuery);

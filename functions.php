@@ -168,6 +168,8 @@ if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 
 			wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/assets/js/scroll-to-top.js', array( 'jquery' ), false, true );
 
+			wp_enqueue_script( 'tas', get_stylesheet_directory_uri() . '/assets/js/tabs.js', array( 'jquery' ), false, true );
+
 			wp_enqueue_script( 'cookies-bar', get_stylesheet_directory_uri() . '/assets/js/cookies-bar.js', false, true );
 
 			wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), false, true );
