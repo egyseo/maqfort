@@ -49,7 +49,7 @@ if ( $table_list ) :
 							</table><!-- table -->
 							<?php
 							if ( $table_footer ) :
-								echo '<div class="table-footer">' , wpautop( $table_footer ) , '</div><!-- .table-footer -->';
+								echo '<div class="table-footer">' , wp_kses_post( wpautop( $table_footer ) ) , '</div><!-- .table-footer -->';
 							endif;
 							?>
 						</div>

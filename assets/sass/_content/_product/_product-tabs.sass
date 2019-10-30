@@ -1,9 +1,10 @@
 .product-tabs-wrapper
-  padding: 60px 0
+  border-bottom: 1px solid $light-grey
+  margin-bottom: 40px
   .tabs
     overflow: hidden
     button
-      background-color: inherit
+      background-color: $light-grey
       border: none
       border-radius: 0
       outline: none
@@ -12,15 +13,19 @@
       transition: 0.3s
       font-size: 15px
       &:hover
-        background-color: $light-grey
+        background-color: $primary-color
+        h3
+          color: #fff
       h3
         &::before
           display: none
     .active
-      background-color: $light-grey
+      background-color: $darker-grey
+      h3
+        color: #fff
   .tab-container-wrapper
     .tabcontent
+      border-top: 1px solid $light-grey
       display: none
       padding: 20px 0
-      border-top: 1px solid $light-grey
       transition: all 400ms ease-in-out

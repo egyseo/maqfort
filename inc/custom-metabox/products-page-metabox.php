@@ -31,6 +31,24 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 
 		$cmb->add_field(
 			array(
+				'name' => __( 'Usa lasers Nukon?', 'maqfort' ),
+				'desc' => __( 'Selecione se desejar mostar detalhes dos lasers', 'maqfort' ),
+				'id'   => $prefix . 'laser',
+				'type' => 'checkbox',
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name' => __( 'Industria 4.0', 'maqfort' ),
+				'desc' => __( 'Selecione se utiliza Industria 4.0', 'maqfort' ),
+				'id'   => $prefix . 'industry',
+				'type' => 'checkbox',
+			)
+		);
+
+		$cmb->add_field(
+			array(
 				'name'    => __( 'Descrição do Produto', 'maqfort' ),
 				'id'      => $prefix . 'wysiwyg',
 				'type'    => 'wysiwyg',
