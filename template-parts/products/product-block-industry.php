@@ -11,5 +11,6 @@
 
 <section id="industry-block" class="product-block">
 	<h4 class="block-title">Indústria 4.0</h4>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>Indústria 4.0 ou Quarta Revolução Industrial é uma expressão que engloba algumas tecnologias para automação e troca de dados e utiliza conceitos de Sistemas ciberfísicos, Internet das Coisas e Computação em Nuvem.</p>
+	<p>A partir disso, a indústria 4.0 consegue diminuir os seus custos de produção e aumentar a sua produtividade. Este conceito engloba as principais tecnologias disponíveis no mundo e tende a ofertar produtos e serviços mais personalizados e customizáveis para os clientes.</p>
 </section>
