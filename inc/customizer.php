@@ -7,8 +7,6 @@
  * -----------------------------------------------------------
  */
 
-//require get_parent_theme_file_path( '/inc/customizer/class-text-editor-custom-control.php' );
-
 function mf_customize_register( $wp_customize ) {
 
 	$wp_customize->add_panel(
@@ -22,6 +20,7 @@ function mf_customize_register( $wp_customize ) {
 		)
 	);
 
+	require get_parent_theme_file_path( '/inc/customizer/class-text-editor-custom-control.php' );
 	require get_parent_theme_file_path( '/inc/customizer/general-section.php' );
 	require get_parent_theme_file_path( '/inc/customizer/products-section.php' );
 	require get_parent_theme_file_path( '/inc/customizer/cookies-section.php' );
