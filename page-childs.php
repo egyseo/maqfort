@@ -3,6 +3,8 @@
  * -----------------------------------------------------------
  * Template Name: Page with childs
  * the theme template for pages with siblings.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 

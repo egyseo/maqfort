@@ -7,7 +7,7 @@
  * -----------------------------------------------------------
  */
 
-require get_parent_theme_file_path( '/inc/customizer/class-text-editor-custom-control.php' );
+//require get_parent_theme_file_path( '/inc/customizer/class-text-editor-custom-control.php' );
 
 function mf_customize_register( $wp_customize ) {
 

@@ -2,6 +2,8 @@
 /**
  * -----------------------------------------------------------
  * The theme custom archive page to display all term from custom taxonomie.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 

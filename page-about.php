@@ -3,6 +3,8 @@
  * -----------------------------------------------------------
  * Template Name: About Template
  * The theme about page template.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 

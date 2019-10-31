@@ -2,8 +2,11 @@
 /**
  * -----------------------------------------------------------
  * The theme main header template.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<?php // force Internet Explorer to use the latest rendering engine available ?>
+	<?php // force Internet Explorer to use the latest rendering engine available. ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 	<meta name="HandheldFriendly" content="True">

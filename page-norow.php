@@ -3,6 +3,8 @@
  * -----------------------------------------------------------
  * Template Name: Page with no rows and columns
  * The theme page template withouht default grid system.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 

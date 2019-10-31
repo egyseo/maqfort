@@ -2,13 +2,13 @@
 /**
  * -----------------------------------------------------------
  * The theme default sidebar.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 
 if ( ! is_active_sidebar( 'sidebar' ) ) :
-
 	return;
-
 endif;
 
 ?>

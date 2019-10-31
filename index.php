@@ -2,6 +2,8 @@
 /**
  * -----------------------------------------------------------
  * The default page to display all posts.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 
@@ -13,9 +15,11 @@ $news_page_description = get_theme_mod( 'news_page_desc' ); ?>
 	<div class="row">
 		<div class="col-xs-12">
 			<h1><?php esc_html_e( 'Notícias', 'maqfort' ); ?></h1>
-			<?php if ( $news_page_description ) : ?>
-			<p><?php echo esc_html( $news_page_description ); ?></p>
-			<?php endif; ?>
+			<?php
+			if ( $news_page_description ) :
+				echo '<p>' , esc_html( $news_page_description ) , '</p>';
+			endif;
+			?>
 		</div>
 	</div>
 	<div class="row">

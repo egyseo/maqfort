@@ -3,6 +3,8 @@
  * -----------------------------------------------------------
  * Template Name: Contacts Template
  * The theme template for the contacts page.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 

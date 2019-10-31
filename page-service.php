@@ -3,6 +3,8 @@
  * -----------------------------------------------------------
  * Template Name: Service Template
  * The theme template for service pages.
+ *
+ * @package maqfort
  * -----------------------------------------------------------
  */
 
