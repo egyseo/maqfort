@@ -154,31 +154,25 @@ if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 
 			wp_enqueue_style( 'flex-slider', get_stylesheet_directory_uri() . '/assets/css/flexslider.css' );
 
+			wp_enqueue_style( 'swiperjs', get_stylesheet_directory_uri() . '/assets/css/swiper.min.css' );
+
 			wp_enqueue_style( 'fancy-box', get_stylesheet_directory_uri() . '/assets/css/jquery.fancybox.min.css' );
 
 			wp_enqueue_style( 'theme-core', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 
 			wp_enqueue_script( 'jquery' );
 
-			wp_enqueue_script( 'navigation-offcanvas', get_stylesheet_directory_uri() . '/assets/js/navigation-offcanvas.js', array( 'jquery' ), false, true );
+			wp_enqueue_script( 'maqfort-onload-scripts', get_stylesheet_directory_uri() . '/assets/js/theme-onload.js', '1.0.0', true );
 
-			wp_enqueue_script( 'searchform', get_stylesheet_directory_uri() . '/assets/js/searchform.js', array( 'jquery' ), false, true );
+			wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', false);
 
-			wp_enqueue_script( 'header-scroll', get_stylesheet_directory_uri() . '/assets/js/header-scroll.js', array( 'jquery' ), false, true );
-
-			wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/assets/js/scroll-to-top.js', array( 'jquery' ), false, true );
-
-			wp_enqueue_script( 'tas', get_stylesheet_directory_uri() . '/assets/js/tabs.js', array( 'jquery' ), false, true );
-
-			wp_enqueue_script( 'cookies-bar', get_stylesheet_directory_uri() . '/assets/js/cookies-bar.js', false, true );
-
-			wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), false, true );
-
-			wp_enqueue_script( 'fancybox-setup', get_stylesheet_directory_uri() . '/assets/js/fancybox-setup.js', array( 'fancybox' ), false, true );
+			wp_enqueue_script( 'swiperjs', get_stylesheet_directory_uri() . '/assets/js/swiper.min.js', array( 'jquery' ), '1.0.0', false);
 
 			wp_enqueue_script( 'flex-slider', get_stylesheet_directory_uri() . '/assets/js/jquery.flexslider-min.js', array( 'jquery' ), false, false );
 
 			wp_enqueue_script( 'flex-slider-setup', get_stylesheet_directory_uri() . '/assets/js/flex-slider-setup.js', array( 'flex-slider' ), false, false );
+
+			wp_enqueue_script( 'maqfort-onready-scripts', get_stylesheet_directory_uri() . '/assets/js/theme-onready.js', array( 'jquery', 'fancybox' ), '1.0.0', false );
 
 		}
 	}

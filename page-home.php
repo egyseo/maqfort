@@ -14,7 +14,7 @@ get_template_part( 'template-parts/home/home', 'slider' );
 
 while ( have_posts() ) :
 	the_post();
-	get_template_part( 'template-parts/home/home', 'products-categories' );
+	get_template_part( 'template-parts/home/home', 'products-slider' );
 	get_template_part( 'template-parts/home/home', 'services' );
 	get_template_part( 'template-parts/home/home', 'news' );
 endwhile;
