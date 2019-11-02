@@ -20,15 +20,15 @@
 					<div class="col-md-8">
 						<div class="hero-content">
 							<div class="content-wrapper">
-								<h2 class="hero-title">MAQFORT</h2>
-								<p class="hero-subtitle">12 000 m2 de área de exposição.</p>
-								<p class="hero-description">MAQFORT distribui e dá assistência técnica.</p>
-								<a href="#" class="hero-link" >Saber mais</a>
+								<h2 class="hero-title">Distribuimos Máquinas</h2>
+								<p class="hero-subtitle">Temos uma área de exposição 12 000 m2</p>
+								<p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, vel.</p>
+								<a href="#" class="hero-link" >Ver Produtos</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
+		</div><!-- #hero-content-container -->
+	</div><!-- .video-background-wrapper -->
+</section><!-- #home-hero-wrapper -->
