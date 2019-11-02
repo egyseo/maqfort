@@ -1,0 +1,55 @@
+#home-hero-wrapper
+  height: 600px
+  overflow: hidden
+  .video-background-wrapper
+    position: relative
+    height: 100%
+
+    #video-background
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translateX(-50%) translateY(-50%)
+      width: 100%
+      height: auto
+    .hero-content-container
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      right:  0
+      display: flex
+      align-content: center
+      justify-content: flex-start
+      align-items: center
+      background-color: rgba(23,23,23,.7)
+      background-blend-mode: multiply
+      .hero-content
+        .content-wrapper
+          padding: 60px
+          background-color: rgba(22,21,21,.95)
+          p
+            margin-top: 0
+            margin-bottom: 30px
+            line-height: 1
+          .hero-title
+            color: $primary-color
+            font-size: 40px
+            font-weight: bold
+            line-height: 1
+            margin-bottom: 10px
+            &::before
+              display: none
+          .hero-subtitle
+            font-weight: bold
+            font-size: 30px
+            color: white
+          .hero-description
+            font-size: 15px
+            letter-spacing: 2px
+            color: #888
+          .hero-link
+            display: inline-block
+            background-color: $primary-color
+            padding: 10px 20px
+            color: white

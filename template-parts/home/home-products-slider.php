@@ -28,6 +28,8 @@ if ( $products_terms ) :
 					<div class="section-title-wrapper">
 						<h2 class="section-title"><span><a href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Produtos', 'maqfort' ); ?></a></span></h2>
 						<a class="see-all" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div><!-- .section-title-wrapper -->
 				</div><!-- .col -->
 			</div><!-- .row -->
@@ -52,7 +54,7 @@ if ( $products_terms ) :
 										endif;
 										$output .= '</header>';
 										$output .= '<div class="product-card-content"><a href="' . esc_url( $term_link ) . '"><h2 class="product-card-title">' . esc_attr( $product_term->name ) . '</h2></a>';
-										$output .= '<p class="card-desc">' . mf_truncate( esc_html( $product_term->description ), 90 ) . '</p></div>';
+										$output .= '<p class="card-desc">' . mf_truncate( esc_html( $product_term->description ), 88 ) . '</p></div>';
 										$output .= '<footer class="product-card-footer"><a href="' . esc_url( $term_link ) . '"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></footer></article></div><!-- .swiper-slide -->';
 
 										echo wp_kses_post( $output );
@@ -65,8 +67,6 @@ if ( $products_terms ) :
 							?>
 						</div><!-- .swiper-wrapper -->
 						<div class="swiper-pagination"></div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
 					</div><!-- .swiper-container -->
 				</div><!-- .col -->
 			</div><!-- .row -->
@@ -80,13 +80,13 @@ endif;
 	var mySwiper = new Swiper ('.swiper-container', {
 		// Optional parameters
 		autoHeight: true,
-		slidesPerView: 3,
-		spaceBetween: 30,
+		slidesPerView: 1,
 		slidesPerGroup: 3,
+		spaceBetween: 10,
 		loop: true,
 		loopFillGroupWithBlank: true,
 		autoplay: {
-			delay: 2500,
+			delay: 4000,
 			disableOnInteraction: false,
 		},
 		// Responsive breakpoints
@@ -94,22 +94,17 @@ endif;
 			// when window width is >= 320px
 			320: {
 				slidesPerView: 1,
-				spaceBetween: 20
+				spaceBetween: 10,
 			},
 			// when window width is >= 480px
 			480: {
-				slidesPerView: 1,
-				spaceBetween: 20
+				slidesPerView: 2,
+				spaceBetween: 10,
 			},
 			// when window width is >= 640px
 			640: {
-				slidesPerView: 2,
-				spaceBetween: 30
-			},
-			// when window width is >= 640px
-			1024: {
 				slidesPerView: 3,
-				spaceBetween: 30
+				spaceBetween: 10,
 			}
 		},
 		// Navigation arrows

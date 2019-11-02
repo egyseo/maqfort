@@ -19,7 +19,7 @@ get_header(); ?>
 		$add_css   = 'style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(' . esc_url( $term_banner ) . ');"';
 	endif;
 	?>
-	<header class="page-header <?php echo esc_html( $add_class ); ?>"  <?php echo esc_attr( $add_css ); ?> >
+	<header class="page-header <?php echo esc_html( $add_class ); ?>"  <?php echo wp_kses_post( $add_css ); ?> >
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

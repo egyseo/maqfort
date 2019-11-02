@@ -53,3 +53,41 @@
             content: '\f105'
             color: $blue-grey
             text-shadow: none
+
+#home-products-slider
+  background-color: $light-grey
+  .swiper-container
+    width: 100%
+    height: 100%
+    .swiper-wrapper
+      padding-bottom: 40px
+      .product-card
+        margin: 0 10px 30px
+    .swiper-pagination
+      .swiper-pagination-bullet-active
+        opacity: 1
+        background: $primary-color
+
+  .section-title-wrapper
+    position: relative
+    .swiper-button-prev,
+    .swiper-button-next
+      position: absolute
+      top: 25px
+      &::after
+        font-family: "FontAwesome"
+        font-size: 16px
+        background-color: #f1f1f1
+        padding: 6px 16px
+        color: $blue-grey
+      &:focus
+        outline: 0
+    .swiper-button-prev
+      left: 205px
+      &::after
+        content: '\f105'
+    .swiper-button-next
+      position: absolute
+      left: 160px
+      &::after
+        content: '\f104'

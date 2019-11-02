@@ -10,7 +10,8 @@
 
 get_header();
 
-get_template_part( 'template-parts/home/home', 'slider' );
+//get_template_part( 'template-parts/home/home', 'slider' );
+get_template_part( 'template-parts/home/home', 'slider2' );
 
 while ( have_posts() ) :
 	the_post();
