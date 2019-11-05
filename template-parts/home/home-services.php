@@ -11,7 +11,8 @@ $service_items              = get_post_meta( get_the_ID(), '_mf_homepage_itens',
 $service_background_image   = get_theme_mod( 'mf_services_background_image' );
 $service_background_overlay = get_theme_mod( 'mf_services_background_overlay' );
 
-$service_background = '';
+$service_background    = '';
+$add_new_service_class = '';
 
 if ( ! empty( $service_background_image && $service_background_overlay ) ) :
 	$service_background    = 'style="background-image: linear-gradient( ' . esc_attr( $service_background_overlay ) . ', ' . esc_attr( $service_background_overlay ) . ' ), url(' . esc_url( $service_background_image ) . ');"';
