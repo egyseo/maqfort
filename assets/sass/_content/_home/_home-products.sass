@@ -58,12 +58,26 @@
   background-color: $light-grey
   .swiper-container
     width: 100%
+    max-width: 100%
     height: 100%
     .swiper-wrapper
-      padding-bottom: 40px
-      .product-card
-        margin: 0 10px 30px
+      padding-bottom: 60px
+      width: 100%
+      max-width: 100%
+      .swiper-slide
+        width: 100%
+        .product-card
+          width: 100%
+          .product-card-header
+            width: 100%
+            .product-card-thumbnail
+              max-width: 100%
+              overflow: hidden
+              img
+                width: 100%
+                max-width: 100%
     .swiper-pagination
+      bottom: 0
       .swiper-pagination-bullet-active
         opacity: 1
         background: $primary-color
@@ -91,3 +105,15 @@
       left: 160px
       &::after
         content: '\f104'
+
+@media (max-width: $small)
+  #home-products-slider
+    .swiper-container
+    .primary-btn
+      margin-top: 30px
+    .section-title-wrapper
+      .swiper-button-prev,
+      .swiper-button-next
+        display: none
+      .see-all
+        display: none

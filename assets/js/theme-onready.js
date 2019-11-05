@@ -129,51 +129,49 @@
       openEffect	: 'none',
       closeEffect	: 'none'
     });
-
-
-		/*
-		 *  Setup swiper on home page.
-		 */
-		var mySwiper = new Swiper ('.swiper-container', {
-			// Optional parameters
-			autoHeight: true,
-			slidesPerView: 1,
-			slidesPerGroup: 3,
-			spaceBetween: 10,
-			loop: true,
-			loopFillGroupWithBlank: true,
-			autoplay: {
-				delay: 4000,
-				disableOnInteraction: false,
-			},
-			// Responsive breakpoints
-			breakpoints: {
-				// when window width is >= 320px
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 10,
-				},
-				// when window width is >= 480px
-				480: {
-					slidesPerView: 2,
-					spaceBetween: 10,
-				},
-				// when window width is >= 640px
-				640: {
-					slidesPerView: 3,
-					spaceBetween: 10,
-				}
-			},
-			// Navigation arrows
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-		})
-
+    /*
+    *  Setup swiper on home page.
+    */
+    var productSwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      speed: 900,
+      spaceBetween: 10,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 10
+        },
+        // when window width is >= 480px
+        567: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 10
+        },
+        // when window width is >= 640px
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 10
+        }
+      }
+    });
   });
 })(jQuery);

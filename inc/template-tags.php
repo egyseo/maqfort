@@ -45,6 +45,7 @@ if ( ! function_exists( 'mf_pagination' ) ) {
 	function mf_pagination() {
 		global $wp_query;
 		$bignum = 999999999;
+		$translated = __( 'Página', 'maqfort' );
 		if ( $wp_query->max_num_pages <= 1 ) {
 			return;
 		}
@@ -53,15 +54,16 @@ if ( ! function_exists( 'mf_pagination' ) ) {
 		echo '<nav class="pagination">';
 		echo paginate_links(
 			array(
-				'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
-				'format'       => '',
-				'current'      => max( 1, get_query_var( 'paged' ) ),
-				'total'        => $wp_query->max_num_pages,
-				'prev_text'    => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-				'next_text'    => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-				'type'         => 'list',
-				'end_size'     => 1,
-				'mid_size'     => 1,
+				'base'               => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
+				'format'             => '',
+				'current'            => max( 1, get_query_var( 'paged' ) ),
+				'total'              => $wp_query->max_num_pages,
+				'prev_text'          => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+				'next_text'          => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+				'type'               => 'list',
+				'before_page_number' => '<span class="screen-reader-text">' . $translated . ' </span>',
+				'end_size'           => 0,
+				'mid_size'           => 1,
 			)
 		);
 		echo '</nav>';

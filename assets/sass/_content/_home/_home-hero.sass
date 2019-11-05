@@ -4,14 +4,17 @@
   .video-background-wrapper
     position: relative
     height: 100%
+    overflow: hidden
 
     #video-background
+      min-width: 100%
+      min-height: 100%
+      width: auto
+      height: auto
       position: absolute
       top: 50%
       left: 50%
-      transform: translateX(-50%) translateY(-50%)
-      width: 100%
-      height: auto
+      transform: translate(-50%, -50%)
     .hero-content-container
       position: absolute
       left: 0
@@ -22,7 +25,7 @@
       align-content: center
       justify-content: flex-start
       align-items: center
-      background-color: rgba(23,23,23,.7)
+      //background-color: rgba(23,23,23,.7)
       background-blend-mode: multiply
       .hero-content
         .content-wrapper
@@ -47,24 +50,51 @@
           .hero-description
             font-size: 15px
             letter-spacing: 2px
-            color: #888
+            color: #CCC
           .hero-link
             display: inline-block
             background-color: $primary-color
             padding: 10px 20px
             color: white
 
-@media (max-width: 520px)
+@media (max-width: $small)
   #home-hero-wrapper
+    height: 100vh
     .video-background-wrapper
-      #video-background
-        position: absolute
-        top: 0
-        left: 0
-        transform: translateX(0%) translateY(0%)
-        width: 100%
-        min-height: 100%
       .hero-content-container
         .hero-content
           .content-wrapper
             padding: 0px
+            p
+              margin-top: 0
+              margin-bottom: 30px
+              line-height: 1
+            .hero-title
+              font-size: 40px
+              margin-bottom: 10px
+            .hero-subtitle
+              font-size: 20px
+            .hero-description
+              font-size: 14px
+            .hero-link
+              font-size: 13px
+
+@media (max-width: $supasmall)
+  #home-hero-wrapper
+    .video-background-wrapper
+      .hero-content-container
+        .hero-content
+          .content-wrapper
+            padding: 0px
+            p
+              margin-top: 0
+              margin-bottom: 30px
+              line-height: 1
+            .hero-title
+              font-size: 40px
+              margin-bottom: 10px
+            .hero-subtitle
+              font-size: 18px
+            .hero-description
+            .hero-link
+              font-size: 13px

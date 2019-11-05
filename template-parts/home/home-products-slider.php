@@ -34,7 +34,7 @@ if ( $products_terms ) :
 				</div><!-- .col -->
 			</div><!-- .row -->
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 							<?php
@@ -46,7 +46,7 @@ if ( $products_terms ) :
 
 										$term_link  = get_term_link( $product_term );
 										$term_image = wp_get_attachment_image( get_term_meta( $product_term->term_id, 'customtaxonomie_mb_image_id', 1 ), 'full' );
-										$output     = '<div class="swiper-slide"><article class="product-card"><header class="produc-card-header">';
+										$output     = '<div class="swiper-slide"><article class="product-card"><header class="product-card-header">';
 										if ( ! empty( $term_image ) ) :
 											$output .= '<a href="' . esc_url( $term_link ) . '"><figure class="product-card-thumbnail">' . $term_image . '</figure></a>';
 										else :
@@ -70,6 +70,11 @@ if ( $products_terms ) :
 					</div><!-- .swiper-container -->
 				</div><!-- .col -->
 			</div><!-- .row -->
+			<div class="row center-xs">
+				<div class="col-xs-12">
+					<a class="see-all-mobile primary-btn" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				</div>
+			</div>
 		</div><!-- .container -->
 	</section><!-- #home-products-slider -->
 	<?php

@@ -21,11 +21,14 @@ function mf_customize_register( $wp_customize ) {
 	);
 
 	require get_parent_theme_file_path( '/inc/customizer/class-text-editor-custom-control.php' );
+	require get_parent_theme_file_path( '/inc/customizer//alpha-color-picker/alpha-color-picker.php' );
 	require get_parent_theme_file_path( '/inc/customizer/general-section.php' );
 	require get_parent_theme_file_path( '/inc/customizer/products-section.php' );
 	require get_parent_theme_file_path( '/inc/customizer/cookies-section.php' );
 	require get_parent_theme_file_path( '/inc/customizer/touch-icon-section.php' );
 	require get_parent_theme_file_path( '/inc/customizer/social-icons-section.php' );
+	require get_parent_theme_file_path( '/inc/customizer/hero-section.php' );
+	require get_parent_theme_file_path( '/inc/customizer/services-section.php' );
 
 }
 

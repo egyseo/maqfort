@@ -25,3 +25,25 @@ a
   &:hover,
   &:active
     outline: 0
+
+.primary-btn
+  display: inline-block
+  background-color: $primary-color
+  padding: 10px 20px
+  font-weight: bold
+  color: white
+  font-size: 14px
+  &:visited
+    color: white
+    background-color: $primary-color
+  &:hover
+    background-color: $darker-grey
+    color: white
+  .fa
+    margin-left: 10px
+    color: white
+
+@media (max-width: $small)
+  .primary-btn
+    display: block
+    width: 100%

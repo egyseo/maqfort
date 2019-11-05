@@ -301,3 +301,7 @@ function mf_truncate( $string, $length ) {
 	}
 	return $string;
 }
+
+function maqfort_custom_text_sanitize( $input ) {
+	return wp_kses_post( force_balance_tags( $input ) );
+}
