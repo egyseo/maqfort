@@ -28,17 +28,17 @@ function console_log( $data ) {
 			if ( $product_carousel_images ) :
 				foreach ( (array) $product_carousel_images as $carousel_id => $image ) :
 					$image_output = '';
-					//console_log( $image );
+					console_log( $image );
 					$image_output .= '<div class="swiper-slide" style="background-image:url(' . esc_url( $image ) . ')"></div>';
 					echo wp_kses_post( $image_output );
 				endforeach;
 			endif;
 			?>
-		</div>
+		</div><!-- .swiper-wrapper -->
 		<!-- Add Arrows -->
 		<div class="swiper-button-next"></div>
 		<div class="swiper-button-prev"></div>
-	</div>
+	</div><!-- .gallery-frame-->
 	<div class="swiper-container gallery-thumbs">
 		<div class="swiper-wrapper">
 			<?php
@@ -50,6 +50,6 @@ function console_log( $data ) {
 				endforeach;
 			endif;
 			?>
-		</div>
-	</div>
+		</div><!-- .swiper-wrapper -->
+	</div><!-- .gallery-thumbs -->
 </section>

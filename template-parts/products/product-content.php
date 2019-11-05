@@ -18,7 +18,7 @@ $terms_list                = get_the_terms( get_the_ID(), 'mf_tipos_de_produtos'
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					<?php get_template_part( 'template-parts/products/product', 'images' ); ?>
+					<?php //get_template_part( 'template-parts/products/product', 'images' ); ?>
 					<?php get_template_part( 'template-parts/products/product', 'gallery' ); ?>
 				</div><!-- .col -->
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

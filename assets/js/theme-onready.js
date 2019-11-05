@@ -176,12 +176,12 @@
     var galleryThumbs = new Swiper('.gallery-thumbs', {
       spaceBetween: 10,
       slidesPerView: 4,
-      freeMode: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
     });
     var galleryFrame = new Swiper('.gallery-frame', {
       spaceBetween: 10,
+      slidesPerView: 1,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
