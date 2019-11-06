@@ -132,7 +132,7 @@
     /*
     *  Setup swiper on home page.
     */
-    var productSwiper = new Swiper ('.swiper-container', {
+    var productSwiper = new Swiper ('.products-slider', {
       // Optional parameters
       speed: 900,
       spaceBetween: 10,
@@ -173,22 +173,24 @@
         }
       }
     });
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
+		var galleryThumbs = new Swiper('.gallery-thumbs', {
       spaceBetween: 10,
-      slidesPerView: 4,
+      slidesPerView: 6,
+      freeMode: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
     });
     var galleryFrame = new Swiper('.gallery-frame', {
-      spaceBetween: 10,
-      slidesPerView: 1,
+      spaceBetween: 20,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
       thumbs: {
-        swiper: galleryThumbs,
-      },
+        swiper: galleryThumbs
+      }
     });
+
+
   });
 })(jQuery);

@@ -35,7 +35,7 @@ if ( $products_terms ) :
 			</div><!-- .row -->
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="swiper-container">
+					<div class="swiper-container products-slider">
 						<div class="swiper-wrapper">
 							<?php
 							foreach ( $products_terms as $product_term ) :

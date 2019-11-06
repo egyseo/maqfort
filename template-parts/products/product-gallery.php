@@ -21,7 +21,6 @@ function console_log( $data ) {
 ?>
 
 <section id="product-gallery-wrapper">
-	<!-- Swiper -->
 	<div class="swiper-container gallery-frame">
 		<div class="swiper-wrapper">
 			<?php
@@ -35,7 +34,6 @@ function console_log( $data ) {
 			endif;
 			?>
 		</div><!-- .swiper-wrapper -->
-		<!-- Add Arrows -->
 		<div class="swiper-button-next"></div>
 		<div class="swiper-button-prev"></div>
 	</div><!-- .gallery-frame-->
@@ -52,4 +50,4 @@ function console_log( $data ) {
 			?>
 		</div><!-- .swiper-wrapper -->
 	</div><!-- .gallery-thumbs -->
-</section>
+</section><!-- #product-gallery-wrapper -->

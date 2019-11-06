@@ -28,7 +28,7 @@ $terms_list                = get_the_terms( get_the_ID(), 'mf_tipos_de_produtos'
 					echo '<div class="product-small-description">' , wp_kses_post( wpautop( $product_small_description ) ) , '</div>';
 
 					foreach ( $terms_list as $term_name ) :
-						$term_link = get_term_link( $term_name, array( 'mf_tipos_de_produtos') );
+						$term_link = get_term_link( $term_name, array( 'mf_tipos_de_produtos' ) );
 						echo '<p class="product-cat"><span>' , esc_html__( 'Categoria: ', 'maqfort' ) , '</span><a href="' , esc_url( $term_link ) , '">' , esc_html( $term_name->name ) , '</a></p>';
 					endforeach;
 
