@@ -4,7 +4,7 @@
     /*
     * Setup tabs for products.
     */
-    if ( $('.tabs').children().length && $('.tabcontent').length >= 0 ) {
+    /*if ( $('.tabs').children().length && $('.tabcontent').length >= 0 ) {
       $('.tabs .tablinks').first().addClass('active');
       $('.tabcontent').first().css('display', 'block');
     }
@@ -16,7 +16,42 @@
           $(this).addClass('active');
           $('#'+tabID+'-tab').css('display', 'block');
         }
+    });*/
+
+    /*
+    * Setup tabs for products.
+    */
+    $(".tab-content").hide();
+    $(".tab-content:first").show();
+
+    /* if in tab mode */
+    $("ul.tabs li").click(function() {
+      $(".tab-content").hide();
+      var activeTab = $(this).attr("rel");
+      $("#"+activeTab).fadeIn();
+
+      $("ul.tabs li").removeClass("active");
+      $(this).addClass("active");
+
+      $(".tab-drawer-heading").removeClass("d-active");
+      $(".tab-drawer-heading[rel^='"+activeTab+"']").addClass("d-active");
     });
+
+    /* if in drawer mode */
+    $(".tab-drawer-heading").click(function() {
+      $(".tab-content").hide();
+      var d_activeTab = $(this).attr("rel");
+      $("#"+d_activeTab).fadeIn();
+
+      $(".tab-drawer-heading").removeClass("d-active");
+      $(this).addClass("d-active");
+
+      $("ul.tabs li").removeClass("active");
+      $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+    });
+
+    /* Extra class "tab_last" to add border to right side of last tab */
+    $('ul.tabs li').last().addClass("tab-last");
 
     /*
     * Slide search form, from top.

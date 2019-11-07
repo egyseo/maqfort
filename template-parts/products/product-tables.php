@@ -11,14 +11,18 @@ $table_list = get_post_meta( get_the_ID(), '_mf_produtos_tabelas', true );
 
 if ( $table_list ) :
 
+	$count_tabs = 1;
+
 	foreach ( $table_list as $table ) :
 		$table_head   = get_post_meta( $table, 'mf_tables_mb_table_head', true );
 		$table_row    = get_post_meta( $table, 'mf_tables_mb_table_row', true );
 		$table_name   = get_post_meta( $table, 'mf_tables_mb_table_name', true );
 		$table_footer = get_post_meta( $table, 'mf_tables_mb_table_footer', true );
+		$count_tabs++;
+		echo '<h3 class="tab-drawer-heading" rel="tab' , esc_attr( $count_tabs ) , '">' , esc_html( $table_name ) , '</h3>';
 
 		?>
-		<div id="<?php echo esc_html( $table_name ); ?>-tab" class="tabcontent">
+		<div id="tab<?php echo esc_attr( $count_tabs ); ?>" class="tab-content">
 			<section class="product-table">
 				<div class="container container-fluid">
 					<div class="row">
