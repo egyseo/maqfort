@@ -1,68 +1,65 @@
 #home-services
-  padding: 100px 0
-  background-color: $darker-grey
-  .service-box
-    display: block
-    position: relative
-    margin-bottom: 120px
-    .service-image-box
-      img
-        position: relative
-      .service-content-box
-        position: absolute
-        top: 60%
-        left: 0
-        right: 0
-        padding: 0 10px
+  padding: 140px 0 100px
+  .row
+    &:nth-child(2)
+      .service-box
+        .service-image-box
+          order: 2
         .service-content
-          background-color: white
-          transition: all .4s ease
-          text-align: center
-          padding: 30px
-          border: 1px solid $light-grey
-          box-shadow: 0 7px 22px rgba(19,19,19,.08)
-          .fa
-            position: absolute
-            top: 0
-            left: 50%
-            transform: translate(-50%, -50%)
-            background-color: $darker-grey
-            color: white
-            width: 70px
-            height: 70px
-            font-size: 1.6rem
-            line-height: 70px
-            //border-radius: 50%
-
-          .service-title
-            font-size: 1.2rem
-            font-weight: 700
-            color: $darker-grey
-            margin: 0
-            margin-bottom: 10px
-            margin-top: 20px
-          .service-desc
-            color: #505050
-            font-size: 16px
-            line-height: 1.8
-            margin: 0
+          order: 1
+  .service-box
+    display: flex
+    margin-bottom: 40px
+    .service-image-box
+      width: 50%
+      order: 1
+      position: relative
+      img
+        width: 100%
+        height: 100%
+    .service-content
+      width: 50%
+      order: 2
+      display: flex
+      flex-direction: column
+      justify-content: center
+      transition: all .4s ease
+      padding: 40px
+      background-color: $light-grey
+      .service-title
+        font-size: 1.6rem
+        font-weight: 700
+        color: $darker-grey
+        margin: 0
+        margin-bottom: 20px
+      .service-desc
+        color: #505050
+        font-size: 16px
+        line-height: 1.8
+        margin: 0
+        margin-bottom: 20px
+      .service-link
+        font-weight: bold
+        color: $primary-darker
+        margin: 0
+        font-size: 14px
 
 @media (max-width: $small)
   #home-services
-    .col-xs-12:last-child
-      .service-box
-        margin-bottom: 100px
-    .service-box
-      display: block
-      position: relative
-      margin-bottom: 140px
-      .service-image-box
-        .service-content-box
-          position: absolute
-          top: 40%
+    .row
+      &:nth-child(2)
+        .service-box
+          .service-image-box
+            order: 1
           .service-content
-            .fa
+            order: 2
+    .service-box
+      flex-direction: column
+      background-color: white
+      margin-bottom: 40px
+      .service-image-box
+        width: 100%
+        order: 1
 
-            .service-title
-
-            .service-desc
+      .service-content
+        width: 100%

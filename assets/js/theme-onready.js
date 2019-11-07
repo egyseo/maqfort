@@ -183,6 +183,7 @@
       slidesPerGroup: 1,
       loop: true,
       loopFillGroupWithBlank: true,
+      autoHeight: true,
       autoplay: {
         delay: 8000,
         disableOnInteraction: false,

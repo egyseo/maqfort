@@ -23,7 +23,6 @@ if ( $service_items ) :
 	?>
 	<section id="home-services" <?php echo wp_kses_post( $add_new_service_class ) . wp_kses_post( $service_background ); ?> >
 		<div class="container container-fluid">
-			<div class="row">
 				<?php
 				foreach ( (array) $service_items as $key => $service ) :
 
@@ -55,39 +54,40 @@ if ( $service_items ) :
 
 					if ( ! empty( $service_url ) ) :
 						?>
-						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-							<a class="service-box" href="<?php echo esc_url( $service_url ); ?>">
-								<div class="service-image-box">
-									<?php
-									if ( $service_image ) :
-										echo '<img class="service-image" src="' . esc_url( $service_image ) . '" alt="' . esc_attr( $service_title ) . '">';
-									else :
-										echo '<img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/placeholder.png" alt="imagem provisória">';
-									endif;
-									?>
-									<div class="service-content-box">
-										<div class="service-content">
-											<?php
-											if ( $service_icon ) :
-												echo '<i class="fa ' , esc_attr( $service_icon ) , '" aria-hidden="true"></i>';
-											endif;
-											if ( $service_title ) :
-												echo '<p class="service-title">' , esc_html( $service_title ) , '</p>';
-											endif;
-											if ( $service_desc ) :
-												echo '<p class="service-desc">' , esc_html( mf_truncate( $service_desc, 140 ) ) , '</p>';
-											endif;
-											?>
-										</div><!-- .service-content -->
-									</div><!-- .service-content-box -->
-								</div><!-- .service-image-box -->
-							</a><!-- service-box -->
-						</div><!-- .col -->
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<a class="service-box" href="<?php echo esc_url( $service_url ); ?>">
+									<div class="service-image-box">
+										<?php
+										if ( $service_image ) :
+											echo '<img class="service-image" src="' . esc_url( $service_image ) . '" alt="' . esc_attr( $service_title ) . '">';
+										else :
+											echo '<img class="service-image" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/placeholder.png" alt="imagem provisória">';
+										endif;
+										/*if ( $service_icon ) :
+											echo '<i class="fa ' , esc_attr( $service_icon ) , '" aria-hidden="true"></i>';
+										endif;*/
+										?>
+									</div><!-- .service-image-box -->
+									<div class="service-content">
+										<?php
+										if ( $service_title ) :
+											echo '<h3 class="service-title">' , esc_html( $service_title ) , '</h3>';
+										endif;
+										if ( $service_desc ) :
+											echo '<p class="service-desc">' , esc_html( $service_desc ) , '</p>';
+										endif;
+											echo '<div class="service-link"><p class="btn btn-secondary">' , esc_html__( 'Saber mais', 'maqfort' ) , '</p></div>';
+										?>
+									</div><!-- .service-content -->
+								</a><!-- service-box -->
+							</div><!-- .col -->
+						</div><!-- .row -->
 						<?php
 					endif;
 				endforeach;
 				?>
-			</div><!-- .row -->
+			<!-- .row -->
 		</div><!-- .container -->
 	</section><!-- #home-services -->
 	<?php

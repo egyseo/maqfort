@@ -54,7 +54,7 @@ if ( $products_terms ) :
 										endif;
 										$output .= '</header>';
 										$output .= '<div class="product-card-content"><a href="' . esc_url( $term_link ) . '"><h2 class="product-card-title">' . esc_attr( $product_term->name ) . '</h2></a>';
-										$output .= '<p class="card-desc">' . mf_truncate( esc_html( $product_term->description ), 88 ) . '</p></div>';
+										$output .= '<p class="card-desc">' . mf_truncate( esc_html( $product_term->description ), 84 ) . '</p></div>';
 										$output .= '<footer class="product-card-footer"><a href="' . esc_url( $term_link ) . '"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></footer></article></div><!-- .swiper-slide -->';
 
 										echo wp_kses_post( $output );
@@ -72,7 +72,7 @@ if ( $products_terms ) :
 			</div><!-- .row -->
 			<div class="row center-xs">
 				<div class="col-xs-12">
-					<a class="see-all-mobile primary-btn" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					<a class="see-all-mobile btn btn-primary" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div><!-- .container -->
