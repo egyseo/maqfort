@@ -57,7 +57,7 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 		);
 
 		// Product Images.
-		$cmb->add_field(
+		/*$cmb->add_field(
 			array(
 				'name' => __( 'Principais imagens do produtos', 'maqfort' ),
 				'desc' => '',
@@ -73,7 +73,7 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 					'remove_text' => __( 'Remover', 'maqfort' ), // default: "Remove"
 				),
 			)
-		);
+		);*/
 
 		// Product Pieces Images
 		$cmb->add_field(

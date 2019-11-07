@@ -16,7 +16,7 @@ $product_videos           = get_post_meta( get_the_ID(), '_mf_produtos_videos', 
 <section class="product-tabs-wrapper">
 	<div class="container container-fluid">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="tabs">
 					<?php
 					if ( $product_full_description ) :

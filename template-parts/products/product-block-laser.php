@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="product-block">
+<section id="laser-block" class="product-block">
 	<h4 class="block-title">Os lasers NUKON</h4>
 	<div class="laser-block-content">
 		<img src="https://crew.pt/mf/wp-content/uploads/2019/10/laser-nukon.jpg" alt="laser">

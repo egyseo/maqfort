@@ -10,6 +10,7 @@
 $product_small_description = get_post_meta( get_the_ID(), '_mf_produtos_wysiwyg', true );
 $is_industry40             = get_post_meta( get_the_ID(), '_mf_produtos_industry', 1 );
 $terms_list                = get_the_terms( get_the_ID(), 'mf_tipos_de_produtos' );
+$product_title             = get_the_title( get_the_ID() );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -18,12 +19,13 @@ $terms_list                = get_the_terms( get_the_ID(), 'mf_tipos_de_produtos'
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<?php echo '<h1 class="product-title product-title-mobile">' , esc_html( $product_title ) , '</h1>'; ?>
 					<?php //get_template_part( 'template-parts/products/product', 'images' ); ?>
 					<?php get_template_part( 'template-parts/products/product', 'gallery' ); ?>
 				</div><!-- .col -->
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<?php
-					the_title( '<h1 class="product-title">', '</h1>' );
+					echo '<h1 class="product-title product-title-desktop">' , esc_html( $product_title ) , '</h1>';
 
 					echo '<div class="product-small-description">' , wp_kses_post( wpautop( $product_small_description ) ) , '</div>';
 

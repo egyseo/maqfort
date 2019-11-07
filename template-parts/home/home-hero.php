@@ -7,16 +7,18 @@
  * -----------------------------------------------------------
  */
 
-$hero_title        = get_theme_mod( 'mf_hero_title' );
-$hero_subtitle     = get_theme_mod( 'mf_hero_subtitle' );
-$hero_description  = get_theme_mod( 'mf_hero_description' );
-$hero_link_text    = get_theme_mod( 'mf_hero_link_text' );
-$hero_link_url     = get_theme_mod( 'mf_hero_button_url' );
-$hero_video_poster = get_theme_mod( 'mf_hero_video_poster' );
-$hero_video_mp4    = get_theme_mod( 'mf_hero_video_mp4' );
-$hero_video_webm   = get_theme_mod( 'mf_hero_video_webm' );
-$hero_video_ogv    = get_theme_mod( 'mf_hero_video_ogv' );
-$hero_video_filter = get_theme_mod( 'mf_hero_video_filter' );
+$hero_title               = get_theme_mod( 'mf_hero_title' );
+$hero_subtitle            = get_theme_mod( 'mf_hero_subtitle' );
+$hero_description         = get_theme_mod( 'mf_hero_description' );
+$hero_link_text           = get_theme_mod( 'mf_hero_link_text' );
+$hero_link_url            = get_theme_mod( 'mf_hero_button_url' );
+$hero_link_text_secondary = get_theme_mod( 'mf_hero_link_text_secondary' );
+$hero_link_url_secondary  = get_theme_mod( 'mf_hero_button_url_secondary' );
+$hero_video_poster        = get_theme_mod( 'mf_hero_video_poster' );
+$hero_video_mp4           = get_theme_mod( 'mf_hero_video_mp4' );
+$hero_video_webm          = get_theme_mod( 'mf_hero_video_webm' );
+$hero_video_ogv           = get_theme_mod( 'mf_hero_video_ogv' );
+$hero_video_filter        = get_theme_mod( 'mf_hero_video_filter' );
 
 
 if ( ! empty( $hero_title ) ) :
@@ -48,9 +50,14 @@ if ( ! empty( $hero_title ) ) :
 										<p class="hero-description"><?php echo esc_html( $hero_description ); ?></p>
 										<?php
 									endif;
-									if ( ! empty( $hero_link_url && $hero_link_text ) ) :
+									if ( ! empty( $hero_link_text ) ) :
 										?>
 										<a href="<?php echo esc_url( $hero_link_url ); ?>" class="primary-btn hero-link" ><?php echo esc_html( $hero_link_text ); ?></a>
+										<?php
+									endif;
+									if ( ! empty( $hero_link_text_secondary ) ) :
+										?>
+										<a href="<?php echo esc_url( $hero_link_url_secondary ); ?>" class="secondary-btn hero-link" ><?php echo esc_html( $hero_link_text_secondary ); ?></a>
 										<?php
 									endif;
 									?>

@@ -40,22 +40,55 @@
 
 #product-gallery-wrapper
   width: 100%
-  height: 400px
+  height: auto
   margin-left: auto
   margin-right: auto
+  position: relative
   .swiper-container
-    .swiper-slide
-      background-size: cover
-      background-position: center
   .gallery-frame
-    height: 70%
+    height: 80%
     width: 100%
+    .swiper-slide
+      img
+        width: 100%
+        border: 1px solid $light-grey
   .gallery-thumbs
     height: 30%
-    padding: 20px 0
+    padding: 10px 0
+    //background-color: $light-grey
     .swiper-slide
-      width: 15%
+      width: 25%
       height: 100%
-      opacity: 0.4
+      opacity: 0.6
+      img
     .swiper-slide-thumb-active
       opacity: 1
+  .swiper-button-prev,
+  .swiper-button-next
+    position: absolute
+    top: 28px
+    &::after
+      font-family: "FontAwesome"
+      font-size: 16px
+      background-color: #f1f1f1
+      padding: 6px 16px
+      color: $blue-grey
+    &:focus
+      outline: 0
+  .swiper-button-prev
+    left: 15px
+    &::after
+      content: '\f104'
+  .swiper-button-next
+    position: absolute
+    left: 55px
+    &::after
+      content: '\f105'
+
+@media (max-width: $small)
+  #product-gallery-wrapper
+    position: relative
+    height: auto
+    margin-bottom: 20px
+    .swiper-button-next
+      left: 60px

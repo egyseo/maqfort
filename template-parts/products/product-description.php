@@ -11,7 +11,7 @@
 <section class="product-info">
 	<div class="container container-fluid">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<?php
 				the_content();
 

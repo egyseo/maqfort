@@ -133,10 +133,10 @@ $wp_customize->add_control(
 );
 
 /*
- * ----------- Button url -----------
+ * ----------- Button url secondary -----------
  */
 $wp_customize->add_setting(
-	'mf_hero_link_url',
+	'mf_hero_link_url_secondary',
 	array(
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -149,12 +149,40 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Control(
 		$wp_customize,
-		'mf_hero_link_url',
+		'mf_hero_link_url_secondary',
 		array(
 			'type'        => 'text',
 			'section'     => 'hero_section',
 			'priority'    => 5,
-			'label'       => __( 'URL do link', 'maqfort' ),
+			'label'       => __( 'URL do segundo link', 'maqfort' ),
+			'description' => '',
+		)
+	)
+);
+
+/*
+ * ----------- Button url secondary -----------
+ */
+$wp_customize->add_setting(
+	'mf_hero_link_url_secondary',
+	array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'esc_url',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Control(
+		$wp_customize,
+		'mf_hero_link_url_secondary',
+		array(
+			'type'        => 'text',
+			'section'     => 'hero_section',
+			'priority'    => 5,
+			'label'       => __( 'URL do link secundario', 'maqfort' ),
 			'description' => '',
 		)
 	)

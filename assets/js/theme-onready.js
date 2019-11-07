@@ -129,6 +129,14 @@
       openEffect	: 'none',
       closeEffect	: 'none'
     });
+
+    $('[data-fancybox="gallery"]').fancybox({
+      // Options will go here
+      arrows: true,
+      animationEffect: 'zoom',
+      transitionEffect: 'fade',
+    });
+
     /*
     *  Setup swiper on home page.
     */
@@ -175,13 +183,14 @@
     });
 		var galleryThumbs = new Swiper('.gallery-thumbs', {
       spaceBetween: 10,
-      slidesPerView: 6,
+      slidesPerView: 4,
       freeMode: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
     });
     var galleryFrame = new Swiper('.gallery-frame', {
-      spaceBetween: 20,
+      spaceBetween: 10,
+      autoHeight: true,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

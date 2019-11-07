@@ -22,7 +22,7 @@ if ( $table_list ) :
 			<section class="product-table">
 				<div class="container container-fluid">
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<table>
 								<thead>
 									<?php

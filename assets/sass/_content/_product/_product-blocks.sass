@@ -1,26 +1,46 @@
 .product-block
+  margin-bottom: 30px
   .block-title
     font-size: 20px
+    margin-bottom: 20px
   .laser-block-content
     display: flex
-    padding: 20px 0
+    padding: 20px
+    background-color: white
+    img
+      border: 1px solid $light-grey
+      width: 100%
     .block-description
+      padding-left: 20px
       .list-title
         font-weight: bold
         color: $primary-color
         margin-bottom: 10px
-      ul
-        margin: 0
-        padding-left: 15px
-        margin-left: 15px
-        columns: 2
-        list-style-type: none
-        font-size: 14px
-        li
-          &::before
-            content: '\25AA'
-            color: $primary-color
-            font-weight: bold
-            display: inline-block
-            margin-left: -1em
-            width: 1em
+#laser-block
+  .block-title
+    background-color: white
+    padding: 20px 20px 0
+    margin-bottom: 0
+    display: inline-block
+  .industry-block-content
+    background-color: white
+    padding: 20px
+
+#industry-block
+  .block-title
+    background-color: white
+    padding: 20px 20px 0
+    margin-bottom: 0
+    display: inline-block
+  .industry-block-content
+    background-color: white
+    padding: 20px
+
+@media (max-width: $medium)
+  .product-block
+    .laser-block-content
+      flex-direction: column
+      .block-description
+        padding-left: 0px
+        ul
+          columns: 1
