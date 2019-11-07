@@ -26,24 +26,31 @@ a
   &:active
     outline: 0
 
-.primary-btn
+.btn
   display: inline-block
-  background-color: $primary-color
   padding: 10px 20px
   font-weight: bold
   color: white
   font-size: 14px
   &:visited
     color: white
+  .fa
+    color: white
+    margin-left: 10px
+
+.btn-primary
+  background-color: $primary-color
+  &:visited
     background-color: $primary-color
   &:hover
+    background-color: $primary-darker
+
+.btn-secondary
+  background-color: $blue-grey
+  &:visited
+    background-color: $blue-grey
+  &:hover
     background-color: $darker-grey
-    color: white
-  .fa
-    margin-left: 10px
-    color: white
 
 @media (max-width: $small)
-  .primary-btn
-    display: block
-    width: 100%
+  .btn

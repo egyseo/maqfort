@@ -30,7 +30,7 @@ $wp_customize->add_setting(
 		'type'              => 'theme_mod',
 		'capability'        => 'edit_theme_options',
 		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_html',
+		'sanitize_callback' => 'wp_kses_post',
 	)
 );
 
@@ -39,38 +39,10 @@ $wp_customize->add_control(
 		$wp_customize,
 		'mf_hero_title',
 		array(
-			'type'        => 'text',
+			'type'        => 'textarea',
 			'section'     => 'hero_section',
 			'priority'    => 1,
 			'label'       => __( 'Título', 'maqfort' ),
-			'description' => '',
-		)
-	)
-);
-
-/*
- * ----------- Sub title -----------
- */
-$wp_customize->add_setting(
-	'mf_hero_subtitle',
-	array(
-		'default'           => '',
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_html',
-	)
-);
-
-$wp_customize->add_control(
-	new WP_Customize_Control(
-		$wp_customize,
-		'mf_hero_subtitle',
-		array(
-			'type'        => 'text',
-			'section'     => 'hero_section',
-			'priority'    => 2,
-			'label'       => __( 'Sub-título', 'maqfort' ),
 			'description' => '',
 		)
 	)
@@ -133,10 +105,10 @@ $wp_customize->add_control(
 );
 
 /*
- * ----------- Button url secondary -----------
+ * ----------- Button url-----------
  */
 $wp_customize->add_setting(
-	'mf_hero_link_url_secondary',
+	'mf_hero_link_url',
 	array(
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -149,22 +121,50 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Control(
 		$wp_customize,
-		'mf_hero_link_url_secondary',
+		'mf_hero_link_url',
 		array(
 			'type'        => 'text',
 			'section'     => 'hero_section',
 			'priority'    => 5,
-			'label'       => __( 'URL do segundo link', 'maqfort' ),
+			'label'       => __( 'URL do link', 'maqfort' ),
 			'description' => '',
 		)
 	)
 );
 
 /*
- * ----------- Button url secondary -----------
+ * ----------- Button Text 2 -----------
  */
 $wp_customize->add_setting(
-	'mf_hero_link_url_secondary',
+	'mf_hero_link_text_2',
+	array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'esc_html',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Control(
+		$wp_customize,
+		'mf_hero_link_text_2',
+		array(
+			'type'        => 'text',
+			'section'     => 'hero_section',
+			'priority'    => 6,
+			'label'       => __( 'Texto do link secondário', 'maqfort' ),
+			'description' => '',
+		)
+	)
+);
+
+/*
+ * ----------- Button url 2 -----------
+ */
+$wp_customize->add_setting(
+	'mf_hero_link_url_2',
 	array(
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -177,12 +177,12 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Control(
 		$wp_customize,
-		'mf_hero_link_url_secondary',
+		'mf_hero_link_url_2',
 		array(
 			'type'        => 'text',
 			'section'     => 'hero_section',
-			'priority'    => 5,
-			'label'       => __( 'URL do link secundario', 'maqfort' ),
+			'priority'    => 7,
+			'label'       => __( 'URL do link secundário', 'maqfort' ),
 			'description' => '',
 		)
 	)
@@ -206,7 +206,7 @@ $wp_customize->add_control(
 		array(
 			'label'    => __( 'Video Poster', 'maqfort' ),
 			'section'  => 'hero_section',
-			'priority' => 6,
+			'priority' => 8,
 		)
 	)
 );
@@ -229,7 +229,7 @@ $wp_customize->add_control(
 		array(
 			'label'    => __( 'Video .mp4', 'maqfort' ),
 			'section'  => 'hero_section',
-			'priority' => 6,
+			'priority' => 9,
 		)
 	)
 );
@@ -252,7 +252,7 @@ $wp_customize->add_control(
 		array(
 			'label'    => __( 'Video .webm', 'maqfort' ),
 			'section'  => 'hero_section',
-			'priority' => 7,
+			'priority' => 10,
 		)
 	)
 );
@@ -275,7 +275,7 @@ $wp_customize->add_control(
 		array(
 			'label'    => __( 'Video .ogv', 'maqfort' ),
 			'section'  => 'hero_section',
-			'priority' => 8,
+			'priority' => 10,
 		)
 	)
 );
@@ -286,7 +286,8 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	'mf_hero_video_filter',
 	array(
-		'default' => 'rgba(23,23,23,.7)',
+		'default'  => 'rgba(23,23,23,.7)',
+		'priority' => 11,
 	)
 );
 

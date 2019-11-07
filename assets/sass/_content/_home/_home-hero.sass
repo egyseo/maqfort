@@ -29,33 +29,23 @@
       background-blend-mode: multiply
       .hero-content
         .content-wrapper
-          padding: 60px
-          //background-color: rgba(22,21,21,.8)
-          p
-            margin-top: 0
-            margin-bottom: 30px
-            line-height: 1
+          padding: 40px
           .hero-title
-            color: $primary-color
-            font-size: 60px
-            font-weight: bold
-            line-height: 1
-            margin-bottom: 10px
-            &::before
-              display: none
-          .hero-subtitle
-            font-weight: bold
-            font-size: 30px
             color: white
+            font-size: 36px
+            font-weight: bold
+            line-height: 1.2
+            margin-bottom: 20px
+            span
+              font-size: 40px
+              color: $primary-color
           .hero-description
-            font-size: 15px
-            letter-spacing: 2px
-            color: #CCC
-          .hero-link
-            display: inline-block
-            background-color: $primary-color
-            padding: 10px 20px
-            color: white
+            font-size: 16px
+            letter-spacing: 1.6px
+            line-height: 1.4
+            color: #E0E0E0
+          .btn-primary
+            margin-right: 10px
 
 @media (max-width: $small)
   #home-hero-wrapper
@@ -72,8 +62,6 @@
             .hero-title
               font-size: 40px
               margin-bottom: 10px
-            .hero-subtitle
-              font-size: 20px
             .hero-description
               font-size: 14px
             .hero-link
@@ -93,8 +81,6 @@
             .hero-title
               font-size: 40px
               margin-bottom: 10px
-            .hero-subtitle
-              font-size: 18px
             .hero-description
             .hero-link
               font-size: 13px

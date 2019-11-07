@@ -12,8 +12,8 @@ $hero_subtitle            = get_theme_mod( 'mf_hero_subtitle' );
 $hero_description         = get_theme_mod( 'mf_hero_description' );
 $hero_link_text           = get_theme_mod( 'mf_hero_link_text' );
 $hero_link_url            = get_theme_mod( 'mf_hero_button_url' );
-$hero_link_text_secondary = get_theme_mod( 'mf_hero_link_text_secondary' );
-$hero_link_url_secondary  = get_theme_mod( 'mf_hero_button_url_secondary' );
+$hero_link_text_secondary = get_theme_mod( 'mf_hero_link_text_2' );
+$hero_link_url_secondary  = get_theme_mod( 'mf_hero_button_url_2' );
 $hero_video_poster        = get_theme_mod( 'mf_hero_video_poster' );
 $hero_video_mp4           = get_theme_mod( 'mf_hero_video_mp4' );
 $hero_video_webm          = get_theme_mod( 'mf_hero_video_webm' );
@@ -39,10 +39,9 @@ if ( ! empty( $hero_title ) ) :
 							<div class="hero-content">
 								<div class="content-wrapper">
 									<?php
-									if ( ! empty( $hero_title && $hero_subtitle ) ) :
+									if ( ! empty( $hero_title ) ) :
 										?>
-										<h2 class="hero-title"><?php echo esc_html( $hero_title ); ?></h2>
-										<p class="hero-subtitle"><?php echo esc_html( $hero_subtitle ); ?></p>
+										<p class="hero-title"><?php echo wp_kses_post( $hero_title ); ?></p>
 										<?php
 									endif;
 									if ( ! empty( $hero_description ) ) :
@@ -52,15 +51,20 @@ if ( ! empty( $hero_title ) ) :
 									endif;
 									if ( ! empty( $hero_link_text ) ) :
 										?>
-										<a href="<?php echo esc_url( $hero_link_url ); ?>" class="primary-btn hero-link" ><?php echo esc_html( $hero_link_text ); ?></a>
+										<a href="<?php echo esc_url( $hero_link_url ); ?>" class="btn btn-primary" ><?php echo esc_html( $hero_link_text ); ?></a>
 										<?php
 									endif;
 									if ( ! empty( $hero_link_text_secondary ) ) :
 										?>
-										<a href="<?php echo esc_url( $hero_link_url_secondary ); ?>" class="secondary-btn hero-link" ><?php echo esc_html( $hero_link_text_secondary ); ?></a>
+										<a href="<?php echo esc_url( $hero_link_url_secondary ); ?>" class="btn btn-secondary" ><?php echo esc_html( $hero_link_text_secondary ); ?></a>
 										<?php
 									endif;
 									?>
+									<div class="icon-scroll-down">
+										<div class="mouse">
+											<div class="mouse-scroll"></div>
+										</div><!-- .mouse -->
+									</div><!-- .icon-scroll-down-->
 								</div><!--- .content-wrapper -->
 							</div><!-- .hero-content -->
 						</div><!-- .col -->
