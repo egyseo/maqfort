@@ -27,7 +27,7 @@ if ( $products_terms ) :
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class="section-title-wrapper">
 						<h2 class="section-title"><span><a href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Produtos', 'maqfort' ); ?></a></span></h2>
-						<a class="see-all" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						<a class="see-all on-desktop" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
 					</div><!-- .section-title-wrapper -->
@@ -72,7 +72,7 @@ if ( $products_terms ) :
 			</div><!-- .row -->
 			<div class="row center-xs">
 				<div class="col-xs-12">
-					<a class="see-all-mobile btn btn-primary" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					<a class="btn btn-primary on-mobile" href="<?php echo esc_url( $products_archives_url ); ?>"><?php esc_html_e( 'Ver todos produtos', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div><!-- .container -->

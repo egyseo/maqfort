@@ -9,20 +9,24 @@
     overflow: hidden
     li
       cursor: pointer
-      background-color: $white-text-ongrey
-      color: $darker-grey
-      overflow: hidden
+      background-color: $blue-grey
       position: relative
       padding: 20px
       border: 1px solid white
       border-bottom: none
+      h3
+        color: white
       &:hover
-        background-color: $darker-grey
-        color: $light-grey
+        background-color: $primary-color
+        h3
+          color: white
+          &::before
+            background-color: $darker-grey
     .active
       background-color: $light-grey
-      color: #333
       display: block
+      h3
+        color: $darker-grey
 
   .tab-last
     border-right: 1px solid #333
@@ -35,6 +39,8 @@
     overflow: hidden
     clear: both
     float: left
+    margin-bottom: 60px
+
     .tab-drawer-heading
       display: none
     .tab-content
@@ -64,16 +70,15 @@
 
 @media (max-width: $small)
   #product-tabs-wrapper
+    margin-bottom: 40px
     .tabs
       display: none
     .tab-wrapper
       .tab-drawer-heading
-        background-color: $white-text-ongrey
-        color: $darker-grey
-        border-top: 1px solid $light-grey
-        margin: 0
-        padding: 20px
         display: block
+        padding: 20px 0
+        background-color: $blue-grey
+        margin: 0
         cursor: pointer
         -webkit-touch-callout: none
         -webkit-user-select: none
@@ -81,8 +86,14 @@
         -moz-user-select: none
         -ms-user-select: none
         user-select: none
-        &::before
-          display: none
+        margin-bottom: 1px
+        h3
+          color: white
+        &:hover
+          background-color: $primary-color
+          h3
+            &::before
+              background-color: $darker-grey
       .tab-content
         padding: 20px 0
         display: none
@@ -92,7 +103,8 @@
         figcaption
           background-color: white
         ul
-
+          columns: 1
       .d-active
-        background-color: #666
+        background-color: $darker-grey
         color: #fff
+        margin-bottom: 0px

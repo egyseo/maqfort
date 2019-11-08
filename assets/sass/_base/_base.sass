@@ -23,10 +23,11 @@ body
 
 $main-transition: all 600ms ease-in-out
 
-.rev_slider
-  .tp-caption
-    &::before
-      display: none !important
+.on-desktop
+  display: block
+
+.on-mobile
+  display: none !important
 
 .grecaptcha-badge
   visibility: collapse !important
@@ -36,3 +37,10 @@ $main-transition: all 600ms ease-in-out
 @media (max-width: 600px)
   #wpadminbar
     position: fixed !important
+
+@media (max-width: $small)
+  .on-desktop
+    display: none
+
+  .on-mobile
+    display: block !important
