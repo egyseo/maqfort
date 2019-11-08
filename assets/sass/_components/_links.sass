@@ -33,11 +33,30 @@ a
   color: white
   font-size: 14px
   margin: 0
-  &:visited
-    color: white
+
   .fa
     color: white
+    font-size: 16px
     margin-left: 10px
+  &:visited
+    color: white
+
+  &:hover,
+  &:focus,
+  &:active
+    color: white
+    outline: 0
+    border: none
+    -moz-outline-style: none
+
+  &:focus
+    color: white
+
+
+  &:hover,
+  &:active
+    outline: 0
+
 
 .btn-primary
   background-color: $primary-color
@@ -52,6 +71,20 @@ a
     background-color: $blue-grey
   &:hover
     background-color: $darker-grey
+
+.btn-print
+  padding: 0
+  color: $medium-grey
+  cursor: pointer
+  .fa
+    color: $medium-grey
+  &:visited,
+  &:active,
+  &:hover,
+  &:focus
+    color: $darker-grey
+    .fa
+      color: $darker-grey
 
 @media (max-width: $small)
   .btn

@@ -4,6 +4,10 @@ jQuery(document).ready(function( $ ) {
   }
 });
 
+function printPage() {
+  window.print();
+}
+
 function euSetCookie(cookieName, cookieValue, nDays) {
   var today = new Date();
   var expire = new Date();

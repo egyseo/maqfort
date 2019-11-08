@@ -12,7 +12,9 @@ $product_block_industry_description = get_theme_mod( 'mf_product_block_industry'
 ?>
 
 <section id="industry-block" class="product-block">
-	<h4 class="block-title"><?php esc_html_e( 'Indústria 4.0', 'maqfort' ); ?></h4>
+	<div class="section-title-wrapper">
+		<h4 class="section-title"><span><?php esc_html_e( 'Indústria 4.0', 'maqfort' ); ?></span></h4>
+	</div>
 	<div class="industry-block-content">
 		<div class="block-description">
 			<?php echo wp_kses_post( wpautop( $product_block_industry_description ) ); ?>

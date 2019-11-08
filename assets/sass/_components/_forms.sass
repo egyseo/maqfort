@@ -50,7 +50,7 @@ textarea
   padding-left: 3px
   width: 100%
 
-#contact_form_pop
+#more-info-form-wrapper
   .wpcf7-form
     input[type="text"],
     input[type="email"],
@@ -73,11 +73,27 @@ textarea
       width: 100%
       text-align: center
       margin: 0 auto
+      font-weight: bold
       &:hover
         background-color: $primary-darker
     .required-fields
       color: $primary-color
-      font-weight: 500
+      font-weight: bold
+      font-size: 12px
+    .wpcf7-not-valid-tip
+      margin-top: 10px
+      padding: 10px
+      background-color: #C22E1F
+      color: white
+      font-size: 12px
+    .wpcf7-validation-errors
+      padding: 10px
+      background-color: #FFF7AF
+      border-color: #FFF7AF
+      color: $darker-grey
+      font-size: 12px
+
+
 
 button,
 input[type="button"],

@@ -7,17 +7,18 @@
  * -----------------------------------------------------------
  */
 
-$more_info = get_theme_mod( 'product_form' );
+$more_info = get_theme_mod( 'mf_product_form' );
 
 ?>
 <div class="product-buttons">
 	<?php
 	if ( $more_info ) :
-		echo '<button type="button" name="button" class="btn btn-rpimary" href="#contact_form_pop"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>' , esc_html__( 'Mais informaçlões', 'maqfort' ) , '</button>';
+		echo '<a class="btn btn-primary" data-fancybox data-src="#hidden-content" href="javascript:;" ><i class="fa fa-info" aria-hidden="true"></i>' , esc_html__( 'Mais informações', 'maqfort' ) , '</a>';
 	endif;
 	?>
-	<div style="display:none" class="fancybox-hidden">
-		<div id="contact_form_pop" style="height: 80vh;">
+	<button class="btn btn-print" onclick="printPage()"><i class="fa fa-print" aria-hidden="true"></i><?php esc_html_e( 'Imprimir este produto', 'maqfort' ); ?></button>
+	<div style="display: none;" id="hidden-content">
+		<div id="more-info-form-wrapper">
 			<?php echo do_shortcode( $more_info ); ?>
 		</div>
 	</div>
