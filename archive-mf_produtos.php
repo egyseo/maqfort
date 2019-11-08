@@ -7,20 +7,29 @@
  * -----------------------------------------------------------
  */
 
-get_header();
+$products_archive_description = get_theme_mod( 'mf_products_archives_description' );
+$products_archive_banner      = get_theme_mod( 'mf_products_archives_banner' );
 
-$products_archive_page_description = get_theme_mod( 'products_archives_page_desc' );
+$add_class = '';
+$add_css   = '';
+
+if ( $products_archive_banner ) :
+	$add_class = 'page-header-background';
+	$add_css   = 'style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(' . esc_url( $products_archive_banner ) . ');"';
+endif;
+
+get_header();
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header">
+	<header class="page-header <?php echo esc_html( $add_class ); ?>"  <?php echo wp_kses_post( $add_css ); ?> >
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
-					<?php if ( $products_archive_page_description ) : ?>
-						<p><?php echo esc_html( $products_archive_page_description ); ?></p>
+					<?php if ( $products_archive_description ) : ?>
+						<p><?php echo esc_html( $products_archive_description ); ?></p>
 					<?php endif; ?>
 				</div>
 			</div>

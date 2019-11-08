@@ -7,27 +7,17 @@
  * -----------------------------------------------------------
  */
 
+$product_block_laser_image       = get_theme_mod( 'mf_product_block_laser_image' );
+$product_block_laser_description = get_theme_mod( 'mf_product_block_laser' );
+
 ?>
 
 <section id="laser-block" class="product-block">
-	<h4 class="block-title">Os lasers NUKON</h4>
+	<h4 class="block-title"><?php esc_html_e( 'Os lasers NUKON', 'maqfort' ); ?></h4>
 	<div class="laser-block-content">
-		<img src="https://crew.pt/mf/wp-content/uploads/2019/10/laser-nukon.jpg" alt="laser">
+		<img src="<?php echo esc_url( $product_block_laser_image ); ?>" alt="laser-nukon" />
 		<div class="block-description">
-			<p>Os laser NUKON estão equipados com um grupo óptico de qualidade superior que suporta potências até 12kw. Desenvolvido especificamente para os nossos equipamentos, concentra todos os componentes num único corpo, leve e robusto construído 100% em alumínio.</p>
-			<p>Foi o resultado de um longo esforço de I+D e tem como principal objectivo permitir a fácil manutenção e mudança dos componentes ópticos no local.</p>
-			<p class="list-title">Principais especificações:</p>
-			<ul>
-				<li>Estrutura óptica capaz de suportar até 12kw</li>
-				<li>Controle sobre contaminações e temperaturas do grupo óptico</li>
-				<li>Controlo do sensor de piercing</li>
-				<li>Lentes e colimador arrefecidos a água</li>
-				<li>Manómetro de pressão de gás integrado</li>
-				<li>Sistema de calibração óptico automático</li>
-				<li>Auto-focus com retorno de informação</li>
-				<li>Mudança dos elementos ópticos no local</li>
-			</ul>
+			<?php echo wp_kses_post( wpautop( $product_block_laser_description ) ); ?>
 		</div>
 	</div><!-- .laser-block-content -->
-
-</section><!-- .product-laser-block -->
+</section><!-- #laser-block -->

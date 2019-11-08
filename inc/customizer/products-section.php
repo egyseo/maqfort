@@ -100,26 +100,28 @@ $wp_customize->add_control(
  * ----------- Product laser block content -----------
  */
 $wp_customize->add_setting(
-	'mf_product_block_laser[editor_content]',
+	'mf_product_block_laser',
 	array(
 		'default'           => '',
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'wp_kses_post',
 	)
 );
 
 $wp_customize->add_control(
-	new Text_Editor_Custom_Control(
+	new Maqfort_TinyMCE_Custom_Control(
 		$wp_customize,
-		'mf_product_block_laser[editor_content]',
+		'mf_product_block_laser',
 		array(
-			'type'        => 'textarea',
 			'section'     => 'mf_products_section',
 			'priority'    => 4,
 			'label'       => __( 'Bloco laser - Descrição', 'maqfort' ),
 			'description' => '',
+			'input_attrs' => array(
+				'toolbar1'     => 'bold italic bullist numlist alignleft aligncenter alignright link',
+				'toolbar2'     => 'formatselect outdent indent | blockquote charmap',
+				'mediaButtons' => true,
+			),
 		)
 	)
 );
@@ -128,26 +130,28 @@ $wp_customize->add_control(
  * ----------- Product laser block content -----------
  */
 $wp_customize->add_setting(
-	'mf_product_block_industry[editor_content]',
+	'mf_product_block_industry',
 	array(
 		'default'           => '',
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'wp_kses_post',
 	)
 );
 
 $wp_customize->add_control(
-	new Text_Editor_Custom_Control(
+	new Maqfort_TinyMCE_Custom_Control(
 		$wp_customize,
-		'mf_product_block_industry[editor_content]',
+		'mf_product_block_industry',
 		array(
-			'type'        => 'textarea',
 			'section'     => 'mf_products_section',
 			'priority'    => 5,
 			'label'       => __( 'Bloco indústria 4.0', 'maqfort' ),
 			'description' => '',
+			'input_attrs' => array(
+				'toolbar1'     => 'bold italic bullist numlist alignleft aligncenter alignright link',
+				'toolbar2'     => 'formatselect outdent indent | blockquote charmap',
+				'mediaButtons' => true,
+			),
 		)
 	)
 );
@@ -184,7 +188,7 @@ $wp_customize->add_control(
  * ----------- Product archive banner -----------
  */
 $wp_customize->add_setting(
-	'mq_products_archives_banner',
+	'mf_products_archives_banner',
 	array(
 		'default'           => '',
 		'sanitize_callback' => 'maqfort_custom_text_sanitize',
@@ -194,7 +198,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new WP_Customize_Image_Control(
 		$wp_customize,
-		'mq_products_archives_banner',
+		'mf_products_archives_banner',
 		array(
 			'label'    => __( 'Banner da página de arquivos de produtos', 'maqfort' ),
 			'section'  => 'mf_products_section',

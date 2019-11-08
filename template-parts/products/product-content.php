@@ -20,7 +20,6 @@ $product_title             = get_the_title( get_the_ID() );
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<?php echo '<h1 class="product-title product-title-mobile">' , esc_html( $product_title ) , '</h1>'; ?>
-					<?php //get_template_part( 'template-parts/products/product', 'images' ); ?>
 					<?php get_template_part( 'template-parts/products/product', 'gallery' ); ?>
 				</div><!-- .col -->
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

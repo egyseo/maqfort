@@ -1,65 +1,41 @@
+<?php
+/**
+ * -----------------------------------------------------------
+ * Default page template for the theme.
+ *
+ * @package maqfort
+ * -----------------------------------------------------------
+ */
+
+$add_class = '';
+$add_css   = '';
+$thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+
+if ( has_post_thumbnail() ) :
+	$add_class = 'page-header-background';
+	$add_css   = 'style="background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(' . $thumbnail . ');"';
+endif;
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-
-	<?php if ( has_post_thumbnail() ) { ?>
-
-	<header class="page-header-with-img" style="background-color:#525254;background-image:url(<?php the_post_thumbnail_url( 'full' ); ?>); background-position:center; background-repeat:no-repeat; background-size:cover;">
-
-	</header>
-		<?php do_action( 'breadcrumbs' ); ?>
+	<header class="page-header <?php echo esc_html( $add_class ); ?>"  <?php echo wp_kses_post( $add_css ); ?> >
+		<div class="container container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
+				</div><!-- .col -->
+			</div><!-- .row  -->
+		</div><!-- .container -->
+	</header><!-- .page-header -->
+	<?php do_action( 'breadcrumbs' ); ?>
 	<section class="page-content">
-	  <div class="container container-fluid">
-		<div class="row">
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<?php
-			  the_content();
-
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Páginas:', 'maqfort' ),
-					'after'  => '</div>',
-				)
-			);
-			?>
-		  </div>
-		</div>
-	  </div>
-	</section>
-	<?php } else { ?>
-	<header class="page-header">
-	  <div class="container container-fluid">
-		<div class="row">
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<?php the_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
-		  </div>
-		</div>
-	  </div>
-	</header>
-		<?php do_action( 'breadcrumbs' ); ?>
-	<section class="page-content">
-	  <div class="container container-fluid">
-		<div class="row">
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<?php
-			  the_content();
-
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'maqfort' ),
-					'after'  => '</div>',
-				)
-			);
-			?>
-		  </div>
-		</div>
-	  </div>
-	</section>
-	<?php } ?>
-
-
+		<div class="container container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<?php the_content(); ?>
+				</div><!-- .row -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section><!-- .page-content -->
 </article>
