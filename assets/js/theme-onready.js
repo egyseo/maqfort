@@ -3,23 +3,6 @@
     /*
     * Setup tabs for products.
     */
-    /*if ( $('.tabs').children().length && $('.tabcontent').length >= 0 ) {
-      $('.tabs .tablinks').first().addClass('active');
-      $('.tabcontent').first().css('display', 'block');
-    }
-    $('.tablinks').click(function(){
-       var tabID = $(this).attr('id');
-        if(!$(this).hasClass('active')){
-          $('.tablinks').removeClass('active');
-          $('.tabcontent').css('display', 'none');
-          $(this).addClass('active');
-          $('#'+tabID+'-tab').css('display', 'block');
-        }
-    });*/
-
-    /*
-    * Setup tabs for products.
-    */
     $(".tab-content").hide();
     $(".tab-content:first").show();
 
@@ -129,34 +112,13 @@
     * Setup fancybox
     * Initialize the Lightbox for any links with the 'fancybox' class.
     */
-    $(".fancybox").fancybox();
-
-    $("[data-fancybox]").fancybox({
-			autoSize : false,
-	    arrows: true,
-			animationEffect: 'zoom',
-			transitionEffect: 'fade',
-     });
-
-    // Initialize the Lightbox automatically for any links to images with extensions .jpg, .jpeg, .png or .gif
-    $("a[href$='.jpg'], a[href$='.png'], a[href$='.jpeg'], a[href$='.gif']").fancybox();
-
-    // Initialize the Lightbox and add rel="gallery" to all gallery images when the gallery is set up using [gallery link="file"] so that a Lightbox Gallery exists
-    $(".gallery a[href$='.jpg'], .gallery a[href$='.png'], .gallery a[href$='.jpeg'], .gallery a[href$='.gif']").attr('data-fancybox','gallery').fancybox();
-
-    // Initalize the Lightbox for any links with the 'video' class and provide improved video embed support
-    $(".video").fancybox({
-      maxWidth        : 800,
-      maxHeight       : 600,
-      fitToView       : false,
-      width           : '70%',
-      height          : '70%',
-      autoSize        : false,
-      closeClick      : false,
-      openEffect      : 'none',
-      closeEffect     : 'none'
+    $('[data-fancybox="images"]').fancybox({
+      buttons : [
+        'zoom',
+        'fullScreen',
+        'close'
+      ],
     });
-
 
     /*
     *  Setup swiper on home page.
@@ -206,13 +168,13 @@
 		var galleryThumbs = new Swiper('.gallery-thumbs', {
       spaceBetween: 10,
       slidesPerView: 4,
-      freeMode: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
+      slidesPerGroup: 1,
     });
     var galleryFrame = new Swiper('.gallery-frame', {
       spaceBetween: 10,
       autoHeight: true,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

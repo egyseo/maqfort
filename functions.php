@@ -152,8 +152,6 @@ if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 
 			wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css' );
 
-			wp_enqueue_style( 'flex-slider', get_stylesheet_directory_uri() . '/assets/css/flexslider.css' );
-
 			wp_enqueue_style( 'swiperjs', get_stylesheet_directory_uri() . '/assets/css/swiper.min.css' );
 
 			wp_enqueue_style( 'fancy-box', get_stylesheet_directory_uri() . '/assets/css/jquery.fancybox.min.css' );
@@ -167,10 +165,6 @@ if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 			wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', false);
 
 			wp_enqueue_script( 'swiperjs', get_stylesheet_directory_uri() . '/assets/js/swiper.min.js', array( 'jquery' ), '1.0.0', false);
-
-			wp_enqueue_script( 'flex-slider', get_stylesheet_directory_uri() . '/assets/js/jquery.flexslider-min.js', array( 'jquery' ), false, false );
-
-			wp_enqueue_script( 'flex-slider-setup', get_stylesheet_directory_uri() . '/assets/js/flex-slider-setup.js', array( 'flex-slider' ), false, false );
 
 			wp_enqueue_script( 'maqfort-onready-scripts', get_stylesheet_directory_uri() . '/assets/js/theme-onready.js', array( 'jquery', 'fancybox' ), '1.0.0', false );
 
