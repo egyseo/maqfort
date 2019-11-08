@@ -28,7 +28,7 @@ function console_log( $data ) {
 					$image_full    = wp_get_attachment_image( $carousel_id, 'full' );
 					$image_alt     = get_post_meta( $carousel_id, '_wp_attachment_image_alt', true );
 					$image_output  = '';
-					$image_output .= '<div class="swiper-slide" data-fancybox="images" data-caption="' . $image_alt . '">' . $image_full . '</div>';
+					$image_output .= '<div class="swiper-slide">' . $image_full . '</div>';
 					echo wp_kses_post( $image_output );
 				endforeach;
 			endif;

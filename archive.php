@@ -20,7 +20,7 @@ endif;
 get_header(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header <?php echo esc_html( $add_class ); ?>"  <?php echo wp_kses_post( $add_css ); ?> >
+	<header class="page-header <?php echo esc_html( $add_class ); ?>" <?php echo wp_kses_post( $add_css ); ?> >
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
