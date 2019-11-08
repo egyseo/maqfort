@@ -7,18 +7,19 @@
  * -----------------------------------------------------------
  */
 
+$add_class      = '';
+$add_css        = '';
+$thumbnail      = wp_get_attachment_image_url( get_term_meta( get_queried_object()->term_id, 'customtaxonomie_mb_banner_image_id', 1 ), 'full' );
+$banner_overlay = get_theme_mod( 'mf_page_headers_banners_overlay' );
+
+if ( has_post_thumbnail() ) :
+	$add_class = 'page-header-background';
+	$add_css   = 'style="background-image: linear-gradient( ' . esc_attr( $banner_overlay ) . ', ' . esc_attr( $banner_overlay ) . ' ), url(' . $thumbnail . ');"';
+endif;
+
 get_header(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-	$term_banner = wp_get_attachment_image_url( get_term_meta( get_queried_object()->term_id, 'customtaxonomie_mb_banner_image_id', 1 ), 'full' );
-	$add_class   = '';
-	$add_css     = '';
-	if ( $term_banner ) :
-		$add_class = 'page-header-background';
-		$add_css   = 'style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(' . esc_url( $term_banner ) . ');"';
-	endif;
-	?>
 	<header class="page-header <?php echo esc_html( $add_class ); ?>"  <?php echo wp_kses_post( $add_css ); ?> >
 		<div class="container container-fluid">
 			<div class="row">

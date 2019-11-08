@@ -9,13 +9,13 @@
 
 $products_archive_description = get_theme_mod( 'mf_products_archives_description' );
 $products_archive_banner      = get_theme_mod( 'mf_products_archives_banner' );
-
-$add_class = '';
-$add_css   = '';
+$banner_overlay               = get_theme_mod( 'mf_page_headers_banners_overlay' );
+$add_class                    = '';
+$add_css                      = '';
 
 if ( $products_archive_banner ) :
 	$add_class = 'page-header-background';
-	$add_css   = 'style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(' . esc_url( $products_archive_banner ) . ');"';
+	$add_css   = 'style="background-image: linear-gradient( ' . esc_attr( $banner_overlay ) . ', ' . esc_attr( $banner_overlay ) . ' ), url(' . $products_archive_banner . ');"';
 endif;
 
 get_header();

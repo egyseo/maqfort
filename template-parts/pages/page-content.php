@@ -7,13 +7,14 @@
  * -----------------------------------------------------------
  */
 
-$add_class = '';
-$add_css   = '';
-$thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+$add_class      = '';
+$add_css        = '';
+$thumbnail      = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+$banner_overlay = get_theme_mod( 'mf_page_headers_banners_overlay' );
 
 if ( has_post_thumbnail() ) :
 	$add_class = 'page-header-background';
-	$add_css   = 'style="background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(' . $thumbnail . ');"';
+	$add_css   = 'style="background-image: linear-gradient( ' . esc_attr( $banner_overlay ) . ', ' . esc_attr( $banner_overlay ) . ' ), url(' . $thumbnail . ');"';
 endif;
 
 ?>
