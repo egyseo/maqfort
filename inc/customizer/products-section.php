@@ -8,19 +8,21 @@
  */
 
 $wp_customize->add_section(
-	'products_section',
+	'mf_products_section',
 	array(
-		'priority'       => 5,
+		'priority'       => 3,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __( 'Definições de produtos', 'maqfort' ),
+		'title'          => __( 'Definições dos Produtos', 'maqfort' ),
 		'panel'          => 'mf_theme_panel',
 	)
 );
 
-// Settings.
+/*
+ * ----------- Product general catalog button -----------
+ */
 $wp_customize->add_setting(
-	'products_catalogue_button',
+	'mf_products_catalogue_button',
 	array(
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -30,25 +32,26 @@ $wp_customize->add_setting(
 	)
 );
 
-// Controls.
 $wp_customize->add_control(
 	new WP_Customize_Upload_Control(
 		$wp_customize,
-		'products_catalogue_button',
+		'mf_products_catalogue_button',
 		array(
-			'label'       => __( 'Catálogo de Produtos Geral', 'maqfort' ),
-			'section'     => 'products_section',
+			'label'       => __( 'Catálogo geral de Produtos', 'maqfort' ),
+			'section'     => 'mf_products_section',
 			'priority'    => 1,
 			'description' => '',
 		)
 	)
 );
 
-// Settings.
+/*
+ * ----------- Product more info form shortcode -----------
+ */
 $wp_customize->add_setting(
-	'product_form',
+	'mf_product_form',
 	array(
-		'default'           => '[rev_slider alias=homeslider]',
+		'default'           => '',
 		'type'              => 'theme_mod',
 		'capability'        => 'edit_theme_options',
 		'transport'         => 'refresh',
@@ -56,24 +59,48 @@ $wp_customize->add_setting(
 	)
 );
 
-// Controls.
 $wp_customize->add_control(
 	new WP_Customize_Control(
 		$wp_customize,
-		'product_form',
+		'mf_product_form',
 		array(
 			'type'        => 'text',
-			'section'     => 'products_section',
+			'section'     => 'mf_products_section',
 			'priority'    => 2,
-			'label'       => __( 'Shortcode do Formulário', 'maqfort' ),
+			'label'       => __( 'Shortcode para o formulário do produto', 'maqfort' ),
 			'description' => '',
 		)
 	)
 );
 
-// Settings.
+/*
+ * ----------- Product laser image -----------
+ */
 $wp_customize->add_setting(
-	'product_block_laser[editor_content]',
+	'mf_product_block_laser_image',
+	array(
+		'default'           => '',
+		'sanitize_callback' => 'maqfort_custom_text_sanitize',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Image_Control(
+		$wp_customize,
+		'mf_product_block_laser_image',
+		array(
+			'label'    => __( 'Bloco laser - Imagem', 'maqfort' ),
+			'section'  => 'mf_products_section',
+			'priority' => 3,
+		)
+	)
+);
+
+/*
+ * ----------- Product laser block content -----------
+ */
+$wp_customize->add_setting(
+	'mf_product_block_laser[editor_content]',
 	array(
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -83,17 +110,95 @@ $wp_customize->add_setting(
 	)
 );
 
-// Controls.
 $wp_customize->add_control(
 	new Text_Editor_Custom_Control(
 		$wp_customize,
-		'product_block_laser[editor_content]',
+		'mf_product_block_laser[editor_content]',
 		array(
 			'type'        => 'textarea',
-			'section'     => 'products_section',
-			'priority'    => 3,
-			'label'       => __( 'Bloco do produto - Laser', 'maqfort' ),
+			'section'     => 'mf_products_section',
+			'priority'    => 4,
+			'label'       => __( 'Bloco laser - Descrição', 'maqfort' ),
 			'description' => '',
+		)
+	)
+);
+
+/*
+ * ----------- Product laser block content -----------
+ */
+$wp_customize->add_setting(
+	'mf_product_block_industry[editor_content]',
+	array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'wp_kses_post',
+	)
+);
+
+$wp_customize->add_control(
+	new Text_Editor_Custom_Control(
+		$wp_customize,
+		'mf_product_block_industry[editor_content]',
+		array(
+			'type'        => 'textarea',
+			'section'     => 'mf_products_section',
+			'priority'    => 5,
+			'label'       => __( 'Bloco indústria 4.0', 'maqfort' ),
+			'description' => '',
+		)
+	)
+);
+
+
+/*
+ * ----------- Product archive page description -----------
+ */
+$wp_customize->add_setting(
+	'mf_products_archives_description',
+	array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'esc_html',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Control(
+		$wp_customize,
+		'mf_products_archives_description',
+		array(
+			'type'     => 'textarea',
+			'section'  => 'mf_products_section',
+			'priority' => 6,
+			'label'    => __( 'Descrição página de arquivos dos produtos', 'maqfort' ),
+		)
+	)
+);
+
+/*
+ * ----------- Product archive banner -----------
+ */
+$wp_customize->add_setting(
+	'mq_products_archives_banner',
+	array(
+		'default'           => '',
+		'sanitize_callback' => 'maqfort_custom_text_sanitize',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Image_Control(
+		$wp_customize,
+		'mq_products_archives_banner',
+		array(
+			'label'    => __( 'Banner da página de arquivos de produtos', 'maqfort' ),
+			'section'  => 'mf_products_section',
+			'priority' => 7,
 		)
 	)
 );

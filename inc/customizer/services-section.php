@@ -12,7 +12,7 @@
 $wp_customize->add_section(
 	'mf_services_section',
 	array(
-		'priority'       => 7,
+		'priority'       => 2,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
 		'title'          => __( 'Home Services', 'maqfort' ),

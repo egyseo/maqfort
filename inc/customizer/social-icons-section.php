@@ -4,7 +4,7 @@
 $wp_customize->add_section(
 	'social_section',
 	array(
-		'priority' => 3,
+		'priority' => 5,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
 		'title' => __( 'Redes Socias', 'maqfort' ),
