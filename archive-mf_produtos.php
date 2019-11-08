@@ -15,7 +15,7 @@ $add_css                      = '';
 
 if ( $products_archive_banner ) :
 	$add_class = 'page-header-background';
-	$add_css   = 'style="background-image: linear-gradient( ' . esc_attr( $banner_overlay ) . ', ' . esc_attr( $banner_overlay ) . ' ), url(' . $products_archive_banner . ');"';
+	$add_css   = 'style="background-image: linear-gradient( ' . esc_attr( $banner_overlay ) . ', ' . esc_attr( $banner_overlay ) . ' ), url(' . esc_url( $products_archive_banner ) . ');"';
 endif;
 
 get_header();

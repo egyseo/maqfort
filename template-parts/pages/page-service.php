@@ -9,7 +9,7 @@
 
 $add_class      = '';
 $add_css        = '';
-$thumbnail      = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+$thumbnail      = get_the_post_thumbnail_url( get_the_ID(), 'maqfort-header' );
 $banner_overlay = get_theme_mod( 'mf_page_headers_banners_overlay' );
 
 if ( has_post_thumbnail() ) :

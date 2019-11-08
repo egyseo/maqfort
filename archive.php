@@ -9,7 +9,7 @@
 
 $add_class      = '';
 $add_css        = '';
-$thumbnail      = wp_get_attachment_image_url( get_term_meta( get_queried_object()->term_id, 'customtaxonomie_mb_banner_image_id', 1 ), 'full' );
+$thumbnail      = wp_get_attachment_image_url( get_term_meta( get_queried_object()->term_id, 'customtaxonomie_mb_banner_image_id', 1 ), 'maqfort-header' );
 $banner_overlay = get_theme_mod( 'mf_page_headers_banners_overlay' );
 
 if ( has_post_thumbnail() ) :
