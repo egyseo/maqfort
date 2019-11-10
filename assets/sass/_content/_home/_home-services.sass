@@ -10,6 +10,7 @@
   .service-box
     display: flex
     margin-bottom: 40px
+    background-color: $light-grey
     .service-image-box
       width: 50%
       order: 1
@@ -25,7 +26,6 @@
       justify-content: center
       transition: all .4s ease
       padding: 40px
-      background-color: $light-grey
       .service-title
         font-size: 1.6rem
         font-weight: 700
@@ -44,7 +44,7 @@
         margin: 0
         font-size: 14px
 
-@media (max-width: $small)
+@media (max-width: $medium)
   #home-services
     .row
       &:nth-child(2)
@@ -55,11 +55,17 @@
             order: 2
     .service-box
       flex-direction: column
-      background-color: white
       margin-bottom: 40px
+      .service-content
+        width: 100%
       .service-image-box
         width: 100%
         order: 1
 
+@media (max-width: $small)
+  #home-services
+    .service-box
       .service-content
-        width: 100%
+        .service-desc
+          line-height: 1.6
+          text-align: justify

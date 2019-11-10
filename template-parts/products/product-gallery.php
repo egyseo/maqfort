@@ -23,7 +23,7 @@ function console_log( $data ) {
 		<div class="swiper-wrapper">
 			<?php
 			if ( $product_carousel_images ) :
-				echo '<div class="swiper-slide" data-fancybox="gallery">' . wp_kses_post( $product_featured_image ) . '</div>';
+				echo '<div class="swiper-slide">' . wp_kses_post( $product_featured_image ) . '</div>';
 				foreach ( (array) $product_carousel_images as $carousel_id => $image ) :
 					$image_full    = wp_get_attachment_image( $carousel_id, 'full' );
 					$image_alt     = get_post_meta( $carousel_id, '_wp_attachment_image_alt', true );
@@ -41,7 +41,7 @@ function console_log( $data ) {
 		<div class="swiper-wrapper">
 			<?php
 			if ( $product_carousel_images ) :
-				echo '<div class="swiper-slide" data-fancybox="gallery">' . wp_kses_post( $product_featured_image ) . '</div>';
+				echo '<div class="swiper-slide">' . wp_kses_post( $product_featured_image ) . '</div>';
 				foreach ( (array) $product_carousel_images as $carousel_id => $image ) :
 					$image_full    = wp_get_attachment_image( $carousel_id, 'full' );
 					$image_output  = '';

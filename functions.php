@@ -90,9 +90,10 @@ if ( ! function_exists( 'mf_setup' ) ) {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'main-menu'   => __( 'Main Menu', 'maqfort' ),
-				'mobile-menu' => __( 'Mobile Menu', 'maqfort' ),
-				'menu-footer' => __( 'Footer Menu', 'maqfort' ),
+				'main-menu'     => __( 'Menu Principal', 'maqfort' ),
+				'mobile-menu'   => __( 'Menu Mobile', 'maqfort' ),
+				'menu-products' => __( 'Menu de Produtos', 'maqfort' ),
+				'menu-footer'   => __( 'Menu Footer', 'maqfort' ),
 			)
 		);
 
@@ -197,7 +198,7 @@ if ( ! function_exists( 'mf_widget_init' ) ) :
 				'name'          => __( 'Footer', 'maqfort' ),
 				'id'            => 'footer',
 				'description'   => __( 'Show on some page and posts', 'maqfort' ),
-				'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-4 col-md-3 col-lg-3 %2$s">',
+				'before_widget' => '<div id="%1$s" class="widget col-xs-12 col-sm-3 col-md-3 col-lg-3 %2$s">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h4 class="widget-title">',
 				'after_title'   => '</h4>',
