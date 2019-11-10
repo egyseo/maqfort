@@ -3,6 +3,7 @@
     /*
     * Setup tabs for products.
     */
+
     $(".tab-content").hide();
     $(".tab-content:first").show();
 
@@ -184,6 +185,9 @@
       }
     });
 
+    /*
+    * Smooth scroll.
+    */
     // Select all links with hashes
     $('a[href*="#"]')
       // Remove links that don't actually link to anything

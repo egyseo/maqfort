@@ -28,7 +28,7 @@
 						<?php else : ?>
 							<p><?php esc_html_e( 'Não conseguimos encontrar o que procura, talvez uma pesquisa possa ajudá-lo.', 'maqfort' ); ?></p>
 							<?php get_search_form(); ?>
-							<a class="btn btn-secondary" href="<?php echo get_home_url(); ?>"><?php _e( 'Ir para o início', 'mafort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+							<a class="btn btn-secondary" href="<?php echo get_home_url(); ?>"><?php _e( 'Ir para o início', 'maqfort' ); ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 						<?php
 					endif;
 					?>
