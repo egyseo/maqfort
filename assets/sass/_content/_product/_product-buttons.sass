@@ -1,34 +1,18 @@
 .product-buttons
   margin-bottom: 40px
-  a,
-  button
-    font-size: 13px
+  .btn
+    margin-bottom: 10px
     .fa
-      margin-right: 8px
-  .button-catalog
-    display: inline-block
-    padding: 10px 20px
-    color: $light-grey
-    background-color: $blue-grey
-    margin-right: 20px
-    &:hover
-      background-color: $darker-grey
-  .button-getquote
-    display: inline-block
-    padding: 10px 20px
-    background-color: $primary-color
-    color: #fff
-    cursor: pointer
-    &:hover
-      background-color: $primary-darker
+      margin-right: 5px
 
 @media (max-width: 767px)
   .product-buttons
-    .button-catalog
-      margin-right: 0
-      text-align: center
+    margin-bottom: 20px
+    .btn
+      margin-bottom: 10px
+      .fa
+        margin-right: 5px
+    .btn-primary
       width: 100%
-      margin-bottom: 20px
-    .button-getquote
       text-align: center
-      width: 100%
+      padding: 10px 20px

@@ -26,11 +26,11 @@ $product_title             = get_the_title( get_the_ID() );
 					<?php
 					echo '<h1 class="product-title product-title-desktop">' , esc_html( $product_title ) , '</h1>';
 
-					echo '<div class="product-small-description">' , wp_kses_post( wpautop( $product_small_description ) ) , '</div>';
+					echo '<div class="product-small-description">' , wp_kses_post( wpautop( $product_small_description ) ) , '</div><div class="product-cat-and-print-container">';
 
 					foreach ( $terms_list as $term_name ) :
 						$term_link = get_term_link( $term_name, array( 'mf_tipos_de_produtos' ) );
-						echo '<p class="product-cat"><span>' , esc_html__( 'Categoria: ', 'maqfort' ) , '</span><a href="' , esc_url( $term_link ) , '">' , esc_html( $term_name->name ) , '</a></p>';
+						echo '<p class="product-cat"><span>' , esc_html__( 'Categoria: ', 'maqfort' ) , '</span><a href="' , esc_url( $term_link ) , '">' , esc_html( $term_name->name ) , '</a></p><button class="btn btn-print" onclick="printPage()"><i class="fa fa-print" aria-hidden="true"></i>' , esc_html__( 'Imprimir este produto', 'maqfort' ) , '</button></div>';
 					endforeach;
 
 					if ( $is_industry40 ) :

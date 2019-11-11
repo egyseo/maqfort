@@ -50,3 +50,23 @@
 @media (max-width: $small)
   .see-all-mobile
     display: inline-block
+
+  .section-title-wrapper
+    .section-title
+      margin-bottom: 30px
+      font-size: 20px
+      span
+        position: relative
+        display: inline-block
+        &::after
+          content: ''
+          display: inline-block
+          height: 6px
+          width: 2000%
+          position: absolute
+          top: 50%
+          left: 100%
+          right: 100%
+          margin-left: 10px
+          //margin-top: -2px
+          background-color: #f1f1f1

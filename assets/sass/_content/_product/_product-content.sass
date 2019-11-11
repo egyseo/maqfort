@@ -49,16 +49,27 @@
           margin-left: 6px
         &:hover
           text-decoration: underline
-    .product-cat
-      text-transform: uppercase
-      font-size: 10px
-      color: #717171
-      margin: 0
+    .product-cat-and-print-container
+      display: flex
+      justify-content: space-between
+      align-content: center
       margin-bottom: 20px
-      span
-        font-weight: bold
-      a
-        color: #656565
+      .btn-print
+        display: inline-block
+        font-size: 10px
+        .fa
+          font-size: 10px
+          margin-right: 5px
+      .product-cat
+        display: inline-block
+        text-transform: uppercase
+        font-size: 10px
+        color: #717171
+        margin: 0
+        span
+          font-weight: bold
+        a
+          color: #656565
 
 @media (max-width: $medium)
   .type-mf_produtos
@@ -72,6 +83,8 @@
 
 @media (max-width: $small)
   .type-mf_produtos
+    .breadcrumbs
+      margin-bottom: 40px
     .product-content
       padding-bottom: 0
       .product-title
@@ -82,8 +95,23 @@
         align-items: flex-start
         align-content: center
         flex-direction: column
+        margin-bottom: 20px
         p
           display: block
           margin-bottom: 10px
         a
           display: block
+      .product-cat-and-print-container
+        flex-direction: column
+        align-items: flex-start
+        margin-bottom: 20px
+        .btn-print
+          display: block
+          width: 100%
+          text-align: left
+          .fa
+            margin-left: 0
+        .product-cat
+          display: block
+          width: 100%
+          margin-bottom: 5px

@@ -205,9 +205,8 @@ add_filter( 'request', 'mf_change_term_request', 1, 1 );
 
 function mf_change_term_request( $query ) {
 
-	$tax_name = 'mf_tipos_de_produtos'; // specify you taxonomy name here, it can be also 'category' or 'post_tag'
-
-	// Request for child terms differs, we should make an additional check
+	$tax_name = 'mf_tipos_de_produtos'; // specify you taxonomy name here, it can be also 'category' or 'post_tag'.
+	// Request for child terms differs, we should make an additional check.
 
 	if ( isset( $query['attachment'] ) && $query['attachment'] ) :
 		$include_children = true;
@@ -262,9 +261,8 @@ add_filter( 'term_link', 'mf_term_permalink', 10, 3 );
 
 function mf_term_permalink( $url, $term, $taxonomy ) {
 
-	$taxonomy_name = 'mf_tipos_de_produtos'; // your taxonomy name here
-	$taxonomy_slug = 'tipos_de_produtos'; // the taxonomy slug can be different with the taxonomy name (like 'post_tag' and 'tag' )
-
+	$taxonomy_name = 'mf_tipos_de_produtos'; // your taxonomy name here.
+	$taxonomy_slug = 'tipos_de_produtos'; // the taxonomy slug can be different with the taxonomy name (like 'post_tag' and 'tag' ).
 	// exit the function if taxonomy slug is not in URL
 	if ( strpos( $url, $taxonomy_slug ) === false || $taxonomy != $taxonomy_name ) {
 		return $url;

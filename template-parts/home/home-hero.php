@@ -35,7 +35,7 @@ if ( ! empty( $hero_title ) ) :
 			<div class="hero-content-container" style="background-color: <?php echo esc_attr( $hero_video_filter ); ?>">
 				<div class="container container-fluid">
 					<div class="row">
-						<div class="col-md-8">
+						<div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
 							<div class="hero-content">
 								<div class="content-wrapper">
 									<?php
