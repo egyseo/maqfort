@@ -24,7 +24,7 @@ function console_log( $data ) {
 	<div class="swiper-container gallery-frame">
 		<div class="swiper-wrapper">
 			<?php
-			if ( $product_carousel_image ) :
+			if ( $product_featured_image ) :
 				echo '<div class="swiper-slide"><a href="' , esc_url( $product_featured_image_url ) , '" data-fancybox="gallery" data-caption="' . esc_html( $product_featured_image_alt ) . '">' . wp_kses_post( $product_featured_image ) . '</a></div>';
 				foreach ( (array) $product_carousel_images as $carousel_id => $image ) :
 					$image_full    = wp_get_attachment_image( $carousel_id, 'full' );
