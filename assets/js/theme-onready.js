@@ -225,6 +225,42 @@
         }
       });
 
+    /*
+    * Download button.
+    * https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
+    */
+    /* function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.text(minutes + ":" + seconds);
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    function countDown(){
+      var timer = 30;
+      setInterval(function () {
+        seconds = parseInt(timer % 60, 10);
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+      }, 1000);
+      console.log( timer );
+    }
+
+    $( ".btn-download" ).on( "click", function(e) {
+      e.preventDefault();
+      display = $(this);
+      startTimer(30, display);
+      console.log( 'yo clique' );
+    }); */
 
   });
 })(jQuery);

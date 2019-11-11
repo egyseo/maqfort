@@ -94,6 +94,48 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 			)
 		);
 
+		// Product indivcidualç catalog link/file.
+		$cmb->add_field(
+			array(
+				'name'    => __( 'Catalogo Individual', 'maqfort' ),
+				'desc'    => '',
+				'id'      => $prefix . 'catalogo_individual',
+				'type'    => 'file',
+				// Optional:
+				'options' => array(
+					'url' => true, // Hide the text input for the url
+				),
+				'text'    => array(
+					'add_upload_file_text' => 'Adicionar Ficheiro', // Change upload button text. Default: "Add or Upload File"
+				),
+				// query_args are passed to wp.media's library query.
+				'query_args' => array(
+					'type' => 'application/pdf', // Make library only display PDFs.
+				),
+			)
+		);
+
+		// Product tabels catalog link/file.
+		$cmb->add_field(
+			array(
+				'name'    => __( 'Catalogo das Tabelas', 'maqfort' ),
+				'desc'    => '',
+				'id'      => $prefix . 'catalogo_tables',
+				'type'    => 'file',
+				// Optional:
+				'options' => array(
+					'url' => true, // Hide the text input for the url
+				),
+				'text'    => array(
+					'add_upload_file_text' => 'Adicionar Ficheiro', // Change upload button text. Default: "Add or Upload File"
+				),
+				// query_args are passed to wp.media's library query.
+				'query_args' => array(
+					'type' => 'application/pdf', // Make library only display PDFs.
+				),
+			)
+		);
+
 		// Product Catalog link/file
 		$cmb->add_field(
 			array(
