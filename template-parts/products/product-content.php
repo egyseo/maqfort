@@ -9,6 +9,8 @@
 
 $product_small_description = get_post_meta( get_the_ID(), '_mf_produtos_wysiwyg', true );
 $is_industry40             = get_post_meta( get_the_ID(), '_mf_produtos_industry', 1 );
+$is_hyperhterm             = get_post_meta( get_the_ID(), '_mf_produtos_hypertherm', 1 );
+$hypertherm_image          = get_theme_mod( 'mf_products_hypherterm' );
 $terms_list                = get_the_terms( get_the_ID(), 'mf_tipos_de_produtos' );
 $product_title             = get_the_title( get_the_ID() );
 
@@ -35,6 +37,9 @@ $product_title             = get_the_title( get_the_ID() );
 
 					if ( $is_industry40 ) :
 						echo '<div class="is-industry40"><p>' , esc_html( __( 'Indústria 4.0', 'maqfort' ) ) , '</p><a href="#industry-block">' , esc_html( __( 'O que é? Saiba mais aqui', 'maqfort' ) ) , '<i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>';
+					endif;
+					if ( $is_hyperhterm && $hypertherm_image ) :
+						echo '<div class="is-hypertherm"><p>' , esc_html( __( 'Equipado com:', 'maqfort' ) ) , '</p><img src="' , esc_url( $hypertherm_image ) , '" alt="hyperterm Highperformance Plasma" /></div>';
 					endif;
 
 					?>

@@ -206,3 +206,26 @@ $wp_customize->add_control(
 		)
 	)
 );
+
+/*
+ * ----------- Product archive banner -----------
+ */
+$wp_customize->add_setting(
+	'mf_products_hypherterm',
+	array(
+		'default'           => '',
+		'sanitize_callback' => 'maqfort_custom_text_sanitize',
+	)
+);
+
+$wp_customize->add_control(
+	new WP_Customize_Image_Control(
+		$wp_customize,
+		'mf_products_hypherterm',
+		array(
+			'label'    => __( 'Hypertherm logo', 'maqfort' ),
+			'section'  => 'mf_products_section',
+			'priority' => 8,
+		)
+	)
+);

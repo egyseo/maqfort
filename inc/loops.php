@@ -57,7 +57,9 @@ endif;
 if ( ! function_exists( 'mf_standart_loop' ) ) :
 
 	function mf_standart_loop() {
-		$is_industry40 = get_post_meta( get_the_ID(), '_mf_produtos_industry', 1 );
+		$is_industry40    = get_post_meta( get_the_ID(), '_mf_produtos_industry', 1 );
+		$is_hyperhterm    = get_post_meta( get_the_ID(), '_mf_produtos_hypertherm', 1 );
+		$hypertherm_image = get_theme_mod( 'mf_products_hypherterm' );
 		?>
 		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<article class="post-card">
@@ -74,6 +76,9 @@ if ( ! function_exists( 'mf_standart_loop' ) ) :
 					endif;
 					if ( $is_industry40 ) :
 						echo '<div class="is-industry40"><p>' , esc_html( __( 'Indústria 4.0', 'maqfort' ) ) , '</p></div>';
+					endif;
+					if ( $is_hyperhterm && $hypertherm_image ) :
+						echo '<div class="is-hypertherm"><img src="' , esc_url( $hypertherm_image ) , '" alt="hyperterm Highperformance Plasma" /></div>';
 					endif;
 					?>
 				</header><!-- .post-card-header -->

@@ -16,10 +16,10 @@ $tabelas             = get_post_meta( get_the_ID(), '_mf_produtos_catalogo_table
 <div class="product-buttons">
 	<?php
 	if ( $more_info ) :
-		echo '<a class="btn btn-primary" data-fancybox data-src="#hidden-form" href="javascript:;" ><i class="fa fa-info" aria-hidden="true"></i>' , esc_html__( 'Peça mais informações', 'maqfort' ) , '</a>';
+		echo '<a class="btn btn-primary" data-fancybox data-src="#hidden-form" href="javascript:;" >' , esc_html__( 'Peça mais informações', 'maqfort' ) , '<i class="fa fa-info" aria-hidden="true"></i></a>';
 	endif;
 	if ( ! empty( $catalogo_geral ) ) :
-		echo '<a class="btn btn-secondary" data-fancybox data-src="#modal" href="javascript:;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>' , esc_html__( 'Ver Catálogos', 'maqfort' ) , '</a>';
+		echo '<a class="btn btn-secondary" data-fancybox data-src="#modal" href="javascript:;">' , esc_html__( 'Ver Catálogos', 'maqfort' ) , '<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>';
 	endif;
 	?>
 	<div style="display: none;" id="hidden-form">

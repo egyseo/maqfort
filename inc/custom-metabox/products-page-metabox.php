@@ -49,6 +49,15 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 
 		$cmb->add_field(
 			array(
+				'name' => __( 'Hypertherm Plasma', 'maqfort' ),
+				'desc' => __( 'Selecione se utiliza Hypertherm Plasma', 'maqfort' ),
+				'id'   => $prefix . 'hypertherm',
+				'type' => 'checkbox',
+			)
+		);
+
+		$cmb->add_field(
+			array(
 				'name'    => __( 'Descrição do Produto', 'maqfort' ),
 				'id'      => $prefix . 'wysiwyg',
 				'type'    => 'wysiwyg',
