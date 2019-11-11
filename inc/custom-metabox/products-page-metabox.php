@@ -145,27 +145,6 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 			)
 		);
 
-		// Product Catalog link/file
-		$cmb->add_field(
-			array(
-				'name'    => __( 'Detalhes do Produto em PDF', 'maqfort' ),
-				'desc'    => '',
-				'id'      => $prefix . 'extra_info',
-				'type'    => 'file',
-				// Optional:
-				'options' => array(
-					'url' => true, // Hide the text input for the url
-				),
-				'text'    => array(
-					'add_upload_file_text' => 'Adicionar Ficheiro', // Change upload button text. Default: "Add or Upload File"
-				),
-				// query_args are passed to wp.media's library query.
-				'query_args' => array(
-					'type' => 'application/pdf', // Make library only display PDFs.
-				),
-			)
-		);
-
 		$cmb->add_field(
 			array(
 				'name'        => __( 'Tabela de especificações do produto', 'maqfort' ),

@@ -7,8 +7,9 @@
  * -----------------------------------------------------------
  */
 
-$product_featured_image  = get_the_post_thumbnail( get_the_ID(), 'full' );
-$product_carousel_images = get_post_meta( get_the_ID(), '_mf_produtos_carousel', 1 );
+$product_featured_image     = get_the_post_thumbnail( get_the_ID(), 'full' );
+$product_carousel_images    = get_post_meta( get_the_ID(), '_mf_produtos_carousel', 1 );
+$product_featured_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 
 function console_log( $data ) {
 	echo '<script>';
@@ -23,12 +24,13 @@ function console_log( $data ) {
 		<div class="swiper-wrapper">
 			<?php
 			if ( $product_carousel_images ) :
-				echo '<div class="swiper-slide">' . wp_kses_post( $product_featured_image ) . '</div>';
+				echo '<div class="swiper-slide"><a href="' , esc_url( $product_featured_image_url ) , '" data-fancybox="gallery">' . wp_kses_post( $product_featured_image ) . '</a></div>';
 				foreach ( (array) $product_carousel_images as $carousel_id => $image ) :
 					$image_full    = wp_get_attachment_image( $carousel_id, 'full' );
 					$image_alt     = get_post_meta( $carousel_id, '_wp_attachment_image_alt', true );
+					$image_url     = wp_get_attachment_url( $carousel_id );
 					$image_output  = '';
-					$image_output .= '<div class="swiper-slide">' . $image_full . '</div>';
+					$image_output .= '<div class="swiper-slide"><a href="' . esc_url( $image_url ) . '" data-fancybox="gallery">' . $image_full . '</a></div>';
 					echo wp_kses_post( $image_output );
 				endforeach;
 			endif;
