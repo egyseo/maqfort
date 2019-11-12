@@ -8,8 +8,9 @@
  */
 
 $product_full_description = get_post_meta( get_the_ID(), '_mf_produtos_wysiwyg', true );
-$table_list               = get_post_meta( get_the_ID(), '_mf_produtos_tabelas', true );
 $product_videos           = get_post_meta( get_the_ID(), '_mf_produtos_videos', true );
+$product_tables           = get_post_meta( get_the_ID(), '_mf_produtos_tables', true );
+$product_tables_list      = get_post_meta( get_the_ID(), '_mf_produtos_tabelas', true );
 
 ?>
 
@@ -24,8 +25,12 @@ $product_videos           = get_post_meta( get_the_ID(), '_mf_produtos_videos', 
 						$count_tabs++;
 						echo '<li class="active" rel="tab' , esc_attr( $count_tabs ) , '" ><h3>' , esc_html__( 'Informações do Produto', 'maqfort' ) , '</h3></li>';
 					endif;
-					if ( $table_list ) :
-						foreach ( $table_list as $table ) :
+					if ( $product_tables ) :
+						$count_tabs++;
+						echo '<li rel="tab' , esc_attr( $count_tabs ) , '"><h3>' , esc_html__( 'Especificações', 'maqfort' ) , '</h3></li>';
+					endif;
+					if ( $product_tables_list ) :
+						foreach ( $product_tables_list as $table ) :
 							$count_tabs++;
 							$table_name = get_post_meta( $table, 'mf_tables_mb_table_name', true );
 							echo '<li rel="tab' , esc_attr( $count_tabs ) , '"><h3>' , esc_html( $table_name ) , '</h3></li>';
@@ -50,8 +55,14 @@ $product_videos           = get_post_meta( get_the_ID(), '_mf_produtos_videos', 
 			get_template_part( 'template-parts/products/product', 'description' );
 			echo '</div><!-- .tab-content -->';
 		endif;
-		if ( $table_list ) :
-			foreach ( $table_list as $table ) :
+		if ( $product_tables ) :
+			$count_tabs++;
+			echo '<div class="tab-header-mobile tab-drawer-heading" rel="tab' , esc_attr( $count_tabs ) , '"><div class="container container-fluid"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h3>' , esc_html__( 'Especificações', 'maqfort' ) , '</h3></div></div></div></div><div class="container container-fluid"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><div id="tab' , esc_attr( $count_tabs ) , '" class="tab-content">';
+			echo wp_kses_post( wpautop( $product_tables ) );
+			echo '</div></div></div><!-- .tab-content -->';
+		endif;
+		if ( $product_tables_list ) :
+			foreach ( $product_tables_list as $table ) :
 				$count_tabs++;
 				$table_head   = get_post_meta( $table, 'mf_tables_mb_table_head', true );
 				$table_row    = get_post_meta( $table, 'mf_tables_mb_table_row', true );
@@ -100,7 +111,6 @@ $product_videos           = get_post_meta( get_the_ID(), '_mf_produtos_videos', 
 				</div><!-- .tabcontent -->
 				<?php
 			endforeach;
-
 		endif;
 		if ( $product_videos ) :
 			$count_tabs++;

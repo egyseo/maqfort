@@ -125,7 +125,7 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 		);
 
 		// Product tabels catalog link/file.
-		$cmb->add_field(
+		/*$cmb->add_field(
 			array(
 				'name'    => __( 'Catalogo das Tabelas', 'maqfort' ),
 				'desc'    => '',
@@ -143,7 +143,7 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 					'type' => 'application/pdf', // Make library only display PDFs.
 				),
 			)
-		);
+		);*/
 
 		$cmb->add_field(
 			array(
@@ -160,6 +160,15 @@ if ( ! function_exists( 'mf_produtos' ) ) {
 				),
 			)
 		);
+
+			$cmb->add_field(
+				array(
+					'name'    => __( 'Imagens de tabelas de especificações', 'maqfort' ),
+					'id'      => $prefix . 'tables',
+					'type'    => 'wysiwyg',
+					'options' => array(),
+				)
+			);
 
 		$group_field_id = $cmb->add_field(
 			array(
