@@ -60,8 +60,8 @@ add_action( 'init', 'mf_register_custom_post_type_products', 0 );
 function mf_register_custom_post_type_products() {
 
 	$labels = array(
-		'name'                  => __( 'Produtos', 'Post Type General Name', 'maqfort' ),
-		'singular_name'         => __( 'Produto', 'Post Type Singular Name', 'maqfort' ),
+		'name'                  => __( 'Produtos', 'maqfort' ),
+		'singular_name'         => __( 'Produto', 'maqfort' ),
 		'menu_name'             => __( 'Produtos', 'maqfort' ),
 		'name_admin_bar'        => __( 'Produtos', 'maqfort' ),
 		'archives'              => __( 'Arquivos de Produtos', 'maqfort' ),
@@ -126,8 +126,8 @@ add_action( 'init', 'mf_register_custom_post_type_tables', 0 );
 function mf_register_custom_post_type_tables() {
 
 	$labels = array(
-		'name'                  => __( 'Tabelas', 'Post Type General Name', 'maqfort' ),
-		'singular_name'         => __( 'Tabela', 'Post Type Singular Name', 'maqfort' ),
+		'name'                  => __( 'Tabelas', 'maqfort' ),
+		'singular_name'         => __( 'Tabela', 'maqfort' ),
 		'menu_name'             => __( 'Tabelas', 'maqfort' ),
 		'name_admin_bar'        => __( 'Tabelas', 'maqfort' ),
 		'archives'              => __( 'Arquivos de Tabelas', 'maqfort' ),
