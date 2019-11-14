@@ -150,6 +150,8 @@ if ( ! function_exists( 'mf_scripts_and_styles' ) ) {
 	function mf_scripts_and_styles() {
 
 		if ( ! is_admin() ) {
+			// Fonts styles.
+			wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:100,300,400,700&display=swap' );
 
 			wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css' );
 

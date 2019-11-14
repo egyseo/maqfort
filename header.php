@@ -30,6 +30,16 @@
 	<!--[if IE]>
 	<link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/favicon.ico">
 	<![endif]-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148210018-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-148210018-2');
+	</script>
+
 	<title><?php wp_title( '-', true, 'right' ); ?></title>
 	<?php wp_head(); ?>
 </head>
