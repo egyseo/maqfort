@@ -33,13 +33,13 @@ $tabelas             = get_post_meta( get_the_ID(), '_mf_produtos_catalogo_table
 		<?php
 		echo '<p class="buttons-title">' , __( 'Download de Catálogo', 'maqfort' ) , '</p><div class="buttons-container">';
 		if ( ! empty( $catalogo_geral ) ) :
-			echo '<div class="button-content"><i class="fa fa-file-pdf-o" aria-hidden="true"></i><p>' , __( 'Catalogo Geral', 'maqfort' ) , '</p><a download href="' , esc_url( $catalogo_geral ) , '" class="btn btn-primary btn-download">' , __( 'Download', 'maqfort' ) , '<i class="fa fa-download" aria-hidden="true"></i></a></div>';
+			echo '<div class="button-content"><i class="fa fa-file-pdf-o" aria-hidden="true"></i><p>' , __( 'Catalogo Geral', 'maqfort' ) , '</p><a href="' , esc_url( $catalogo_geral ) , '" class="btn btn-primary btn-download">' , __( 'Download', 'maqfort' ) , '<i class="fa fa-download" aria-hidden="true"></i></a></div>';
 		endif;
 		if ( ! empty( $catalogo_individual ) ) :
-			echo '<div class="button-content"><i class="fa fa-file-pdf-o" aria-hidden="true"></i><p>' , __( 'Catalogo Individual', 'maqfort' ) , '</p><a download href="' , esc_url( $catalogo_individual ) , '" class="btn btn-primary btn-download">' , __( 'Download', 'maqfort' ) , '<i class="fa fa-download" aria-hidden="true"></i></a></div>';
+			echo '<div class="button-content"><i class="fa fa-file-pdf-o" aria-hidden="true"></i><p>' , __( 'Catalogo Individual', 'maqfort' ) , '</p><a href="' , esc_url( $catalogo_individual ) , '" class="btn btn-primary btn-download">' , __( 'Download', 'maqfort' ) , '<i class="fa fa-download" aria-hidden="true"></i></a></div>';
 		endif;
 		if ( ! empty( $tabelas ) ) :
-			echo '<div class="button-content"><i class="fa fa-file-excel-o" aria-hidden="true"></i><p>' , __( 'Tabelas', 'maqfort' ) , '</p><a download href="' , esc_url( $tabelas ) , '" class="btn btn-primary btn-download">' , __( 'Download', 'maqfort' ) , '<i class="fa fa-download" aria-hidden="true"></i></a></div></div>';
+			echo '<div class="button-content"><i class="fa fa-file-excel-o" aria-hidden="true"></i><p>' , __( 'Tabelas', 'maqfort' ) , '</p><a href="' , esc_url( $tabelas ) , '" class="btn btn-primary btn-download">' , __( 'Download', 'maqfort' ) , '<i class="fa fa-download" aria-hidden="true"></i></a></div></div>';
 		endif;
 		?>
 	</div>
