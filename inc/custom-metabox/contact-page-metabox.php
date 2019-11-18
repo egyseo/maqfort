@@ -1,9 +1,12 @@
 <?php
-/*
-* -----------------------------------------------------------
-* Metabox for contacts page.
-* -----------------------------------------------------------
-*/
+/**
+ * -----------------------------------------------------------
+ * Metabox for contacts page.
+ *
+ * @package maqfort
+ * -----------------------------------------------------------
+ */
+
 if ( ! function_exists( 'mf_contacts' ) ) {
 
 	function mf_contacts() {
@@ -27,6 +30,61 @@ if ( ! function_exists( 'mf_contacts' ) ) {
 				'show_names'    => true, // Show field names on the left
 			// 'cmb_styles' => false, // false to disable the CMB stylesheet
 			// 'closed'     => true, // Keep the metabox closed by default
+			)
+		);
+
+		$group_field_id = $cmb->add_field(
+			array(
+				'id'          => $prefix . 'address_group',
+				'type'        => 'group',
+				'description' => __( 'Moradas', 'maqfort' ),
+				'options'     => array(
+					'group_title'   => __( 'Morada {#}', 'maqfort' ),
+					'add_button'    => __( 'Adicionar Morada', 'maqfort' ),
+					'remove_button' => __( 'Remover Morada', 'maqfort' ),
+					'sortable'      => true,
+					'closed'     => true,
+				),
+			)
+		);
+
+		$cmb->add_group_field(
+			$group_field_id,
+			array(
+				'id'   => 'title',
+				'name' => __( 'Titlo da morada', 'maqfort' ),
+				'desc' => '',
+				'type' => 'text',
+			)
+		);
+
+		$cmb->add_group_field(
+			$group_field_id,
+			array(
+				'id'   => 'address',
+				'name' => __( 'Morada', 'maqfort' ),
+				'desc' => '',
+				'type' => 'textarea_small',
+			)
+		);
+
+		$cmb->add_group_field(
+			$group_field_id,
+			array(
+				'id'   => 'phone',
+				'name' => __( 'Telefone da morada', 'maqfort' ),
+				'desc' => '',
+				'type' => 'text',
+			)
+		);
+
+		$cmb->add_group_field(
+			$group_field_id,
+			array(
+				'id'   => 'email',
+				'name' => __( 'Email da morada', 'maqfort' ),
+				'desc' => '',
+				'type' => 'text_email',
 			)
 		);
 
@@ -57,6 +115,7 @@ if ( ! function_exists( 'mf_contacts' ) ) {
 				'type' => 'text',
 			)
 		);
+
 
 		$cmb->add_field(
 			array(

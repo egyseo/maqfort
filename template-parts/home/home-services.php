@@ -20,9 +20,18 @@ if ( ! empty( $service_background_image && $service_background_overlay ) ) :
 endif;
 
 if ( $service_items ) :
+	$title_url = '#'
 	?>
 	<section id="home-services" <?php echo wp_kses_post( $add_new_service_class ) . wp_kses_post( $service_background ); ?> >
 		<div class="container container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="section-title-wrapper">
+						<h2 class="section-title"><span><a href="<?php echo esc_url( $title_url ); ?>"><?php esc_html_e( 'Serviços', 'maqfort' ); ?></a></span></h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
 				<?php
 				foreach ( (array) $service_items as $key => $service ) :
 
@@ -54,19 +63,19 @@ if ( $service_items ) :
 
 					if ( ! empty( $service_url ) ) :
 						?>
-						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+							<div class="service-box-wrapper">
 								<a class="service-box" href="<?php echo esc_url( $service_url ); ?>">
-									<div class="service-image-box">
+									<div class="service-image-wrapper">
 										<?php
 										if ( $service_image ) :
-											echo '<img class="service-image" src="' . esc_url( $service_image ) . '" alt="' . esc_attr( $service_title ) . '">';
+											echo '<img class="service-image" src="' . esc_url( $service_image ) . '" alt="' . esc_attr( $service_title ) . '" />';
 										else :
-											echo '<img class="service-image" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/placeholder.png" alt="imagem provisória">';
+											echo '<img class="service-image" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/placeholder.png" alt="imagem provisória" />';
 										endif;
-										/*if ( $service_icon ) :
+										if ( $service_icon ) :
 											echo '<i class="fa ' , esc_attr( $service_icon ) , '" aria-hidden="true"></i>';
-										endif;*/
+										endif;
 										?>
 									</div><!-- .service-image-box -->
 									<div class="service-content">
@@ -75,19 +84,19 @@ if ( $service_items ) :
 											echo '<h3 class="service-title">' , esc_html( $service_title ) , '</h3>';
 										endif;
 										if ( $service_desc ) :
-											echo '<p class="service-desc">' , esc_html( $service_desc ) , '</p>';
+											echo '<p class="service-description">' , esc_html( $service_desc ) , '</p>';
 										endif;
-											echo '<div class="service-link"><p class="btn btn-secondary">' , esc_html__( 'Saber mais', 'maqfort' ) , '</p></div>';
+											echo '<div class="service-button"><p class="btn btn-secondary">' , esc_html__( 'Saber mais', 'maqfort' ) , '</p></div>';
 										?>
 									</div><!-- .service-content -->
 								</a><!-- service-box -->
-							</div><!-- .col -->
-						</div><!-- .row -->
+							</div><!-- service-box-wrapper -->
+						</div><!-- .col -->
 						<?php
 					endif;
 				endforeach;
 				?>
-			<!-- .row -->
+			</div><!-- .row -->
 		</div><!-- .container -->
 	</section><!-- #home-services -->
 	<?php

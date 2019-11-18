@@ -3,8 +3,8 @@
     margin: 0
 
 .address-wrapper
+  width: 100%
   display: flex
-  justify-content: center
   align-items: center
   .map-wrapper
     width: 50%
@@ -12,13 +12,15 @@
       display: block
   .address
     width: 50%
-    display: flex
-    align-items: center
-    justify-content: center
-    margin-left: 4rem
     .address-content
-      width: 300px
+      padding-left: 2rem
+      padding-right: 2rem
+      margin-right: auto
+      margin-left: auto
+      width: 60%
+      margin-bottom: 40px
       .address-title
+        font-size: 1.3rem
         &::before
           display: none
       .address-phone
@@ -82,8 +84,12 @@
       display: flex
       align-items: center
       justify-content: center
-      margin-left: 4rem
+      //margin-left: 4rem
+      flex-direction: column
       .address-content
         width: 100%
         padding-top: 40px
         padding-bottom: 40px
+        margin-bottom: 0
+        &:last-child
+          padding-top: 0

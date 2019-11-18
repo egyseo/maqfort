@@ -17,14 +17,12 @@ if ( has_post_thumbnail() ) :
 	$add_css   = 'style="background-image: linear-gradient( ' . esc_attr( $banner_overlay ) . ', ' . esc_attr( $banner_overlay ) . ' ), url(' . $thumbnail . ');"';
 endif;
 
-$contacts_title            = get_post_meta( get_the_ID(), '_mf_contacts_title', true );
-$contacts_address          = get_post_meta( get_the_ID(), '_mf_contacts_address', true );
-$contacts_phone            = get_post_meta( get_the_ID(), '_mf_contacts_phone', true );
-$contacts_email            = get_post_meta( get_the_ID(), '_mf_contacts_email', true );
+$contacts_address          = get_post_meta( get_the_ID(), '_mf_contacts_address_group', true );
 $contacts_map              = get_post_meta( get_the_ID(), '_mf_contacts_map', true );
 $contacts_form_title       = get_post_meta( get_the_ID(), '_mf_contacts_form_title', true );
 $contacts_form_description = get_post_meta( get_the_ID(), '_mf_contacts_form_description', true );
 $contacts_form_shortcode   = get_post_meta( get_the_ID(), '_mf_contacts_form_shortcode', true );
+
 
 ?>
 
@@ -40,22 +38,40 @@ $contacts_form_shortcode   = get_post_meta( get_the_ID(), '_mf_contacts_form_sho
 	</header>
 	<section class="address-wrapper">
 		<div class="address">
-			<div class="address-content">
-				<?php
-				if ( $contacts_title ) :
-					echo '<h2 class="address-title">' , esc_html( $contacts_title ) , '</h2>';
-				endif;
-				if ( $contacts_address ) :
-					echo '<p class="address-address">' , wp_kses_post( $contacts_address ) , '</p>';
-				endif;
-				if ( $contacts_phone ) :
-					echo '<p class="address-phone">' , esc_html( 'Telefone: ', 'maqfort' ) , '<a href="tel:' , esc_html( $contacts_phone ) , '">' , esc_html( $contacts_phone ) , '</a></p>';
-				endif;
-				if ( $contacts_email ) :
-					echo '<a href="mailto:' , esc_html( $contacts_email ) , '" class="address-mailto">' ,  esc_html__( 'Enviar email', 'maqfort' ) , '</a>';
-				endif;
-				?>
-			</div><!-- .address-content -->
+			<?php
+			if ( $contacts_address ) :
+				foreach ( (array) $contacts_address as $address_id => $address ) :
+					$address_title  = '';
+					$address_street = '';
+					$address_phone  = '';
+					$address_email  = '';
+					if ( isset( $address ['title'] ) ) :
+						$address_title = $address['title'];
+					endif;
+					if ( isset( $address ['address'] ) ) :
+						$address_street = $address['address'];
+					endif;
+					if ( isset( $address ['phone'] ) ) :
+						$address_phone = $address['phone'];
+					endif;
+					if ( isset( $address ['email'] ) ) :
+						$address_email = $address['email'];
+					endif;
+					if ( ! empty( $address_street ) ) :
+						echo '<div class="address-content">';
+						echo '<h2 class="address-title">' , esc_html( $address_title ) , '</h2>';
+						echo '<p class="address-address">' , wp_kses_post( $address_street ) , '</p>';
+						if ( $address_phone ) :
+							echo '<p class="address-phone">' , esc_html( 'Telefone: ', 'maqfort' ) , '<a href="tel:' , esc_html( $address_phone ) , '">' , esc_html( $address_phone ) , '</a></p>';
+						endif;
+						if ( $address_email ) :
+							echo '<a href="mailto:' , esc_html( $address_email ) , '" class="address-mailto">' ,  esc_html__( 'Enviar email', 'maqfort' ) , '</a>';
+						endif;
+						echo '</div><!-- .address-content -->';
+					endif;
+				endforeach;
+			endif;
+			?>
 		</div><!-- .address -->
 		<div class="map-wrapper">
 			<?php

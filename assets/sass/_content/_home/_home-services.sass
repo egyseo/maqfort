@@ -1,71 +1,54 @@
 #home-services
-  padding: 140px 0 100px
-  .row
-    &:nth-child(2)
-      .service-box
-        .service-image-box
-          order: 2
-        .service-content
-          order: 1
-  .service-box
-    display: flex
+  padding: 40px 0 0
+  .service-box-wrapper
     margin-bottom: 40px
-    background-color: $light-grey
-    .service-image-box
-      width: 50%
-      order: 1
-      position: relative
-      img
-        width: 100%
-        height: 100%
-    .service-content
-      width: 50%
-      order: 2
-      display: flex
-      flex-direction: column
-      justify-content: center
-      transition: all .4s ease
-      padding: 40px
-      .service-title
-        font-size: 1.6rem
-        font-weight: 700
-        color: $darker-grey
-        margin: 0
-        margin-bottom: 20px
-      .service-desc
-        color: #505050
-        font-size: 16px
-        line-height: 1.8
-        margin: 0
-        margin-bottom: 20px
-      .service-link
-        font-weight: bold
-        color: $primary-darker
-        margin: 0
-        font-size: 14px
-
-@media (max-width: $medium)
-  #home-services
-    .row
-      &:nth-child(2)
-        .service-box
-          .service-image-box
-            order: 1
-          .service-content
-            order: 2
+    border: 1px solid $light-grey
     .service-box
-      flex-direction: column
-      margin-bottom: 40px
-      .service-content
-        width: 100%
-      .service-image-box
-        width: 100%
-        order: 1
+      display: block
+      .service-image-wrapper
+        position: relative
+        &::before
+          content: ''
+          display: block
+          position: absolute
+          top: 0
+          right: 0
+          width: 100%
+          height: 100%
+          background-color: rgba(45,45,45,.6)
+        .service-image
+          vertical-align: middle
+        .fa
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%,-50%)
+          color: white
+          font-size: 4em
+          font-weight: normal
 
-@media (max-width: $small)
-  #home-services
-    .service-box
       .service-content
-        padding: 30px
-        .service-desc
-          line-height: 1.6
+        transition: all .4s ease
+        padding: 20px 40px
+        .service-title
+          font-size: 1.3rem
+          font-weight: 700
+          color: $darker-grey
+          margin: 0
+          margin-bottom: 20px
+          &:hover
+            color: $primary-color
+        .service-description
+          color: #505050
+          font-size: 16px
+          line-height: 1.8
+          margin: 0
+          margin-bottom: 20px
+        .service-button
+          font-weight: bold
+          color: $primary-darker
+          margin: 0
+          font-size: 14px
+          .btn-secondary
+            &:hover
+              background-color: $primary-color
