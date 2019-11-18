@@ -90,45 +90,7 @@ if ( ! function_exists( 'mf_contacts' ) ) {
 
 		$cmb->add_field(
 			array(
-				'name' => __( 'Titlo', 'maqfort' ),
-				'description' => __( 'Titlo da morada', 'maqfort' ),
-				'id'   => $prefix . 'title',
-				'type' => 'text',
-			)
-		);
-
-		$cmb->add_field(
-			array(
-				'name' => __( 'Morada', 'maqfort' ),
-				'desc' => __( 'Insira aqui a morada', 'maqfort' ),
-				'default' => '',
-				'id' => $prefix . 'address',
-				'type' => 'textarea_small',
-			)
-		);
-
-		$cmb->add_field(
-			array(
-				'name' => __( 'Telefone', 'maqfort' ),
-				'description' => __( 'Insira aqui o telefone', 'maqfort' ),
-				'id'   => $prefix . 'phone',
-				'type' => 'text',
-			)
-		);
-
-
-		$cmb->add_field(
-			array(
-				'name' => __( 'Email', 'maqfort' ),
-				'description' => __( 'Insira aqui o email de contacto', 'maqfort' ),
-				'id'   => $prefix . 'email',
-				'type' => 'text_email',
-			)
-		);
-
-		$cmb->add_field(
-			array(
-				'name'    => __( 'Código para o mapa Google', 'maqfort' ),
+				'name'    => __( 'Código para google maps', 'maqfort' ),
 				'id'      => $prefix . 'map',
 				'type'    => 'textarea_code',
 			)
